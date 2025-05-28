@@ -24,6 +24,8 @@ function PageContact() {
       <>
         <Head>
           <title>Elephant Group - Contacto</title>
+          <meta name="description" content="Elephant Group - Contacto" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
 
         <Loader />

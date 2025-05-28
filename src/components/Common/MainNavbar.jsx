@@ -14,7 +14,7 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
     const bodyScroll = window.scrollY;
     const navbar = document.querySelector(".navbar");
 
-    if (bodyScroll > 300) navbar.classList.add("nav-scroll");
+    if (bodyScroll > 200) navbar.classList.add("nav-scroll");
     else navbar.classList.remove("nav-scroll");
   }
 
@@ -99,13 +99,13 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
               <img
                 src="/dark/assets/imgs/logo-dark.webp"
                 alt="logo claro"
-                className="icon-img-120"
+                className="icon-img-140"
               />
             ) : (
               <img
                 src="/dark/assets/imgs/logo-light.webp"
                 alt="logo oscuro"
-                className="icon-img-120"
+                className="icon-img-115"
               />
             )}
           </Link>

@@ -1664,7 +1664,7 @@ img.left {
   width: 130px;
 }
 .icon-img-115 {
-  width: 240px;
+  width: 280px;
 }
 
 .icon-img-120 {
@@ -3038,7 +3038,7 @@ body.loaded {
 /* Menu
 -----------------------------------------------------------------*/
 .top__navbar {
-  background-color: #141816;
+  background-color: #1f1f1f;
   height: 100%;
   width: 100%;
   display: flex;

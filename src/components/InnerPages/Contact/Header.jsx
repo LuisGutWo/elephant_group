@@ -2,7 +2,7 @@ import React from 'react';
 
 function Header() {
   return (
-    <header className="page-header section-padding sub-bg">
+    <header className="page-header section-padding p-100 bg-img bg-overlay" style={{ backgroundImage: 'url(public/dark/assets/imgs/background/work-127.webp)' }}>
       <div className="container mt-80">
         <div className="row">
           <div className="col-lg-7">
