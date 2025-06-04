@@ -1,7 +1,14 @@
 {
-    "cSpell.words": [
-        "crle",
-        "leter",
-        "primery"
-    ]
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "files.autoSave": "onWindowChange",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.associations": {
+    "*.cns": "c",
+    "*.cns.h": "c"
+  },
+  "cSpell.language": "es",
+  "cSpell.words": ["cortecns", "crle", "leter", "primery", "Reflectivos"]
 }

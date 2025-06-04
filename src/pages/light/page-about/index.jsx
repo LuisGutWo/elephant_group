@@ -15,20 +15,17 @@ import Footer from "@/components/Main/Footer";
 
 function PageAboutLight() {
   useEffect(() => {
-    if (document) {
-      document.body.classList.add("main-bg");
+    const body = document?.body;
+    if (body) {
+      body.classList.add("main-bg");
+      return () => body.classList.remove("main-bg");
     }
-    return () => {
-      if (document) {
-        document.body.classList.remove("main-bg");
-      }
-    };
   }, []);
 
   const headerMetadata = {
     subTitle: "QUIENES SOMOS ?",
     title:
-      "Somos Elephant Group, una empresa que crea y produce implementos PUBLICITARIOS.",
+      "Somos Elephant Group, una empresa de la V Region con 6 años de experiencia, que CREA y PRODUCE implementos publicitarios.",
     text: "Nosotros",
   };
 
@@ -37,6 +34,12 @@ function PageAboutLight() {
       <>
         <Head>
           <title>Elephant Group - Nosotros</title>
+          <meta name="description" content="Elephant Group - Nosotros" />
+          <meta
+            name="keywords"
+            content="Elephant Group, nosotros, publicidad, marketing"
+          />
+          <meta name="author" content="Elephant Group" />
         </Head>
 
         <Loader />
@@ -52,7 +55,7 @@ function PageAboutLight() {
       </>
     );
   } catch (error) {
-    console.error(error);
+    console.error("Rendering error in PageAboutLight:", error);
     return <div>Error: {error.message}</div>;
   }
 }

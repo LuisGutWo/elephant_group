@@ -6,6 +6,15 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const nextConfig = {
   reactStrictMode: false,
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "firebasestorage.googleapis.com",
+      },
+    ],
+  },
   sassOptions: {
     includePaths: [join(__dirname, "css")],
   },
@@ -13,6 +22,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: false,
   },
+  allowedDevOrigins: ["local-origin.dev", "*.local-origin.dev"],
 };
 
 export default nextConfig;

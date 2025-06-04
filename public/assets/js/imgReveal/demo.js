@@ -4,7 +4,7 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2018, Codrops
  * http://www.codrops.com
  */
@@ -29,8 +29,8 @@
     const getRandomFloat = (min, max) => (Math.random() * (max - min) + min).toFixed(2);
 
     /**
-     * One class per effect. 
-     * Lots of code is repeated, so that single effects can be easily used. 
+     * One class per effect.
+     * Lots of code is repeated, so that single effects can be easily used.
      */
 
     // Effect 1
@@ -51,7 +51,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
@@ -67,7 +67,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -112,7 +112,7 @@
                 ease: Sine.easeOut,
                 x: '100%'
             }), 'begin')
-            
+
             .add(new TweenMax(this.DOM.revealImg, 0.2, {
                 ease: Sine.easeOut,
                 x: '-100%'
@@ -138,7 +138,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
@@ -154,7 +154,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -202,7 +202,7 @@
                 x: '100%',
                 y: '100%'
             }), 'begin')
-            
+
             .add(new TweenMax(this.DOM.revealImg, 0.3, {
                 ease: Quint.easeOut,
                 x: '-100%',
@@ -231,7 +231,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
@@ -248,7 +248,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -342,7 +342,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
@@ -359,7 +359,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -433,7 +433,7 @@
     class HoverImgFx5 {
         constructor(el) {
             this.DOM = {el: el};
-            
+
             this.DOM.reveal = document.createElement('div');
             this.DOM.reveal.className = 'hover-reveal';
             this.DOM.reveal.innerHTML = `<div class="hover-reveal__deco"></div><div class="hover-reveal__inner"><div class="hover-reveal__img" style="background-image:url(${this.DOM.el.dataset.img})"></div></div>`;
@@ -450,7 +450,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
@@ -467,7 +467,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -543,7 +543,7 @@
     class HoverImgFx6 {
         constructor(el) {
             this.DOM = {el: el};
-            
+
             this.DOM.reveal = document.createElement('div');
             this.DOM.reveal.className = 'hover-reveal';
             this.DOM.reveal.style.overflow = 'hidden';
@@ -560,7 +560,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
@@ -576,7 +576,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -654,7 +654,7 @@
             }), 'begin')
         }
     }
- 
+
     // Effect 7
     class HoverImgFx7 {
         constructor(el) {
@@ -674,7 +674,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
@@ -691,7 +691,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -778,7 +778,7 @@
     class HoverImgFx8 {
         constructor(el) {
             this.DOM = {el: el};
-            
+
             this.DOM.reveal = document.createElement('div');
             this.DOM.reveal.className = 'hover-reveal';
             this.DOM.reveal.innerHTML = `<div class="hover-reveal__deco"></div><div class="hover-reveal__inner"><div class="hover-reveal__img" style="background-image:url(${this.DOM.el.dataset.img})"></div></div>`;
@@ -796,7 +796,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
@@ -813,7 +813,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -888,7 +888,7 @@
     class HoverImgFx9 {
         constructor(el) {
             this.DOM = {el: el};
-            
+
             this.DOM.reveal = document.createElement('div');
             this.DOM.reveal.className = 'hover-reveal';
             this.DOM.reveal.innerHTML = `<div class="hover-reveal__deco"></div><div class="hover-reveal__inner"><div class="hover-reveal__img" style="background-image:url(${this.DOM.el.dataset.img})"></div></div>`;
@@ -905,7 +905,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
@@ -922,7 +922,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -957,7 +957,7 @@
                 rotation: 0
             }), 'begin+=0.25')
 
-            
+
             .add(new TweenMax(this.DOM.revealImg, 0.8, {
                 ease: Expo.easeOut,
                 startAt: {y: '-150%', rotation: -25},
@@ -999,7 +999,7 @@
     class HoverImgFx10 {
         constructor(el) {
             this.DOM = {el: el};
-            
+
             this.DOM.reveal = document.createElement('div');
             this.DOM.reveal.className = 'hover-reveal';
             this.DOM.reveal.innerHTML = `<div class="hover-reveal__deco"></div><div class="hover-reveal__inner"><div class="hover-reveal__img" style="background-image:url(${this.DOM.el.dataset.img})"></div></div>`;
@@ -1016,7 +1016,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
@@ -1033,7 +1033,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -1102,7 +1102,7 @@
     class HoverImgFx11 {
         constructor(el) {
             this.DOM = {el: el};
-            
+
             this.DOM.reveal = document.createElement('div');
             this.DOM.reveal.className = 'hover-reveal';
             this.DOM.reveal.style.overflow = 'hidden';
@@ -1126,7 +1126,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
@@ -1143,7 +1143,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -1238,7 +1238,7 @@
         constructor(el) {
             this.DOM = {el: el};
             this.DOM.reveal = document.createElement('div');
-            this.DOM.reveal.className = 'hover-reveal'; 
+            this.DOM.reveal.className = 'hover-reveal';
             this.totalDecos = 7;
             let inner = '';
             for (let i = 0; i <= this.totalDecos-1; ++i) {
@@ -1267,7 +1267,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
@@ -1283,7 +1283,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -1354,7 +1354,7 @@
     class HoverImgFx13 {
         constructor(el) {
             this.DOM = {el: el};
-            
+
             this.DOM.reveal = document.createElement('div');
             this.DOM.reveal.className = 'hover-reveal';
             this.DOM.reveal.style.zIndex = -1;
@@ -1383,14 +1383,14 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
         }
         showImage() {
             TweenMax.killTweensOf(this.DOM.revealImgs);
             this.position();
-            
+
             this.tl = new TimelineMax({
                 onStart: () => {
                     this.DOM.reveal.style.opacity = 1;
@@ -1445,7 +1445,7 @@
     class HoverImgFx14 {
         constructor(el) {
             this.DOM = {el: el};
-            
+
             this.DOM.reveal = document.createElement('div');
             this.DOM.reveal.className = 'hover-reveal';
             let inner = '';
@@ -1464,7 +1464,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
@@ -1480,7 +1480,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -1504,7 +1504,7 @@
             };
             this.current = 0;
             show();
-            
+
             const loop = () => {
                 this.imgtimeout = setTimeout(() => {
                     this.DOM.revealImgs[this.current].style.zIndex = '';
@@ -1531,12 +1531,12 @@
             TweenMax.set(this.DOM.reveal, {opacity: 0})
         }
     }
-        
+
     // Effect 15
     class HoverImgFx15 {
         constructor(el) {
             this.DOM = {el: el};
-            
+
             this.DOM.reveal = document.createElement('div');
             this.DOM.reveal.className = 'hover-reveal';
             this.totalImages = 5;
@@ -1555,7 +1555,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
@@ -1572,7 +1572,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -1589,10 +1589,10 @@
 
             for (let i = 0; i <= this.totalImages-1; ++i) {
                 TweenMax.set(this.DOM.revealImgs[i], {
-                    x: `${(this.totalImages-1-i)*5}%`, 
+                    x: `${(this.totalImages-1-i)*5}%`,
                     y: `${(this.totalImages-1-i)*10}%`
                 });
-                
+
                 this.tl.add(new TweenMax(this.DOM.revealImgs[i], i === this.totalImages-1 ? 1.2 : 0.55, {
                     ease: i === this.totalImages-1 ? Quint.easeOut : Quad.easeOut,
                     startAt: i === this.totalImages-1 ? {opacity: 1, x: '5%', y: '10%'} : {opacity: 1},
@@ -1637,7 +1637,7 @@
     class HoverImgFx16 {
         constructor(el) {
             this.DOM = {el: el};
-            
+
             this.DOM.reveal = document.createElement('div');
             this.DOM.reveal.className = 'hover-reveal';
             this.totalImages = 10;
@@ -1657,7 +1657,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y-this.rect.height-20-docScrolls.top}px`;
@@ -1674,7 +1674,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -1688,14 +1688,14 @@
                 }
             })
             .set(this.DOM.revealImgs, {opacity: 0, transformOrigin: '0% 0%'});
-            
+
             for (let i = 0; i <= this.totalImages-1; ++i) {
                 TweenMax.set(this.DOM.revealImgs[i], {
-                    x: `${(this.totalImages-1-i)*getRandomFloat(-10,-5)}%`, 
+                    x: `${(this.totalImages-1-i)*getRandomFloat(-10,-5)}%`,
                     y: `${(this.totalImages-1-i)*getRandomFloat(-15,-10)}%`,
                     rotation: `${getRandomFloat(-5,5)}deg`
                 });
-                
+
                 this.tl.add(new TweenMax(this.DOM.revealImgs[i], i === this.totalImages-1 ? 0.3 : 0.3, {
                     ease: i === this.totalImages-1 ? Quint.easeOut : Sine.easeOut,
                     startAt: i === this.totalImages-1 ? {opacity: 1, x: '-5%', y: '-10%'} : {opacity: 1},
@@ -1741,7 +1741,7 @@
     class HoverImgFx17 {
         constructor(el) {
             this.DOM = {el: el};
-            
+
             this.DOM.reveal = document.createElement('div');
             this.DOM.reveal.className = 'hover-reveal';
             this.totalImages = 10;
@@ -1760,7 +1760,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
@@ -1777,7 +1777,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -1791,15 +1791,15 @@
                 }
             })
             .set(this.DOM.revealImgs, {opacity: 0, transformOrigin: '0% 100%'});
-            
+
             for (let i = 0; i <= this.totalImages-1; ++i) {
                 TweenMax.set(this.DOM.revealImgs[i], {
-                    x: `${(this.totalImages-1-i)*15}%`, 
+                    x: `${(this.totalImages-1-i)*15}%`,
                     y: `${(this.totalImages-1-i)*-10}%`,
                     rotation: `${getRandomFloat(-7,7)}deg`,
                     scale: `${i === this.totalImages-1 ? 1 : getRandomFloat(0.2,1)}`,
                 });
-                
+
                 this.tl.add(new TweenMax(this.DOM.revealImgs[i], i === this.totalImages-1 ? 0.8 : 0.55, {
                     ease: i === this.totalImages-1 ? Quint.easeOut : Quad.easeInOut,
                     startAt: i === this.totalImages-1 ? {opacity: 1, x: '5%', y: '-10%'} : {opacity: 1},
@@ -1845,7 +1845,7 @@
     class HoverImgFx18 {
         constructor(el) {
             this.DOM = {el: el};
-            
+
             this.DOM.reveal = document.createElement('div');
             this.DOM.reveal.className = 'hover-reveal';
             this.totalImages = 10;
@@ -1865,7 +1865,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y-this.rect.height-20-docScrolls.top}px`;
@@ -1882,7 +1882,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -1899,11 +1899,11 @@
 
             for (let i = 0; i <= this.totalImages-1; ++i) {
                 TweenMax.set(this.DOM.revealImgs[i], {
-                    x: `${(this.totalImages-1-i)*-50}%`, 
+                    x: `${(this.totalImages-1-i)*-50}%`,
                     y: `${(this.totalImages-1-i)*-getRandomFloat(-2,2)}%`,
                     rotation: `${i !== this.totalImages-1 ? getRandomFloat(-5,5) : 0}deg`
                 });
-                
+
                 this.tl.add(new TweenMax(this.DOM.revealImgs[i], i === this.totalImages-1 ? 0.4 : 0.55, {
                     ease: i === this.totalImages-1 ? Back.easeOut : Quad.easeInOut,
                     startAt: i === this.totalImages-1 ? {opacity: 1, x: '-50%', y: '0%'} : {opacity: 1},
@@ -1947,7 +1947,7 @@
     class HoverImgFx19 {
         constructor(el) {
             this.DOM = {el: el};
-            
+
             this.DOM.reveal = document.createElement('div');
             this.DOM.reveal.className = 'hover-reveal';
             this.totalImages = 35;
@@ -1967,7 +1967,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y-this.rect.height-20-docScrolls.top}px`;
@@ -1984,7 +1984,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -2001,12 +2001,12 @@
 
             for (let i = 0; i <= this.totalImages-1; ++i) {
                 TweenMax.set(this.DOM.revealImgs[i], {
-                    x: `${(this.totalImages-1-i)*-8}%`, 
+                    x: `${(this.totalImages-1-i)*-8}%`,
                     y: `${(this.totalImages-1-i)*-5}%`,
                     rotation: `${i !== this.totalImages-1 ? -1+3*(this.totalImages-i-1) : 0}deg`,
                     scale: `${mapNumber(i,0,this.totalImages-1,0.1,1)}`
                 });
-                
+
                 this.tl.add(new TweenMax(this.DOM.revealImgs[i], i === this.totalImages-1 ? 0.8 : 0.55, {
                     ease: i === this.totalImages-1 ? Back.easeOut : Quint.easeOut,
                     startAt: i === this.totalImages-1 ? {opacity: 1, x: '-5%', y: '-5%', rotation: -10} : {opacity: 1},
@@ -2052,7 +2052,7 @@
     class HoverImgFx20 {
         constructor(el) {
             this.DOM = {el: el};
-            
+
             this.DOM.reveal = document.createElement('div');
             this.DOM.reveal.className = 'hover-reveal';
             this.totalImages = 10;
@@ -2073,7 +2073,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
@@ -2090,7 +2090,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -2106,10 +2106,10 @@
             .set([this.DOM.revealImgs], {opacity: 0});
             for (let i = 0; i <= this.totalImages-1; ++i) {
                 TweenMax.set(this.DOM.revealImgs[i], {
-                    x: i === this.totalImages-1 ? '0%' : `${getRandomFloat(-5,5)}%`, 
+                    x: i === this.totalImages-1 ? '0%' : `${getRandomFloat(-5,5)}%`,
                     y: i === this.totalImages-1 ? '0%' : `${getRandomFloat(-5,5)}%`
                 });
-                
+
                 this.tl.add(new TweenMax(this.DOM.revealImgs[i], 0.25, {
                     ease: Quad.easeOut,
                     startAt: {opacity: 1},
@@ -2157,7 +2157,7 @@
     class HoverImgFx21 {
         constructor(el) {
             this.DOM = {el: el};
-            
+
             this.DOM.reveal = document.createElement('div');
             this.DOM.reveal.className = 'hover-reveal';
             this.totalImages = 15;
@@ -2179,7 +2179,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y-this.rect.height-20-docScrolls.top}px`;
@@ -2196,7 +2196,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -2213,12 +2213,12 @@
 
             for (let i = 0; i <= this.totalImages-1; ++i) {
                 TweenMax.set(this.DOM.revealImgs[i], {
-                    x: `${i !== this.totalImages-1 ? getRandomFloat(-45,45) : 0}%`, 
+                    x: `${i !== this.totalImages-1 ? getRandomFloat(-45,45) : 0}%`,
                     y: `${i !== this.totalImages-1 ? getRandomFloat(-45,45) : 0}%`,
                     rotation: `${i !== this.totalImages-1 ? getRandomFloat(-10,10) : 0}`,
                     scale: `${i !== this.totalImages-1 ? getRandomFloat(0.1,1.2) : 0.9}`
                 });
-                
+
                 this.tl.add(new TweenMax(this.DOM.revealImgs[i], 0.5, {
                     ease: Quint.easeOut,
                     startAt: i === this.totalImages-1 ? {opacity: 1, x: '0%', y: '0%'} : {opacity: 1},
@@ -2264,7 +2264,7 @@
             });
         }
     }
-	
+
     // Effect 22
     class HoverImgFx22 {
         constructor(el) {
@@ -2281,7 +2281,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
@@ -2297,7 +2297,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -2357,13 +2357,13 @@
                 x: '-20%'
             }), 'begin');
         }
-    }    
+    }
 
     // Effect 23
     class HoverImgFx23 {
         constructor(el) {
             this.DOM = {el: el};
-            
+
             this.DOM.reveal = document.createElement('div');
             this.DOM.reveal.className = 'hover-reveal';
             this.totalImages = 15;
@@ -2383,7 +2383,7 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
                     top : document.body.scrollTop + document.documentElement.scrollTop
                 };
                 this.DOM.reveal.style.top = `${mousePos.y-this.rect.height-20-docScrolls.top}px`;
@@ -2400,7 +2400,7 @@
             this.mouseleaveFn = () => {
                 this.hideImage();
             };
-            
+
             this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
             this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
             this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
@@ -2417,12 +2417,12 @@
 
             for (let i = 0; i <= this.totalImages-1; ++i) {
                 TweenMax.set(this.DOM.revealImgs[i], {
-                    x: `${i*getRandomFloat(-10,10)}%`, 
+                    x: `${i*getRandomFloat(-10,10)}%`,
                     y: `${i*getRandomFloat(-15,15)}%`,
                     rotation: `${i !== this.totalImages-1 ? getRandomFloat(-7,7) : 0}deg`,
                     scale: `${getRandomFloat(0.1,0.5)}`
                 });
-                
+
                 this.tl.add(new TweenMax(this.DOM.revealImgs[i], i === this.totalImages-1 ? 0.8 : 0.5, {
                     ease: i === this.totalImages-1 ? Expo.easeOut : Quint.easeOut,
                     startAt: i === this.totalImages-1 ? {opacity: 1, x: '0%', y: '-10%'} : {opacity: 1},
@@ -2462,7 +2462,7 @@
             });
         }
     }
-    
+
     [...document.querySelectorAll('[data-fx="1"] > a, a[data-fx="1"]')].forEach(link => new HoverImgFx1(link));
     [...document.querySelectorAll('[data-fx="2"] > a, a[data-fx="2"]')].forEach(link => new HoverImgFx2(link));
     [...document.querySelectorAll('[data-fx="3"] > a, a[data-fx="3"]')].forEach(link => new HoverImgFx3(link));

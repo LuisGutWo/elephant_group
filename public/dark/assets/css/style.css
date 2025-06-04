@@ -38,42 +38,8 @@ body.noise-img:before {
   height: 100%;
 }
 
-body.home-digital .container,
-body.home-arch .container,
-body.home-corp .container {
-  max-width: 1200px;
-}
-
-body.space-font,
-body.home-digital {
-  font-family: "Space Grotesk", sans-serif;
-}
-
-body.home-arch {
-  font-family: "Space Grotesk", sans-serif;
-}
-
-body.home-arch main {
-  position: relative;
-}
-
-body.home-arch main:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 70px;
-  background: #141618;
-  z-index: 5;
-}
-
-body.home-main-crev,
-body.digital-marketing {
-  font-family: "Epilogue", sans-serif;
-}
-
 main {
+  overflow-x: hidden;
   position: relative;
   z-index: 5;
 }
@@ -252,11 +218,11 @@ figure {
 }
 
 .main-colorbg {
-  background-color: #fca311;
+  background-color: #141618;
 }
 
 .main-color2 {
-  color: #fca311 !important;
+  color: #c27d0e !important;
 }
 
 .main-colorbg2 {
@@ -264,26 +230,26 @@ figure {
 }
 
 .main-color3 {
-  color: #74c69d !important;
+  color: #f2c213 !important;
 }
 
 .main-colorbg3 {
-  background-color: #74c69d;
+  background-color: #181314;
 }
 
 .main-color4 {
-  color: #fca311 !important;
+  color: #885709 !important;
 }
 
 .main-colorbg4 {
-  background-color: #fca311;
+  background-color: #181818;
 }
 
 .main-bg {
   background-color: #141618;
 }
 .main-bg2 {
-  background-color: #6c757d;
+  background-color: #222421;
 }
 
 .sub-bg {
@@ -291,7 +257,7 @@ figure {
 }
 
 .bg-gray1 {
-  background: #343a40;
+  background: #181311;
   color: #e9ecef;
 }
 
@@ -313,7 +279,7 @@ figure {
 }
 
 img {
-  width: 100%;
+  width: 4rem;
   height: auto;
 }
 
@@ -377,7 +343,11 @@ img {
   position: fixed;
   cursor: pointer;
   top: 50%;
+<<<<<<< HEAD
   right: 0;
+=======
+  right: 5%; /* Add a small offset to keep it inside the viewport */
+>>>>>>> ab6374d1b4aa47d0523b3645a2cbb3f8f64d41bc
   z-index: 100;
 
   & .wsp-image {
@@ -1680,7 +1650,10 @@ img.left {
 }
 
 .icon-img-120 {
-  width: 120px;
+  width: 300px;
+}
+.icon-img-140 {
+  width: 340px;
 }
 
 /*-------------------------------------------------------
@@ -3043,13 +3016,12 @@ body.loaded {
 /* Menu
 -----------------------------------------------------------------*/
 .top__navbar {
-  background-color: #fafafa;
+  background-color: #d5d5d5;
   height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 .top__navbar-list {
   list-style: none;
@@ -3063,17 +3035,18 @@ body.loaded {
 .top__navbar-list li p {
   color: #141816;
   font-size: small;
-} 
+}
 .top__navbar-list li a {
-  color: #fca311;
-} 
+  color: #cf850d;
+}
 .navbar {
   position: absolute;
+  width: 100vw;
+  height: 7rem;
   left: 0;
   top: 0;
   padding: 0;
   margin: 0;
-  width: 100vw;
   background: transparent;
   border-bottom: 2px solid transparent;
   z-index: 999;
@@ -5760,8 +5733,21 @@ footer .bg-pattern {
   position: relative;
   overflow: hidden;
 }
-
-.page-header .background {
+.page-header .background-img {
+  background-image: url("../imgs/header/banner_impresion.webp");
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  position: absolute;
+  opacity: 0.3;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   min-height: 480px;
 }
 
@@ -6782,8 +6768,8 @@ footer .bg-pattern {
 }
 
 .work-carsouel .work-crus.out {
-  width: 120%;
-  margin-left: -10%;
+  width: 100%;
+  margin-left: 0;
 }
 
 .work-carsouel .work-crus .swiper-slide-active .img .cont span,
@@ -7827,6 +7813,11 @@ header.in-box {
   bottom: 0;
   left: 0;
   background-size: cover;
+  background-position: center center;
+  pointer-events: none;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 .slider .parallax-slider .swiper-slide-active .caption .thin,
@@ -9577,8 +9568,9 @@ header.in-box {
   .navbar {
     height: 5rem;
     width: 100%;
-}
+  }
   .navbar .navbar-collapse {
+    background-color: #191919;
     max-height: 440px;
     overflow: auto;
   }
@@ -9595,12 +9587,8 @@ header.in-box {
     max-width: 100%;
   }
   .navbar .logo {
-    max-width: 80px !important;
+    max-width: 100px !important;
     margin-left: 30px;
-  }
-  .navbar .navbar-collapse {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: 15px;
   }
   .navbar .search-form {
     display: none;
@@ -9984,6 +9972,7 @@ header.in-box {
     width: 100px;
   }
   /* // /// WhatsApp Floating Button /// */
+<<<<<<< HEAD
 .btn-wsp {
   & .wsp-image {
     width: 6rem;
@@ -9998,6 +9987,25 @@ header.in-box {
 }
 
 
+=======
+  .btn-wsp {
+    & .wsp-image {
+      width: 6rem;
+      max-width: fit-content;
+      min-width: 2rem;
+
+      &:hover {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  img {
+    width: 2rem;
+    height: auto;
+  }
+>>>>>>> ab6374d1b4aa47d0523b3645a2cbb3f8f64d41bc
 
   .hamenu {
     padding: 120px 15px 15px;

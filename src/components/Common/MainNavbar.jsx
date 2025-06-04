@@ -14,7 +14,7 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
     const bodyScroll = window.scrollY;
     const navbar = document.querySelector(".navbar");
 
-    if (bodyScroll > 300) navbar.classList.add("nav-scroll");
+    if (bodyScroll > 200) navbar.classList.add("nav-scroll");
     else navbar.classList.remove("nav-scroll");
   }
 
@@ -56,13 +56,15 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
   }
   function handleThemeChange() {
     if (typeof window === "undefined" || window === null) {
-      console.error("Window is null");
-      return;
+      throw new Error("Window is null");
     }
 
     if (typeof window.location === "undefined" || window.location === null) {
-      console.error("Window location is null");
-      return;
+      throw new Error("Window location is null");
+    }
+
+    if (typeof window.location.pathname !== "string") {
+      throw new Error("Window location pathname is not a string");
     }
 
     const currentPath = window.location.pathname;
@@ -76,6 +78,7 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
       window.location.href = newPath;
     } catch (error) {
       console.error("Error while changing theme:", error);
+      throw error;
     }
   }
 
@@ -89,20 +92,20 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
       >
         <div className="container">
           <Link
-            className="logo icon-img-200"
+            className="logo"
             href={`/${lightMode ? "light/page-home" : "dark/page-home"}`}
           >
             {lightMode ? (
               <img
-                src="/dark/assets/imgs/logo-dark.png"
+                src="/dark/assets/imgs/logo-dark.webp"
                 alt="logo claro"
-                className="icon-img-120"
+                className="icon-img-140"
               />
             ) : (
               <img
-                src="/dark/assets/imgs/logo-light.png"
+                src="/dark/assets/imgs/logo-light.webp"
                 alt="logo oscuro"
-                className="icon-img-120"
+                className="icon-img-115"
               />
             )}
           </Link>

@@ -1,5 +1,7 @@
 import React from "react";
 
+import Splitting from "splitting.js";
+
 class Split extends React.Component {
   target = React.createRef();
 
@@ -13,9 +15,8 @@ class Split extends React.Component {
   componentDidUpdate = this.split;
 
   render() {
-    if (this.props.tag === 'span') return <span ref={this.target}>{this.props.children}</span>;
-    else if (this.props.tag === 'a') return <a href={this.props.href} className={this.props.className} ref={this.target}>{this.props.children}</a>;
-    return <div ref={this.target}>{this.props.children}</div>;
+    const { tag: Tag = 'div', ...props } = this.props;
+    return <Tag ref={this.target} {...props}>{this.props.children}</Tag>;
   }
 }
 
