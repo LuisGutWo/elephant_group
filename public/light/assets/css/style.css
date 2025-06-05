@@ -5737,7 +5737,7 @@ footer {
   text-align: center;
   position: relative;
   z-index: 2;
-  
+
 }
 
 footer .call-box {
@@ -7892,7 +7892,7 @@ header.in-box {
   overflow: hidden;
   width: 100%;
   height: 100vh;
-  padding: 80px 0;
+  padding: 0;
 }
 
 .slider .parallax-slider .swiper-slide .bg-img {
@@ -10075,12 +10075,9 @@ header.in-box {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
-<<<<<<< HEAD
-=======
     display: flex;
     justify-content: center;
     align-items: flex-start;
->>>>>>> ab6374d1b4aa47d0523b3645a2cbb3f8f64d41bc
   }
   .hamenu {
     padding: 120px 15px 15px;
@@ -10413,20 +10410,12 @@ header.in-box {
     padding: 40px 25px;
   }
 }
-<<<<<<< HEAD
-@media screen and (max-width: 390px) {
-=======
 /* @media screen and (max-width: 390px) {
->>>>>>> ab6374d1b4aa47d0523b3645a2cbb3f8f64d41bc
   .slider .parallax-slider .swiper-slide {
     position: relative;
     overflow: hidden;
     width: 100%;
-<<<<<<< HEAD
-    height: 20vh;
-=======
     height: 100%;
->>>>>>> ab6374d1b4aa47d0523b3645a2cbb3f8f64d41bc
     padding: 0;
   }
   .slider .parallax-slider .swiper-slide .bg-img {
@@ -10448,18 +10437,10 @@ header.in-box {
     -webkit-mask-size: cover !important;
     mask-size: cover !important;
 
-<<<<<<< HEAD
-    background-size: contain !important;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-}
-=======
     background-size: cover !important;
     background-repeat: no-repeat;
     background-position: center center;
   }
 } */
->>>>>>> ab6374d1b4aa47d0523b3645a2cbb3f8f64d41bc
 
 /* ====================== [ End Responsive ] ====================== */

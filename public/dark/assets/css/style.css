@@ -343,11 +343,7 @@ img {
   position: fixed;
   cursor: pointer;
   top: 50%;
-<<<<<<< HEAD
-  right: 0;
-=======
-  right: 5%; /* Add a small offset to keep it inside the viewport */
->>>>>>> ab6374d1b4aa47d0523b3645a2cbb3f8f64d41bc
+  right: 3%; /* Add a small offset to keep it inside the viewport */
   z-index: 100;
 
   & .wsp-image {
@@ -7803,7 +7799,7 @@ header.in-box {
   overflow: hidden;
   width: 100%;
   min-height: 100vh;
-  padding: 80px 0;
+  padding: 0;
 }
 
 .slider .parallax-slider .swiper-slide .bg-img {
@@ -9972,22 +9968,6 @@ header.in-box {
     width: 100px;
   }
   /* // /// WhatsApp Floating Button /// */
-<<<<<<< HEAD
-.btn-wsp {
-  & .wsp-image {
-    width: 6rem;
-    max-width: fit-content;
-    min-width: 2rem;
-
-    &:hover {
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1);
-    }
-  }
-}
-
-
-=======
   .btn-wsp {
     & .wsp-image {
       width: 6rem;
@@ -10005,7 +9985,6 @@ header.in-box {
     width: 2rem;
     height: auto;
   }
->>>>>>> ab6374d1b4aa47d0523b3645a2cbb3f8f64d41bc
 
   .hamenu {
     padding: 120px 15px 15px;

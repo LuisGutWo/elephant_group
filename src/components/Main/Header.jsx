@@ -13,7 +13,7 @@ const swiperOptions = {
   modules: [Navigation, Autoplay, Pagination, Parallax],
   speed: 1500,
   autoplay: {
-    delay: 5000,
+    delay: 4000,
   },
   parallax: true,
   loop: true,
@@ -59,17 +59,57 @@ function Header() {
             <SwiperSlide key={item.id}>
               <div
                 className="swiper-slide bg-img valign"
-                style={{
-                  backgroundImage: window.matchMedia("(max-width: 768px)")
-                    .matches
-                    ? `url(${item?.backgroundMobile})`
-                    : `url(${item?.background})`,
-                }}
                 data-swiper-parallax-opacity="0.5"
                 data-swiper-parallax-scale="1.2"
                 data-swiper-parallax-duration="1000"
+                style={{ position: "relative", overflow: "hidden" }}
               >
-                <div className="container">
+                {item.backgroundVideo ? (
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="bg-video"
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      zIndex: 0,
+                    }}
+                  >
+                    <source
+                      src={
+                        window.matchMedia("(max-width: 768px)").matches
+                          ? item.backgroundVideoMobile
+                          : item.backgroundVideo
+                      }
+                      type="video/webm"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <div
+                    className="bg-img"
+                    style={{
+                      backgroundImage: `url(${
+                        window.matchMedia("(max-width: 768px)").matches
+                          ? item?.backgroundMobile
+                          : item?.background
+                      })`,
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      zIndex: 0,
+                    }}
+                  />
+                )}
+                <div className="container" style={{ position: "relative", zIndex: 1 }}>
                   <div className="row">
                     <div className="col-lg-7">
                       <div className="caption mt-0">
@@ -82,10 +122,7 @@ function Header() {
                         <h1 className="text-light">
                           <StatementSplitter statement={item.title || ""} />
                         </h1>
-                        <h4
-                          className="text-light ms-1
-            text-uppercase fw-400"
-                        >
+                        <h4 className="text-light ms-1 text-uppercase fw-400">
                           <StatementSplitter statement={item.subtitle || ""} />
                         </h4>
                         <p className="sub-title">{item.text || ""}</p>

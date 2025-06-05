@@ -51,11 +51,11 @@
             this.positionElement = (ev) => {
                 const mousePos = getMousePos(ev);
                 const docScrolls = {
-                    left : document.body.scrollLeft + document.documentElement.scrollLeft,
-                    top : document.body.scrollTop + document.documentElement.scrollTop
+                    left : window.pageXOffset || document.documentElement.scrollLeft,
+                    top : window.pageYOffset || document.documentElement.scrollTop
                 };
-                this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
-                this.DOM.reveal.style.left = `${mousePos.x+20-docScrolls.left}px`;
+                this.DOM.reveal.style.top = `${mousePos.y + 20 - docScrolls.top}px`;
+                this.DOM.reveal.style.left = `${mousePos.x + 20 - docScrolls.left}px`;
             };
             this.mouseenterFn = (ev) => {
                 this.positionElement(ev);
@@ -112,7 +112,6 @@
                 ease: Sine.easeOut,
                 x: '100%'
             }), 'begin')
-
             .add(new TweenMax(this.DOM.revealImg, 0.2, {
                 ease: Sine.easeOut,
                 x: '-100%'

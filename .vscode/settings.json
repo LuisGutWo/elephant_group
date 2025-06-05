@@ -10,5 +10,12 @@
     "*.cns.h": "c"
   },
   "cSpell.language": "es",
-  "cSpell.words": ["cortecns", "crle", "leter", "primery", "Reflectivos"]
+  "cSpell.words": [
+    "animate",
+    "cortecns",
+    "crle",
+    "leter",
+    "primery",
+    "Reflectivos"
+]
 }

@@ -1,84 +1,106 @@
 import React, { useEffect } from "react";
-import { MdLightMode } from "react-icons/md";
-import { MdDarkMode } from "react-icons/md";
+import { MdLightMode, MdDarkMode } from "react-icons/md";
 import Link from "next/link";
 import TopNavbar from "./TopNavbar";
 
 function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    if (typeof window !== "undefined" && window !== null) {
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
   }, []);
 
   function handleScroll() {
-    const bodyScroll = window.scrollY;
-    const navbar = document.querySelector(".navbar");
+    if (typeof window !== "undefined" && window !== null) {
+      const bodyScroll = window.scrollY;
+      const navbar = document.querySelector(".navbar");
 
-    if (bodyScroll > 200) navbar.classList.add("nav-scroll");
-    else navbar.classList.remove("nav-scroll");
+      if (bodyScroll > 200 && navbar) {
+        navbar.classList.add("nav-scroll");
+      } else if (navbar) {
+        navbar.classList.remove("nav-scroll");
+      }
+    }
   }
 
   function handleDropdownMouseMove(event) {
-    event.currentTarget.querySelector(".dropdown-menu").classList.add("show");
+    if (event && event.currentTarget) {
+      event.currentTarget.querySelector(".dropdown-menu").classList.add("show");
+    }
   }
 
   function handleDropdownMouseLeave(event) {
-    event.currentTarget
-      .querySelector(".dropdown-menu")
-      .classList.remove("show");
+    if (event && event.currentTarget) {
+      event.currentTarget
+        .querySelector(".dropdown-menu")
+        .classList.remove("show");
+    }
   }
 
   function handleDropdownSideMouseMove(event) {
-    const dropdownSide = event.currentTarget.querySelector(".dropdown-side");
-    if (dropdownSide) {
-      dropdownSide.classList.add("show");
+    if (event && event.currentTarget) {
+      const dropdownSide = event.currentTarget.querySelector(".dropdown-side");
+      if (dropdownSide) {
+        dropdownSide.classList.add("show");
+      }
     }
   }
 
   function handleDropdownSideMouseLeave(event) {
-    const dropdownSide = event.currentTarget.querySelector(".dropdown-side");
-    if (dropdownSide) {
-      dropdownSide.classList.remove("show");
+    if (event && event.currentTarget) {
+      const dropdownSide = event.currentTarget.querySelector(".dropdown-side");
+      if (dropdownSide) {
+        dropdownSide.classList.remove("show");
+      }
     }
   }
 
   function toggleNavbar() {
-    document.querySelector(".navbar .navbar-collapse").classList.toggle("show");
+    if (typeof document !== "undefined" && document !== null) {
+      document.querySelector(".navbar .navbar-collapse").classList.toggle("show");
+    }
   }
 
   function toggleSearch() {
-    let form = document.querySelector(".navbar .search-form");
-    let closeBtn = document.querySelector(".search-form .close-search");
+    if (typeof document !== "undefined" && document !== null) {
+      let form = document.querySelector(".navbar .search-form");
+      let closeBtn = document.querySelector(".search-form .close-search");
 
-    form.classList.toggle("open");
-    if (form.classList.contains("open")) closeBtn.style.display = "block";
-    else closeBtn.style.display = "none";
+      if (form && closeBtn) {
+        form.classList.toggle("open");
+        if (form.classList.contains("open")) {
+          closeBtn.style.display = "block";
+        } else {
+          closeBtn.style.display = "none";
+        }
+      }
+    }
   }
+
   function handleThemeChange() {
-    if (typeof window === "undefined" || window === null) {
-      throw new Error("Window is null");
-    }
+    if (typeof window !== "undefined" && window !== null) {
+      if (typeof window.location === "undefined" || window.location === null) {
+        throw new Error("Window location is null");
+      }
 
-    if (typeof window.location === "undefined" || window.location === null) {
-      throw new Error("Window location is null");
-    }
+      if (typeof window.location.pathname !== "string") {
+        throw new Error("Window location pathname is not a string");
+      }
 
-    if (typeof window.location.pathname !== "string") {
-      throw new Error("Window location pathname is not a string");
-    }
+      const currentPath = window.location.pathname;
+      const newTheme = lightMode ? "dark" : "light";
+      const newPath = currentPath.replace(
+        lightMode ? "/light/" : "/dark/",
+        `/${newTheme}/`
+      );
 
-    const currentPath = window.location.pathname;
-    const newTheme = lightMode ? "dark" : "light";
-    const newPath = currentPath.replace(
-      lightMode ? "/light/" : "/dark/",
-      `/${newTheme}/`
-    );
-
-    try {
-      window.location.href = newPath;
-    } catch (error) {
-      console.error("Error while changing theme:", error);
-      throw error;
+      try {
+        window.location.href = newPath;
+      } catch (error) {
+        console.error("Error while changing theme:", error);
+        throw error;
+      }
     }
   }
 
@@ -99,13 +121,13 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
               <img
                 src="/dark/assets/imgs/logo-dark.webp"
                 alt="logo claro"
-                className="icon-img-140"
+                className="icon-img-120"
               />
             ) : (
               <img
                 src="/dark/assets/imgs/logo-light.webp"
                 alt="logo oscuro"
-                className="icon-img-115"
+                className="icon-img-140"
               />
             )}
           </Link>
@@ -166,7 +188,7 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
                       lightMode ? "light/page-services" : "dark/page-services"
                     }`}
                   >
-                    diseño
+                    Diseño
                   </Link>
                   <Link
                     className="dropdown-item"
