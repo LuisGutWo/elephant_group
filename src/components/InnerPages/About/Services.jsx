@@ -11,7 +11,7 @@ function Services({ lightMode }) {
       <div className="container">
         <div className="sec-lg-head mb-80">
           <div className="row">
-            <div className="col-lg-8">
+            <article className="col-lg-8">
               <div className="position-re">
                 <Link
                   href={catalogoPDF}
@@ -30,8 +30,8 @@ function Services({ lightMode }) {
                 </Link>
                 <h2 className="fz-60 fw-700">Nuestros Servicios</h2>
               </div>
-            </div>
-            <div className="col-lg-4 d-flex align-items-center">
+            </article>
+            <article className="col-lg-4 d-flex align-items-center">
               <div className="text">
                 <p>
                   Ofrecemos soluciones de impresion en diferentes formatos,
@@ -63,10 +63,10 @@ function Services({ lightMode }) {
                   </h6>
                 </Link>
               </div>
-            </div>
+            </article>
           </div>
         </div>
-        <div className="row justify-content-center mb-50">
+        <article className="row justify-content-center mb-50">
           {data.map((item) => (
             <div
               className="text-center d-flex flex-wrap flex-column justify-content-center align-items-center item-bord col-lg-4 col-md-8"
@@ -75,7 +75,8 @@ function Services({ lightMode }) {
               <div className="icon-img-100 mb-40">
                 <img
                   src={`/${lightMode ? "light" : "dark"}${item.image}`}
-                  alt=""
+                  alt="Elephant Group services logos"
+                  width="100"
                   loading="lazy"
                   className="img-fluid mt-50"
                 />
@@ -87,7 +88,7 @@ function Services({ lightMode }) {
               <p className="text mb-35">{item.text}</p>
             </div>
           ))}
-        </div>
+        </article>
       </div>
     </section>
   );

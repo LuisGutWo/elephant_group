@@ -1,3 +1,4 @@
+import { facebookSvg, instagramSvg } from "@/data/icons";
 import React from "react";
 
 function Form() {
@@ -5,7 +6,7 @@ function Form() {
     <section className="contact-crev section-padding">
       <div className="container">
         <div className="row">
-          <div className="col-lg-5">
+          <article className="col-lg-5">
             <div className="sec-lg-head mb-80">
               <h6 className="dot-titl-non mb-10">Contáctenos</h6>
               <h2 className="fz-50">
@@ -20,16 +21,32 @@ function Form() {
               </div>
               <ul className="rest social-text d-flex mt-60">
                 <li className="mr-30">
-                  <a href="https://web.facebook.com/elephantgroupchile" rel="noopener noreferrer">Facebook</a>
+                  <a
+                    href="https://web.facebook.com/elephantgroupchile"
+                    rel="noopener noreferrer"
+                    className="active"
+                    aria-label="Facebook"
+                    target="_blank"
+                  >
+                    {facebookSvg}
+                  </a>
                 </li>
 
                 <li>
-                  <a href="https://www.instagram.com/elephantgroupchile/" rel="noopener noreferrer">Instagram</a>
+                  <a
+                    href="https://www.instagram.com/elephantgroupchile/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    className="active"
+                    aria-label="Instagram"
+                  >
+                    {instagramSvg}
+                  </a>
                 </li>
               </ul>
             </div>
-          </div>
-          <div className="col-lg-6 offset-lg-1 valign">
+          </article>
+          <article className="col-lg-6 offset-lg-1 valign">
             <div className="full-width">
               <form id="contact-form" method="post" action="contact.php">
                 <div className="messages"></div>
@@ -79,7 +96,7 @@ function Form() {
                     <div className="mt-30">
                       <button
                         type="submit"
-                        className="butn butn-md butn-bord radius-30"
+                        className="butn butn-md butn-bord radius-30  bg-color-1"
                       >
                         <span className="text">Hablemos</span>
                       </button>
@@ -88,7 +105,7 @@ function Form() {
                 </div>
               </form>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>

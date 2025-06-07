@@ -11,12 +11,19 @@ import Header from "@/components/Portfolio/HeaderPortfolio";
 import GridPortfolioImages from "@/components/Portfolio/GridPortfolioImages";
 
 function PagePortfolioLight() {
-  useEffect(() => document.body.classList.add("main-bg"), []);
-  useEffect(() => () => document.body.classList.remove("main-bg"), []);
+  useEffect(() => {
+    if (document) document.body.classList.add("main-bg");
+    return () => {
+      if (document) document.body.classList.remove("main-bg");
+    };
+  }, []);
 
   const metadata = {
     subTitle: "Portafolio",
     title: "Nuestros trabajos.",
+    text: "Portafolio",
+    description:
+      "Descubre los proyectos destacados de Elephant Group, donde la innovación y la creatividad se unen para ofrecer soluciones excepcionales.",
   };
 
   return (
@@ -24,17 +31,24 @@ function PagePortfolioLight() {
       <Head>
         <title>Elephant Group - Portafolio de Trabajos</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Portafolio de trabajos realizados por Elephant Group." />
-        <meta name="keywords" content="Elephant Group, portafolio, trabajos, proyectos" />
+        <meta
+          name="description"
+          content="Portafolio de trabajos realizados por Elephant Group."
+        />
+        <meta
+          name="keywords"
+          content="portafolio, trabajos, proyectos, Elephant Group"
+        />
+        <meta name="author" content="Elephant Group" />
       </Head>
 
-      <Loader />
       <Navbar mainBg lightMode />
       <main className="main-bg">
         <Header data={metadata} />
         <GridPortfolioImages />
       </main>
       <Footer subBg lightMode />
+      <Loader />
     </>
   );
 }

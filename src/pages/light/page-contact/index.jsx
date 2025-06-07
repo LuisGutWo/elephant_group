@@ -26,7 +26,7 @@ function PageContactLight() {
   return (
     <>
       <Head>
-        <title>Elephant Group - Contáctenos</title>
+        <title>Elephant Group - Contacto</title>
       </Head>
 
       <Loader />

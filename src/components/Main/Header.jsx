@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 //= Modules
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay, Pagination, Parallax } from "swiper/modules";
+import {
+  Navigation,
+  Autoplay,
+  Pagination,
+  Parallax,
+  Keyboard,
+} from "swiper/modules";
 //= Components
 import StatementSplitter from "../Common/StatementSplitter";
 //= Scripts
@@ -12,6 +18,9 @@ import data from "@/data/Main/header.json";
 const swiperOptions = {
   modules: [Navigation, Autoplay, Pagination, Parallax],
   speed: 1500,
+  Keyboard: {
+    enabled: true,
+  },
   autoplay: {
     delay: 4000,
   },
@@ -67,10 +76,15 @@ function Header() {
                 {item.backgroundVideo ? (
                   <video
                     autoPlay
+                    playsInline
+                    preload="auto"
+                    lazy= "true"
+                    disableRemotePlayback
+                    disablePictureInPicture
                     loop
                     muted
-                    playsInline
                     className="bg-video"
+                    alt="Background Autonivelante banners videos"
                     style={{
                       position: "absolute",
                       top: 0,
@@ -109,22 +123,25 @@ function Header() {
                     }}
                   />
                 )}
-                <div className="container" style={{ position: "relative", zIndex: 1 }}>
+                <div
+                  className="container"
+                  style={{ position: "relative", zIndex: 1 }}
+                >
                   <div className="row">
                     <div className="col-lg-7">
                       <div className="caption mt-0">
                         <img
                           src="/light/assets/imgs/logo-light.webp"
-                          alt="Elephant Group Logo"
+                          alt="Elephant Group - Designe and Print Solutions Logo"
                           className="logo-webp img-responsive w-25"
                           data-swiper-parallax="0.5"
                         />
                         <h1 className="text-light">
                           <StatementSplitter statement={item.title || ""} />
                         </h1>
-                        <h4 className="text-light ms-1 text-uppercase fw-400">
+                        <h2 className="text-light ms-1 text-uppercase fw-400">
                           <StatementSplitter statement={item.subtitle || ""} />
-                        </h4>
+                        </h2>
                         <p className="sub-title">{item.text || ""}</p>
                       </div>
                     </div>

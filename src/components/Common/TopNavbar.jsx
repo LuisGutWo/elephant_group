@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 
 const TopNavbar = ({ lightMode, mainBg, curve }) => {
   const handleClick = () => {
-    try { 
+    try {
       if (window == null || window.location == null) {
         throw new Error("Window or window.location is null");
       }
@@ -42,11 +42,11 @@ const TopNavbar = ({ lightMode, mainBg, curve }) => {
           <p className="me-3 ms-2 pt-1">+56 9 5163 1370</p>
           <Button
             className="btn"
-            variant="#fca311"
             style={{
               backgroundColor: "#fca311",
-              color: "dark",
-              hover: { backgroundColor: "#ce840e" },
+              color: "#000",
+              hover: { backgroundColor: "#f4f4f4", color: "#000" },
+              boxShadow: "0 0.25rem 0.5rem rgba(0, 0, 0, 0.1)",
               active: { backgroundColor: "#ce840e" },
               border: "none",
               borderRadius: "0.25rem",

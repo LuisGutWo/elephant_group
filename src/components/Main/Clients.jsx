@@ -41,7 +41,7 @@ function Clients({ lightMode }) {
   return (
     <section className="clients-carso section-padding pt-100">
       <div className="container">
-        <div className="row justify-content-center">
+        <article className="row justify-content-center">
           <div className="col-lg-9">
             <div className="text-center mb-70">
               <h6 className="fz-20 fw-400">
@@ -50,8 +50,8 @@ function Clients({ lightMode }) {
               </h6>
             </div>
           </div>
-        </div>
-        <div className="swiper5">
+        </article>
+        <article className="swiper5">
           {loadSwiper && (
             <Swiper
               {...swiperOptions}
@@ -64,8 +64,12 @@ function Clients({ lightMode }) {
                     <div className="img icon-img-150">
                       <img
                         src={`/${lightMode ? "light" : "dark"}${item}`}
-                        alt=""
-                        style={{ display: "block", margin: "0 auto", width: "100%" }}
+                        alt="Elephant Group clients logos carousel images"
+                        style={{
+                          display: "block",
+                          margin: "0 auto",
+                          width: "100%",
+                        }}
                         className="img-fluid"
                         loading="lazy"
                       />
@@ -75,7 +79,7 @@ function Clients({ lightMode }) {
               ))}
             </Swiper>
           )}
-        </div>
+        </article>
       </div>
     </section>
   );

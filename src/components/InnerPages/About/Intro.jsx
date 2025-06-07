@@ -21,21 +21,22 @@ function Intro() {
               <div className="img1 wow fadeInUp">
                 <img
                   src="/light/assets/imgs/about/work-127.webp"
-                  alt="Elephant Group fondo negro 700x840"
+                  alt="Elephant Group background designe work image"
+                  loading="lazy"
                   className="radius-10"
                 />
               </div>
               <div className="img2 wow fadeInLeft">
                 <img
                   src="/light/assets/imgs/about/work-122.webp"
-                  alt="Elephant Group fondo negro 700x840"
+                  alt="Elephant Group background designe work image"
+                  loading="lazy"
                   className="radius-10"
                 />
-                
               </div>
             </div>
           </div>
-          <div className="col-lg-5 valign">
+          <article className="col-lg-5 valign">
             <div className="cont">
               <div className="text">
                 <h2 className="d-slideup wow">
@@ -88,10 +89,10 @@ function Intro() {
                   <div className="accordion-info">
                     <p className="fz-14">
                       Nuestro CNC es una herramienta de alta precisión que nos
-                      permite realizar cortes y grabados en una amplia variedad de
-                      materiales, como acrílicos, madera y aluminio compuesto.
-                      Gracias a su tecnología avanzada, podemos crear diseños
-                      personalizados y precisos.
+                      permite realizar cortes y grabados en una amplia variedad
+                      de materiales, como acrílicos, madera y aluminio
+                      compuesto. Gracias a su tecnología avanzada, podemos crear
+                      diseños personalizados y precisos.
                     </p>
                   </div>
                 </div>
@@ -102,10 +103,11 @@ function Intro() {
                   </div>
                   <div className="accordion-info">
                     <p className="fz-14">
-                      En Elephant Group, nos especializamos en la <b>creación</b> y <b>diseño</b> de
-                      logotipos, papelería, publicidad digital y física, así como
-                      en la creación de contenido para redes sociales. Nuestro equipo
-                      de expertos en <b>diseno de letreros</b> y <b>rótulos</b> y
+                      En Elephant Group, nos especializamos en la{" "}
+                      <b>creación</b> y <b>diseño</b> de logotipos, papelería,
+                      publicidad digital y física, así como en la creación de
+                      contenido para redes sociales. Nuestro equipo de expertos
+                      en <b>diseno de letreros</b> y <b>rótulos</b> y
                       <b>señalización</b> nos permite ofrecer soluciones
                       personalizadas y atractivas para nuestros clientes.
                     </p>
@@ -113,7 +115,7 @@ function Intro() {
                 </div>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>

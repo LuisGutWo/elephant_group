@@ -58,7 +58,9 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
 
   function toggleNavbar() {
     if (typeof document !== "undefined" && document !== null) {
-      document.querySelector(".navbar .navbar-collapse").classList.toggle("show");
+      document
+        .querySelector(".navbar .navbar-collapse")
+        .classList.toggle("show");
     }
   }
 
@@ -112,7 +114,7 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
           noStatic ? "" : "static"
         } ${mainBg ? "main-bg" : ""} ${subBg ? "sub-bg" : ""}`}
       >
-        <div className="container">
+        <section className="container">
           <Link
             className="logo"
             href={`/${lightMode ? "light/page-home" : "dark/page-home"}`}
@@ -120,13 +122,15 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
             {lightMode ? (
               <img
                 src="/dark/assets/imgs/logo-dark.webp"
-                alt="logo claro"
+                alt="Elephant Group logo claro"
+                loading="lazy"
                 className="icon-img-120"
               />
             ) : (
               <img
                 src="/dark/assets/imgs/logo-light.webp"
-                alt="logo oscuro"
+                alt="Elephant Group logo oscuro"
+                loading="lazy"
                 className="icon-img-140"
               />
             )}
@@ -145,7 +149,7 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
               <i className="fas fa-bars"></i>
             </span>
           </button>
-          <div
+          <section
             className="collapse navbar-collapse justify-content-center"
             id="navbarSupportedContent"
           >
@@ -244,7 +248,7 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
                 </Link>
               </li>
             </ul>
-          </div>
+          </section>
           <div className="search-form">
             <div className="form-group">
               <input type="text" name="search" placeholder="Search" />
@@ -257,7 +261,7 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
               <span className="pe-7s-close close-search"></span>
             </div>
           </div>
-        </div>
+        </section>
       </nav>
     </>
   );
