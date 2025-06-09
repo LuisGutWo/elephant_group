@@ -9981,9 +9981,44 @@ header.in-box {
     }
   }
 
+  .slider .parallax-slider .swiper-slide {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 60vh;
+    padding: 0;
+  }
+  .slider .parallax-slider .swiper-slide .bg-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: fill;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
   img {
     width: 2rem;
     height: auto;
+  }
+  .slider .parallax-slider .caption {
+    margin-top: 2rem;
+  }
+  .slider .parallax-slider .caption h1 {
+    font-size: 1.8rem;
+  }
+  .slider .parallax-slider .caption h2 {
+    font-size: 1.3rem;
+  }
+
+  .slider .parallax-slider .caption p {
+    font-size: 0.8rem;
   }
 
   .hamenu {

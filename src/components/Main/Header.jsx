@@ -16,13 +16,16 @@ import loadBackgroudImages from "@/common/loadBackgroudImages";
 import data from "@/data/Main/header.json";
 
 const swiperOptions = {
-  modules: [Navigation, Autoplay, Pagination, Parallax],
+  modules: [Navigation, Autoplay, Pagination, Parallax, Keyboard],
   speed: 1500,
   Keyboard: {
     enabled: true,
   },
   autoplay: {
-    delay: 4000,
+    delay: 3500,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+    waitForTransition: true,
   },
   parallax: true,
   loop: true,
@@ -129,7 +132,7 @@ function Header() {
                 >
                   <div className="row">
                     <div className="col-lg-7">
-                      <div className="caption mt-0">
+                      <div className="caption">
                         <img
                           src="/light/assets/imgs/logo-light.webp"
                           alt="Elephant Group - Designe and Print Solutions Logo"

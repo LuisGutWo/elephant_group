@@ -19,7 +19,7 @@ body {
   font-size: 14px;
   font-family: "Poppins", sans-serif;
   font-family: "Sora", sans-serif;
-  overflow-x: hidden  !important;
+  overflow-x: hidden !important;
 }
 
 body.noise-img {
@@ -1658,7 +1658,7 @@ img.left {
 }
 
 .icon-img-100 {
-  width: 100px;
+  width: 6rem;
 }
 .icon-img-110 {
   width: 130px;
@@ -5728,7 +5728,7 @@ footer {
   margin: 0;
   font-size: 0.8rem;
   line-height: 1.5;
-  color: #f7f4f4;
+  color: #f7f4f465;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -5737,7 +5737,6 @@ footer {
   text-align: center;
   position: relative;
   z-index: 2;
-
 }
 
 footer .call-box {
@@ -10067,13 +10066,17 @@ header.in-box {
       }
     }
   }
+  img {
+    width: 2rem;
+    height: auto;
+  }
 
   .slider .parallax-slider .swiper-slide {
     position: relative;
     overflow: hidden;
     width: 100%;
     min-height: 60vh;
-    padding: 80px 0;
+    padding: 0;
   }
   .slider .parallax-slider .swiper-slide .bg-img {
     position: absolute;
@@ -10089,6 +10092,21 @@ header.in-box {
     justify-content: center;
     align-items: flex-start;
   }
+
+  .slider .parallax-slider .caption {
+    margin-top: 2rem;
+  }
+  .slider .parallax-slider .caption h1 {
+    font-size: 1.8rem;
+  }
+  .slider .parallax-slider .caption h2 {
+    font-size: 1.3rem;
+  }
+
+  .slider .parallax-slider .caption p {
+    font-size: 0.8rem;
+  }
+
   .hamenu {
     padding: 120px 15px 15px;
   }
@@ -10405,6 +10423,9 @@ header.in-box {
     width: 50px;
     height: 50px;
   }
+  .sub-footer .footer-text {
+  font-size: 0.4rem;
+}
   .product-details .reviews .reviews-area > .d-flex {
     display: block !important;
   }

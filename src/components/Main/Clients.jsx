@@ -38,51 +38,73 @@ function Clients({ lightMode }) {
     setLoadSwiper(true);
   }, []);
 
-  return (
+return (
     <section className="clients-carso section-padding pt-100">
-      <div className="container">
-        <article className="row justify-content-center">
-          <div className="col-lg-9">
-            <div className="text-center mb-70">
-              <h6 className="fz-20 fw-400">
-                Mas de <span className="fw-600">100+ Clientes</span> confían en
-                nosotros en todo Chile
-              </h6>
-            </div>
-          </div>
-        </article>
-        <article className="swiper5">
-          {loadSwiper && (
-            <Swiper
-              {...swiperOptions}
-              id="content-carousel-container-unq-clients"
-              className="swiper-container d-flex justify-content-end align-items-end"
-            >
-              {data.map((item) => (
-                <SwiperSlide key={item}>
-                  <div className="item d-flex justify-content-center align-items-center">
-                    <div className="img icon-img-150">
-                      <img
-                        src={`/${lightMode ? "light" : "dark"}${item}`}
-                        alt="Elephant Group clients logos carousel images"
-                        style={{
-                          display: "block",
-                          margin: "0 auto",
-                          width: "100%",
-                        }}
-                        className="img-fluid"
-                        loading="lazy"
-                      />
+        <div className="container">
+            <article className="row justify-content-center">
+                <div className="col-lg-9">
+                    <div className="text-center mb-70">
+                        <h6 className="fz-20 fw-400">
+                            Mas de <span className="fw-600">100+ Clientes</span> confían en
+                            nosotros en todo Chile
+                        </h6>
                     </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          )}
-        </article>
-      </div>
+                </div>
+            </article>
+            <article className="swiper5">
+                {loadSwiper && data && data.length > 0 && (
+                    <Swiper
+                        {...swiperOptions}
+                        id="content-carousel-container-unq-clients"
+                        className="swiper-container d-flex justify-content-end align-items-end"
+                    >
+                        {data.map((item, index) => (
+                            <SwiperSlide key={index}>
+                                <div
+                                    className="item d-flex justify-content-center align-items-center"
+                                    style={{
+                                        height: "150px",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                    }}
+                                >
+                                    <div
+                                        className="img icon-img-150"
+                                        style={{
+                                            width: "150px",
+                                            height: "150px",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                        }}
+                                    >
+                                        <img
+                                            src={`/${lightMode ? "light" : "dark"}${item}`}
+                                            alt="Elephant Group clients logos carousel images"
+                                            style={{
+                                                display: "block",
+                                                margin: "0 auto",
+                                                width: "100%",
+                                                height: "100%",
+                                                objectFit: "contain",
+                                                objectPosition: "center",
+                                                maxWidth: "150px",
+                                                maxHeight: "150px",
+                                            }}
+                                            className="img-fluid"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                )}
+            </article>
+        </div>
     </section>
-  );
+);
 }
 
 export default Clients;

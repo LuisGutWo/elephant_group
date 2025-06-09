@@ -9,20 +9,19 @@ function Services({ lightMode }) {
       <div className="container-fluid text-center">
         <div className="row justify-content-center mb-50">
           {data.map((item) => (
-            <div
-              className="item-bord col-lg-4 col-md-8"
-              key={item.id}
-            >
+            <div className="item-bord col-lg-4 col-md-8" key={item.id}>
               <Link
                 href={`/${
                   lightMode ? "light/page-services" : "dark/page-services"
                 }`}
                 className="d-flex flex-wrap flex-column justify-content-center align-items-center arrow mt-40"
               >
-                <div className="icon-img-100 mb-40">
+                <div className="mb-40">
                   <img
                     src={`/${lightMode ? "light" : "dark"}${item.image}`}
-                    alt=""
+                    alt="Service Icon Image - Elephant Group"
+                    className="img-fluid w-100 h-100 mb-20"
+                    style={{ maxWidth: "100px", maxHeight: "100px" }}
                   />
                 </div>
                 <h4
@@ -37,6 +36,10 @@ function Services({ lightMode }) {
                   style={{ color: lightMode ? "#000" : "#fff" }}
                 >
                   {item.subtitle}
+
+                  <span className="dot">
+                    <i className="fa fa-angle-right fs-5 ms-2" />
+                  </span>
                 </h6>
                 <p>{item.text}</p>
               </Link>
