@@ -112,13 +112,11 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
       <nav
         className={`navbar navbar-expand-lg ${curve ? "nav-crev" : ""} ${
           noStatic ? "" : "static"
-        } ${mainBg ? "main-bg" : ""} ${subBg ? "sub-bg" : ""}`}
-      >
+        } ${mainBg ? "main-bg" : ""} ${subBg ? "sub-bg" : ""}`}>
         <section className="container">
           <Link
             className="logo"
-            href={`/${lightMode ? "light/page-home" : "dark/page-home"}`}
-          >
+            href={`/${lightMode ? "light/page-home" : "dark/page-home"}`}>
             {lightMode ? (
               <img
                 src="/dark/assets/imgs/logo-dark.webp"
@@ -131,7 +129,7 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
                 src="/dark/assets/imgs/logo-light.webp"
                 alt="Elephant Group logo oscuro"
                 loading="lazy"
-                className="icon-img-140"
+                className="icon-img-120"
               />
             )}
           </Link>
@@ -143,38 +141,33 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            onClick={toggleNavbar}
-          >
+            onClick={toggleNavbar}>
             <span className="icon-bar">
               <i className="fas fa-bars"></i>
             </span>
           </button>
           <section
             className="collapse navbar-collapse justify-content-center"
-            id="navbarSupportedContent"
-          >
+            id="navbarSupportedContent">
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  href={`/${lightMode ? "light/page-home" : "dark/page-home"}`}
-                >
+                  href={`/${lightMode ? "light/page-home" : "dark/page-home"}`}>
                   <span className="rolling-text">Home</span>
                 </Link>
               </li>
               <li
                 className="nav-item dropdown"
                 onMouseMove={handleDropdownMouseMove}
-                onMouseLeave={handleDropdownMouseLeave}
-              >
+                onMouseLeave={handleDropdownMouseLeave}>
                 <a
                   className="nav-link dropdown-toggle"
                   data-toggle="dropdown"
                   href="#"
                   role="button"
                   aria-haspopup="true"
-                  aria-expanded="false"
-                >
+                  aria-expanded="false">
                   <span className="rolling-text">Servicios</span>
                 </a>
                 <div className="dropdown-menu">
@@ -182,24 +175,21 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
                     className="dropdown-item"
                     href={`/${
                       lightMode ? "light/page-services" : "dark/page-services"
-                    }`}
-                  >
+                    }`}>
                     Impresión
                   </Link>
                   <Link
                     className="dropdown-item"
                     href={`/${
                       lightMode ? "light/page-services" : "dark/page-services"
-                    }`}
-                  >
+                    }`}>
                     Diseño
                   </Link>
                   <Link
                     className="dropdown-item"
                     href={`/${
                       lightMode ? "light/page-services" : "dark/page-services"
-                    }`}
-                  >
+                    }`}>
                     Cortes CNC
                   </Link>
                 </div>
@@ -209,8 +199,7 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
                   className="nav-link"
                   href={`/${
                     lightMode ? "light/page-portfolio" : "dark/page-portfolio"
-                  }`}
-                >
+                  }`}>
                   <span className="rolling-text">Portafolio</span>
                 </Link>
               </li>
@@ -219,8 +208,7 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
                   className="nav-link"
                   href={`/${
                     lightMode ? "light/page-about" : "dark/page-about"
-                  }`}
-                >
+                  }`}>
                   <span className="rolling-text">Nosotros</span>
                 </Link>
               </li>
@@ -229,23 +217,24 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
                   className="nav-link"
                   href={`/${
                     lightMode ? "light/page-contact" : "dark/page-contact"
-                  }`}
-                >
+                  }`}>
                   <span className="rolling-text">Contacto</span>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link
+                <a
                   className="nav-link"
-                  href={`/${lightMode ? "light/page-home" : "dark/page-home"}`}
-                  onClick={handleThemeChange}
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleThemeChange();
+                  }}
                   onMouseMove={handleDropdownSideMouseMove}
-                  onMouseLeave={handleDropdownSideMouseLeave}
-                >
+                  onMouseLeave={handleDropdownSideMouseLeave}>
                   <span className="rolling-text fs-5 fw-bold">
                     {lightMode ? <MdDarkMode /> : <MdLightMode />}
                   </span>
-                </Link>
+                </a>
               </li>
             </ul>
           </section>

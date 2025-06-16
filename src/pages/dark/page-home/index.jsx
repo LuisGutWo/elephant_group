@@ -12,7 +12,7 @@ import Intro from "@/components/Main/Intro";
 import Clients from "@/components/Main/Clients";
 import Services from "@/components/Main/Services";
 import Portfolio from "@/components/Main/Portfolio";
-import CallToAction from "@/components/Main/Contact";
+import Contact from "@/components/Main/Contact";
 import Footer from "@/components/Main/Footer";
 
 function HomeDark() {
@@ -45,7 +45,7 @@ function HomeDark() {
         <Services />
         <Portfolio />
         <Clients />
-        <CallToAction />
+        <Contact />
       </main>
       <Footer />
     </>

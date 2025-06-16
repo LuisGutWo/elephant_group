@@ -19,7 +19,7 @@ function GridPortfolioImages() {
           <div className="filtering col-12 mb-80 text-center">
             <div className="filter">
               <span className="text">Filtrar Por :</span>
-              {data.filters.map((item, index) => (
+              {data?.filters?.map((item, index) => (
                 <span
                   data-filter={item?.filter}
                   className={index === 0 ? "active" : ""}
@@ -34,7 +34,7 @@ function GridPortfolioImages() {
         </div>
         <div className="gallery metro text-center">
           <div className="row">
-            {data.gallery.map((item) => (
+            {data?.gallery?.map((item) => (
               <div
                 className={`col-lg-${item?.width} col-md-6 items ${item?.filter} info-overlay height-${item?.height} mb-30`}
                 key={item?.id}

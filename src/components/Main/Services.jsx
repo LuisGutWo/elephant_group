@@ -27,7 +27,7 @@ function Services({ lightMode }) {
                 <h4
                   className="mb-15"
                   key={item.id}
-                  style={{ color: "#fca311" }}
+                  style={{ color: "#f7a800" }}
                 >
                   {item.title}
                 </h4>

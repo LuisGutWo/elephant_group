@@ -17,16 +17,17 @@ import data from "@/data/Main/header.json";
 
 const swiperOptions = {
   modules: [Navigation, Autoplay, Pagination, Parallax, Keyboard],
-  speed: 1500,
   Keyboard: {
     enabled: true,
   },
   autoplay: {
-    delay: 3500,
+    delay: 5000,
     disableOnInteraction: false,
-    pauseOnMouseEnter: true,
+    pauseOnMouseEnter: false,
     waitForTransition: true,
   },
+  effect: "fade",
+  speed: 1500,
   parallax: true,
   loop: true,
   onSwiper: function (swiper) {
@@ -73,15 +74,13 @@ function Header() {
                 className="swiper-slide bg-img valign"
                 data-swiper-parallax-opacity="0.5"
                 data-swiper-parallax-scale="1.2"
-                data-swiper-parallax-duration="1000"
-                style={{ position: "relative", overflow: "hidden" }}
-              >
+                style={{ position: "relative", overflow: "hidden" }}>
                 {item.backgroundVideo ? (
                   <video
                     autoPlay
                     playsInline
                     preload="auto"
-                    lazy= "true"
+                    lazy="true"
                     disableRemotePlayback
                     disablePictureInPicture
                     loop
@@ -96,8 +95,7 @@ function Header() {
                       height: "100%",
                       objectFit: "cover",
                       zIndex: 0,
-                    }}
-                  >
+                    }}>
                     <source
                       src={
                         window.matchMedia("(max-width: 768px)").matches
@@ -128,8 +126,7 @@ function Header() {
                 )}
                 <div
                   className="container"
-                  style={{ position: "relative", zIndex: 1 }}
-                >
+                  style={{ position: "relative", zIndex: 1 }}>
                   <div className="row">
                     <div className="col-lg-7">
                       <div className="caption">

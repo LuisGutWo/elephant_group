@@ -9,7 +9,7 @@ import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/InnerPages/Header";
 import Services from "@/components/InnerPages/About/Services";
 import ServicesTab from "@/components/Main/ServicesTab";
-import CallToAction from "@/components/Main/Contact";
+import Contact from "@/components/Main/Contact";
 import Footer from "@/components/Main/Footer";
 
 function PageServices() {
@@ -54,7 +54,7 @@ function PageServices() {
           <Header data={headerMetadata} subBg={true} />
           <Services />
           <ServicesTab />
-          <CallToAction innerPageStyle />
+          <Contact innerPageStyle />
         </main>
         <Footer />
       </>

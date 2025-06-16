@@ -4,14 +4,17 @@ import { Button } from "react-bootstrap";
 
 const TopNavbar = ({ lightMode, mainBg, curve }) => {
   const handleClick = () => {
+    if (window == null || window.location == null) {
+      console.error(
+        "Error while opening WhatsApp link: Window or window.location is null"
+      );
+      return;
+    }
+
+    const url =
+      "https://api.whatsapp.com/send?phone=+56920390272&text=Hola,%20somos%20Elephant%20Group...%20en%20que%20podemos%20ayudarte?";
+
     try {
-      if (window == null || window.location == null) {
-        throw new Error("Window or window.location is null");
-      }
-
-      const url =
-        "https://api.whatsapp.com/send?phone=+56920390272&text=Hola,%20somos%20Elephant%20Group...%20en%20que%20podemos%20ayudarte?";
-
       window.open(url, "_blank", "noopener noreferrer");
     } catch (error) {
       console.error("Error while opening WhatsApp link:", error);
@@ -39,7 +42,7 @@ const TopNavbar = ({ lightMode, mainBg, curve }) => {
         </li>
         <li className="top__navbar-item nav-item d-flex flex-row justify-content-center align-items-center g-2">
           {whatsAppSvg}
-          <p className="me-3 ms-2 pt-1">+56 9 5163 1370</p>
+          <p className="me-3 ms-2 pt-1 flex-shrink flex-grow">+56 9 5163 1370</p>
           <Button
             className="btn"
             style={{

@@ -2,7 +2,7 @@ import React from "react";
 
 function Marq() {
   return (
-    <section className="serv-marq main-colorbg2">
+    <section className="serv-marq">
       <div className="container-fluid ontop sub-bg rest pt-20 pb-20">
         <div className="row">
           <div className="col-12">

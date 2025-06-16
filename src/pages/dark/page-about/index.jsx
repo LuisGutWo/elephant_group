@@ -10,10 +10,10 @@ import Header from "@/components/InnerPages/Header";
 import Story from "@/components/InnerPages/About/Story";
 import Services from "@/components/InnerPages/About/Services";
 import Intro from "@/components/InnerPages/About/Intro";
-import CallToAction from "@/components/Main/Contact";
+import Contact from "@/components/Main/Contact";
 import Footer from "@/components/Main/Footer";
 
-function PageAbout() {
+function PageAboutDark() {
   useEffect(() => {
     const body = document?.body;
     if (body) {
@@ -28,32 +28,36 @@ function PageAbout() {
       "Somos Elephant Group, una empresa de la V Region con 6 años de experiencia, que CREA y PRODUCE implementos publicitarios.",
     text: "Nosotros",
   };
-
-  return (
-    <>
-      <Head>
-        <title>Elephant Group - Nosotros</title>
-        <meta name="description" content="Elephant Group - Nosotros" />
-        <meta
-          name="keywords"
-          content="Elephant Group, nosotros, publicidad, marketing"
-        />
-        <meta name="author" content="Elephant Group" />
-      </Head>
-      <Loader />
-      <Navbar mainBg />
-      <main>
-        <Header data={headerMetadata} />
-        <Story />
-        <Services />
-        <Intro />
-        <CallToAction innerPageStyle />
-      </main>
-      <Footer />
-    </>
-  );
+  try {
+    return (
+      <>
+        <Head>
+          <title>Elephant Group - Nosotros</title>
+          <meta name="description" content="Elephant Group - Nosotros" />
+          <meta
+            name="keywords"
+            content="Elephant Group, nosotros, publicidad, marketing"
+          />
+          <meta name="author" content="Elephant Group" />
+        </Head>
+        <Loader />
+        <Navbar mainBg />
+        <main>
+          <Header data={headerMetadata} />
+          <Story />
+          <Services />
+          <Intro />
+          <Contact innerPageStyle />
+        </main>
+        <Footer />
+      </>
+    );
+  } catch (error) {
+    console.error("Rendering error in PageAboutLight:", error);
+    return <div>Error: {error.message}</div>;
+  }
 }
 
-PageAbout.getLayout = (page) => <Layout>{page}</Layout>;
+PageAboutDark.getLayout = (page) => <Layout>{page}</Layout>;
 
-export default PageAbout;
+export default PageAboutDark;

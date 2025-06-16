@@ -30,31 +30,33 @@ const DefaultLayout = ({ children, lightMode = false }) => {
       return;
     }
 
-    const existingLightStyles = document.querySelectorAll(
+    let existingLightStyles = document.querySelectorAll(
       'link[href^="/light/assets/css"]'
     );
-    const existingDarkStyles = document.querySelectorAll(
+    let existingDarkStyles = document.querySelectorAll(
       'link[href^="/dark/assets/css"]'
     );
 
     // Remove existing stylesheets
+    existingLightStyles = Array.from(existingLightStyles);
+    existingDarkStyles = Array.from(existingDarkStyles);
+
     [...existingLightStyles, ...existingDarkStyles].forEach((link) => {
       if (link && link.parentNode) link.parentNode.removeChild(link);
     });
 
     // Add new stylesheets based on lightMode
     const stylesheets = lightMode
-      ? [
-          "/light/assets/css/plugins.css",
-          "/light/assets/css/style.css",
-        ]
-      : [
-          "/dark/assets/css/plugins.css",
-          "/dark/assets/css/style.css",
-        ];
+      ? ["/light/assets/css/plugins.css", "/light/assets/css/style.css"]
+      : ["/dark/assets/css/plugins.css", "/dark/assets/css/style.css"];
 
     stylesheets.forEach((href) => {
       const link = document.createElement("link");
+      if (!link) {
+        console.error("Error creating the link element");
+        return;
+      }
+
       link.rel = "stylesheet";
       link.href = href;
       head.appendChild(link);
@@ -71,9 +73,21 @@ const DefaultLayout = ({ children, lightMode = false }) => {
 
   return (
     <>
-      {typeof Cursor === "function" ? <Cursor /> : console.error("Cursor component is not available")}
-      {typeof WhatsAppButton === "function" ? <WhatsAppButton /> : console.error("WhatsAppButton component is not available")}
-      {typeof ProgressScroll === "function" ? <ProgressScroll /> : console.error("ProgressScroll component is not available")}
+      {typeof Cursor === "function" ? (
+        <Cursor />
+      ) : (
+        console.error("Cursor component is not available")
+      )}
+      {typeof WhatsAppButton === "function" ? (
+        <WhatsAppButton />
+      ) : (
+        console.error("WhatsAppButton component is not available")
+      )}
+      {typeof ProgressScroll === "function" ? (
+        <ProgressScroll />
+      ) : (
+        console.error("ProgressScroll component is not available")
+      )}
       {children}
     </>
   );

@@ -16,7 +16,7 @@ function Intro() {
     <section className="intro-corp section-padding pt-0">
       <div className="container">
         <div className="row justify-content-around">
-          <div className="col-lg-5 valign md-mb50">
+          <article className="col-lg-5 valign md-mb50">
             <div className="imgs mb-80">
               <div className="img1 wow fadeInUp">
                 <img
@@ -35,7 +35,7 @@ function Intro() {
                 />
               </div>
             </div>
-          </div>
+          </article>
           <article className="col-lg-5 valign">
             <div className="cont">
               <div className="text">

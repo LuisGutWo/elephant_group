@@ -27,7 +27,8 @@ function ServicesTab({ lightMode }) {
                       src={`/${
                         lightMode ? "light" : "dark"
                       }/assets/imgs/works/casa_colibri_servicestab.webp`}
-                      alt=""
+                      alt=" Casa Colibri - Elephant Group"
+                      loading="lazy"
                     />
                   </div>
                   <div className="cont sub-bg">
@@ -36,7 +37,8 @@ function ServicesTab({ lightMode }) {
                         src={`/${
                           lightMode ? "light" : "dark"
                         }/assets/imgs/serv-icons/4.webp`}
-                        alt=""
+                        alt=" Corte CNC - Elephant Group"
+                        loading="lazy"
                       />
                     </div>
                     <h4>Corte CNC</h4>
@@ -50,8 +52,7 @@ function ServicesTab({ lightMode }) {
                     </div>
                     <Link
                       href={`/${lightMode ? "light" : "dark"}/page-services`}
-                      className="mt-30"
-                    >
+                      className="mt-30">
                       <span className="mr-15">Saber mas</span>
                       <i className="fas fa-long-arrow-alt-right"></i>
                     </Link>
@@ -80,16 +81,15 @@ function ServicesTab({ lightMode }) {
                     <h4>Diseño</h4>
                     <div className="text">
                       <p>
-                        Creamos diseños únicos y personalizados para tu
-                        empresa, adaptándonos a tus necesidades y objetivos. Nos
-                        aseguramos de que cada diseño sea atractivo y
-                        funcional, ayudando a tu marca a destacar en el mercado.
+                        Creamos diseños únicos y personalizados para tu empresa,
+                        adaptándonos a tus necesidades y objetivos. Nos
+                        aseguramos de que cada diseño sea atractivo y funcional,
+                        ayudando a tu marca a destacar en el mercado.
                       </p>
                     </div>
                     <Link
                       href={`/${lightMode ? "light" : "dark"}/page-services`}
-                      className="mt-30"
-                    >
+                      className="mt-30">
                       <span className="mr-15">Saber mas</span>
                       <i className="fas fa-long-arrow-alt-right"></i>
                     </Link>
@@ -118,13 +118,17 @@ function ServicesTab({ lightMode }) {
                     <h4>Impresión</h4>
                     <div className="text">
                       <p>
-                      Ofrecemos soluciones de impresión en diferentes formato, ideales para quienes buscan destacar con materiales visuales de alto impacto. Contamos con tecnología de vanguardia y maquinaria propia, lo que nos permite controlar cada detalle del proceso y asegurar resultados excepcionales.
+                        Ofrecemos soluciones de impresión en diferentes formato,
+                        ideales para quienes buscan destacar con materiales
+                        visuales de alto impacto. Contamos con tecnología de
+                        vanguardia y maquinaria propia, lo que nos permite
+                        controlar cada detalle del proceso y asegurar resultados
+                        excepcionales.
                       </p>
                     </div>
                     <Link
                       href={`/${lightMode ? "light" : "dark"}/page-services`}
-                      className="mt-30"
-                    >
+                      className="mt-30">
                       <span className="mr-15">Saber mas</span>
                       <i className="fas fa-long-arrow-alt-right"></i>
                     </Link>
@@ -162,8 +166,7 @@ function ServicesTab({ lightMode }) {
                     </div>
                     <Link
                       href={`/${lightMode ? "light" : "dark"}/page-services`}
-                      className="mt-30"
-                    >
+                      className="mt-30">
                       <span className="mr-15">Saber mas</span>
                       <i className="fas fa-long-arrow-alt-right"></i>
                     </Link>
@@ -186,22 +189,19 @@ function ServicesTab({ lightMode }) {
                 <li
                   className="item-link mb-30"
                   data-tab="tabs-3"
-                  onClick={openTab}
-                >
+                  onClick={openTab}>
                   <span>01</span> Impresión
                 </li>
                 <li
                   className="item-link current mb-30"
                   data-tab="tabs-1"
-                  onClick={openTab}
-                >
+                  onClick={openTab}>
                   <span>02</span> Corte CNC
                 </li>
                 <li
                   className="item-link mb-30"
                   data-tab="tabs-2"
-                  onClick={openTab}
-                >
+                  onClick={openTab}>
                   <span>03</span> Diseño
                 </li>
 

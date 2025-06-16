@@ -23,10 +23,11 @@ function PagePortfolio() {
   }, []);
 
   const headerMetadata = {
-    subTitle: "SERVICIOS",
-    title:
-      "Nuestra misión es ser un asesor publicitario para nuestros clientes.",
-    text: "SERVICIOS",
+    subTitle: "Portafolio",
+    title: "Nuestros trabajos.",
+    text: "Portafolio",
+    description:
+      "Descubre los proyectos destacados de Elephant Group, donde la innovación y la creatividad se unen para ofrecer soluciones excepcionales.",
   };
 
   try {
@@ -34,6 +35,16 @@ function PagePortfolio() {
       <>
         <Head>
           <title>Elephant Group - Portafolio de Trabajos</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta
+            name="description"
+            content="Portafolio de trabajos realizados por Elephant Group."
+          />
+          <meta
+            name="keywords"
+            content="portafolio, trabajos, proyectos, Elephant Group"
+          />
+          <meta name="author" content="Elephant Group" />
         </Head>
 
         <Loader />

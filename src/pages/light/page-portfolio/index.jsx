@@ -18,7 +18,7 @@ function PagePortfolioLight() {
     };
   }, []);
 
-  const metadata = {
+  const headerMetadata = {
     subTitle: "Portafolio",
     title: "Nuestros trabajos.",
     text: "Portafolio",
@@ -42,13 +42,13 @@ function PagePortfolioLight() {
         <meta name="author" content="Elephant Group" />
       </Head>
 
+      <Loader />
       <Navbar mainBg lightMode />
       <main className="main-bg">
-        <Header data={metadata} />
+        <Header data={headerMetadata} />
         <GridPortfolioImages />
       </main>
       <Footer subBg lightMode />
-      <Loader />
     </>
   );
 }
