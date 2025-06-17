@@ -14,7 +14,7 @@ function HeaderPortfolio({ data }) {
   return (
     <header className="work-header section-padding pb-0">
       {/* Background image with opacity */}
-      <div
+      <section
         style={{
           backgroundImage: "url(/light/assets/imgs/works/work_publicity.webp)",
           position: "absolute",
@@ -31,7 +31,7 @@ function HeaderPortfolio({ data }) {
         }}
         aria-hidden="true"
       />
-      <div className="container mt-80">
+      <section className="container mt-80">
         <div className="row">
           <div className="col-12">
             <div className="caption">
@@ -40,7 +40,7 @@ function HeaderPortfolio({ data }) {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </header>
   );
 }

@@ -71,6 +71,14 @@ const DefaultLayout = ({ children, lightMode = false }) => {
     };
   }, [lightMode]);
 
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  useEffect(() => {
+    // Simula el fin del loading, reemplaza esto con tu lógica real
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       {typeof Cursor === "function" ? (
@@ -78,11 +86,9 @@ const DefaultLayout = ({ children, lightMode = false }) => {
       ) : (
         console.error("Cursor component is not available")
       )}
-      {typeof WhatsAppButton === "function" ? (
+      {!isLoading && typeof WhatsAppButton === "function" ? (
         <WhatsAppButton />
-      ) : (
-        console.error("WhatsAppButton component is not available")
-      )}
+      ) : null}
       {typeof ProgressScroll === "function" ? (
         <ProgressScroll />
       ) : (

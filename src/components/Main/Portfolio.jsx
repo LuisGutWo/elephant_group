@@ -103,10 +103,10 @@ function Portfolio({ lightMode }) {
               )}
             </div>
           </div>
-          <div className="col-lg-6 d-flex align-items-center mt-60">
+          <div className="col-lg-6 d-flex align-items-center justify-content-center mt-60">
             <div className="full-width">
               <div className="d-flex justify-content-end justify-end">
-                <div className="swiper-controls arrow-out d-flex">
+                <div className="swiper-controls arrow-out d-flex justify-content-center align-items-center">
                   <div
                     className="swiper-button-prev"
                     tabIndex="0"

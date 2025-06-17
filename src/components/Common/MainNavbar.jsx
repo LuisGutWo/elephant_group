@@ -222,19 +222,17 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
                 </Link>
               </li>
               <li className="nav-item">
-                <a
+                <Link
                   className="nav-link"
-                  href="#"
+                  href={"#"}
                   onClick={(e) => {
                     e.preventDefault();
                     handleThemeChange();
-                  }}
-                  onMouseMove={handleDropdownSideMouseMove}
-                  onMouseLeave={handleDropdownSideMouseLeave}>
+                  }}>
                   <span className="rolling-text fs-5 fw-bold">
                     {lightMode ? <MdDarkMode /> : <MdLightMode />}
                   </span>
-                </a>
+                </Link>
               </li>
             </ul>
           </section>

@@ -19,8 +19,7 @@ function Services({ lightMode }) {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Catalogo"
-                  className="d-flex w-100"
-                >
+                  className="d-flex w-100">
                   <h6 className="dot-titl-non colorbg-3 mb-10 d-flex align-items-center justify-content-center gap-4">
                     <p>Catalogo</p>
                     <span className="dot">
@@ -53,8 +52,7 @@ function Services({ lightMode }) {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Catalogo"
-                  className="d-flex w-100"
-                >
+                  className="d-flex w-100">
                   <h6 className="dot-titl-non colorbg-3 mb-10 mt-40 d-flex align-items-center justify-content-center gap-4 w-75">
                     <p>Ver mas servicios</p>
                     <span className="dot">
@@ -73,8 +71,7 @@ function Services({ lightMode }) {
                 href={`/${
                   lightMode ? "light/page-services" : "dark/page-services"
                 }`}
-                className="d-flex flex-wrap flex-column justify-content-center align-items-center arrow mt-40"
-              >
+                className="d-flex flex-wrap flex-column justify-content-center align-items-center arrow mt-40">
                 <div className="mb-40">
                   <img
                     src={`/${lightMode ? "light" : "dark"}${item.image}`}
@@ -86,21 +83,23 @@ function Services({ lightMode }) {
                 <h4
                   className="mb-15"
                   key={item.id}
-                  style={{ color: "#f7a800" }}
-                >
+                  style={{ color: "#fca311" }}>
                   {item.title}
                 </h4>
                 <h6
                   className="mb-15"
-                  style={{ color: lightMode ? "#000" : "#fff" }}
-                >
+                  style={{ color: lightMode ? "#000" : "#fff" }}>
                   {item.subtitle}
 
                   <span className="dot">
                     <i className="fa fa-angle-right fs-5 ms-2" />
                   </span>
                 </h6>
-                <p>{item.text}</p>
+                <p
+                  className="text-center"
+                  style={{ color: lightMode ? "#282828" : "#f2f0ef", fontSize: "0.9rem" }} >
+                  {item.text}
+                </p>
               </Link>
             </div>
           ))}

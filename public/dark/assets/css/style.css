@@ -328,7 +328,7 @@ img {
   cursor: pointer;
   top: 50%;
   right: 3%; /* Add a small offset to keep it inside the viewport */
-  z-index: 100;
+  z-index: 9;
 
   & .wsp-image {
     width: 9rem;
@@ -465,7 +465,7 @@ img {
 .circle-button {
   position: relative;
   display: inline-block;
-  color: #141816 !important;
+  color: #282828 !important;
 }
 
 .circle-button.in-bord:after {
@@ -492,9 +492,9 @@ img {
 
 .circle-button .rotate-circle svg {
   width: 210px;
-  fill: #343a40 !important;
-  color: #343a40 !important;
-  border-color: #343a40;
+  fill: #f2f0efb4 !important;
+  color: #f2f0ef !important;
+  border-color: #25282a;
 }
 
 .circle-button .arrow {
@@ -4095,12 +4095,12 @@ body.loaded {
 .about .about-circle-crev .circle-button:after {
   content: "";
   position: absolute;
-  color: #212529;
+  color: #2125294b;
   top: 60px;
   left: 60px;
   right: 60px;
   bottom: 60px;
-  border: 70px solid rgba(255, 255, 255, 0.188);
+  border: 70px solid rgba(255, 255, 255, 0.123);
   border-radius: 50%;
   z-index: -1;
 }
@@ -4129,6 +4129,7 @@ body.loaded {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  opacity: 0.5;
   -o-object-position: center center;
   object-position: center center;
 }
@@ -5303,6 +5304,7 @@ body.loaded {
   height: 450px;
   width: 130%;
   position: relative;
+  border-radius: 50px 0 0 50px;
   margin-bottom: -200px;
 }
 
@@ -5317,7 +5319,9 @@ body.loaded {
   right: 0;
   width: 400%;
   height: 100%;
-  background: #5e544e;
+  background: #363636 !important;
+  border-radius: 0 50px 50px 0;
+  z-index: 1;
 }
 
 .call-action-center .bg-pattern {
@@ -8609,9 +8613,10 @@ header.in-box {
   height: 50px;
   line-height: 50px;
   text-align: center;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.466);
   border-radius: 50%;
-  color: #212529 !important;
+  background-color: #36363686;
+  color: #f2f0efc2 !important;
 }
 
 .swiper-controls.arrow-out .left {

@@ -13,31 +13,52 @@ import Footer from "@/components/Main/Footer";
 function PageContactLight() {
   useEffect(() => {
     const body = document?.body;
-    if (body) {
+    if (body !== null && body !== undefined) {
       body.classList.add("main-bg");
       return () => {
-        if (body) {
+        if (body !== null && body !== undefined) {
           body.classList.remove("main-bg");
         }
       };
     }
   }, []);
 
-  return (
-    <>
-      <Head>
-        <title>Elephant Group - Contact main page</title>
-      </Head>
+  try {
+    return (
+      <>
+        <Head>
+          <title>
+            Contacto | Elephant Group - Soluciones Creativas en Marketing
+            Digital, Impresion y Publicidad
+          </title>
+          <meta
+            name="description"
+            content="Contacta a Elephant Group, expertos en marketing digital, branding, publicidad, diseño web y estrategias creativas para potenciar tu marca. ¡Impulsa tu negocio con soluciones innovadoras!"
+          />
+          <meta
+            name="keywords"
+            content="Elephant Group, contacto, marketing digital, publicidad, branding, diseño web, estrategias creativas, agencia creativa, soluciones innovadoras, impresion, plotter, letreros, gigantografías, potenciar marca"
+          />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
 
-      <Loader />
-      <Navbar mainBg lightMode />
-      <main>
-        <Header />
-        <Form />
-      </main>
-      <Footer lightMode />
-    </>
-  );
+        <Loader />
+        <Navbar mainBg lightMode />
+        <main>
+          <Header />
+          <Form />
+        </main>
+        <Footer lightMode />
+      </>
+    );
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error("Rendering error in PageContactLight:", error);
+      return <div>Error: {error.message}</div>;
+    } else {
+      throw error;
+    }
+  }
 }
 
 PageContactLight.getLayout = (page) => <Layout lightMode>{page}</Layout>;

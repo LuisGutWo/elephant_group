@@ -14,20 +14,20 @@ import Footer from "@/components/Main/Footer";
 
 function PageServices() {
   useEffect(() => {
-    if (typeof document !== "undefined" && document.body !== null) {
-      document.body.classList.add("main-bg");
+    const body = document?.body;
+    if (body) {
+      body.classList.add("main-bg");
     }
     return () => {
-      if (typeof document !== "undefined" && document.body !== null) {
-        document.body.classList.remove("main-bg");
+      if (body) {
+        body.classList.remove("main-bg");
       }
     };
   }, []);
 
   const headerMetadata = {
     subTitle: "SERVICIOS",
-    title:
-      "Nuestra misión es ser un asesor publicitario para nuestros clientes.",
+    title: "Impulsamos tu marca con soluciones creativas y personalizadas.",
     text: "SERVICIOS",
   };
 
@@ -62,13 +62,12 @@ function PageServices() {
   } catch (error) {
     if (error instanceof Error) {
       console.error("Error rendering PageServicesLight:", error.message);
-      return <div>Error: {error.message}</div>;
     } else {
       console.error(
         "Unknown error occurred while rendering PageServicesLight:"
       );
-      return <div>Error: Unknown error occurred.</div>;
     }
+    return <div>Error: An unknown error occurred.</div>;
   }
 }
 

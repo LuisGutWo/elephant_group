@@ -96,7 +96,7 @@ function Form() {
                     <div className="mt-30">
                       <button
                         type="submit"
-                        className="butn butn-md butn-bord radius-30  bg-color-1"
+                        className="btn btn-lg btn-secondary radius-25 hover-up"
                       >
                         <span className="text">Hablemos</span>
                       </button>
