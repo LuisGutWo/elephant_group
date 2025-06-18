@@ -56,6 +56,16 @@ function Portfolio({ lightMode }) {
     setLoadSwiper(true);
   }, []);
 
+  const [tooltipImage, setTooltipImage] = useState(null);
+
+  const handleImageClickOpenTooltip = (item) => {
+    setTooltipImage(item);
+  };
+
+  const handleCloseTooltip = () => {
+    setTooltipImage(null);
+  };
+
   return (
     <section className="work-carsouel section-padding sub-bg">
       <div className="container">
@@ -76,12 +86,14 @@ function Portfolio({ lightMode }) {
                 <Swiper
                   {...swiperOptions}
                   id="content-carousel-container-unq-w"
-                  className="swiper-container"
-                >
+                  className="swiper-container">
                   {data.gallery.map((item) => (
                     <SwiperSlide key={item.id}>
                       <div className="item">
-                        <div className="img">
+                        <div
+                          className="img"
+                          style={{ cursor: "pointer" }}
+                          onClick={() => handleImageClickOpenTooltip(item)}>
                           <img
                             src={item.image}
                             alt={item.title ? item.title : "Portfolio Image"}
@@ -91,10 +103,6 @@ function Portfolio({ lightMode }) {
                             <br />
                             <span className="mb-5">{item.type}</span>
                           </div>
-                          <Link
-                            href="/light/page-contact"
-                            className="plink"
-                          ></Link>
                         </div>
                       </div>
                     </SwiperSlide>
@@ -105,22 +113,20 @@ function Portfolio({ lightMode }) {
           </div>
           <div className="col-lg-6 d-flex align-items-center justify-content-center mt-60">
             <div className="full-width">
-              <div className="d-flex justify-content-end justify-end">
+              <div className="d-flex justify-content-center align-items-center">
                 <div className="swiper-controls arrow-out d-flex justify-content-center align-items-center">
                   <div
                     className="swiper-button-prev"
                     tabIndex="0"
                     role="button"
-                    aria-label="Previous slide"
-                  >
+                    aria-label="Previous slide">
                     <span className="left">{leftArrowPaginationSvg}</span>
                   </div>
                   <div
                     className="swiper-button-next ml-50"
                     tabIndex="0"
                     role="button"
-                    aria-label="Next slide"
-                  >
+                    aria-label="Next slide">
                     <span className="right">{rightArrowPaginationSvg}</span>
                   </div>
                 </div>
@@ -128,6 +134,42 @@ function Portfolio({ lightMode }) {
             </div>
           </div>
         </div>
+        {/* Tooltip Modal */}
+        {tooltipImage && (
+          <div className="tooltip-modal" onClick={handleCloseTooltip}>
+            <div
+              className="tooltip-content"
+              onClick={(e) => e.stopPropagation()}>
+              <div className="tooltip-inner">
+                <img
+                  src={tooltipImage.image}
+                  alt={
+                    tooltipImage.title ? tooltipImage.title : "Portfolio Image"
+                  }
+                  style={{ maxWidth: "100%", maxHeight: 350, borderRadius: 8 }}
+                />
+                <button
+                  onClick={handleCloseTooltip}
+                  className="tooltip-close-button"
+                  aria-label="Cerrar">
+                  &times;
+                </button>
+                <div className="cont">
+                  <span className="mb-5">{tooltipImage.year}</span>
+                  <br />
+                  <span className="mb-5">{tooltipImage.type}</span>
+                  <div style={{ marginTop: 30 }}>
+                    <Link
+                      href="/light/page-portfolio"
+                      className="btn btn-primary">
+                      Ver más detalles
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -13,7 +13,7 @@ function Intro() {
   }
 
   return (
-    <section className="intro-corp section-padding pt-0">
+    <section className="intro-about section-padding pt-0">
       <div className="container">
         <div className="row justify-content-around">
           <article className="col-lg-5 valign md-mb50">
