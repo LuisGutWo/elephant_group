@@ -52,6 +52,10 @@ function HomeDark() {
   );
 }
 
+HomeDark.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 HomeDark.getLayout = (page) => <Layout>{page}</Layout>;
 
 export default HomeDark;

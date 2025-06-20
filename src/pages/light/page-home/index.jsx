@@ -15,12 +15,16 @@ import Portfolio from "@/components/Main/Portfolio";
 import Contact from "@/components/Main/Contact";
 import Footer from "@/components/Main/Footer";
 
-function HomeLight() {
+function HomePageLight() {
   useEffect(() => {
-    const body = document?.body;
-    if (body) {
-      body.classList.add("sub-bg");
-      return () => body.classList.remove("sub-bg");
+    if (typeof document !== "undefined" && document.body !== null) {
+      document.body.classList.add("sub-bg");
+
+      return () => {
+        if (typeof document !== "undefined" && document.body !== null) {
+          document.body.classList.remove("sub-bg");
+        }
+      };
     }
   }, []);
 
@@ -48,11 +52,17 @@ function HomeLight() {
       </>
     );
   } catch (error) {
-    console.error("Rendering error in HomeLight:", error);
-    return <div>Error: {error.message}</div>;
+    if (error instanceof Error) {
+      console.error("Rendering error in HomePageLight:", error);
+      return <div>Error: {error.message}</div>;
+    } else {
+      throw new Error(
+        `Uncaught error in HomePageLight component: ${error.toString()}`
+      );
+    }
   }
 }
 
-HomeLight.getLayout = (page) => <Layout lightMode>{page}</Layout>;
+HomePageLight.getLayout = (page) => <Layout lightMode>{page}</Layout>;
 
-export default HomeLight;
+export default HomePageLight;

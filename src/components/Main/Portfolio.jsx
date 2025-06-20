@@ -21,7 +21,6 @@ const swiperOptions = {
   speed: 1500,
   centeredSlides: true,
   watchSlidesProgress: true,
-  watchSlidesVisibility: true,
   breakpoints: {
     0: {
       slidesPerView: 1,
@@ -111,7 +110,7 @@ function Portfolio({ lightMode }) {
               )}
             </div>
           </div>
-          <div className="col-lg-6 d-flex align-items-center justify-content-center mt-60">
+          <div className="col-lg-12 d-flex align-items-center justify-content-center mt-60">
             <div className="full-width">
               <div className="d-flex justify-content-center align-items-center">
                 <div className="swiper-controls arrow-out d-flex justify-content-center align-items-center">
@@ -140,32 +139,25 @@ function Portfolio({ lightMode }) {
             <div
               className="tooltip-content"
               onClick={(e) => e.stopPropagation()}>
-              <div className="tooltip-inner">
-                <img
-                  src={tooltipImage.image}
-                  alt={
-                    tooltipImage.title ? tooltipImage.title : "Portfolio Image"
-                  }
-                  style={{ maxWidth: "100%", maxHeight: 350, borderRadius: 8 }}
-                />
-                <button
-                  onClick={handleCloseTooltip}
-                  className="tooltip-close-button"
-                  aria-label="Cerrar">
-                  &times;
-                </button>
-                <div className="cont">
-                  <span className="mb-5">{tooltipImage.year}</span>
-                  <br />
-                  <span className="mb-5">{tooltipImage.type}</span>
-                  <div style={{ marginTop: 30 }}>
-                    <Link
-                      href="/light/page-portfolio"
-                      className="btn btn-primary">
-                      Ver más detalles
-                    </Link>
-                  </div>
-                </div>
+              <img
+                src={tooltipImage.image}
+                alt={tooltipImage.title ? tooltipImage.title : "Tooltip Image"}
+                className="tooltip-image"
+              />
+              <button
+                onClick={handleCloseTooltip}
+                className="tooltip-close-button"
+                aria-label="Cerrar">
+                &times;
+              </button>
+              <div className="tooltip-text">
+                <span className="mb-5">{tooltipImage.year}</span>
+                <br />
+                <span className="mb-5">{tooltipImage.type}</span>
+                <br />
+                <Link href="/light/page-portfolio" className="btn btn-sm btn-warning">
+                  Ver más detalles
+                </Link>
               </div>
             </div>
           </div>

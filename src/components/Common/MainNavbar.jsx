@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import Link from "next/link";
 import TopNavbar from "./TopNavbar";
@@ -106,6 +106,22 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
     }
   }
 
+  // Import useState from React
+
+  // ...rest of your code...
+
+  // Add state to track mobile view
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth < 992); // Bootstrap lg breakpoint
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <TopNavbar />
@@ -150,12 +166,25 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
             className="collapse navbar-collapse justify-content-center"
             id="navbarSupportedContent">
             <ul className="navbar-nav">
-              <li className="nav-item">
+              <li className="nav-item d-flex align-items-center justify-content-between">
                 <Link
                   className="nav-link"
                   href={`/${lightMode ? "light/page-home" : "dark/page-home"}`}>
                   <span className="rolling-text">Home</span>
                 </Link>
+                {isMobile && (
+                  <Link
+                    className="nav-link ms-2"
+                    href={"#"}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleThemeChange();
+                    }}>
+                    <span className="rolling-text fs-5 fw-bold">
+                      {lightMode ? <MdDarkMode /> : <MdLightMode />}
+                    </span>
+                  </Link>
+                )}
               </li>
               <li
                 className="nav-item dropdown"
@@ -221,19 +250,21 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
                   <span className="rolling-text">Contacto</span>
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  href={"#"}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleThemeChange();
-                  }}>
-                  <span className="rolling-text fs-5 fw-bold">
-                    {lightMode ? <MdDarkMode /> : <MdLightMode />}
-                  </span>
-                </Link>
-              </li>
+              {!isMobile && (
+                <li className="nav-item">
+                  <Link
+                    className="nav-link"
+                    href={"#"}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleThemeChange();
+                    }}>
+                    <span className="rolling-text fs-5 fw-bold">
+                      {lightMode ? <MdDarkMode /> : <MdLightMode />}
+                    </span>
+                  </Link>
+                </li>
+              )}
             </ul>
           </section>
           <div className="search-form">

@@ -3,11 +3,11 @@
     "id": 1,
     "image": "/assets/imgs/serv-icons/2.webp",
     "title": "IMPRESION",
-    "subtitle": "PLOTTER DE IMPRESION.",
+    "subtitle": "PLOTTER DE IMPRESION",
     "text": [
-      "Impresión de gran formato.",
-      "Adhesivo y tela PVC.",
-      "Tela Canvas, magnéticos, sintéticos vinílicos.",
+      "Impresión de gran formato. ",
+      "Adhesivo y tela PVC. ",
+      "Tela Canvas, magnéticos, sintéticos vinílicos. ",
       "Empavonados y malla mesh."
     ]
   },
@@ -17,7 +17,7 @@
     "title": "CORTE",
     "subtitle": "ROUTER CNC",
     "text": [
-      "Herramienta poderosa y precisa para la creación de letreros.",
+      "Herramienta poderosa y precisa para la creación de letreros. ",
       "Corte de productos en materiales como trovicel, acrílicos, madera y aluminio compuesto."
     ]
   },
@@ -27,10 +27,10 @@
     "title": "PUBLICIDAD",
     "subtitle": "ASESORÍA Y DISEÑO",
     "text": [
-      "Diseño de logotipos y papelería.",
-      "Publicidad digital y física.",
-      "Diseño y creación de páginas web.",
-      "Diseño de letreros, rótulos y señalización.",
+      "Diseño de logotipos y papelería. ",
+      "Publicidad digital y física. ",
+      "Diseño y creación de páginas web. ",
+      "Diseño de letreros, rótulos y señalización. ",
       "Diseño de etiquetas y empaques."
     ]
   }

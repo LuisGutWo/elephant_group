@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
-// This is a custom Document component for Next.js, used to augment the application's HTML and <head> tags.
+// This is a custom Document component for Next.js, used to argument the application's HTML and <head> tags.
 export default function Document() {
   return (
     <Html lang={process.env.NEXT_PUBLIC_SITE_LANGUAGE || "es"}>

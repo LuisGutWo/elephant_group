@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from "react";
 //= Modules
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  Navigation,
-  Autoplay,
-  Pagination,
-  Parallax,
-  Keyboard,
-} from "swiper/modules";
+import { Navigation, Autoplay, Pagination, Parallax } from "swiper/modules";
 //= Components
 import StatementSplitter from "../Common/StatementSplitter";
 //= Scripts
@@ -16,10 +10,7 @@ import loadBackgroudImages from "@/common/loadBackgroudImages";
 import data from "@/data/Main/header.json";
 
 const swiperOptions = {
-  modules: [Navigation, Autoplay, Pagination, Parallax, Keyboard],
-  Keyboard: {
-    enabled: true,
-  },
+  modules: [Navigation, Autoplay, Pagination, Parallax],
   autoplay: {
     delay: 5000,
     disableOnInteraction: false,
