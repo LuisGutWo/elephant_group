@@ -317,8 +317,9 @@ img {
 .btn-wsp {
   position: fixed;
   cursor: pointer;
-  top: 30% !important;
-  right: 5%; /* Add a small offset to keep it inside the viewport */
+  top: 50% !important;
+  right: 0; /* Add a small offset to keep it inside the viewport */
+  offset: 0 0 0 0;
   z-index: 9;
 
   & .wsp-image {
@@ -872,7 +873,7 @@ img {
 /* Extra
 -----------------------------------------------------------------*/
 
-/* Tooltip styles */
+/* Tooltip styles light */
 .tooltip-modal {
   position: fixed;
   top: 0;
@@ -887,28 +888,26 @@ img {
 
   .tooltip-content {
     background: #282828;
+    width: 90%;
+    height: 70%;
     padding: 0;
     border-radius: 12px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 70%;
-    width: 70%;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    position: relative;
+    position: absolute;
     text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 
     .tooltip-image {
       position: relative;
-      width: auto;
       height: auto;
-      z-index: 1;
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: cover;
-      border-radius: 12px;
+      z-index: 9999;
+      .tooltip-image img {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: 12px;
+      }
     }
     .tooltip-close-button {
       position: absolute;
@@ -10143,6 +10142,16 @@ header.in-box {
   }
   /* // /// WhatsApp Floating Button /// */
   .btn-wsp {
+    top: 15% !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: 0;
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     & .wsp-image {
       width: 6rem;
       max-width: fit-content;

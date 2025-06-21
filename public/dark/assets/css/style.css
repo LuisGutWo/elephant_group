@@ -327,7 +327,8 @@ img {
   position: fixed;
   cursor: pointer;
   top: 50%;
-  right: 3%; /* Add a small offset to keep it inside the viewport */
+  right: 0; /* Add a small offset to keep it inside the viewport */
+  offset: 0 0 0 0;
   z-index: 9;
 
   & .wsp-image {
@@ -856,7 +857,7 @@ img {
 /* Extra
 -----------------------------------------------------------------*/
 
-/* Tooltip styles */
+/* Tooltip styles dark */
 .tooltip-modal {
   position: fixed;
   top: 0;
@@ -10034,6 +10035,16 @@ header.in-box {
   }
   /* // /// WhatsApp Floating Button /// */
   .btn-wsp {
+    top: 15% !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: 0;
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     & .wsp-image {
       width: 6rem;
       max-width: fit-content;
