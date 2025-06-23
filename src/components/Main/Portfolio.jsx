@@ -139,25 +139,32 @@ function Portfolio({ lightMode }) {
             <div
               className="tooltip-content"
               onClick={(e) => e.stopPropagation()}>
-              <img
-                src={tooltipImage.image}
-                alt={tooltipImage.title ? tooltipImage.title : "Tooltip Image"}
-                className="tooltip-image"
-              />
-              <button
-                onClick={handleCloseTooltip}
-                className="tooltip-close-button"
-                aria-label="Cerrar">
-                &times;
-              </button>
-              <div className="tooltip-text">
-                <span className="mb-5">{tooltipImage.year}</span>
-                <br />
-                <span className="mb-5">{tooltipImage.type}</span>
-                <br />
-                <Link href="/light/page-portfolio" className="btn btn-sm btn-warning">
-                  Ver más detalles
-                </Link>
+              <div className="tooltip-image-container">
+                <img
+                  src={tooltipImage.image}
+                  alt={
+                    tooltipImage.title ? tooltipImage.title : "Tooltip Image"
+                  }
+                  className="tooltip-image"
+                />
+                <button
+                  onClick={handleCloseTooltip}
+                  className="tooltip-close-button"
+                  aria-label="Cerrar">
+                  &times;
+                </button>
+                <div className="tooltip-text">
+                  <span className="mb-5">{tooltipImage.year}</span>
+                  <br />
+                  <span className="mb-5">{tooltipImage.type}</span>
+                  <br />
+                  <Link
+                    href="/light/page-portfolio"
+                    className="btn btn-sm btn-warning"
+                    style={{ marginTop: "10px" }}>
+                    Ver más detalles
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

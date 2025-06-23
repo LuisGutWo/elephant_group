@@ -52,7 +52,7 @@ function Footer({ lightMode, subBg }) {
               <div className="tit mb-20">
                 <h6>Redes Sociales</h6>
               </div>
-              <ul className="rest social-text text-center">
+              <ul className="rest social-text">
                 <li>
                   <a href="https://web.facebook.com/search/top?q=elephant%20group">
                     {facebookSvg}
