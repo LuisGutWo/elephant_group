@@ -4640,7 +4640,7 @@ body.loaded {
   top: 0;
   width: 8px;
   height: 150px;
-  background: #f0a874;
+  background: #fca311;
 }
 
 .intro-about .imgs .img1:before {
@@ -4653,14 +4653,6 @@ body.loaded {
   background-image: url(../imgs/patterns/dots2.png);
   background-repeat: repeat;
   z-index: -1;
-}
-
-.intro-about .imgs .img1.main-color2:after {
-  background: #f0a374;
-}
-
-.intro-about .imgs .img1.main-color3:after {
-  background: #f0a874;
 }
 
 .intro-about .imgs .img2 {
@@ -5932,10 +5924,10 @@ footer .bg-pattern {
 .page-header .background-img {
   background-image: url("../imgs/header/banner_impresion.webp");
   background-size: cover;
-  background-position: right center;
+  background-position: left center;
   background-repeat: no-repeat;
   position: absolute;
-  opacity: 0.3;
+  opacity: 0.1;
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   transition: all 0.4s;
@@ -10195,10 +10187,10 @@ header.in-box {
       }
     }
   }
-  img {
+  /* img {
     width: 2rem;
     height: auto;
-  }
+  } */
 
   .slider .parallax-slider .swiper-slide {
     position: relative;

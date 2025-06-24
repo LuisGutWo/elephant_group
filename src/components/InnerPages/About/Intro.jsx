@@ -1,16 +1,20 @@
 import React from "react";
 
 function Intro() {
-  function openAccordion(event) {
-    document.querySelectorAll(".accordion-info").forEach((element) => {
-      element.classList.remove("active");
-      element.style.maxHeight = 0;
-      element.parentElement.classList.remove("active");
-    });
-    event.currentTarget.parentElement.classList.add("active");
-    event.currentTarget.nextElementSibling.style.maxHeight = "300px";
-    event.currentTarget.nextElementSibling.classList.add("active");
-  }
+  const openAccordion = (event) => {
+    if (event?.currentTarget?.parentElement) {
+      document.querySelectorAll(".accordion-info").forEach((element) => {
+        element.classList.remove("active");
+        element.style.maxHeight = 0;
+        if (element.parentElement) {
+          element.parentElement.classList.remove("active");
+        }
+      });
+      event.currentTarget.parentElement.classList.add("active");
+      event.currentTarget.nextElementSibling.style.maxHeight = "300px";
+      event.currentTarget.nextElementSibling.classList.add("active");
+    }
+  };
 
   return (
     <section className="intro-about section-padding pt-0">

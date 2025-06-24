@@ -16,7 +16,7 @@ function Header() {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",
-          opacity: 0.2, // Adjust opacity as needed
+          opacity: 0.1, // Adjust opacity as needed
           zIndex: 0,
         }}
         aria-hidden="true"
