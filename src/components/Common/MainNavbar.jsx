@@ -64,47 +64,47 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
     }
   }
 
-  function toggleSearch() {
-    if (typeof document !== "undefined" && document !== null) {
-      let form = document.querySelector(".navbar .search-form");
-      let closeBtn = document.querySelector(".search-form .close-search");
+  //   function toggleSearch() {
+  //     if (typeof document !== "undefined" && document !== null) {
+  //       let form = document.querySelector(".navbar .search-form");
+  //       let closeBtn = document.querySelector(".search-form .close-search");
 
-      if (form && closeBtn) {
-        form.classList.toggle("open");
-        if (form.classList.contains("open")) {
-          closeBtn.style.display = "block";
-        } else {
-          closeBtn.style.display = "none";
-        }
-      }
-    }
-  }
+  //       if (form && closeBtn) {
+  //         form.classList.toggle("open");
+  //         if (form.classList.contains("open")) {
+  //           closeBtn.style.display = "block";
+  //         } else {
+  //           closeBtn.style.display = "none";
+  //         }
+  //       }
+  //     }
+  //   }
 
-  function handleThemeChange() {
-    if (typeof window !== "undefined" && window !== null) {
-      if (typeof window.location === "undefined" || window.location === null) {
-        throw new Error("Window location is null");
-      }
+  //   function handleThemeChange() {
+  //     if (typeof window !== "undefined" && window !== null) {
+  //       if (typeof window.location === "undefined" || window.location === null) {
+  //         throw new Error("Window location is null");
+  //       }
 
-      if (typeof window.location.pathname !== "string") {
-        throw new Error("Window location pathname is not a string");
-      }
+  //       if (typeof window.location.pathname !== "string") {
+  //         throw new Error("Window location pathname is not a string");
+  //       }
 
-      const currentPath = window.location.pathname;
-      const newTheme = lightMode ? "dark" : "light";
-      const newPath = currentPath.replace(
-        lightMode ? "/light/" : "/dark/",
-        `/${newTheme}/`
-      );
+  //       const currentPath = window.location.pathname;
+  //       const newTheme = lightMode ? "dark" : "light";
+  //       const newPath = currentPath.replace(
+  //         lightMode ? "/light/" : "/dark/",
+  //         `/${newTheme}/`
+  //       );
 
-      try {
-        window.location.href = newPath;
-      } catch (error) {
-        console.error("Error while changing theme:", error);
-        throw error;
-      }
-    }
-  }
+  //       try {
+  //         window.location.href = newPath;
+  //       } catch (error) {
+  //         console.error("Error while changing theme:", error);
+  //         throw error;
+  //       }
+  //     }
+  //   }
 
   // Import useState from React
 
@@ -128,24 +128,26 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
       <nav
         className={`navbar navbar-expand-lg ${curve ? "nav-crev" : ""} ${
           noStatic ? "" : "static"
-        } ${mainBg ? "main-bg" : ""} ${subBg ? "sub-bg" : ""}`}>
+        } ${mainBg ? "main-bg" : ""} ${subBg ? "sub-bg" : ""}`}
+      >
         <section className="container">
           <Link
             className="logo"
-            href={`/${lightMode ? "light/page-home" : "dark/page-home"}`}>
+            href={`/${lightMode ? "light/page-home" : "dark/page-home"}`}
+          >
             {lightMode ? (
               <img
                 src="/dark/assets/imgs/logo-dark.webp"
                 alt="Elephant Group logo claro"
                 loading="lazy"
-                className="icon-img-120"
+                className="icon-img-140"
               />
             ) : (
               <img
                 src="/dark/assets/imgs/logo-light.webp"
                 alt="Elephant Group logo oscuro"
                 loading="lazy"
-                className="icon-img-120"
+                className="icon-img-140"
               />
             )}
           </Link>
@@ -157,20 +159,23 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            onClick={toggleNavbar}>
+            onClick={toggleNavbar}
+          >
             <span className="icon-bar">
               <i className="fas fa-bars"></i>
             </span>
           </button>
           <section
-            className="collapse navbar-collapse justify-content-center"
-            id="navbarSupportedContent">
+            className="collapse navbar-collapse justify-content-end pe-4 pt-30"
+            id="navbarSupportedContent"
+          >
             <ul className="navbar-nav">
               <li className="nav-item d-flex align-items-center justify-content-between">
                 <Link
                   className="nav-link"
-                  href={`/${lightMode ? "light/page-home" : "dark/page-home"}`}>
-                  <span className="rolling-text">Home</span>
+                  href={`/${lightMode ? "light/page-home" : "dark/page-home"}`}
+                >
+                  <span className="rolling-text">INICIO</span>
                 </Link>
                 {isMobile && (
                   <Link
@@ -179,7 +184,8 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
                     onClick={(e) => {
                       e.preventDefault();
                       handleThemeChange();
-                    }}>
+                    }}
+                  >
                     <span className="rolling-text fs-5 fw-bold">
                       {lightMode ? <MdDarkMode /> : <MdLightMode />}
                     </span>
@@ -189,37 +195,42 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
               <li
                 className="nav-item dropdown"
                 onMouseMove={handleDropdownMouseMove}
-                onMouseLeave={handleDropdownMouseLeave}>
+                onMouseLeave={handleDropdownMouseLeave}
+              >
                 <a
                   className="nav-link dropdown-toggle"
                   data-toggle="dropdown"
                   href="#"
                   role="button"
                   aria-haspopup="true"
-                  aria-expanded="false">
-                  <span className="rolling-text">Servicios</span>
+                  aria-expanded="false"
+                >
+                  <span className="rolling-text">PRODUCTOS</span>
                 </a>
                 <div className="dropdown-menu">
                   <Link
                     className="dropdown-item"
                     href={`/${
                       lightMode ? "light/page-services" : "dark/page-services"
-                    }`}>
-                    Impresión
+                    }`}
+                  >
+                    Letreros
                   </Link>
                   <Link
                     className="dropdown-item"
                     href={`/${
                       lightMode ? "light/page-services" : "dark/page-services"
-                    }`}>
-                    Diseño
+                    }`}
+                  >
+                    Señaleticas
                   </Link>
                   <Link
                     className="dropdown-item"
                     href={`/${
                       lightMode ? "light/page-services" : "dark/page-services"
-                    }`}>
-                    Cortes CNC
+                    }`}
+                  >
+                    Adhesivos
                   </Link>
                 </div>
               </li>
@@ -228,8 +239,9 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
                   className="nav-link"
                   href={`/${
                     lightMode ? "light/page-portfolio" : "dark/page-portfolio"
-                  }`}>
-                  <span className="rolling-text">Portafolio</span>
+                  }`}
+                >
+                  <span className="rolling-text">PORTAFOLIO</span>
                 </Link>
               </li>
               <li className="nav-item">
@@ -237,8 +249,17 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
                   className="nav-link"
                   href={`/${
                     lightMode ? "light/page-about" : "dark/page-about"
-                  }`}>
-                  <span className="rolling-text">Nosotros</span>
+                  }`}
+                >
+                  <span className="rolling-text">COTIZACIÓN</span>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  href={`/${lightMode ? "light/page-shop" : "dark/page-shop"}`}
+                >
+                  <span className="rolling-text">TIENDA</span>
                 </Link>
               </li>
               <li className="nav-item">
@@ -246,11 +267,12 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
                   className="nav-link"
                   href={`/${
                     lightMode ? "light/page-contact" : "dark/page-contact"
-                  }`}>
-                  <span className="rolling-text">Contacto</span>
+                  }`}
+                >
+                  <span className="rolling-text">CONTACTO</span>
                 </Link>
               </li>
-              {!isMobile && (
+              {/* {!isMobile && (
                 <li className="nav-item">
                   <Link
                     className="nav-link"
@@ -258,16 +280,17 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
                     onClick={(e) => {
                       e.preventDefault();
                       handleThemeChange();
-                    }}>
+                    }}
+                  >
                     <span className="rolling-text fs-5 fw-bold">
                       {lightMode ? <MdDarkMode /> : <MdLightMode />}
                     </span>
                   </Link>
                 </li>
-              )}
+              )} */}
             </ul>
           </section>
-          <div className="search-form">
+          {/* <div className="search-form">
             <div className="form-group">
               <input type="text" name="search" placeholder="Search" />
               <button>
@@ -278,7 +301,7 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
               <span className="pe-7s-search open-search"></span>
               <span className="pe-7s-close close-search"></span>
             </div>
-          </div>
+          </div> */}
         </section>
       </nav>
     </>

@@ -28,13 +28,15 @@ const TopNavbar = ({ lightMode, mainBg, curve }) => {
           <a
             className="nav-link icon-img-200"
             href="https://www.instagram.com/elephantgroupchile/"
-            rel="noopener noreferrer">
+            rel="noopener noreferrer"
+          >
             {instagramSvg}
           </a>
           <a
             className="nav-link icon-img-200"
             href="https://web.facebook.com/elephantgroupchile"
-            rel="noopener noreferrer">
+            rel="noopener noreferrer"
+          >
             {facebookSvg}
           </a>
         </li>
@@ -48,8 +50,11 @@ const TopNavbar = ({ lightMode, mainBg, curve }) => {
             type="button"
             size="sm"
             aria-label="Cotiza ahora"
-            onClick={handleClick}>
-            <p><b>Cotiza ahora</b></p>
+            onClick={handleClick}
+          >
+            <p>
+              <b>Cotiza ahora</b>
+            </p>
           </Button>
         </li>
       </ul>

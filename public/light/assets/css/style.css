@@ -3085,6 +3085,7 @@ body.loaded {
 /* ====================== [ End Overlay ] ====================== */
 /* Menu
 -----------------------------------------------------------------*/
+/* top navbar */
 .top__navbar {
   background-color: #25282a;
   height: 100%;
@@ -3102,13 +3103,23 @@ body.loaded {
   justify-content: space-between;
   align-items: center;
   margin: 0;
-  padding: 0.3rem;
+  padding: 0 3rem 0 1.8rem;
 }
 .top__navbar-list li a {
   color: #fca311;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: small;
+  margin: 0;
+  padding: 0.3rem;
 }
+.top__navbar-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.3rem;
+}
+
 .top__navbar-item p {
   color: #f2efe6;
   font-size: small;
@@ -3132,7 +3143,8 @@ body.loaded {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 0.25rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 .top__navbar-button p {
   color: #25282a !important;
@@ -3257,10 +3269,11 @@ body.loaded {
 .navbar .navbar-nav .nav-link {
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 13px;
+  font-size: 0.7rem;
   font-weight: 600;
   color: #212529;
-  padding: 20px 10px 15px 10px;
+  padding: 0;
+  position: relative;
   margin: 0 15px;
 }
 
