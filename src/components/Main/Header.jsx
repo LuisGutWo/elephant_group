@@ -65,59 +65,34 @@ function Header() {
                 className="swiper-slide bg-img valign"
                 data-swiper-parallax-opacity="0.5"
                 data-swiper-parallax-scale="1.2"
-                style={{ position: "relative", overflow: "hidden" }}>
-                {item.backgroundVideo ? (
-                  <video
-                    autoPlay
-                    playsInline
-                    preload="auto"
-                    lazy="true"
-                    disableRemotePlayback
-                    disablePictureInPicture
-                    loop
-                    muted
-                    className="bg-video"
-                    alt="Background Autonivelante banners videos"
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      zIndex: 0,
-                    }}>
-                    <source
-                      src={
-                        window.matchMedia("(max-width: 768px)").matches
-                          ? item.backgroundVideoMobile
-                          : item.backgroundVideo
-                      }
-                      type="video/webm"
-                    />
-                    Your browser does not support the video tag.
-                  </video>
-                ) : (
-                  <div
-                    className="bg-img"
-                    style={{
-                      backgroundImage: `url(${
-                        window.matchMedia("(max-width: 768px)").matches
-                          ? item?.backgroundMobile
-                          : item?.background
-                      })`,
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "100%",
-                      zIndex: 0,
-                    }}
+                style={{ position: "relative", overflow: "hidden" }}
+              >
+                <div
+                  className="bg-img"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    backgroundAttachment: "fixed",
+                  }}
+                >
+                  <img
+                    src={item.background}
+                    alt="Elephant Group - Designe and Print Solutions"
+                    className="img-responsive"
+                    data-swiper-parallax="0.5"
                   />
-                )}
+                </div>
+
                 <div
                   className="container"
-                  style={{ position: "relative", zIndex: 1 }}>
+                  style={{ position: "relative", zIndex: 1 }}
+                >
                   <div className="row">
                     <div className="col-lg-7">
                       <div className="caption">
@@ -127,13 +102,12 @@ function Header() {
                           className="logo-webp img-responsive w-25"
                           data-swiper-parallax="0.5"
                         />
-                        <h1 className="text-light">
-                          <StatementSplitter statement={item.title || ""} />
-                        </h1>
                         <h2 className="text-light ms-1 text-uppercase fw-400">
                           <StatementSplitter statement={item.subtitle || ""} />
                         </h2>
-                        <p className="sub-title">{item.text || ""}</p>
+                        <h1 className="text-light">
+                          <StatementSplitter statement={item.title || ""} />
+                        </h1>
                       </div>
                     </div>
                   </div>

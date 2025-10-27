@@ -2,45 +2,33 @@
     {
         "id": 1,
         "number": "01",
-        "background": "/light/assets/imgs/header/banner_impresion_main.webp",
-        "backgroundMobile": "/light/assets/imgs/header/banner_impresion_mobile.webp",
-        "backgroundVideo": "/light/assets/imgs/header/bannervideo_impresion.webm",
-        "backgroundVideoMobile": "/light/assets/imgs/header/bannervideo_mobile_impresion.webm",
-        "title": "IMPRESION",
-        "subtitle": "PLOTTER DE IMPRESION",
-        "text": "Impresión de gran formato. Adhesivo y tela PVC. Tela Canvas, magnéticos, sintéticos vinílicos. Empavonados y malla mesh."
+        "background": "/light/assets/imgs/header/mercadito_main_banner.png",
+        "backgroundMobile": "/light/assets/imgs/header/mercadito_mobile_banner.png",
+        "title": "LETREROS VOLUMÉTRICOS",
+        "subtitle": "Soluciones Gráficas que destacan y transforman tu marca"
     },
     {
         "id": 2,
         "number": "02",
-        "background": "/light/assets/imgs/header/banner_cortecnc.webp",
-        "backgroundMobile": "/light/assets/imgs/header/banner_cortecnc_mobile.webp",
-        "backgroundVideo": "/light/assets/imgs/header/bannervideo_cortescnc.webm",
-        "backgroundVideoMobile": "/light/assets/imgs/header/bannervideo_mobile_cortescnc.webm",
-        "title": "CORTE",
-        "subtitle": "ROUTER CNC",
-        "text": "Herramienta poderosa y precisa para la creación de letreros.Corte de productos en materiales como trovicel, acrílicos, madera y aluminio compuesto."
+        "background": "/light/assets/imgs/header/mercadito_main_banner.png",
+        "backgroundMobile": "/light/assets/imgs/header/mercadito_mobile_banner.png",
+        "title": "LETREROS VOLUMÉTRICOS",
+        "subtitle": "Soluciones Gráficas que destacan y transforman tu marca"
     },
     {
         "id": 3,
         "number": "03",
-        "background": "/light/assets/imgs/header/banner_diseno.webp",
-        "backgroundMobile": "/light/assets/imgs/header/banner_diseno_mobile.webp",
-        "backgroundVideo": "/light/assets/imgs/header/bannervideo_diseno.webm",
-        "backgroundVideoMobile": "/light/assets/imgs/header/bannervideo_mobile_diseno.webm",
-        "title": "PUBLICIDAD",
-        "subtitle": "ASESORÍA Y DISEÑO",
-        "text": "Diseño de logotipos y papelería. Publicidad digital y física. Diseño y creación de páginas web. Diseño de letreros, rótulos y señalización. Diseño de etiquetas y empaques."
+        "background": "/light/assets/imgs/header/mercadito_main_banner.png",
+        "backgroundMobile": "/light/assets/imgs/header/mercadito_mobile_banner.png",
+        "title": "LETREROS VOLUMÉTRICOS",
+        "subtitle": "Soluciones Gráficas que destacan y transforman tu marca"
     },
     {
         "id": 4,
         "number": "04",
-        "background": "/light/assets/imgs/header/banner_webdevelop.webp",
-        "backgroundMobile": "/light/assets/imgs/header/banner_webdevelop_mobile.webp",
-        "backgroundVideo": "/light/assets/imgs/header/bannervideo_webdeveloper.webm",
-        "backgroundVideoMobile": "/light/assets/imgs/header/bannervideo_mobile_webdeveloper.webm",
-        "title": "DISEÑO Y DESARROLLO WEB",
-        "subtitle": "TRANSFORMA TU PRESENCIA DIGITAL",
-        "text": " Soluciones digitales a la medida de tus objetivos. Creamos apps y webs innovadoras para destacar en el mercado."
+        "background": "/light/assets/imgs/header/mercadito_main_banner.png",
+        "backgroundMobile": "/light/assets/imgs/header/mercadito_mobile_banner.png",
+        "title": "LETREROS VOLUMÉTRICOS",
+        "subtitle": "Soluciones Gráficas que destacan y transforman tu marca"
     }
 ]
