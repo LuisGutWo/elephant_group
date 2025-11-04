@@ -7,7 +7,6 @@ import Layout from "@/layouts/default";
 import Loader from "@/components/Common/Loader";
 import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/Main/Header";
-import Marq from "@/components/Main/Marq";
 import Intro from "@/components/Main/Intro";
 import Clients from "@/components/Main/Clients";
 import Services from "@/components/Main/Services";
@@ -17,11 +16,11 @@ import Footer from "@/components/Main/Footer";
 
 function HomePageLight() {
   useEffect(() => {
-    if (typeof document !== "undefined" && document.body !== null) {
+    if (document !== null && document.body !== null) {
       document.body.classList.add("sub-bg");
 
       return () => {
-        if (typeof document !== "undefined" && document.body !== null) {
+        if (document !== null && document.body !== null) {
           document.body.classList.remove("sub-bg");
         }
       };
@@ -29,6 +28,10 @@ function HomePageLight() {
   }, []);
 
   try {
+    if (process.env.NODE_ENV !== "production") {
+      console.log("HomePageLight component rendering...");
+    }
+
     return (
       <>
         <Head>
@@ -38,17 +41,16 @@ function HomePageLight() {
         </Head>
 
         <Loader />
-        <Navbar mainBg lightMode />
+        <Navbar mainBg lightMode={true} />
         <main className="main-bg position-re">
-          <Header lightMode />
-          <Marq />
-          <Intro />
-          <Services lightMode />
+          <Header lightMode={true} />
           <Portfolio />
-          <Clients lightMode />
+          <Intro />
+          <Services lightMode={true} />
+          <Clients lightMode={true} />
           <Contact />
         </main>
-        <Footer lightMode />
+        <Footer lightMode={true} />
       </>
     );
   } catch (error) {

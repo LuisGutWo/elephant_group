@@ -3127,7 +3127,8 @@ body.loaded {
   padding: 0.3rem;
 }
 .top__navbar-button {
-  background-color: #db8c0d;
+  z-index: 3;
+  background-color: #fca311;
   color: #25282a;
   border: none;
   padding: 0 0.25rem;
@@ -3136,7 +3137,7 @@ body.loaded {
   transition: background-color 0.3s ease;
 }
 .top__navbar-button:hover {
-  background-color: #fca311;
+  background-color: #e99817;
   color: #25282a;
   border: none;
   cursor: pointer;
@@ -3292,9 +3293,9 @@ body.loaded {
   opacity: 0;
   visibility: hidden;
   border-radius: 0 0 15px 15px;
-  border: 1px solid #f7f4f4;
-  color: #0d0d0d;
-  background: #f7f4f4;
+  border: 1px solid #0d0d0d;
+  color: #f7f4f4;
+  background: #0d0d0d;
   min-width: 255px;
   -webkit-transform: translateY(20px);
   -ms-transform: translateY(20px);
@@ -3319,7 +3320,7 @@ body.loaded {
 
 .navbar .dropdown-menu .dropdown-item {
   font-size: 13px;
-  color: #212529;
+  color: #f7f4f4;
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   transition: all 0.4s;
@@ -4037,7 +4038,6 @@ body.loaded {
 .sub-title {
   font-size: 14px;
   font-weight: 300;
-  text-transform: uppercase;
   letter-spacing: 2px;
 }
 
@@ -5952,15 +5952,36 @@ footer .bg-pattern {
   min-height: 480px;
 }
 
-.page-header .caption .sub-title {
+.page-header .caption {
+  position: relative;
+  z-index: 2;
+}
+
+.page-header .caption .banner__title {
+  font-weight: 800;
+  font-size: 80px;
+  line-height: 1;
+  margin-bottom: 20px;
+  color: #f7f4f4 !important;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+  -webkit-animation: fadeInUp 0.4s cubic-bezier(0.3, 0, 0.7, 1) both;
+  animation: fadeInUp 0.4s cubic-bezier(0.3, 0, 0.7, 1) both;
+}
+
+.page-header .caption .banner__sub-title {
   position: relative;
   padding-left: 20px;
   font-size: 20px;
   font-weight: 300;
-  text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 20px;
-  color: #212529;
+  color: #f7f4f4 !important;
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   transition: all 0.4s;
@@ -5984,6 +6005,30 @@ footer .bg-pattern {
   height: 5px;
   border-radius: 50%;
   background: #212529;
+}
+.page-header .caption .banner_button {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 12px 30px;
+  background-color: #fca311;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+  -webkit-animation: fadeInUp 0.4s cubic-bezier(0.3, 0, 0.7, 1) both;
+  animation: fadeInUp 0.4s cubic-bezier(0.3, 0, 0.7, 1) both;
+}
+
+.page-header .caption .banner_button:hover {
+  background-color: #212529;
+  color: #fff;
 }
 
 .page-header .explore {
@@ -8124,6 +8169,20 @@ header.in-box {
   z-index: 3;
 }
 
+.arch-slider .parallax-slider .caption {
+  margin-top: 2rem;
+  text-align: start;
+  position: absolute;
+  background-color: #2828287c;
+  top: 50%;
+  left: 20%;
+  z-index: 9;
+  border-radius: 0 35px 35px 0;
+  padding: 1.5rem 2.5rem 1.5rem 12rem;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 .arch-slider .parallax-slider .caption h5 {
   font-size: 50px;
   overflow: hidden;
@@ -8137,8 +8196,25 @@ header.in-box {
 }
 
 .arch-slider .parallax-slider .caption h1 {
-  font-size: 75px;
+  font-size: 1.6rem;
+  margin-top: 0;
   letter-spacing: 2px;
+  color: #f7f4f4;
+}
+.arch-slider .parallax-slider .caption h2 {
+  font-size: 1.3rem;
+  margin-top: 10px;
+  letter-spacing: 2px;
+  color: #f7f4f4;
+}
+.arch-slider .parallax-slider .caption .banner_button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #db8c0d;
+  color: #f7f4f4;
+  border-radius: 5px;
+  display: inline-block;
+  text-transform: uppercase;
 }
 
 .arch-slider .parallax-slider .caption p {

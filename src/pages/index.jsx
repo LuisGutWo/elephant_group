@@ -6,9 +6,14 @@ export default function Index() {
   if (!router) {
     throw new Error("router is null");
   }
+
   useEffect(() => {
     try {
-      router.replace("/light/page-home");
+      if (router) {
+        router.replace("/light/page-home");
+      } else {
+        throw new Error("router is null");
+      }
     } catch (error) {
       console.error("Error redirecting to /light/page-home", error);
     }

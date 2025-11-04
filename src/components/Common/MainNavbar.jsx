@@ -80,31 +80,31 @@ function MainNavbar({ lightMode, mainBg, subBg, noStatic, curve }) {
   //     }
   //   }
 
-  //   function handleThemeChange() {
-  //     if (typeof window !== "undefined" && window !== null) {
-  //       if (typeof window.location === "undefined" || window.location === null) {
-  //         throw new Error("Window location is null");
-  //       }
+  function handleThemeChange() {
+    if (typeof window !== "undefined" && window !== null) {
+      if (typeof window.location === "undefined" || window.location === null) {
+        throw new Error("Window location is null");
+      }
 
-  //       if (typeof window.location.pathname !== "string") {
-  //         throw new Error("Window location pathname is not a string");
-  //       }
+      if (typeof window.location.pathname !== "string") {
+        throw new Error("Window location pathname is not a string");
+      }
 
-  //       const currentPath = window.location.pathname;
-  //       const newTheme = lightMode ? "dark" : "light";
-  //       const newPath = currentPath.replace(
-  //         lightMode ? "/light/" : "/dark/",
-  //         `/${newTheme}/`
-  //       );
+      const currentPath = window.location.pathname;
+      const newTheme = lightMode ? "dark" : "light";
+      const newPath = currentPath.replace(
+        lightMode ? "/light/" : "/dark/",
+        `/${newTheme}/`
+      );
 
-  //       try {
-  //         window.location.href = newPath;
-  //       } catch (error) {
-  //         console.error("Error while changing theme:", error);
-  //         throw error;
-  //       }
-  //     }
-  //   }
+      try {
+        window.location.href = newPath;
+      } catch (error) {
+        console.error("Error while changing theme:", error);
+        throw error;
+      }
+    }
+  }
 
   // Import useState from React
 

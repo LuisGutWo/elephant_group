@@ -27,17 +27,17 @@ const TopNavbar = ({ lightMode, mainBg, curve }) => {
         <li className="top__navbar-item nav-item d-flex flex-row justify-content-evenly align-items-center">
           <a
             className="nav-link icon-img-200"
-            href="https://www.instagram.com/elephantgroupchile/"
-            rel="noopener noreferrer"
-          >
-            {instagramSvg}
-          </a>
-          <a
-            className="nav-link icon-img-200"
             href="https://web.facebook.com/elephantgroupchile"
             rel="noopener noreferrer"
           >
             {facebookSvg}
+          </a>
+          <a
+            className="nav-link icon-img-200"
+            href="https://www.instagram.com/elephantgroupchile/"
+            rel="noopener noreferrer"
+          >
+            {instagramSvg}
           </a>
         </li>
         <li className="top__navbar-item nav-item d-flex flex-row justify-content-center align-items-center g-2">

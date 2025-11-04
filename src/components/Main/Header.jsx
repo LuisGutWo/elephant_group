@@ -8,15 +8,17 @@ import StatementSplitter from "../Common/StatementSplitter";
 import loadBackgroudImages from "@/common/loadBackgroudImages";
 //= Data
 import data from "@/data/Main/header.json";
+import { arrowRightUpSvg } from "@/data/icons";
+import Link from "next/link";
 
 const swiperOptions = {
   modules: [Navigation, Autoplay, Pagination, Parallax],
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-    pauseOnMouseEnter: false,
-    waitForTransition: true,
-  },
+  //   autoplay: {
+  //     delay: 5000,
+  //     disableOnInteraction: false,
+  //     pauseOnMouseEnter: false,
+  //     waitForTransition: true,
+  //   },
   effect: "fade",
   speed: 1500,
   parallax: true,
@@ -45,7 +47,7 @@ const swiperOptions = {
     prevEl: ".slider-prlx .prev-ctrl",
   },
 };
-function Header() {
+function Header({ lightMode }) {
   const [loadSwiper, setLoadSwiper] = useState(false);
 
   useEffect(() => {
@@ -96,21 +98,59 @@ function Header() {
                   <div className="row">
                     <div className="col-lg-7">
                       <div className="caption">
-                        <img
-                          src="/light/assets/imgs/logo-light.webp"
-                          alt="Elephant Group - Designe and Print Solutions Logo"
-                          className="logo-webp img-responsive w-25"
-                          data-swiper-parallax="0.5"
-                        />
-                        <h2 className="text-light ms-1 text-uppercase fw-400">
+                        <h2 className="text-light ms-1 fw-400">
                           <StatementSplitter statement={item.subtitle || ""} />
                         </h2>
                         <h1 className="text-light">
                           <StatementSplitter statement={item.title || ""} />
                         </h1>
                       </div>
+                      <Link
+                        className="nav-link"
+                        href={`/${
+                          lightMode ? "light/page-contact" : "dark/page-contact"
+                        }`}
+                        aria-label="Contacto"
+                        style={{
+                          position: "absolute",
+                          inset: 0,
+                          top: 100,
+                          left: 0,
+                          width: "100%",
+                          height: "100%",
+                          zIndex: 3,
+                          marginTop: "2rem",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "flex-start",
+                          textDecoration: "none",
+                        }}
+                      >
+                        <button
+                          className="btn top__navbar-button text-light mt-30"
+                          style={{
+                            pointerEvents: "auto",
+                            borderRadius: "10px",
+                            padding: "0.2rem 1.6rem",
+                            fontSize: "1.2rem",
+                            fontWeight: "bold",
+                            fontWeight: "600",
+                            cursor: "pointer",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            zIndex: 3,
+                          }}
+                        >
+                          <span className="rolling-text">
+                            HABLA CON UN ASESOR
+                          </span>
+                        </button>
+                      </Link>
                     </div>
                   </div>
+
+                  {/* Link colocado como overlay completo para estar por encima de todo */}
                 </div>
               </div>
             </SwiperSlide>
