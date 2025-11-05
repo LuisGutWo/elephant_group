@@ -15,7 +15,8 @@ function Intro({ lightMode }) {
                     <defs>
                       <path
                         id="textcircle"
-                        d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"></path>
+                        d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"
+                      ></path>
                     </defs>
                     <text>
                       <textPath xlinkHref="#textcircle" textLength="900">
@@ -64,7 +65,8 @@ function Intro({ lightMode }) {
                       href={`/${
                         lightMode ? "dark/page-about" : "light/page-about"
                       }`}
-                      className="mt-30 ls1 sub-title">
+                      className="mt-30 ls1 sub-title"
+                    >
                       Leer mas <i className="ml-5">{arrowRightUpSvg}</i>
                     </Link>
                   </div>

@@ -1499,7 +1499,7 @@ img.left {
 }
 
 .section-padding {
-  padding: 7.5rem 0;
+  padding: 7.5rem 0 2rem 0;
 }
 
 .section-ptb {
@@ -4933,7 +4933,7 @@ body.loaded {
 
 .blog-list2 .item .categ a {
   padding: 8px 25px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.473);
   border-radius: 30px;
 }
 
@@ -4994,7 +4994,7 @@ body.loaded {
   top: 50%;
   right: -70px;
   width: 50px;
-  border-bottom: 1px solid #cecece;
+  border-bottom: 1px solid #91919193;
 }
 
 .blog-crev .item .cont .info {

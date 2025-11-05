@@ -7,12 +7,13 @@ import Layout from "@/layouts/default";
 import Loader from "@/components/Common/Loader";
 import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/Main/Header";
-import Intro from "@/components/Main/Intro";
+import Products from "@/components/Main/Products";
 import Clients from "@/components/Main/Clients";
 import Services from "@/components/Main/Services";
 import Portfolio from "@/components/Main/Portfolio";
 import Contact from "@/components/Main/Contact";
 import Footer from "@/components/Main/Footer";
+import Form from "@/components/InnerPages/Contact/Form";
 
 function HomePageLight() {
   useEffect(() => {
@@ -45,10 +46,10 @@ function HomePageLight() {
         <main className="main-bg position-re">
           <Header lightMode={true} />
           <Portfolio />
-          <Intro />
-          <Services lightMode={true} />
+          <Products />
           <Clients lightMode={true} />
-          <Contact />
+          <Form />
+          <Services lightMode={true} />
         </main>
         <Footer lightMode={true} />
       </>

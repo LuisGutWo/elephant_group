@@ -21,6 +21,7 @@
     "leaflet-defaulticon-compatibility": "^0.1.2",
     "leaflet-geosearch": "^4.2.0",
     "next": "^15.3.2",
+    "nodemailer": "^7.0.10",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.9",
     "react-countup": "^6.5.3",
