@@ -32,7 +32,16 @@ function Form() {
     { value: "packaging", label: "Packaging" },
   ];
   const productsByType = {
-    impreso: ["Volantes", "Brochure", "Afiche"],
+    impreso: [
+      "Volantes",
+      "Brochure",
+      "Afiche",
+      "Tarjeta de presentación",
+      "Sticker",
+      "Calendario",
+      "Carpeta",
+      "Otros",
+    ],
     textil: ["Polera", "Gorro", "Bolsa"],
     packaging: ["Caja", "Etiqueta", "Envelope"],
   };

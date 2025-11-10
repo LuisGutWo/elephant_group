@@ -5628,16 +5628,17 @@ body.loaded {
 
 .contact-crev:after {
   content: "";
-  width: 80vw;
-  height: 80vw;
-  border: 200px solid #212529;
-  border-radius: 50%;
   position: absolute;
-  top: -15vw;
-  right: -30vw;
-  opacity: 0.03;
-  z-index: -1;
-  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../imgs/patterns/s1.png);
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center center;
+  overflow: hidden;
+  opacity: 0.2;
 }
 
 .contact-crev input,
@@ -5904,6 +5905,19 @@ body.loaded {
   padding: 60px 0 40px;
   position: relative;
 }
+.eg-footer-top::after {
+  content: "";
+  background-image: url(../imgs/patterns/s1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
 .eg-footer-inner {
   display: flex;
   gap: 30px;
@@ -6036,18 +6050,39 @@ body.loaded {
 }
 
 .eg-footer-bottom {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   background: #0b0b0b;
   color: #ddd;
   padding: 14px 0;
 }
+.eg-footer-bottom::after {
+  content: "";
+  background-image: url(../imgs/patterns/asx7.png);
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center center;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
 .eg-footer-bottom-inner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 20px;
 }
 .eg-footer-left {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   align-items: center;
   gap: 18px;
 }
@@ -6055,12 +6090,29 @@ body.loaded {
   height: 36px;
   object-fit: contain;
 }
+.eg-footer-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 0;
+}
 .eg-footer-nav a {
   color: #cfcfcf;
   margin-right: 12px;
   font-size: 13px;
   text-decoration: none;
 }
+.eg-footer-nav a::after {
+  content: "|";
+  margin-left: 12px;
+  color: #f7a800;
+}
+.eg-footer-nav a:last-child::after {
+  content: "";
+}
+
 .eg-footer-right small {
   color: #9b9b9b;
 }

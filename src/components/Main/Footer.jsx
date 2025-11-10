@@ -191,21 +191,22 @@ function Footer({ lightMode, subBg }) {
       <div className="eg-footer-bottom">
         <div className="container eg-footer-bottom-inner">
           <div className="eg-footer-left">
+            <nav className="eg-footer-nav">
+              <a href="#">Blog</a>
+              <a href="#">Mercado Libre</a>
+              <a href="#">Política de Privacidad</a>
+              <a href="#">Términos y Condiciones</a>
+            </nav>
             <img
-              src="/logo-footer.png"
+              src="/dark/assets/imgs/logo-light.webp"
               alt="Elephant Group"
               className="eg-footer-logo"
             />
-            <nav className="eg-footer-nav">
-              <a href="#">Blog</a>
-              <a href="#">Política de Privacidad</a>
-              <a href="#">Términos</a>
-            </nav>
           </div>
           <div className="eg-footer-right">
             <small>
-              © {new Date().getFullYear()} Elephant Group — Todos los derechos
-              reservados
+              © {new Date().getFullYear()} Elephant Group — LAGmedia. Todos los
+              derechos reservados
             </small>
           </div>
         </div>
