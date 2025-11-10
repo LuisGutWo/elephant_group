@@ -10,8 +10,8 @@ import Header from "@/components/Main/Header";
 import Products from "@/components/Main/Products";
 import Clients from "@/components/Main/Clients";
 import Services from "@/components/Main/Services";
+import AboutUs from "@/components/Main/AboutUs";
 import Portfolio from "@/components/Main/Portfolio";
-import Contact from "@/components/Main/Contact";
 import Footer from "@/components/Main/Footer";
 import Form from "@/components/InnerPages/Contact/Form";
 
@@ -49,7 +49,7 @@ function HomePageLight() {
           <Products />
           <Clients lightMode={true} />
           <Form />
-          <Services lightMode={true} />
+          <AboutUs />
         </main>
         <Footer lightMode={true} />
       </>

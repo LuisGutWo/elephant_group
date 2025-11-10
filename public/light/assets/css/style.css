@@ -311,6 +311,79 @@ img {
   border-radius: 40px;
 }
 
+/* New about section
+-----------------------------------------------------------------*/
+.eg-about {
+  background: #fff;
+  color: #222;
+  padding: 60px 0;
+}
+.about-title {
+  font-size: 28px;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  color: #111;
+  font-weight: 700;
+}
+.about-lead {
+  max-width: 720px;
+  margin: 0 auto 32px;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.about-features {
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.about-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 22px;
+  width: 260px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+.about-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-item h4 {
+  font-size: 14px;
+  color: #f7a800;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.about-item p {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-features {
+    gap: 18px;
+  }
+  .about-item {
+    width: 100%;
+    max-width: 520px;
+  }
+  .eg-about {
+    padding: 40px 12px;
+  }
+}
+
 /* Buttons
 -----------------------------------------------------------------*/
 /* // /// WhatsApp Floating Button /// */
@@ -5822,6 +5895,191 @@ body.loaded {
 
 /* Footer
 -----------------------------------------------------------------*/
+.eg-footer {
+  font-family: Inter, Arial, sans-serif;
+  color: #222;
+  background: #f7f7f7;
+}
+.eg-footer-top {
+  padding: 60px 0 40px;
+  position: relative;
+}
+.eg-footer-inner {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.eg-contact-col {
+  flex: 1 1 45%;
+  max-width: 520px;
+}
+.eg-contact-col h3 {
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+  color: #111;
+}
+.eg-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+.eg-contact-list li {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+  align-items: flex-start;
+}
+.eg-icon {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  font-size: 16px;
+}
+.eg-contact-list strong {
+  display: block;
+  font-size: 13px;
+  color: #111;
+}
+.eg-contact-list div {
+  font-size: 13px;
+  color: #666;
+}
+
+.eg-socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+.eg-social {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  color: #fff;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.eg-form-col {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+.eg-form-card {
+  background: #fff;
+  padding: 22px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+.eg-form-card h4 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: #111;
+}
+.eg-alert {
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+.eg-alert.success {
+  background: #e7f8ee;
+  color: #0b6b3a;
+}
+.eg-alert.error {
+  background: #ffecec;
+  color: #922d2d;
+}
+
+.eg-contact-form input,
+.eg-contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  background: #fafafa;
+}
+.eg-form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+.btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn-primary {
+  background: #f7a800;
+  color: #111;
+}
+.btn-secondary {
+  background: #222;
+  color: #fff;
+}
+
+.eg-footer-bottom {
+  background: #0b0b0b;
+  color: #ddd;
+  padding: 14px 0;
+}
+.eg-footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.eg-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.eg-footer-logo {
+  height: 36px;
+  object-fit: contain;
+}
+.eg-footer-nav a {
+  color: #cfcfcf;
+  margin-right: 12px;
+  font-size: 13px;
+  text-decoration: none;
+}
+.eg-footer-right small {
+  color: #9b9b9b;
+}
+
+@media (max-width: 900px) {
+  .eg-footer-inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .eg-form-col {
+    justify-content: center;
+  }
+  .eg-footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
 footer {
   position: relative;
 }
