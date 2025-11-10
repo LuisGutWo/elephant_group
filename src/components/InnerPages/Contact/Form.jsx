@@ -196,122 +196,118 @@ function Form() {
                 </p>
               </div>
               <div className="full-width">
-                {status.type === "success" && (
-                  <Alert variant="success">{status.message}</Alert>
-                )}
-                {status.type === "error" && (
-                  <Alert variant="danger">{status.message}</Alert>
-                )}
+                {/* No anidar RBForm: usar el RBForm exterior que envuelve todo */}
+                <Row className="g-3 d-flex flex-column">
+                  <Col md={12}>
+                    <RBForm.Group
+                      className="mb-3 d-flex flex-row align-items-center justify-content-between"
+                      controlId="name"
+                    >
+                      <RBForm.Label className="me-2 text-center d-flex flex-row align-items-center">
+                        Nombre completo
+                      </RBForm.Label>
+                      <RBForm.Control
+                        name="name"
+                        value={form.name}
+                        onChange={handleChange}
+                        isInvalid={!!errors.name}
+                        placeholder="ESCRIBE TU NOMBRE"
+                        style={{
+                          width: "70%",
+                          border: "none",
+                          fontWeight: "500",
+                          fontSize: "0.7rem",
+                          color: "#9191919",
+                          backgroundColor: "#9191912a",
+                        }}
+                      />
+                      <RBForm.Control.Feedback type="invalid">
+                        {errors.name}
+                      </RBForm.Control.Feedback>
+                    </RBForm.Group>
+                  </Col>
 
-                <RBForm onSubmit={handleSubmit} noValidate>
-                  <Row className="g-3 d-flex flex-column">
-                    <Col md={12}>
-                      <RBForm.Group
-                        className="mb-3 d-flex flex-row align-items-center justify-content-between"
-                        controlId="name"
-                      >
-                        <RBForm.Label className="me-2 text-center d-flex flex-row align-items-center">
-                          Nombre completo
-                        </RBForm.Label>
-                        <RBForm.Control
-                          name="name"
-                          value={form.name}
-                          onChange={handleChange}
-                          isInvalid={!!errors.name}
-                          placeholder="ESCRIBE TU NOMBRE"
-                          style={{
-                            width: "70%",
-                            border: "none",
-                            fontWeight: "500",
-                            fontSize: "0.7rem",
-                            backgroundColor: "#9191912a",
-                          }}
-                        />
-                        <RBForm.Control.Feedback type="invalid">
-                          {errors.name}
-                        </RBForm.Control.Feedback>
-                      </RBForm.Group>
-                    </Col>
+                  <Col md={12}>
+                    <RBForm.Group
+                      className="mb-3 d-flex flex-row justify-content-between align-items-center"
+                      controlId="company"
+                    >
+                      <RBForm.Label>Empresa</RBForm.Label>
+                      <RBForm.Control
+                        name="company"
+                        value={form.company}
+                        onChange={handleChange}
+                        isInvalid={!!errors.company}
+                        placeholder="ESCRIBE EL NOMBRE DE TU EMPRESA"
+                        style={{
+                          width: "80%",
+                          border: "none",
+                          fontWeight: "500",
+                          fontSize: "0.7rem",
+                          color: "#9191919",
+                          backgroundColor: "#9191912a",
+                        }}
+                      />
+                      <RBForm.Control.Feedback type="invalid">
+                        {errors.company}
+                      </RBForm.Control.Feedback>
+                    </RBForm.Group>
+                  </Col>
+                  <Col md={12}>
+                    <RBForm.Group
+                      className="mb-3 d-flex flex-row justify-content-between align-items-center"
+                      controlId="email"
+                    >
+                      <RBForm.Label>Correo electrónico</RBForm.Label>
+                      <RBForm.Control
+                        type="email"
+                        name="email"
+                        value={form.email}
+                        onChange={handleChange}
+                        isInvalid={!!errors.email}
+                        placeholder="ESCRIBE TU CORREO CORPORATIVO O PERSONAL"
+                        style={{
+                          width: "70%",
+                          border: "none",
+                          fontWeight: "500",
+                          fontSize: "0.7rem",
+                          color: "#9191919",
+                          backgroundColor: "#9191912a",
+                        }}
+                      />
+                      <RBForm.Control.Feedback type="invalid">
+                        {errors.email}
+                      </RBForm.Control.Feedback>
+                    </RBForm.Group>
+                  </Col>
 
-                    <Col md={12}>
-                      <RBForm.Group
-                        className="mb-3 d-flex flex-row justify-content-between align-items-center"
-                        controlId="company"
-                      >
-                        <RBForm.Label>Empresa</RBForm.Label>
-                        <RBForm.Control
-                          name="company"
-                          value={form.company}
-                          onChange={handleChange}
-                          isInvalid={!!errors.company}
-                          placeholder="Empresa"
-                          style={{
-                            width: "80%",
-                            border: "none",
-                            fontWeight: "500",
-                            fontSize: "0.7rem",
-                            backgroundColor: "#9191912a",
-                          }}
-                        />
-                        <RBForm.Control.Feedback type="invalid">
-                          {errors.company}
-                        </RBForm.Control.Feedback>
-                      </RBForm.Group>
-                    </Col>
-                    <Col md={12}>
-                      <RBForm.Group
-                        className="mb-3 d-flex flex-row justify-content-between align-items-center"
-                        controlId="email"
-                      >
-                        <RBForm.Label>Correo electrónico</RBForm.Label>
-                        <RBForm.Control
-                          type="email"
-                          name="email"
-                          value={form.email}
-                          onChange={handleChange}
-                          isInvalid={!!errors.email}
-                          placeholder="correo@ejemplo.com"
-                          style={{
-                            width: "70%",
-                            border: "none",
-                            fontWeight: "500",
-                            fontSize: "0.7rem",
-                            backgroundColor: "#9191912a",
-                          }}
-                        />
-                        <RBForm.Control.Feedback type="invalid">
-                          {errors.email}
-                        </RBForm.Control.Feedback>
-                      </RBForm.Group>
-                    </Col>
-
-                    <Col md={12}>
-                      <RBForm.Group
-                        className="mb-3 d-flex flex-row justify-content-between align-items-center"
-                        controlId="phone"
-                      >
-                        <RBForm.Label>Teléfono</RBForm.Label>
-                        <RBForm.Control
-                          name="phone"
-                          value={form.phone}
-                          onChange={handleChange}
-                          isInvalid={!!errors.phone}
-                          placeholder="+56 9 1234 5678"
-                          style={{
-                            width: "80%",
-                            border: "none",
-                            fontWeight: "500",
-                            fontSize: "0.7rem",
-                            backgroundColor: "#9191912a",
-                          }}
-                        />
-                        <RBForm.Control.Feedback type="invalid">
-                          {errors.phone}
-                        </RBForm.Control.Feedback>
-                      </RBForm.Group>
-                    </Col>
-                  </Row>
-                </RBForm>
+                  <Col md={12}>
+                    <RBForm.Group
+                      className="mb-3 d-flex flex-row justify-content-between align-items-center"
+                      controlId="phone"
+                    >
+                      <RBForm.Label>Teléfono</RBForm.Label>
+                      <RBForm.Control
+                        name="phone"
+                        value={form.phone}
+                        onChange={handleChange}
+                        isInvalid={!!errors.phone}
+                        placeholder="ESCRIBE TU WHATSAPP O TELÉFONO"
+                        style={{
+                          width: "80%",
+                          border: "none",
+                          fontWeight: "500",
+                          fontSize: "0.7rem",
+                          color: "#9191919",
+                          backgroundColor: "#9191912a",
+                        }}
+                      />
+                      <RBForm.Control.Feedback type="invalid">
+                        {errors.phone}
+                      </RBForm.Control.Feedback>
+                    </RBForm.Group>
+                  </Col>
+                </Row>
               </div>
             </article>
 
@@ -333,6 +329,7 @@ function Form() {
                         border: "none",
                         fontWeight: "500",
                         fontSize: "0.7rem",
+                        color: "#9191919",
                         backgroundColor: "#9191912a",
                       }}
                     >
@@ -365,6 +362,7 @@ function Form() {
                         border: "none",
                         fontWeight: "500",
                         fontSize: "0.7rem",
+                        color: "#9191919",
                         backgroundColor: "#9191912a",
                       }}
                     >
@@ -381,17 +379,17 @@ function Form() {
                   </RBForm.Group>
                 </Col>
 
-                <section className="d-flex flex-row justify-content-between align-items-center w-100">
-                  <RBForm.Label>Medidas (cm.)</RBForm.Label>
-                  <Col md={6}>
-                    <RBForm.Group className="mb-3" controlId="width">
+                <section className="mb-2 d-flex flex-row justify-content-between align-items-center">
+                  <RBForm.Label className="me-3">Medidas (cm.)</RBForm.Label>
+                  <Col md={3}>
+                    <RBForm.Group controlId="width">
                       <RBForm.Select
                         name="width"
                         value={details.width}
                         onChange={handleDetailChange}
                         isInvalid={!!errors.width}
                         style={{
-                          width: "50%",
+                          width: "70%",
                           border: "none",
                           fontWeight: "500",
                           fontSize: "0.7rem",
@@ -410,15 +408,15 @@ function Form() {
                       </RBForm.Control.Feedback>
                     </RBForm.Group>
                   </Col>
-                  <Col md={6}>
-                    <RBForm.Group className="mb-3" controlId="height">
+                  <Col md={3}>
+                    <RBForm.Group controlId="height">
                       <RBForm.Select
                         name="height"
                         value={details.height}
                         onChange={handleDetailChange}
                         isInvalid={!!errors.height}
                         style={{
-                          width: "50%",
+                          width: "70%",
                           border: "none",
                           fontWeight: "500",
                           fontSize: "0.7rem",
@@ -437,38 +435,57 @@ function Form() {
                       </RBForm.Control.Feedback>
                     </RBForm.Group>
                   </Col>
+                  <Col md={2}>
+                    <RBForm.Group
+                      className="d-flex flex-row justify-content-start align-items-center"
+                      controlId="quantity"
+                    >
+                      <RBForm.Label>Cantidad</RBForm.Label>
+                      <RBForm.Select
+                        name="quantity"
+                        value={details.quantity}
+                        onChange={handleDetailChange}
+                        isInvalid={!!errors.quantity}
+                        style={{
+                          width: "70%",
+                          border: "none",
+                          fontWeight: "500",
+                          fontSize: "0.7rem",
+                          backgroundColor: "#9191912a",
+                        }}
+                      >
+                        {quantities.map((q) => (
+                          <option key={q} value={q}>
+                            {q}
+                          </option>
+                        ))}
+                      </RBForm.Select>
+                      <RBForm.Control.Feedback type="invalid">
+                        {errors.quantity}
+                      </RBForm.Control.Feedback>
+                    </RBForm.Group>
+                  </Col>
                 </section>
 
-                <Col md={6}>
-                  <RBForm.Group className="mb-3" controlId="quantity">
-                    <RBForm.Label>Cantidad</RBForm.Label>
-                    <RBForm.Select
-                      name="quantity"
-                      value={details.quantity}
-                      onChange={handleDetailChange}
-                      isInvalid={!!errors.quantity}
-                    >
-                      {quantities.map((q) => (
-                        <option key={q} value={q}>
-                          {q}
-                        </option>
-                      ))}
-                    </RBForm.Select>
-                    <RBForm.Control.Feedback type="invalid">
-                      {errors.quantity}
-                    </RBForm.Control.Feedback>
-                  </RBForm.Group>
-                </Col>
-
-                <Col md={6}>
-                  <RBForm.Group className="mb-3" controlId="file">
-                    <RBForm.Label>
+                <Col md={12}>
+                  <RBForm.Group
+                    className="mb-3 mt-2 d-flex flex-row justify-content-start align-items-center"
+                    controlId="file"
+                  >
+                    <RBForm.Label className="me-3 d-flex flex-row align-items-center">
                       Adjuntar archivo (pdf, jpg, ai, eps)
                     </RBForm.Label>
                     <RBForm.Control
                       type="file"
                       accept=".pdf,.jpg,.jpeg,.ai,.eps,.png"
                       onChange={handleFileChange}
+                      style={{
+                        width: "60%",
+                        border: "none",
+                        fontWeight: "500",
+                        fontSize: "0.7rem",
+                        backgroundColor: "#9191912a",
+                      }}
                     />
                     {details.fileName && (
                       <div className="small mt-1">
@@ -482,14 +499,26 @@ function Form() {
                 </Col>
 
                 <Col md={12}>
-                  <RBForm.Group className="mb-3" controlId="deliveryDate">
-                    <RBForm.Label>Fecha de entrega estimada</RBForm.Label>
+                  <RBForm.Group
+                    className="mb-3 d-flex flex-row justify-content-start align-items-center"
+                    controlId="deliveryDate"
+                  >
+                    <RBForm.Label className="me-3">
+                      Fecha de entrega estimada
+                    </RBForm.Label>
                     <RBForm.Control
                       type="date"
                       name="deliveryDate"
                       value={details.deliveryDate}
                       onChange={handleDetailChange}
                       isInvalid={!!errors.deliveryDate}
+                      style={{
+                        width: "70%",
+                        border: "none",
+                        fontWeight: "500",
+                        fontSize: "0.7rem",
+                        backgroundColor: "#9191912a",
+                      }}
                     />
                     <RBForm.Control.Feedback type="invalid">
                       {errors.deliveryDate}
@@ -498,8 +527,13 @@ function Form() {
                 </Col>
 
                 <Col md={12}>
-                  <RBForm.Group className="mb-3" controlId="comments">
-                    <RBForm.Label>Comentario adicional</RBForm.Label>
+                  <RBForm.Group
+                    className="mb-3 d-flex flex-row justify-content-start align-items-between"
+                    controlId="comments"
+                  >
+                    <RBForm.Label className="me-4">
+                      Comentario adicional
+                    </RBForm.Label>
                     <RBForm.Control
                       as="textarea"
                       rows={4}
@@ -508,14 +542,22 @@ function Form() {
                       onChange={handleDetailChange}
                       placeholder="Describe aquí información adicional..."
                       maxLength={1000}
+                      style={{
+                        width: "80%",
+                        border: "none",
+                        fontWeight: "500",
+                        fontSize: "0.7rem",
+                        backgroundColor: "#9191912a",
+                      }}
                     />
-                    <div className="small text-muted mt-1">
-                      {details.comments.length}/1000
-                    </div>
+                    {/* <div className="small text-muted mt-1">
+                      {details.comments.length ? details.comments.length : 0}
+                      /1000
+                    </div> */}
                   </RBForm.Group>
                 </Col>
 
-                <Col md={12} className="d-flex justify-content-between mt-3">
+                <Col md={12} className="d-flex justify-content-end mt-3 gap-3">
                   <Button
                     variant="secondary"
                     onClick={resetDetails}
@@ -523,7 +565,12 @@ function Form() {
                   >
                     Cancelar
                   </Button>
-                  <Button type="submit" variant="success" disabled={loading}>
+                  <Button
+                    type="submit"
+                    className="text-light"
+                    variant="warning"
+                    disabled={loading}
+                  >
                     {loading ? "Enviando..." : "Solicitar cotización"}
                   </Button>
                 </Col>
