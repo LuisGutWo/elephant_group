@@ -55,9 +55,8 @@ function Intro({ lightMode }) {
                       <div className="buttons__group d-flex flex-column justify-content-center align-items-end gap-2">
                         <Button
                           type="button"
-                          className="btn btn-warning text-light"
+                          className="top__navbar-button text-light"
                           size="sm"
-                          variant="warning"
                           as={Link}
                           href="/light/page-portfolio/project-details"
                           style={{ fontSize: "0.9rem" }}

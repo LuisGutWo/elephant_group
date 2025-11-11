@@ -3220,8 +3220,6 @@ body.loaded {
 .top__navbar-button p {
   color: #25282a !important;
   font-size: 0.7rem;
-  margin: 0;
-  padding: 0.2rem;
   border-radius: 0.25rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -5559,6 +5557,10 @@ body.loaded {
   margin: auto;
 }
 
+.clients-carso {
+  background-color: #f7f7f7;
+}
+
 .clients-carso .img {
   margin: auto;
 }
@@ -5617,6 +5619,7 @@ body.loaded {
 .contact-crev {
   position: relative;
   overflow: hidden;
+  z-index: 2;
 }
 
 .contact-crev.no-crev:after {
@@ -5625,6 +5628,7 @@ body.loaded {
 
 .contact-crev:after {
   content: "";
+  z-index: -1;
   position: absolute;
   top: 0;
   left: 0;

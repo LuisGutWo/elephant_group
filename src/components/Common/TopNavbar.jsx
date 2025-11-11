@@ -51,6 +51,17 @@ const TopNavbar = ({ lightMode, mainBg, curve }) => {
             size="sm"
             aria-label="Cotiza ahora"
             onClick={handleClick}
+            style={{
+              backgroundColor: mainBg,
+              borderRadius: curve,
+              color: "#fff",
+              border: "none",
+              padding: 0,
+              margin: 0,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
             <p>
               <b>Cotiza ahora</b>
