@@ -314,19 +314,19 @@ img {
 /* New about section
 -----------------------------------------------------------------*/
 .eg-about {
-  background: #fff;
+  background: #f7f7f7;
   color: #222;
-  padding: 60px 0;
+  padding: 2rem 0;
 }
 .about-title {
   font-size: 28px;
   letter-spacing: 1px;
-  margin-bottom: 12px;
+  margin-bottom: 1rem;
   color: #111;
   font-weight: 700;
 }
 .about-lead {
-  max-width: 720px;
+  max-width: 58rem;
   margin: 0 auto 32px;
   color: #666;
   font-size: 15px;
@@ -342,11 +342,8 @@ img {
   margin-top: 20px;
 }
 .about-item {
-  background: #fff;
-  border-radius: 8px;
   padding: 22px;
   width: 260px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
   text-align: center;
 }
 .about-icon {
@@ -5896,7 +5893,30 @@ body.loaded {
 
 /* Footer
 -----------------------------------------------------------------*/
+.eg-footer-image-inner {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+.eg-footer-image-inner::after {
+  content: "";
+  background-color: #0b0b0bc0;
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.eg-footer-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .eg-footer {
+  height: auto;
+  width: 100%;
   font-family: Inter, Arial, sans-serif;
   color: #222;
   background: #f7f7f7;

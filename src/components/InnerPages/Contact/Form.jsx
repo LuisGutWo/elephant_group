@@ -196,12 +196,16 @@ function Form() {
         <RBForm onSubmit={handleSubmit} noValidate>
           <div className="row">
             <article className="col-lg-5">
-              <div className="sec-lg-head mb-80">
+              <div className="sec-lg-head mb-60">
                 <h2 className="fz-20">
-                  Solicita tu cotización <b className="fst-italic">EXPRESS</b>
+                  Obtén tu Cotización <b className="fst-italic">EXPRESS</b>
                 </h2>
                 <p className="fz-15 mt-10">
-                  Complete el formulario y recibirá un correo con los datos.
+                  Cuéntanos tu visión y recibe una propuesta personalizada al
+                  instante. Nuestro equipo de asesores especializados está listo
+                  para transformar tu marca con soluciones gráficas innovadoras,
+                  presupuestos competitivos y entrega garantizada. ¡Lleva tu
+                  identidad visual al siguiente nivel!
                 </p>
               </div>
               <div className="full-width">

@@ -18,8 +18,8 @@ function AboutUs() {
               {/* icono - garantía */}
               <svg
                 viewBox="0 0 64 64"
-                width="36"
-                height="36"
+                width="65"
+                height="65"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -52,8 +52,8 @@ function AboutUs() {
               {/* icono - personalización */}
               <svg
                 viewBox="0 0 64 64"
-                width="36"
-                height="36"
+                width="65"
+                height="65"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <circle
@@ -85,8 +85,8 @@ function AboutUs() {
               {/* icono - tiempos de entrega */}
               <svg
                 viewBox="0 0 64 64"
-                width="36"
-                height="36"
+                width="65"
+                height="65"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <circle

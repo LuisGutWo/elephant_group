@@ -12,6 +12,7 @@ import Clients from "@/components/Main/Clients";
 import Services from "@/components/Main/Services";
 import AboutUs from "@/components/Main/AboutUs";
 import Portfolio from "@/components/Main/Portfolio";
+import FooterImg from "@/components/Main/FooterImg";
 import Footer from "@/components/Main/Footer";
 import Form from "@/components/InnerPages/Contact/Form";
 
@@ -51,6 +52,7 @@ function HomePageLight() {
           <Form />
           <AboutUs />
         </main>
+        <FooterImg lightMode={true} />
         <Footer lightMode={true} />
       </>
     );
