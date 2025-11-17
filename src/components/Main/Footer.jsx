@@ -1,26 +1,34 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { facebookSvg, instagramSvg } from "@/data/icons";
+import {
+  facebookSvg,
+  geoTagSvg,
+  instagramSvg,
+  linkedinSvg,
+  mailSvg,
+  timeSvg,
+  whatsAppSvg,
+} from "@/data/icons";
 
 function Footer({ lightMode, subBg }) {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState({ type: "", msg: "" });
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (window.innerWidth > 991) {
-      gsap.set(".footer-container", { yPercent: -30 });
-      const uncover = gsap.timeline({ paused: true });
-      uncover.to(".footer-container", { yPercent: 0, ease: "none" });
-      ScrollTrigger.create({
-        trigger: "main",
-        start: "bottom bottom",
-        end: "+=30%",
-        animation: uncover,
-        scrub: true,
-      });
-    }
-  }, []);
+  //   useEffect(() => {
+  //     if (window.innerWidth > 991) {
+  //       gsap.set(".footer-container", { yPercent: -30 });
+  //       const uncover = gsap.timeline({ paused: true });
+  //       uncover.to(".footer-container", { yPercent: 0, ease: "none" });
+  //       ScrollTrigger.create({
+  //         trigger: "main",
+  //         start: "bottom bottom",
+  //         end: "+=30%",
+  //         animation: uncover,
+  //         scrub: true,
+  //       });
+  //     }
+  //   }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -81,7 +89,7 @@ function Footer({ lightMode, subBg }) {
             <h3>CONTACTO</h3>
             <ul className="eg-contact-list">
               <li>
-                <span className="eg-icon">📍</span>
+                <span className="eg-icon">{geoTagSvg}</span>
                 <div>
                   <strong>Ubicación</strong>
                   <div>
@@ -90,44 +98,32 @@ function Footer({ lightMode, subBg }) {
                 </div>
               </li>
               <li>
-                <span className="eg-icon">📞</span>
+                <span className="eg-icon">{whatsAppSvg}</span>
                 <div>
                   <strong>Teléfono</strong>
                   <div>+56 9 93239203</div>
                 </div>
               </li>
               <li>
-                <span className="eg-icon">✉️</span>
+                <span className="eg-icon">{mailSvg}</span>
                 <div>
                   <strong>Correo electrónico</strong>
                   <div>contacto@elephantgroup.cl</div>
                 </div>
               </li>
               <li>
-                <span className="eg-icon">🕒</span>
+                <span className="eg-icon">{timeSvg}</span>
                 <div>
                   <strong>Horario de atención</strong>
                   <div>Lunes a Viernes 10:00 - 14:00 • 15:00 - 18:00 hrs</div>
                 </div>
               </li>
             </ul>
-
-            <div className="eg-socials">
-              <a href="#" aria-label="Instagram" className="eg-social">
-                IG
-              </a>
-              <a href="#" aria-label="Facebook" className="eg-social">
-                FB
-              </a>
-              <a href="#" aria-label="LinkedIn" className="eg-social">
-                IN
-              </a>
-            </div>
           </div>
 
-          <div className="eg-form-col">
+          <div className="eg-form-col d-flex flex-column">
             <div className="eg-form-card">
-              <h4>ENVIAR UN MENSAJE</h4>
+              <h4 className="text-right mb-20">ENVIAR UN MENSAJE</h4>
               {status.type === "success" && (
                 <div className="eg-alert success">{status.msg}</div>
               )}
@@ -140,49 +136,51 @@ function Footer({ lightMode, subBg }) {
                 className="eg-contact-form"
                 noValidate
               >
+                <label className="input-label">Nombre</label>
                 <input
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  placeholder="Nombre"
                   required
                 />
+                <label className="input-label">Correo electrónico</label>
                 <input
                   name="email"
                   type="email"
                   value={form.email}
                   onChange={handleChange}
-                  placeholder="Correo electrónico"
                   required
                 />
+                <label className="input-label">Mensaje</label>
                 <textarea
                   name="message"
                   value={form.message}
                   onChange={handleChange}
-                  placeholder="Mensaje"
                   rows="4"
                   required
                 />
                 <div className="eg-form-actions">
                   <button
-                    type="button"
-                    className="btn btn-secondary"
-                    onClick={() =>
-                      setForm({ name: "", email: "", message: "" })
-                    }
-                    disabled={loading}
-                  >
-                    CANCELAR
-                  </button>
-                  <button
                     type="submit"
-                    className="btn btn-primary"
+                    className="btn btn-primary text-light"
                     disabled={loading}
                   >
                     {loading ? "ENVIANDO..." : "ENVIAR"}
                   </button>
                 </div>
               </form>
+            </div>
+            <div className="eg-socials">
+              <h4 className="text-dark">SÍGUENOS EN</h4>
+              <a href="#" aria-label="Instagram" className="eg-social">
+                {instagramSvg}
+              </a>
+              <a href="#" aria-label="Facebook" className="eg-social">
+                {facebookSvg}
+              </a>
+              <a href="#" aria-label="LinkedIn" className="eg-social">
+                {linkedinSvg}
+              </a>
             </div>
           </div>
         </div>
