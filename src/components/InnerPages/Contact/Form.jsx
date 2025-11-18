@@ -660,7 +660,7 @@ _Enviado desde el formulario web_
 
                 <Col md={12}>
                   <RBForm.Group
-                    className="mb-3 d-flex flex-row justify-content-start align-items-center"
+                    className="mb-3 d-flex flex-row justify-content-evenly align-items-center"
                     controlId="deliveryDate"
                   >
                     <RBForm.Label className="me-3">
@@ -688,7 +688,7 @@ _Enviado desde el formulario web_
 
                 <Col md={12}>
                   <RBForm.Group
-                    className="mb-3 d-flex flex-row justify-content-start align-items-between"
+                    className="mb-3 d-flex flex-row justify-content-between align-items-between"
                     controlId="comments"
                   >
                     <RBForm.Label className="me-4">
@@ -703,7 +703,7 @@ _Enviado desde el formulario web_
                       placeholder="Describe aquí información adicional..."
                       maxLength={1000}
                       style={{
-                        width: "80%",
+                        width: "60%",
                         border: "none",
                         fontWeight: "500",
                         fontSize: "0.7rem",

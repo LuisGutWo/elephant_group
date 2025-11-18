@@ -62,7 +62,7 @@ export default async function handler(req, res) {
       return res.status(500).json({ message: "Destinatario no configurado." });
     }
 
-    const subject = `Nueva cotización de ${name} - ${company}`;
+    const subject = `Nueva cotización de ${name}`;
     const text = `
 NUEVA COTIZACIÓN EXPRESS
 
@@ -71,7 +71,6 @@ Nombre: ${name}
 Empresa: ${company}
 Email: ${email}
 Teléfono: ${phone}
-Mensaje: ${req.body.message || ""}
 
 DETALLES DEL PRODUCTO:
 Tipo de producto: ${details?.productType || "No especificado"}
@@ -81,6 +80,9 @@ Medidas: ${details?.width || ""}cm x ${details?.height || ""}cm
 Cantidad: ${details?.quantity || 1}
 ${details?.fileName ? `Archivo adjunto: ${details.fileName}` : ""}
 Fecha de entrega: ${details?.deliveryDate || "No especificada"}
+
+
+Mensaje: ${req.body.message || ""}
 ${details?.comments ? `Comentarios: ${details.comments}` : ""}
 
 Enviado desde el formulario web
@@ -95,7 +97,6 @@ Enviado desde el formulario web
         <li><strong>Empresa:</strong> ${company}</li>
         <li><strong>Email:</strong> ${email}</li>
         <li><strong>Teléfono:</strong> ${phone}</li>
-        <li><strong>Mensaje:</strong> ${req.body.message || ""}</li>
       </ul>
 
       <h4>DETALLES DEL PRODUCTO:</h4>
@@ -126,6 +127,7 @@ Enviado desde el formulario web
             ? `<li><strong>Comentarios:</strong> ${details.comments}</li>`
             : ""
         }
+            <li><strong>Mensaje:</strong> ${req.body.message || ""}</li>
       </ul>
 
       <p><em>Enviado desde el formulario web</em></p>
