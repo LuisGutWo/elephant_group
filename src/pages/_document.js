@@ -10,12 +10,19 @@ export default function Document() {
           name="keywords"
           content="React, Elephant Group, Web Development, Next.js, SEO Optimization"
         />
-        <meta name="description" content="Explore React-based web development with Elephant Group, powered by Next.js and optimized for SEO by LAG media." />
+        <meta
+          name="description"
+          content="Explore React-based web development with Elephant Group, powered by Next.js and optimized for SEO by LAG media."
+        />
         <meta name="author" content="Elephant Group" />
         {/* ------ Favicon ------ */}
-        <link rel="shortcut icon" href="/light/assets/imgs/favicon.ico"/>
+        <link rel="shortcut icon" href="/light/assets/imgs/favicon.ico" />
         <link rel="apple-touch-icon" href="/light/assets/imgs/favicon.ico" />
-        <link rel="icon" href="/light/assets/imgs/favicon.ico" type="image/x-icon" />
+        <link
+          rel="icon"
+          href="/light/assets/imgs/favicon.ico"
+          type="image/x-icon"
+        />
         {/* ------ Google Fonts ------ */}
         {/* Consolidated Google Fonts */}
         <link

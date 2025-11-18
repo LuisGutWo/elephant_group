@@ -1,6 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { facebookSvg, instagramSvg } from "@/data/icons";
+import {
+  facebookSvg,
+  geoTagSvg,
+  instagramSvg,
+  linkedinSvg,
+  mailSvg,
+  timeSvg,
+  whatsAppSvg,
+} from "@/data/icons";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Footer({ lightMode, subBg }) {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -29,34 +41,46 @@ function Footer({ lightMode, subBg }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus({ type: "", msg: "" });
 
-    if (
-      !form.name.trim() ||
-      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) ||
-      !form.message.trim()
-    ) {
-      setStatus({
-        type: "error",
-        msg: "Por favor complete nombre, correo y mensaje válidos.",
-      });
-      return;
-    }
-
-    setLoading(true);
     try {
-      // Envia al endpoint existente /api/send-contact adaptando campos requeridos
-      await fetch("/api/send-contact", {
+      if (!form) {
+        throw new Error("Form is null or undefined");
+      }
+
+      const { name, email, message } = form;
+
+      if (
+        !name.trim() ||
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
+        !message.trim()
+      ) {
+        setStatus({
+          type: "error",
+          msg: "Por favor complete nombre, correo y mensaje válidos.",
+        });
+        return;
+      }
+
+      setLoading(true);
+
+      const response = await fetch("/api/send-contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: form.name,
+          name,
           company: "Contacto web",
-          email: form.email,
+          email,
           phone: "No proporcionado",
-          message: form.message,
+          message: message.trim(),
+          content: message.trim(), // Add alternative field name
+          body: message.trim(), // Add another alternative field name
         }),
       });
+
+      if (!response.ok) {
+        throw new Error(`Error sending message: ${response.status}`);
+      }
+
       setStatus({
         type: "success",
         msg: "Gracias — mensaje enviado. Le contactaremos pronto.",
@@ -81,7 +105,7 @@ function Footer({ lightMode, subBg }) {
             <h3>CONTACTO</h3>
             <ul className="eg-contact-list">
               <li>
-                <span className="eg-icon">📍</span>
+                <span className="eg-icon">{geoTagSvg}</span>
                 <div>
                   <strong>Ubicación</strong>
                   <div>
@@ -90,44 +114,32 @@ function Footer({ lightMode, subBg }) {
                 </div>
               </li>
               <li>
-                <span className="eg-icon">📞</span>
+                <span className="eg-icon">{whatsAppSvg}</span>
                 <div>
                   <strong>Teléfono</strong>
                   <div>+56 9 93239203</div>
                 </div>
               </li>
               <li>
-                <span className="eg-icon">✉️</span>
+                <span className="eg-icon">{mailSvg}</span>
                 <div>
                   <strong>Correo electrónico</strong>
                   <div>contacto@elephantgroup.cl</div>
                 </div>
               </li>
               <li>
-                <span className="eg-icon">🕒</span>
+                <span className="eg-icon">{timeSvg}</span>
                 <div>
                   <strong>Horario de atención</strong>
                   <div>Lunes a Viernes 10:00 - 14:00 • 15:00 - 18:00 hrs</div>
                 </div>
               </li>
             </ul>
-
-            <div className="eg-socials">
-              <a href="#" aria-label="Instagram" className="eg-social">
-                IG
-              </a>
-              <a href="#" aria-label="Facebook" className="eg-social">
-                FB
-              </a>
-              <a href="#" aria-label="LinkedIn" className="eg-social">
-                IN
-              </a>
-            </div>
           </div>
 
-          <div className="eg-form-col">
+          <div className="eg-form-col d-flex flex-column">
             <div className="eg-form-card">
-              <h4>ENVIAR UN MENSAJE</h4>
+              <h4 className="text-right mb-20">ENVIAR UN MENSAJE</h4>
               {status.type === "success" && (
                 <div className="eg-alert success">{status.msg}</div>
               )}
@@ -140,49 +152,52 @@ function Footer({ lightMode, subBg }) {
                 className="eg-contact-form"
                 noValidate
               >
+                <label className="input-label">Nombre</label>
                 <input
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  placeholder="Nombre"
                   required
                 />
+                <label className="input-label">Correo electrónico</label>
                 <input
                   name="email"
                   type="email"
                   value={form.email}
                   onChange={handleChange}
-                  placeholder="Correo electrónico"
                   required
                 />
+                <label className="input-label">Mensaje</label>
                 <textarea
                   name="message"
+                  type="text"
                   value={form.message}
                   onChange={handleChange}
-                  placeholder="Mensaje"
                   rows="4"
                   required
                 />
                 <div className="eg-form-actions">
                   <button
-                    type="button"
-                    className="btn btn-secondary"
-                    onClick={() =>
-                      setForm({ name: "", email: "", message: "" })
-                    }
-                    disabled={loading}
-                  >
-                    CANCELAR
-                  </button>
-                  <button
                     type="submit"
-                    className="btn btn-primary"
+                    className="btn btn-primary text-light"
                     disabled={loading}
                   >
                     {loading ? "ENVIANDO..." : "ENVIAR"}
                   </button>
                 </div>
               </form>
+            </div>
+            <div className="eg-socials">
+              <h4 className="text-dark">SÍGUENOS EN</h4>
+              <a href="#" aria-label="Instagram" className="eg-social">
+                {instagramSvg}
+              </a>
+              <a href="#" aria-label="Facebook" className="eg-social">
+                {facebookSvg}
+              </a>
+              <a href="#" aria-label="LinkedIn" className="eg-social">
+                {linkedinSvg}
+              </a>
             </div>
           </div>
         </div>

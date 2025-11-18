@@ -1,6 +1,6 @@
-import { facebookSvg, instagramSvg } from "@/data/icons";
 import React, { useState } from "react";
 import { Form as RBForm, Button, Row, Col, Alert } from "react-bootstrap";
+import { FaWhatsapp } from "react-icons/fa";
 
 function Form() {
   const [form, setForm] = useState({
@@ -56,7 +56,13 @@ function Form() {
 
   const handleDetailChange = (e) => {
     const { name, value } = e.target;
-    setDetails((d) => ({ ...d, [name]: value }));
+    setDetails((d) => {
+      // Si cambia el tipo de producto, limpiar el producto específico seleccionado
+      if (name === "productType") {
+        return { ...d, [name]: value, product: "" };
+      }
+      return { ...d, [name]: value };
+    });
   };
 
   const handleFileChange = async (e) => {
@@ -152,26 +158,122 @@ function Form() {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus({ type: "", message: "" });
-    if (!validate()) return;
-    setLoading(true);
+  // Función separada para enviar email de respaldo
+  const sendBackupEmail = async (formData, detailsData) => {
     try {
-      const payload = { ...form, details };
-      const res = await fetch("/api/send-contact", {
+      console.log("📧 Enviando email de respaldo...");
+      const payload = { ...formData, details: detailsData };
+
+      // Crear un AbortController para timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 segundos timeout
+
+      const emailResponse = await fetch("/api/send-contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
+        signal: controller.signal,
       });
-      const json = await res.json();
-      if (!res.ok) throw new Error(json?.message || "Error servidor");
+
+      clearTimeout(timeoutId);
+
+      if (emailResponse.ok) {
+        const emailResult = await emailResponse.json();
+        console.log(
+          "✅ Email de respaldo enviado correctamente:",
+          emailResult.message
+        );
+      } else {
+        const emailError = await emailResponse.json();
+        console.log(
+          "⚠️ Error al enviar email de respaldo:",
+          emailError.message
+        );
+      }
+    } catch (emailErr) {
+      if (emailErr.name === "AbortError") {
+        console.log("⏱️ Timeout del email de respaldo");
+      } else {
+        console.log("❌ Email backup failed:", emailErr);
+      }
+      // No mostramos error al usuario ya que WhatsApp es el canal principal
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ type: "", message: "" });
+    if (!validate()) {
+      setStatus({
+        type: "error",
+        message:
+          "Por favor, completa todos los campos requeridos correctamente.",
+      });
+      return;
+    }
+    setLoading(true);
+
+    try {
+      // Formatear mensaje para WhatsApp
+
+      const message = `
+
+${form.name ? `*NUEVA COTIZACIÓN EXPRESS*\n\n` : ""}
+
+${form.name ? `*DATOS DEL CLIENTE*\n\n` : ""}
+• Nombre: ${form.name || ""}
+• Empresa: ${form.company || ""}
+• Email: ${form.email || ""}
+• Teléfono: ${form.phone || ""}
+
+${details.productType ? `\n\n*DETALLES DEL PRODUCTO*\n\n` : ""}
+• Tipo: ${details.productType || ""}
+• Producto: ${details.product || ""}
+• Material: ${details.material || ""}
+• Medidas: ${details.width || ""}cm x ${details.height || ""}cm
+• Cantidad: ${details.quantity || 1}
+${details.fileName ? `\n\n• Archivo adjunto: ${details.fileName}` : ""}
+• Fecha de entrega: ${details.deliveryDate || ""}
+${details.comments ? `\n\n• Comentarios: ${details.comments}` : ""}
+
+_Enviado desde el formulario web_
+      `.trim();
+
+      // Número de WhatsApp de la empresa (ajusta con tu número)
+      // Formato: código de país + número sin espacios ni caracteres especiales
+      const whatsappNumber =
+        process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "56920390272";
+
+      // Codificar mensaje para URL
+      const encodedMessage = encodeURIComponent(message);
+
+      // Crear URL de WhatsApp
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+      console.log("WhatsApp URL:", whatsappURL); // Debug log
+
+      // Mostrar mensaje de éxito inmediatamente
       setStatus({
         type: "success",
-        message: "Solicitud enviada. Revisaremos y responderemos por correo.",
+        message:
+          "¡Gracias por contactarnos! Serás redirigido a WhatsApp. Te responderemos pronto.",
       });
+
+      // Abrir WhatsApp en nueva ventana después de 1 segundo
+      setTimeout(() => {
+        window.open(whatsappURL, "_blank");
+      }, 1000);
+
+      // Guardar datos antes de limpiar el formulario
+      const formBackup = { ...form };
+      const detailsBackup = { ...details };
+
+      // Limpiar formulario inmediatamente para mejorar UX
       setForm({ name: "", company: "", email: "", phone: "" });
       resetDetails();
+
+      // Enviar email de respaldo de forma asíncrona (no bloquea la UI)
+      sendBackupEmail(formBackup, detailsBackup);
     } catch (err) {
       setStatus({ type: "error", message: err.message || "Error enviando" });
     } finally {
@@ -194,7 +296,7 @@ function Form() {
         )}
 
         <RBForm onSubmit={handleSubmit} noValidate>
-          <div className="row">
+          <div className="row d-flex flex-row">
             <article className="col-lg-5">
               <div className="sec-lg-head mb-60">
                 <h2 className="fz-20">
@@ -362,6 +464,40 @@ function Form() {
                 <Col md={12}>
                   <RBForm.Group
                     className="mb-3 d-flex flex-row justify-content-between align-items-center"
+                    controlId="product"
+                  >
+                    <RBForm.Label>Producto específico</RBForm.Label>
+                    <RBForm.Select
+                      name="product"
+                      value={details.product}
+                      onChange={handleDetailChange}
+                      isInvalid={!!errors.product}
+                      disabled={!details.productType}
+                      style={{
+                        width: "70%",
+                        border: "none",
+                        fontWeight: "500",
+                        fontSize: "0.7rem",
+                        color: "#9191919",
+                        backgroundColor: "#9191912a",
+                      }}
+                    >
+                      <option value="">- Seleccionar producto -</option>
+                      {currentProducts.map((p) => (
+                        <option key={p} value={p}>
+                          {p}
+                        </option>
+                      ))}
+                    </RBForm.Select>
+                    <RBForm.Control.Feedback type="invalid">
+                      {errors.product}
+                    </RBForm.Control.Feedback>
+                  </RBForm.Group>
+                </Col>
+
+                <Col md={12}>
+                  <RBForm.Group
+                    className="mb-3 d-flex flex-row justify-content-between align-items-center"
                     controlId="material"
                   >
                     <RBForm.Label>Material deseado</RBForm.Label>
@@ -392,9 +528,11 @@ function Form() {
                   </RBForm.Group>
                 </Col>
 
-                <section className="mb-2 d-flex flex-row justify-content-between align-items-center">
-                  <RBForm.Label className="me-3">Medidas (cm.)</RBForm.Label>
-                  <Col md={3}>
+                <section className="mb-2 d-flex flex-row justify-content-start align-items-center">
+                  <RBForm.Label className="me-3 mr-80">
+                    Medidas (cm.)
+                  </RBForm.Label>
+                  <Col md={2}>
                     <RBForm.Group controlId="width">
                       <RBForm.Select
                         name="width"
@@ -402,7 +540,10 @@ function Form() {
                         onChange={handleDetailChange}
                         isInvalid={!!errors.width}
                         style={{
-                          width: "70%",
+                          width: "100%",
+                          maxWidth: "100px",
+                          height: "30px",
+                          margin: "0",
                           border: "none",
                           fontWeight: "500",
                           fontSize: "0.7rem",
@@ -421,7 +562,7 @@ function Form() {
                       </RBForm.Control.Feedback>
                     </RBForm.Group>
                   </Col>
-                  <Col md={3}>
+                  <Col md={2}>
                     <RBForm.Group controlId="height">
                       <RBForm.Select
                         name="height"
@@ -429,11 +570,12 @@ function Form() {
                         onChange={handleDetailChange}
                         isInvalid={!!errors.height}
                         style={{
-                          width: "70%",
+                          width: "90%",
                           border: "none",
                           fontWeight: "500",
                           fontSize: "0.7rem",
                           backgroundColor: "#9191912a",
+                          marginRight: "1rem",
                         }}
                       >
                         <option value="">- Alto -</option>
@@ -450,22 +592,27 @@ function Form() {
                   </Col>
                   <Col md={2}>
                     <RBForm.Group
-                      className="d-flex flex-row justify-content-start align-items-center"
+                      className="d-flex flex-row ms-2 align-items-center justify-content-start"
                       controlId="quantity"
                     >
-                      <RBForm.Label>Cantidad</RBForm.Label>
                       <RBForm.Select
                         name="quantity"
                         value={details.quantity}
                         onChange={handleDetailChange}
                         isInvalid={!!errors.quantity}
                         style={{
-                          width: "70%",
+                          width: "100%",
+                          maxWidth: "100px",
+                          height: "30px",
+                          margin: "0",
                           border: "none",
                           fontWeight: "500",
                           fontSize: "0.7rem",
+                          color: "#9191919",
                           backgroundColor: "#9191912a",
+                          marginLeft: "1.5rem",
                         }}
+                        required
                       >
                         {quantities.map((q) => (
                           <option key={q} value={q}>
@@ -500,11 +647,11 @@ function Form() {
                         backgroundColor: "#9191912a",
                       }}
                     />
-                    {details.fileName && (
+                    {/* {details.fileName && (
                       <div className="small mt-1">
                         Archivo: {details.fileName}
                       </div>
-                    )}
+                    )} */}
                     {errors.file && (
                       <div className="text-danger small">{errors.file}</div>
                     )}
@@ -580,11 +727,19 @@ function Form() {
                   </Button>
                   <Button
                     type="submit"
-                    className="text-light"
-                    variant="warning"
+                    className="text-light d-flex align-items-center gap-2"
+                    variant="success"
                     disabled={loading}
+                    style={{ backgroundColor: "#25D366" }}
                   >
-                    {loading ? "Enviando..." : "Solicitar cotización"}
+                    {loading ? (
+                      "Enviando..."
+                    ) : (
+                      <>
+                        <FaWhatsapp size={20} />
+                        Enviar por WhatsApp
+                      </>
+                    )}
                   </Button>
                 </Col>
               </Row>

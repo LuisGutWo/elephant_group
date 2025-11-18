@@ -9,7 +9,23 @@ import data from "@/data/Main/portfolioGalleryPage.json";
 
 function GridPortfolioImages() {
   useEffect(() => {
-    initIsotope();
+    // Asegurar que el script de Isotope esté cargado
+    const checkIsotopeLoaded = setInterval(() => {
+      if (typeof window !== "undefined" && window.Isotope) {
+        clearInterval(checkIsotopeLoaded);
+        initIsotope();
+      }
+    }, 100);
+
+    // Limpiar el intervalo después de 5 segundos si Isotope no se carga
+    const timeout = setTimeout(() => {
+      clearInterval(checkIsotopeLoaded);
+    }, 5000);
+
+    return () => {
+      clearInterval(checkIsotopeLoaded);
+      clearTimeout(timeout);
+    };
   }, []);
 
   return (
