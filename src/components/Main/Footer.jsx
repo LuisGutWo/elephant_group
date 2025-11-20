@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import {
   facebookSvg,
   geoTagSvg,
@@ -47,7 +46,7 @@ function Footer({ lightMode, subBg }) {
         throw new Error("Form is null or undefined");
       }
 
-      const { name, email, message } = form;
+      const { name, company, email, message } = form;
 
       if (
         !name.trim() ||
@@ -68,9 +67,9 @@ function Footer({ lightMode, subBg }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name,
-          company: "Contacto web",
+          company,
           email,
-          phone: "No proporcionado",
+          phone,
           message: message.trim(),
           content: message.trim(), // Add alternative field name
           body: message.trim(), // Add another alternative field name
