@@ -147,10 +147,14 @@ function Acabados() {
                 <h4 className="mb-30">Servicios Relacionados</h4>
                 <ul className="services-links">
                   <li>
-                    <Link href="/services/impresion-digital">Impresión Digital</Link>
+                    <Link href="/services/impresion-digital">
+                      Impresión Digital
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/services/impresion-offset">Impresión Offset</Link>
+                    <Link href="/services/impresion-offset">
+                      Impresión Offset
+                    </Link>
                   </li>
                   <li>
                     <Link href="/services/gran-formato">Gran Formato</Link>

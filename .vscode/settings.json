@@ -9,7 +9,19 @@
     "*.cns": "c",
     "*.cns.h": "c"
   },
-  "cSpell.language": "es",
+  "cSpell.language": "en,es",
+  "cSpell.enabledLanguageIds": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "jsonc",
+    "markdown",
+    "css",
+    "scss",
+    "html"
+  ],
   "cSpell.words": [
     "aboutus",
     "acceleration",
@@ -111,6 +123,7 @@
     "preflight",
     "prepicados",
     "prevent",
+    "Previsualizar",
     "primery",
     "qhuvnpnvmshqwysk",
     "quantities",
@@ -158,6 +171,7 @@
     "sure",
     "Tablet",
     "telephone",
+    "terminos",
     "Timeout",
     "totem",
     "Tótems",
