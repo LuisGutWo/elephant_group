@@ -109,14 +109,18 @@ function Header() {
                       {/* Glass effect container con forma original */}
                       <div className="caption-glass">
                         <div className="caption-content">
-                          <p className="hero-subtitle" itemProp="description">
+                          <span
+                            className="eg-section-eyebrow"
+                            itemProp="description"
+                          >
                             <StatementSplitter
                               statement={item.subtitle || ""}
                             />
-                          </p>
-                          <h1 className="hero-title" itemProp="name">
+                          </span>
+                          <h1 className="eg-section-title" itemProp="name">
                             <StatementSplitter statement={item.title || ""} />
                           </h1>
+                          {/* No description aquí, solo eyebrow y title */}
                           <meta itemProp="provider" content="Elephant Group" />
                           <meta
                             itemProp="serviceType"

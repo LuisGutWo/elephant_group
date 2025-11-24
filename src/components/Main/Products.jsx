@@ -28,15 +28,16 @@ function Products() {
         aria-label="Productos publicitarios destacados"
       >
         <div className="container ontop">
-          {/* Header optimizado SEO */}
+          {/* Header de sección unificado */}
           <div className="row d-flex justify-content-center">
             <div className="col-lg-8 text-center">
-              <div className="modern-section-head mb-80">
-                <p className="section-eyebrow">Bestsellers 2025</p>
-                <h2 className="section-title" itemProp="name">
-                  Productos <span className="accent-text">Destacados</span>
+              <div className="mb-80">
+                <span className="eg-section-eyebrow">Bestsellers 2025</span>
+                <h2 className="eg-section-title" itemProp="name">
+                  Productos <span className="accent-text">Publicitarios</span>{" "}
+                  Más Vendidos
                 </h2>
-                <p className="section-description" itemProp="description">
+                <p className="eg-section-description" itemProp="description">
                   <strong>Tótems</strong>, <strong>pendones roller</strong>,{" "}
                   <strong>señalética personalizada</strong> y{" "}
                   <strong>stickers</strong> en Valparaíso. Los productos más

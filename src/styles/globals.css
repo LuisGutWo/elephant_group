@@ -1,7 +1,188 @@
-@import "./footer-vertical-override.css";
 @import "./modern-clients.css";
 @import "./form-elegant.css";
 @import "./portfolio-elegant.css";
+/* ====================== Section Headers Unificados ====================== */
+.eg-section-eyebrow {
+  color: #fca311;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 18px;
+}
+.eg-section-eyebrow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fca311;
+}
+.eg-section-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+.eg-section-description {
+  font-size: 1.125rem;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 767px) {
+  .eg-section-title {
+    font-size: 1.5rem;
+  }
+  .eg-section-description {
+    font-size: 1rem;
+  }
+}
+/* Efecto hover y activo para navbar y submenu */
+.navbar .nav-link,
+.navbar .dropdown-item {
+  transition: color 0.2s;
+  position: relative;
+  padding-bottom: 6px;
+}
+.navbar .nav-link::after,
+.navbar .dropdown-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-primary, #fca311);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+.navbar .nav-link:hover::after,
+.navbar .nav-link.is-active::after,
+.navbar .dropdown-item:hover::after,
+.navbar .dropdown-item.is-active::after {
+  transform: scaleX(1);
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.is-active,
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item.is-active {
+  color: var(--color-primary, #fca311) !important;
+}
+.navbar .dropdown-toggle::after {
+  display: none !important;
+}
+/* ====================== Header Base Unificado ====================== */
+.eg-header-base {
+  position: relative;
+  z-index: 1;
+  min-height: 340px;
+  padding: 100px 0 60px 0;
+  background: #fff;
+  overflow: hidden;
+}
+.eg-header-base .background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0.12;
+  z-index: 0;
+}
+.eg-header-base .container {
+  position: relative;
+  z-index: 1;
+}
+.eg-header-base .caption {
+  margin-bottom: 1.5rem;
+}
+.eg-header-base .eg-header-eyebrow {
+  color: #fca311;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 20px;
+}
+.eg-header-base .eg-header-eyebrow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #fca311;
+}
+.eg-header-base .eg-header-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+}
+.eg-header-base .eg-header-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #666;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+@media (max-width: 991px) {
+  .eg-header-base .eg-header-title {
+    font-size: 2.5rem;
+  }
+  .eg-header-base .eg-header-description {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 767px) {
+  .eg-header-base .eg-header-eyebrow {
+    font-size: 0.75rem;
+    padding-left: 15px;
+  }
+  .eg-header-base .eg-header-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .eg-header-base .eg-header-description {
+    font-size: 0.9375rem;
+  }
+}
+@media (max-width: 479px) {
+  .eg-header-base .eg-header-title {
+    font-size: 1.75rem;
+  }
+  .eg-header-base .eg-header-description {
+    font-size: 0.875rem;
+  }
+}
+/* Aplica el fondo oscuro a todo el footer bottom */
+.eg-footer-bottom {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
 
 body {
   padding: 0 !important;
@@ -459,128 +640,152 @@ body {
   backface-visibility: hidden;
 }
 
-/* ====================== [ Footer Bottom Mobile Improvements ] ====================== */
+/* ====================== [ Footer Bottom - Diseño Original ] ====================== */
 
-/* Mejorar el contenedor principal */
+/* Contenedor principal */
 .eg-footer-bottom-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.875rem;
-  padding: 2.1875rem 0.9375rem;
-  min-height: 10rem;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
 }
 
-.eg-footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5625rem;
-  width: 100%;
-}
-
-/* Navegación del footer mejorada - ahora primero */
-.eg-footer-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.9375rem;
-  order: 1;
-  width: 100%;
-}
-
-/* Logo del footer - ahora segundo como en diseño original */
+/* Logo del footer - primero, centrado arriba */
 .eg-footer-logo-container {
   display: flex;
   justify-content: center;
-  order: 2;
-  margin-top: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .eg-footer-logo {
-  height: 2.8125rem;
-  max-width: 11.25rem;
+  height: auto;
+  max-width: 180px;
+  width: 100%;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .eg-footer-logo:hover {
   transform: scale(1.05);
+  opacity: 0.9;
 }
 
-.eg-footer-nav-row {
+/* Navegación horizontal - segunda, debajo del logo */
+.eg-footer-nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem 1.25rem;
+  gap: 0.75rem 1rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
 }
 
 .eg-footer-link {
   color: #cfcfcf;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   text-decoration: none;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.375rem;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
   white-space: nowrap;
-  text-align: center;
+  position: relative;
 }
 
 .eg-footer-link:hover {
-  color: #f3731d;
-  background-color: rgba(243, 115, 29, 0.1);
-  transform: translateY(-0.125rem);
+  color: #fca311;
 }
 
-.eg-footer-link:active {
-  transform: translateY(0);
+.eg-footer-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #fca311;
+  transition: width 0.3s ease;
 }
 
-/* Copyright */
-.eg-footer-copyright {
-  order: 3;
-  text-align: center;
+.eg-footer-link:hover::after {
   width: 100%;
 }
 
-.eg-footer-copyright small {
-  color: #9b9b9b;
-  font-size: 0.75rem;
-  line-height: 1.4;
-  display: block;
+.eg-footer-separator {
+  color: #fca311;
+  font-size: 0.875rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.eg-footer-break-mobile {
-  display: none;
+/* Copyright - último, pequeño y centrado */
+.eg-footer-copyright {
+  text-align: center;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.eg-footer-copyright small {
+  color: #888;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  display: block;
 }
 
 /* ====================== [ Responsive Breakpoints ] ====================== */
 
-/* Tablet Portrait */
-@media (min-width: 36rem) {
+/* Móvil pequeño */
+@media (max-width: 480px) {
   .eg-footer-bottom-inner {
-    padding: 2.5rem 1.25rem;
-    gap: 2.1875rem;
-    min-height: 10rem;
+    gap: 0.5rem;
+    padding: 0.75rem 0.75rem;
   }
 
-  .eg-footer-content {
-    gap: 1.875rem;
-  }
   .eg-footer-logo {
-    height: 2.625rem;
-    max-width: 11.25rem;
+    max-width: 140px;
   }
 
-  .eg-footer-nav-row {
-    gap: 0.75rem 1.5625rem;
+  .eg-footer-nav {
+    gap: 0.5rem 0.75rem;
   }
 
   .eg-footer-link {
-    font-size: 0.875rem;
-    padding: 0.625rem 0.9375rem;
+    font-size: 0.75rem;
+  }
+
+  .eg-footer-separator {
+    font-size: 0.75rem;
+    margin: 0 0.25rem;
+  }
+
+  .eg-footer-copyright small {
+    font-size: 0.6875rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .eg-footer-bottom-inner {
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .eg-footer-logo {
+    max-width: 200px;
+  }
+
+  .eg-footer-link {
+    font-size: 0.9375rem;
+  }
+
+  .eg-footer-separator {
+    font-size: 0.9375rem;
   }
 
   .eg-footer-copyright small {
@@ -588,146 +793,27 @@ body {
   }
 }
 
-/* Tablet Landscape */
-@media (min-width: 48rem) {
-  .eg-footer-bottom-inner {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2.1875rem;
-    padding: 1.5625rem 1.875rem;
-    min-height: 5.625rem;
-  }
-
-  .eg-footer-content {
-    flex-direction: row;
-    align-items: center;
-    gap: 2.1875rem;
-    width: auto;
-  }
-
-  .eg-footer-nav {
-    order: 1;
-    flex-direction: row;
-    width: auto;
-  }
-
-  .eg-footer-logo-container {
-    order: 2;
-    display: flex; /* Asegurar que se muestre en desktop */
-    justify-content: center;
-  }
-
-  .eg-footer-nav-row {
-    gap: 0.5rem 0.9375rem;
-  }
-
-  .eg-footer-copyright {
-    order: 3;
-    text-align: right;
-    width: auto;
-  }
-
-  .eg-footer-break-mobile {
-    display: none;
-  }
-}
-
 /* Desktop */
-@media (min-width: 62rem) {
+@media (min-width: 1024px) {
   .eg-footer-bottom-inner {
-    padding: 1.75rem 2.5rem;
-    min-height: 6.25rem;
-  }
-
-  .eg-footer-content {
-    gap: 2.8125rem;
-  }
-
-  .eg-footer-logo-container {
-    display: flex; /* Mostrar el logo en desktop */
-    justify-content: center;
+    gap: 1rem;
+    padding: 1.25rem 2rem;
   }
 
   .eg-footer-logo {
-    height: 2.75rem;
-    max-width: 12.5rem;
-  }
-
-  .eg-footer-nav-row {
-    gap: 0.625rem 1.25rem;
-  }
-}
-
-/* Large Desktop */
-@media (min-width: 75rem) {
-  .eg-footer-logo-container {
-    display: flex; /* Mantener visible en pantallas grandes */
-  }
-
-  .eg-footer-logo {
-    height: 2.875rem; /* Ligeramente más grande en pantallas muy grandes */
-    max-width: 13.125rem;
-  }
-
-  .eg-footer-nav-row {
-    gap: 0.75rem 1.5625rem;
-  }
-
-  .eg-footer-link {
-    padding: 0.75rem 1.125rem;
-  }
-}
-
-/* Extra Small Mobile */
-@media (max-width: 23.4375rem) {
-  .eg-footer-bottom-inner {
-    padding: 1.875rem 0.75rem;
-    gap: 1.5625rem;
-    min-height: 8.125rem;
-  }
-
-  .eg-footer-content {
-    gap: 1.25rem;
-  }
-  .eg-footer-logo {
-    height: 2.25rem;
-    max-width: 8.75rem;
+    max-width: 220px;
   }
 
   .eg-footer-nav {
-    gap: 0.625rem;
-  }
-
-  .eg-footer-nav-row {
-    gap: 0.375rem 0.9375rem;
+    gap: 1rem 1.25rem;
   }
 
   .eg-footer-link {
-    font-size: 0.75rem;
-    padding: 0.375rem 0.625rem;
+    font-size: 1rem;
   }
 
-  .eg-footer-copyright small {
-    font-size: 0.6875rem;
-  }
-
-  .eg-footer-break-mobile {
-    display: inline;
-  }
-}
-
-/* Very Small Mobile */
-@media (max-width: 20rem) {
-  .eg-footer-nav-row {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .eg-footer-link {
-    width: 100%;
-    max-width: 12.5rem;
-    text-align: center;
+  .eg-footer-separator {
+    margin: 0 0.5rem;
   }
 }
 
@@ -739,28 +825,11 @@ body {
 /* ====================== [ Portfolio Styles - Moved to portfolio-elegant.css ] ====================== */
 /* All portfolio styles are now in portfolio-elegant.css for better organization */
 
-/* .eg-portfolio {
-  position: relative;
-  overflow: hidden;
-}
+/* Removed commented code - see portfolio-elegant.css */
 
-.eg-portfolio::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(243, 115, 29, 0.02) 0%,
-    rgba(224, 91, 26, 0.05) 100%
-  );
-  z-index: 0;
-}
+/* Header Styles - removed old portfolio styles that are now in portfolio-elegant.css */
 
-/* Header Styles */
-.eg-portfolio-header {
+.eg-portfolio-header-removed {
   position: relative;
   z-index: 2;
   margin-bottom: 4rem;
@@ -1200,6 +1269,8 @@ body {
 
 /* ====================== [ Header Improvements ] ====================== */
 
+/* ====================== [ Header Improvements ] ====================== */
+
 /* Mejorar la estabilidad y responsive del header slider */
 .arch-slider {
   position: relative;
@@ -1259,13 +1330,13 @@ body {
   -webkit-backdrop-filter: blur(0.625rem);
   backdrop-filter: blur(0.625rem);
   border-radius: 0 1.875rem 1.875rem 0;
-  padding: 1rem 1.75rem 1rem 0;
-  margin-left: -10rem;
-  padding-left: 7.5rem;
+  padding: 1.5rem 2.5rem 1.5rem 0;
+  margin-left: -8rem;
+  padding-left: 6rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
   margin-top: 2rem;
-  max-width: fit-content;
+  max-width: 700px;
 }
 
 .arch-slider .caption-content {
@@ -1278,17 +1349,16 @@ body {
   font-size: 1.1rem !important;
   font-weight: 400 !important;
   line-height: 1.3 !important;
-  margin-bottom: 0.25rem !important;
+  margin-bottom: 0.4rem !important;
   color: #f0f0f0 !important;
   opacity: 0.9;
-  white-space: nowrap;
 }
 
 .arch-slider .caption-content h1,
 .arch-slider .caption-content .hero-title {
-  font-size: 3.2rem !important;
-  font-weight: 800 !important;
-  line-height: 1.1 !important;
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
   color: #ffffff !important;
   text-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
   margin: 0;
@@ -1298,7 +1368,8 @@ body {
 /* Contenedor del botón fuera del glass effect */
 .arch-slider .caption-button-container {
   margin-top: 0;
-  margin-left: 1.25rem;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 /* Mejorar el botón */
@@ -1358,22 +1429,21 @@ body {
 
   .arch-slider .caption-glass {
     margin-left: -3.125rem !important;
-    padding-left: 4.375rem !important;
-    padding: 1.5rem 2rem 1.5rem 4.375rem !important;
-    max-width: 100%;
+    padding-left: 4rem !important;
+    padding: 1.2rem 2rem 1.2rem 4rem !important;
+    max-width: 90%;
     border-radius: 0 1.5625rem 1.5625rem 0 !important;
   }
 
   .arch-slider .caption-content h1,
   .arch-slider .caption-content .hero-title {
-    font-size: 2.2rem !important;
-    white-space: normal !important;
+    font-size: 1.9rem !important;
+    white-space: normal;
   }
 
   .arch-slider .caption-content h2,
   .arch-slider .caption-content .hero-subtitle {
-    font-size: 1.1rem !important;
-    white-space: normal !important;
+    font-size: 0.95rem !important;
   }
 
   .arch-slider .caption-button-container {
@@ -1392,22 +1462,22 @@ body {
   .arch-slider .caption-glass {
     margin-left: -1.25rem !important;
     padding-left: 2.5rem !important;
-    padding: 1.3rem 1.5rem 1.3rem 2.5rem !important;
+    padding: 1rem 1.5rem 1rem 2.5rem !important;
     border-radius: 0 1.25rem 1.25rem 0 !important;
+    max-width: 95%;
   }
 
   .arch-slider .caption-content h1,
   .arch-slider .caption-content .hero-title {
-    font-size: 1.8rem !important;
+    font-size: 1.6rem !important;
     margin-bottom: 0.5rem !important;
-    white-space: normal !important;
+    white-space: normal;
   }
 
   .arch-slider .caption-content h2,
   .arch-slider .caption-content .hero-subtitle {
-    font-size: 0.95rem !important;
+    font-size: 0.9rem !important;
     margin-bottom: 0.3rem !important;
-    white-space: normal !important;
   }
 
   .arch-slider .caption-button-container {
@@ -1436,18 +1506,20 @@ body {
   .arch-slider .caption-glass {
     margin-left: -0.625rem !important;
     padding-left: 1.875rem !important;
-    padding: 1.2rem 1.2rem 1.2rem 1.875rem !important;
+    padding: 0.9rem 1.2rem 0.9rem 1.875rem !important;
     border-radius: 0 0.9375rem 0.9375rem 0 !important;
+    max-width: 98%;
   }
 
   .arch-slider .caption-content h1,
   .arch-slider .caption-content .hero-title {
-    font-size: 1.5rem !important;
+    font-size: 1.3rem !important;
+    white-space: normal;
   }
 
   .arch-slider .caption-content h2,
   .arch-slider .caption-content .hero-subtitle {
-    font-size: 0.9rem !important;
+    font-size: 0.8rem !important;
   }
 
   .arch-slider .top__navbar-button {
@@ -1937,265 +2009,10 @@ body {
 
 /* ====================== [ FooterBottom Previous Design Styles ] ====================== */
 
-/* Footer Bottom */
-.eg-footer-bottom {
-  font-family: Inter, Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background: #1a1a1a;
-  color: #ddd;
-  padding: 2rem 0 1.5rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.eg-footer-bottom::after {
-  content: "";
-  background-image: url(/light/assets/imgs/patterns/asx7.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  opacity: 0.08;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  pointer-events: none;
-  mix-blend-mode: multiply;
-}
-
-.eg-footer-bottom-inner {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 0;
-  position: relative;
-  z-index: 1;
-  margin-bottom: 1.5rem;
-}
-
-/* Footer Navigation */
-.eg-footer-nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  flex: 1;
-}
-
-.eg-footer-link {
-  display: inline-block;
-  color: #999;
-  text-decoration: none;
-  font-size: 0.875rem;
-  font-weight: 400;
-  transition: color 0.3s ease;
-  position: relative;
-  white-space: nowrap;
-}
-
-.eg-footer-link:hover {
-  color: #fca311;
-}
-
-/* Logo */
-.eg-footer-logo-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.eg-footer-logo {
-  height: 2.5rem;
-  width: auto;
-  max-width: 10rem;
-  transition: opacity 0.3s ease;
-}
-
-.eg-footer-logo:hover {
-  opacity: 0.8;
-}
-
-.eg-footer-spacer {
-  flex-shrink: 0;
-  width: 10rem;
-}
-
-/* Copyright */
-.eg-footer-copyright {
-  text-align: center;
-  width: 100%;
-  padding-top: 1.5rem;
-  margin-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.eg-footer-copyright small {
-  color: #666;
-  font-size: 0.75rem;
-  line-height: 1.4;
-  display: block;
-}
-
-/* ====================== [ Responsive Breakpoints ] ====================== */
-
-/* Tablet Portrait */
-@media (min-width: 36rem) {
-  .eg-footer-logo {
-    height: 1.875rem;
-    max-width: 7.5rem;
-  }
-
-  .eg-footer-copyright small {
-    font-size: 0.8125rem;
-  }
-}
-
-/* Tablet Landscape */
-@media (min-width: 48rem) {
-  .eg-footer-bottom {
-    padding: 1rem 0;
-  }
-
-  .eg-footer-nav {
-    gap: 2rem;
-  }
-
-  .eg-footer-link {
-    font-size: 0.9375rem;
-  }
-}
-
-/* Desktop */
-@media (min-width: 62rem) {
-  .eg-footer-bottom {
-    padding: 1rem 0;
-  }
-
-  .eg-footer-logo {
-    height: 2rem;
-    max-width: 8rem;
-  }
-
-  .eg-footer-spacer {
-    width: 12rem;
-  }
-
-  .eg-footer-nav {
-    gap: 3rem;
-  }
-
-  .eg-footer-link {
-    font-size: 1rem;
-  }
-
-  .eg-footer-copyright {
-    padding-top: 2rem;
-    margin-top: 2rem;
-  }
-
-  .eg-footer-copyright small {
-    font-size: 0.875rem;
-  }
-}
-
-/* Large Desktop */
-@media (min-width: 75rem) {
-  .eg-footer-bottom {
-    padding: 1.25rem 0;
-  }
-
-  .eg-footer-logo {
-    height: 2.25rem;
-    max-width: 8.5rem;
-  }
-
-  .eg-footer-spacer {
-    width: 14rem;
-  }
-
-  .eg-footer-nav {
-    gap: 3.5rem;
-  }
-
-  .eg-footer-link {
-    font-size: 1.0625rem;
-  }
-}
-
-/* Mobile Specific */
-@media (max-width: 47.9375rem) {
-  .eg-footer-bottom {
-    padding: 1rem 0 0.75rem;
-  }
-
-  .eg-footer-bottom-inner {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .eg-footer-logo-container {
-    order: 1;
-  }
-
-  .eg-footer-logo {
-    height: 1.75rem;
-    max-width: 7rem;
-  }
-
-  .eg-footer-nav {
-    order: 2;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .eg-footer-link {
-    font-size: 0.875rem;
-  }
-
-  .eg-footer-separator {
-    display: none;
-  }
-
-  .eg-footer-spacer {
-    display: none;
-  }
-
-  .eg-footer-copyright {
-    order: 3;
-    padding-top: 1rem;
-    margin-top: 1rem;
-  }
-
-  .eg-footer-copyright small {
-    font-size: 0.6875rem;
-  }
-}
-
-/* Very Small Mobile */
-@media (max-width: 20rem) {
-  .eg-footer-nav-row {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .eg-footer-link {
-    width: 100%;
-    max-width: 12.5rem;
-    text-align: center;
-  }
-}
-
-/* Dark mode adjustments */
-.dark .eg-footer-link:hover {
-  background-color: rgba(243, 115, 29, 0.15);
+/* Posiciona el botón ScrollToTop en la esquina inferior izquierda */
+.progress-wrap {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 1000;
 }

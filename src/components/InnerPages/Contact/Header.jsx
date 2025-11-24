@@ -2,51 +2,48 @@ import React from "react";
 
 function Header() {
   return (
-    <header className="page-header section-padding p-100 bg-img bg-overlay">
-      {/* Background image with opacity */}
+    <header
+      className="eg-header-base"
+      itemScope
+      itemType="https://schema.org/WPHeader"
+    >
       <div
+        className="background-img"
         style={{
           backgroundImage: "url(/dark/assets/imgs/background/work-127.webp)",
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-          opacity: 0.1, // Adjust opacity as needed
-          zIndex: 0,
         }}
         aria-hidden="true"
       />
-      <div
-        className="container mt-80"
-        style={{ position: "relative", zIndex: 1 }}
-      >
-        <div className="row">
+      <div className="container mt-80">
+        <div className="row align-items-center">
           <div className="col-lg-7">
             <div className="caption">
-              <p className="sub-title">Contáctanos</p>
-              <h1 className="fz-55">
-                Contacta con Elephant Group <br /> Implementos Publicitarios en
-                Valparaíso
+              <p className="eg-header-eyebrow" itemProp="about">
+                Página de Contacto
+              </p>
+              <h1 className="eg-header-title" itemProp="headline" tabIndex={0}>
+                Ponte en contacto con nosotros
+                <br />
+                <span
+                  style={{
+                    color: "#fca311",
+                    fontSize: "1.5rem",
+                    fontWeight: 400,
+                  }}
+                >
+                  Solicita tu presupuesto o haz tus consultas aquí
+                </span>
               </h1>
             </div>
           </div>
           <div className="col-lg-5 valign">
-            <div className="text">
+            <div className="eg-header-description" itemProp="description">
               <p>
-                <strong>Estamos listos para tu proyecto.</strong> Comunícate con
-                nosotros por WhatsApp al <strong>+56 9 5163 1370</strong> o
-                completa el formulario. Te respondemos en menos de 24 horas con
-                una propuesta personalizada de
-                <strong>
-                  {" "}
-                  señalética, material POP, gigantografías y merchandising
-                </strong>
-                para tu empresa en la V Región.
+                <strong>¿Tienes un proyecto en mente?</strong> Completa el
+                formulario o escríbenos por WhatsApp al{" "}
+                <strong>+56 9 5163 1370</strong>. Te responderemos en menos de
+                24 horas con una propuesta personalizada para tu empresa en la V
+                Región.
               </p>
             </div>
           </div>

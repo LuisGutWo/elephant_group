@@ -6167,7 +6167,7 @@ body.loaded {
 .eg-footer-bottom::after {
   content: "";
   background-image: url(../imgs/patterns/asx7.png);
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   opacity: 0.15;
@@ -6188,6 +6188,7 @@ body.loaded {
   align-items: center;
   justify-content: center;
   gap: 20px;
+  background-color: transparent;
 }
 
 /* Legacy footer styles - now handled in globals.css with better responsive design */

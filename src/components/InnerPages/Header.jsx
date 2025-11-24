@@ -4,62 +4,38 @@ function Header({ data, subBg }) {
   if (!data) {
     throw new Error("Data is null in Header component");
   }
-
   if (!data.title || !data.subTitle || !data.text) {
     throw new Error("Data is missing required properties in Header component");
   }
-
   return (
-    <header
-      className={`page-header section-padding pb-0 ${subBg ? "sub-bg" : ""}`}
-    >
-      <div className="background-img"> </div>
-      <section className="container mt-80">
-        <article className="row">
-          <div className="col-lg-8">
+    <header className="eg-header-base">
+      <div className="background-img" />
+      <div className="container mt-80">
+        <div className="row align-items-center">
+          <div className="col-lg-7">
             <div className="caption">
-              <h6 className="sub-title">{data.subTitle}</h6>
-              <h2 className="fz-55">{data.title}</h2>
+              <p className="eg-header-eyebrow">{data.subTitle}</p>
+              <h1 className="eg-header-title">{data.title}</h1>
             </div>
           </div>
-        </article>
-        <article className="row">
-          <div className="col-lg-5 offset-lg-4">
-            <div className="text mt-30">
+          <div className="col-lg-5 valign">
+            <div className="eg-header-description">
               <p>
-                Nos basamos en una combinación de servicios para lograr el
-                proyecto que tienes en mente. Asesoramos a nuestros clientes
-                durante todo el proceso, logrando as este trabajo personalizado
-                que requiere tu marca.
+                Impulsa tu marca con soluciones publicitarias a medida. En
+                Elephant Group, te guiamos de principio a fin para que tu
+                empresa destaque con una imagen profesional y efectiva.
               </p>
               <br />
               <p>
-                Nuestra misión es ser un asesor publicitario para nuestros
-                clientes, entregando los pasos a seguir para tener una imagen
-                visual empresarial m s profesional.
+                Somos expertos en señalética, material POP, gigantografías y
+                merchandising en Valparaíso. Confía en nuestro equipo para
+                potenciar tu presencia y captar más clientes.
               </p>
             </div>
           </div>
-        </article>
-      </section>
-      <section className="main-marq xlrg section-padding pb-0">
-        <div className="slide-har st1">
-          <div className="box">
-            {new Array(5).fill().map((_, i) => (
-              <div className="item" key={i}>
-                <h4>{data.text}</h4>
-              </div>
-            ))}
-          </div>
-          <div className="box">
-            {new Array(5).fill().map((_, i) => (
-              <div className="item" key={i}>
-                <h4>{data.text}</h4>
-              </div>
-            ))}
-          </div>
         </div>
-      </section>
+      </div>
+      {/* Marquee opcional, si se requiere, puede agregarse aquí */}
     </header>
   );
 }
