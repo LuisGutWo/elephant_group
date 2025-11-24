@@ -91,16 +91,15 @@ function Clients() {
         {/* Header minimalista */}
         <div className="clients-header-minimal">
           <div className="text-center mb-5">
-            <p className="clients-eyebrow">Confianza y Experiencia</p>
+            <p className="section-eyebrow">Confianza y Experiencia</p>
             <h2
               id="clients-heading"
-              className="clients-title-minimal"
+              className="section-title"
               itemProp="description"
             >
-              Empresas que <span className="accent-color">Confían</span> en
-              Nosotros
+              Nuestros <span className="accent-text">Clientes</span>
             </h2>
-            <p className="clients-description">
+            <p className="section-description">
               Desde 2018, más de{" "}
               <strong>100 empresas en Viña, Valparaíso y todo Chile</strong> han
               elegido nuestros{" "}

@@ -4,8 +4,8 @@ function AboutUs() {
   return (
     <section className="eg-about section-padding">
       <div className="container text-center">
-        <h2 className="about-title">NOSOTROS</h2>
-        <p className="about-lead">
+        <h2 className="section-title">NOSOTROS</h2>
+        <p className="section-description">
           En Elephant Group sabemos lo importante que es para tu negocio contar
           con productos de calidad, personalizados y a tiempo. Por eso
           trabajamos con los mejores materiales y procesos para ofrecer

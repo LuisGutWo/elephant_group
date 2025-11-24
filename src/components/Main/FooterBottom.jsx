@@ -4,44 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 const FooterBottom = () => {
-  const logoSrc = "/light/assets/imgs/logo-light.webp";
+  const logoSrc = "/dark/assets/imgs/logo-light.webp";
 
   return (
     <footer>
       <div className="eg-footer-bottom">
-        <div className="container eg-footer-bottom-inner">
-          {/* Contenido principal del footer */}
-          <div className="eg-footer-content">
-            {/* Navegación del footer - primero como en el diseño anterior */}
-            <nav
-              className="eg-footer-nav"
-              role="navigation"
-              aria-label="Footer Navigation"
-            >
-              <div className="eg-footer-nav-row">
-                <Link href="/blog" className="eg-footer-link">
-                  Blog
-                </Link>
-                <a
-                  href="https://listado.mercadolibre.com.ar/_CustId_254777934"
-                  className="eg-footer-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Mercado Libre
-                </a>
-              </div>
-              <div className="eg-footer-nav-row">
-                <Link href="/politica-privacidad" className="eg-footer-link">
-                  Política de Privacidad
-                </Link>
-                <Link href="/terminos" className="eg-footer-link">
-                  Términos y Condiciones
-                </Link>
-              </div>
-            </nav>
-
-            {/* Logo - después de la navegación como en el diseño anterior */}
+        <div className="container">
+          <div className="eg-footer-bottom-inner">
+            {/* Logo a la izquierda */}
             <div className="eg-footer-logo-container">
               <Image
                 src={logoSrc}
@@ -52,14 +22,44 @@ const FooterBottom = () => {
                 priority
               />
             </div>
+
+            {/* Enlaces de navegación en el centro */}
+            <nav
+              className="eg-footer-nav"
+              role="navigation"
+              aria-label="Footer Navigation"
+            >
+              <Link href="/blog" className="eg-footer-link">
+                Blog
+              </Link>
+              <span className="eg-footer-separator"></span>
+              <a
+                href="https://listado.mercadolibre.com.ar/_CustId_254777934"
+                className="eg-footer-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Manual User
+              </a>
+              <span className="eg-footer-separator"></span>
+              <Link href="/politica-privacidad" className="eg-footer-link">
+                Política de Privacidad
+              </Link>
+              <span className="eg-footer-separator"></span>
+              <Link href="/terminos" className="eg-footer-link">
+                Términos y Condiciones
+              </Link>
+            </nav>
+
+            {/* Espacio a la derecha (vacío para balance) */}
+            <div className="eg-footer-spacer"></div>
           </div>
 
-          {/* Copyright */}
+          {/* Copyright centrado abajo */}
           <div className="eg-footer-copyright">
             <small>
-              © {new Date().getFullYear()} Elephant Group — LAGmedia.
-              <br className="eg-footer-break-mobile" />
-              Todos los derechos reservados
+              © {new Date().getFullYear()} Elephant Group — LAGmedia. Todos los
+              derechos reservados
             </small>
           </div>
         </div>

@@ -32,12 +32,11 @@ function Products() {
           <div className="row d-flex justify-content-center">
             <div className="col-lg-8 text-center">
               <div className="modern-section-head mb-80">
-                <p className="products-eyebrow">Bestsellers 2025</p>
-                <h2 className="modern-title" itemProp="name">
-                  Productos <span className="accent-text">Publicitarios</span>{" "}
-                  Más Vendidos
+                <p className="section-eyebrow">Bestsellers 2025</p>
+                <h2 className="section-title" itemProp="name">
+                  Productos <span className="accent-text">Destacados</span>
                 </h2>
-                <p className="modern-subtitle" itemProp="description">
+                <p className="section-description" itemProp="description">
                   <strong>Tótems</strong>, <strong>pendones roller</strong>,{" "}
                   <strong>señalética personalizada</strong> y{" "}
                   <strong>stickers</strong> en Valparaíso. Los productos más
