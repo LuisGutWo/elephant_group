@@ -1,6 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Link from "next/link";
 
 const FooterBottom = () => {
   const logoSrc = "/light/assets/imgs/logo-light.webp";
@@ -18,17 +19,9 @@ const FooterBottom = () => {
               aria-label="Footer Navigation"
             >
               <div className="eg-footer-nav-row">
-                <a
-                  href="/blog"
-                  className="eg-footer-link"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    console.log("Navegando a Blog");
-                    // Aquí se puede agregar la lógica de navegación
-                  }}
-                >
+                <Link href="/blog" className="eg-footer-link">
                   Blog
-                </a>
+                </Link>
                 <a
                   href="https://listado.mercadolibre.com.ar/_CustId_254777934"
                   className="eg-footer-link"
@@ -39,28 +32,12 @@ const FooterBottom = () => {
                 </a>
               </div>
               <div className="eg-footer-nav-row">
-                <a
-                  href="/politica-privacidad"
-                  className="eg-footer-link"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    console.log("Navegando a Política de Privacidad");
-                    // Aquí se puede agregar la lógica de navegación
-                  }}
-                >
+                <Link href="/politica-privacidad" className="eg-footer-link">
                   Política de Privacidad
-                </a>
-                <a
-                  href="/terminos-condiciones"
-                  className="eg-footer-link"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    console.log("Navegando a Términos y Condiciones");
-                    // Aquí se puede agregar la lógica de navegación
-                  }}
-                >
+                </Link>
+                <Link href="/terminos" className="eg-footer-link">
                   Términos y Condiciones
-                </a>
+                </Link>
               </div>
             </nav>
 
