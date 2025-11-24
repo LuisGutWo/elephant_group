@@ -5,11 +5,13 @@ import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const nextConfig = {
-  output: "export",
-  distDir: "out",
+  // Comentado para permitir Netlify Functions
+  // output: "export",
+  distDir: ".next",
   trailingSlash: true,
   images: {
-    unoptimized: true,
+    domains: ["localhost"],
+    unoptimized: false,
   },
   reactStrictMode: false,
   sassOptions: {
