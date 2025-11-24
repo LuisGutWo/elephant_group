@@ -1,9 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import TopNavbar from "./TopNavbar";
 
 function MainNavbar({ mainBg, subBg, noStatic, curve }) {
+  const router = useRouter();
   useEffect(() => {
     const handleScroll = () => {
       const navbar = document.querySelector(".navbar");
@@ -86,7 +88,9 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
             <ul className="navbar-nav" role="menubar">
               <li className="nav-item" role="none">
                 <Link
-                  className="nav-link"
+                  className={`nav-link${
+                    router.pathname === "/home" ? " is-active" : ""
+                  }`}
                   href="/home"
                   role="menuitem"
                   aria-label="Ir a página de inicio"
@@ -101,7 +105,9 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                 role="none"
               >
                 <Link
-                  className="nav-link dropdown-toggle"
+                  className={`nav-link dropdown-toggle${
+                    router.pathname.startsWith("/services") ? " is-active" : ""
+                  }`}
                   href="/services"
                   role="menuitem"
                   aria-label="Ver servicios de imprenta"
@@ -112,7 +118,11 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                 <ul className="dropdown-menu" role="menu">
                   <li role="none">
                     <Link
-                      className="dropdown-item"
+                      className={`dropdown-item${
+                        router.pathname === "/services/impresion-digital"
+                          ? " is-active"
+                          : ""
+                      }`}
                       href="/services/impresion-digital"
                       role="menuitem"
                     >
@@ -121,7 +131,11 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                   </li>
                   <li role="none">
                     <Link
-                      className="dropdown-item"
+                      className={`dropdown-item${
+                        router.pathname === "/services/impresion-offset"
+                          ? " is-active"
+                          : ""
+                      }`}
                       href="/services/impresion-offset"
                       role="menuitem"
                     >
@@ -130,7 +144,11 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                   </li>
                   <li role="none">
                     <Link
-                      className="dropdown-item"
+                      className={`dropdown-item${
+                        router.pathname === "/services/gran-formato"
+                          ? " is-active"
+                          : ""
+                      }`}
                       href="/services/gran-formato"
                       role="menuitem"
                     >
@@ -139,7 +157,11 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                   </li>
                   <li role="none">
                     <Link
-                      className="dropdown-item"
+                      className={`dropdown-item${
+                        router.pathname === "/services/acabados"
+                          ? " is-active"
+                          : ""
+                      }`}
                       href="/services/acabados"
                       role="menuitem"
                     >
@@ -148,7 +170,11 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                   </li>
                   <li role="none">
                     <Link
-                      className="dropdown-item"
+                      className={`dropdown-item${
+                        router.pathname === "/services/diseno"
+                          ? " is-active"
+                          : ""
+                      }`}
                       href="/services/diseno"
                       role="menuitem"
                     >
@@ -159,7 +185,9 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
               </li>
               <li className="nav-item" role="none">
                 <Link
-                  className="nav-link"
+                  className={`nav-link${
+                    router.pathname === "/portfolio" ? " is-active" : ""
+                  }`}
                   href="/portfolio"
                   role="menuitem"
                   aria-label="Ver portafolio de trabajos realizados"
@@ -169,7 +197,9 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
               </li>
               <li className="nav-item" role="none">
                 <Link
-                  className="nav-link"
+                  className={`nav-link${
+                    router.pathname === "/quote" ? " is-active" : ""
+                  }`}
                   href="/quote"
                   role="menuitem"
                   aria-label="Solicitar cotización de servicios"
@@ -179,7 +209,9 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
               </li>
               <li className="nav-item" role="none">
                 <Link
-                  className="nav-link"
+                  className={`nav-link${
+                    router.pathname === "/contact" ? " is-active" : ""
+                  }`}
                   href="/contact"
                   role="menuitem"
                   aria-label="Contactar con Elephant Group"

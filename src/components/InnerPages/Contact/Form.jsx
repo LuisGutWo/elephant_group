@@ -441,11 +441,11 @@ function Form() {
     >
       <div className="container">
         <div className="text-center mb-5">
-          <p className="form-eyebrow">Respuesta en 24 Horas</p>
-          <h1 id="form-title" className="form-title-elegant" itemProp="name">
+          <span className="eg-section-eyebrow">Respuesta en 24 Horas</span>
+          <h1 id="form-title" className="eg-section-title" itemProp="name">
             Solicita tu <span className="accent-color">Cotización</span>
           </h1>
-          <p className="form-subtitle" itemProp="description">
+          <p className="eg-section-description" itemProp="description">
             Cuéntanos tu proyecto y recibe un presupuesto personalizado de{" "}
             <strong>implementos publicitarios</strong> en Valparaíso
           </p>
@@ -497,14 +497,14 @@ function Form() {
           <div className="row d-flex flex-row">
             <article className="col-lg-5">
               <div className="sec-lg-head mb-60">
-                <h2 className="form-section-title">
+                <h2 className="eg-section-title">
                   ¿Necesitas{" "}
                   <span className="accent-color">
                     Implementos Publicitarios
                   </span>
                   ?
                 </h2>
-                <p className="form-section-description">
+                <p className="eg-section-description">
                   Completa este formulario y recibe tu cotización en{" "}
                   <strong>menos de 24 horas</strong>. Trabajamos con empresas en
                   Valparaíso ofreciendo:

@@ -9,9 +9,9 @@
 // Configuración SMTP
 define('SMTP_HOST', 'smtp.gmail.com');          // Servidor SMTP
 define('SMTP_PORT', 587);                        // Puerto (587 para TLS, 465 para SSL)
-define('SMTP_USER', 'agutierrezwong@gmail.com');       // Tu email
-define('SMTP_PASS', 'qhuvnpnvmshqwysk');     // Contraseña de aplicación
-define('CONTACT_RECIPIENT', 'alberto_gutierrez@live.com'); // Email de destino
+define('SMTP_USER', 'tu-email@gmail.com');       // Tu email
+define('SMTP_PASS', 'tu-contraseña-de-app');     // Contraseña de aplicación
+define('CONTACT_RECIPIENT', 'destinatario@empresa.cl'); // Email de destino
 
 /**
  * INSTRUCCIONES PARA GMAIL:

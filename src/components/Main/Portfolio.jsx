@@ -83,16 +83,19 @@ function Portfolio() {
       </div>
 
       <div className="container">
-        {/* Header Section */}
+        {/* Header Section Unificado */}
         <div className="eg-portfolio-header">
           <div className="row justify-content-center">
             <div className="col-lg-8 text-center">
-              <p className="section-eyebrow">Catálogo de Productos 2025</p>
-              <h2 className="section-title" itemProp="name">
-                Implementos <span className="accent-text">Publicitarios</span>{" "}
-                en Valparaíso
+              <span className="eg-section-eyebrow">
+                Catálogo de Productos 2025
+              </span>
+              <h2 className="eg-section-title" itemProp="name">
+                Implementos{" "}
+                <span style={{ color: "#fca311" }}>Publicitarios</span> en
+                Valparaíso
               </h2>
-              <p className="section-description" itemProp="description">
+              <p className="eg-section-description" itemProp="description">
                 Fabricación y venta de <strong>señalética industrial</strong>,{" "}
                 <strong>letreros corporativos</strong>,{" "}
                 <strong>material POP</strong>,{" "}

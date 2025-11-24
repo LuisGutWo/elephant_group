@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 
 function ImpresionDigital() {
   return (
@@ -120,32 +119,28 @@ function ImpresionDigital() {
                   Contáctanos para recibir una cotización personalizada de tu
                   proyecto.
                 </p>
-                <Link
+                <a
                   href="/quote"
                   className="butn butn-md butn-bord butn-rounded"
                 >
                   <span>Solicitar Cotización</span>
-                </Link>
+                </a>
               </div>
 
               <div className="widget-box">
                 <h4 className="mb-30">Servicios Relacionados</h4>
                 <ul className="services-links">
                   <li>
-                    <Link href="/services/impresion-offset">
-                      Impresión Offset
-                    </Link>
+                    <a href="/services/impresion-offset">Impresión Offset</a>
                   </li>
                   <li>
-                    <Link href="/services/gran-formato">Gran Formato</Link>
+                    <a href="/services/gran-formato">Gran Formato</a>
                   </li>
                   <li>
-                    <Link href="/services/acabados">
-                      Acabados y Terminaciones
-                    </Link>
+                    <a href="/services/acabados">Acabados y Terminaciones</a>
                   </li>
                   <li>
-                    <Link href="/services/diseno">Diseño Gráfico</Link>
+                    <a href="/services/diseno">Diseño Gráfico</a>
                   </li>
                 </ul>
               </div>

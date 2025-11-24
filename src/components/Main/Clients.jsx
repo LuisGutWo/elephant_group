@@ -88,23 +88,23 @@ function Clients() {
       itemType="https://schema.org/Organization"
     >
       <div className="container">
-        {/* Header minimalista */}
+        {/* Header de sección unificado */}
         <div className="clients-header-minimal">
           <div className="text-center mb-5">
-            <p className="section-eyebrow">Confianza y Experiencia</p>
+            <span className="eg-section-eyebrow">Confianza y Experiencia</span>
             <h2
               id="clients-heading"
-              className="section-title"
+              className="eg-section-title"
               itemProp="description"
             >
-              Nuestros <span className="accent-text">Clientes</span>
+              Empresas que <span className="accent-color">Confían</span> en
+              Nosotros
             </h2>
-            <p className="section-description">
+            <p className="eg-section-description">
               Desde 2018, más de{" "}
-              <strong>100 empresas en Viña, Valparaíso y todo Chile</strong> han
-              elegido nuestros{" "}
-              <strong>implementos publicitarios de calidad</strong> para
-              potenciar su marca.
+              <strong>100 empresas en Valparaíso y Chile</strong> han elegido
+              nuestros <strong>implementos publicitarios de calidad</strong>{" "}
+              para potenciar su marca.
             </p>
           </div>
         </div>

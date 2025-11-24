@@ -16,12 +16,11 @@ import FooterBottom from "@/components/Main/FooterBottom";
 
 function HomePage() {
   useEffect(() => {
-    if (document !== null && document.body !== null) {
+    if (document && document.body) {
       document.body.classList.add("sub-bg");
     }
-
     return () => {
-      if (document !== null && document.body !== null) {
+      if (document && document.body) {
         document.body.classList.remove("sub-bg");
       }
     };
@@ -30,20 +29,35 @@ function HomePage() {
   return (
     <>
       <Head>
-        <title>Elephant Group</title>
-        <meta name="description" content="Elephant Group web site" />
+        <title>
+          Elephant Group | Implementos Publicitarios y Señalética en Valparaíso
+        </title>
+        <meta
+          name="description"
+          content="Especialistas en señalética, material POP, gigantografías y merchandising en Valparaíso. Soluciones publicitarias para empresas. Cotiza con Elephant Group."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <Loader />
       <Navbar mainBg />
-      <main className="main-bg position-re">
+      <main className="main-bg position-re" id="main-content" role="main">
         <Header />
-        <Portfolio />
-        <Products />
-        <Clients />
-        <Form />
-        <AboutUs />
+        <section id="portfolio" aria-labelledby="portfolio-title">
+          <Portfolio />
+        </section>
+        <section id="products" aria-labelledby="products-title">
+          <Products />
+        </section>
+        <section id="clients" aria-labelledby="clients-title">
+          <Clients />
+        </section>
+        <section id="contact" aria-labelledby="contact-title">
+          <Form />
+        </section>
+        <section id="about" aria-labelledby="about-title">
+          <AboutUs />
+        </section>
       </main>
       <FooterImg />
       <Footer />
