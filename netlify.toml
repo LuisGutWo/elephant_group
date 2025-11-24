@@ -1,5 +1,5 @@
 [build]
-  publish = ".next"
+  publish = "out"
   command = "npm run build"
   functions = "netlify/functions"
 
@@ -11,7 +11,7 @@
   command = "npm run dev:next"
   targetPort = 3000
   port = 8888
-  publish = ".next"
+  publish = "out"
   functions = "netlify/functions"
 
 [functions]
