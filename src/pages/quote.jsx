@@ -41,7 +41,7 @@ function QuotePage() {
         />
         <meta
           name="keywords"
-          content="cotización publicidad, presupuesto implementos publicitarios, cotizar material POP, precio señalética, presupuesto merchandising, cotización gigantografías Valparaíso, solicitar presupuesto publicidad V Región"
+          content="cotización publicidad, presupuesto implementos publicitarios, cotizar material POP, precio señalética, presupuesto merchandising, cotización gigantografías Viña del Mar, Valparaiso y V Region, solicitar presupuesto publicidad V Región"
         />
         <meta name="author" content="Elephant Group" />
         <meta
@@ -50,7 +50,7 @@ function QuotePage() {
         />
         <meta
           property="og:description"
-          content="Solicita tu cotización personalizada. Respuesta en 24 horas. Material POP, señalética y merchandising en Valparaíso."
+          content="Solicita tu cotización personalizada. Respuesta en 24 horas. Material POP, señalética y merchandising en Viña del Mar, Valparaiso y V Region."
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />

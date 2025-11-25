@@ -652,9 +652,9 @@ function TermsContent() {
                   <h4>⚖️ Tribunales Competentes</h4>
                   <p>
                     Los tribunales ordinarios de justicia de la ciudad de{" "}
-                    <strong>Valparaíso, Chile</strong>, renunciando las partes a
-                    cualquier otro fuero o jurisdicción que pudiera
-                    corresponderles.
+                    <strong>Viña del Mar, Valparaiso y V Region, Chile</strong>,
+                    renunciando las partes a cualquier otro fuero o jurisdicción
+                    que pudiera corresponderles.
                   </p>
                 </div>
 

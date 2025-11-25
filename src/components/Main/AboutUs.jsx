@@ -2,23 +2,34 @@ import React from "react";
 
 function AboutUs() {
   return (
-    <section className="eg-about section-padding">
+    <section
+      className="eg-about section-padding"
+      style={{ paddingBottom: "5rem" }}
+    >
       <div className="container text-center">
         <h2 className="eg-section-title">¿Por qué elegir Elephant Group?</h2>
-        <p className="eg-section-description">
+        <p
+          className="eg-section-description aboutus-description-wide"
+          style={{
+            maxWidth: "80ch",
+            width: "90%",
+            margin: "0 auto",
+            textAlign: "center",
+          }}
+        >
           En <strong>Elephant Group</strong> somos especialistas en{" "}
           <strong>soluciones gráficas y publicitarias</strong> para empresas en{" "}
-          <strong>Valparaíso, Viña del Mar y toda la V Región</strong>. Nos
-          enfocamos en entregar <strong>productos personalizados</strong>, de
-          alta calidad y con tiempos de entrega rápidos, para que tu marca
-          destaque y logre sus objetivos comerciales. Nuestro compromiso es
-          acompañarte en cada etapa, desde el diseño hasta la instalación,
-          asegurando resultados que potencian tu imagen y comunicación visual en
-          la <strong>V Región</strong>.
+          <strong>Viña del Mar, Valparaiso y V Region</strong>. Nos enfocamos en
+          entregar <strong>productos personalizados</strong>, de alta calidad y
+          con tiempos de entrega rápidos, para que tu marca destaque y logre sus
+          objetivos comerciales. Nuestro compromiso es acompañarte en cada
+          etapa, desde el diseño hasta la instalación, asegurando resultados que
+          potencian tu imagen y comunicación visual en la{" "}
+          <strong>V Region</strong>.
         </p>
 
         <div className="about-features">
-          <article className="about-item">
+          <article className="about-item" style={{ paddingBottom: "2.5rem" }}>
             <div className="about-icon">
               {/* icono - calidad (medalla/check) */}
               <svg
@@ -53,16 +64,20 @@ function AboutUs() {
                 />
               </svg>
             </div>
-            <h4>Calidad y Durabilidad</h4>
-            <p>
-              Utilizamos materiales premium y tecnología avanzada para
-              garantizar <strong>productos publicitarios resistentes</strong> y
-              de excelente presentación, que potencian la imagen de tu empresa
-              en <strong>Valparaíso, Viña del Mar y la V Región</strong>.
+            <h3 className="about-item-title" style={{ fontSize: "1.2rem" }}>
+              Calidad y Durabilidad
+            </h3>
+            <p
+              className="about-item-desc"
+              style={{ fontSize: "1rem", margin: "0 auto", maxWidth: "90%" }}
+              itemProp="description"
+            >
+              Materiales premium y tecnología avanzada para que tu marca siempre
+              luzca profesional y resistente.
             </p>
           </article>
 
-          <article className="about-item">
+          <article className="about-item" style={{ paddingBottom: "2.5rem" }}>
             <div className="about-icon">
               {/* icono - personalización (ajuste/deslizador) */}
               <svg
@@ -154,16 +169,20 @@ function AboutUs() {
                 />
               </svg>
             </div>
-            <h4>Personalización a tu Medida</h4>
-            <p>
-              Creamos <strong>soluciones gráficas personalizadas</strong> que
-              comunican la esencia de tu marca en cada pieza, adaptándonos a tus
-              necesidades y objetivos comerciales en{" "}
-              <strong>Valparaíso, Viña del Mar y la V Región</strong>.
+            <h3 className="about-item-title" style={{ fontSize: "1.2rem" }}>
+              Personalización a tu Medida
+            </h3>
+            <p
+              className="about-item-desc"
+              style={{ fontSize: "1rem", margin: "0 auto", maxWidth: "90%" }}
+              itemProp="description"
+            >
+              Soluciones gráficas únicas, adaptadas a lo que tu empresa
+              realmente necesita.
             </p>
           </article>
 
-          <article className="about-item">
+          <article className="about-item" style={{ paddingBottom: "2.5rem" }}>
             <div className="about-icon">
               {/* icono - rapidez (reloj minimalista) */}
               <svg
@@ -210,13 +229,16 @@ function AboutUs() {
                 <circle cx="32" cy="32" r="2.5" fill="#f7a800" />
               </svg>
             </div>
-            <h4>Entrega Rápida y Cumplimiento</h4>
-            <p>
-              Optimizamos nuestros procesos para ofrecer{" "}
-              <strong>entregas ágiles</strong> y cumplir siempre con los plazos
-              acordados en{" "}
-              <strong>Valparaíso, Viña del Mar y la V Región</strong>, sin
-              sacrificar la calidad del resultado final.
+            <h3 className="about-item-title" style={{ fontSize: "1.2rem" }}>
+              Entrega Rápida y Cumplimiento
+            </h3>
+            <p
+              className="about-item-desc"
+              style={{ fontSize: "1rem", margin: "0 auto", maxWidth: "90%" }}
+              itemProp="description"
+            >
+              Entregas puntuales y ágiles, sin perder calidad. Cumplimos lo que
+              prometemos.
             </p>
           </article>
         </div>

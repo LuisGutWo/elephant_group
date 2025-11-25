@@ -16,8 +16,8 @@ function Services() {
             </h2>
             <p className="eg-section-description">
               Diseño, fabricación e instalación de implementos publicitarios,
-              señalética, letreros y material POP para empresas en Valparaíso y
-              la Región. Servicio profesional y personalizado.
+              señalética, letreros y material POP para empresas en Viña del Mar,
+              Valparaiso y V Region. Servicio profesional y personalizado.
             </p>
           </div>
         </div>

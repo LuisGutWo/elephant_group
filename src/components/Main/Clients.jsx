@@ -100,9 +100,7 @@ function Clients() {
           </h2>
           <p className="eg-section-description">
             Más de{" "}
-            <strong>
-              100 empresas en Valparaíso, Viña del Mar y la V Región
-            </strong>{" "}
+            <strong>100 empresas en Viña del Mar, Valparaiso y V Region</strong>{" "}
             han confiado en nuestros <strong>implementos publicitarios</strong>{" "}
             para potenciar su marca.
           </p>

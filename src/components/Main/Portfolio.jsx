@@ -9,11 +9,11 @@ const portfolioData = [
     title: "LETREROS",
     subtitle: "publicitarios y corporativos",
     description:
-      "Fabricación de letreros publicitarios en Valparaíso. Diseños personalizados en trovicel, acrílico y aluminio compuesto. Instalación profesional para locales comerciales y oficinas.",
+      "Fabricación de letreros publicitarios en Viña del Mar, Valparaiso y V Region. Diseños personalizados en trovicel, acrílico y aluminio compuesto. Instalación profesional para locales comerciales y oficinas.",
     image: "/light/assets/imgs/works/corte_el_brioche.webp",
     category: "Letreros",
     keywords:
-      "letreros publicitarios, letreros corporativos, señalización comercial Valparaíso",
+      "letreros publicitarios, letreros corporativos, señalización comercial Viña del Mar, Valparaiso y V Region",
     priceRange: "Desde $25.000",
     brand: "Elephant Group",
   },
@@ -22,11 +22,11 @@ const portfolioData = [
     title: "SEÑALÉTICAS",
     subtitle: "industriales y corporativas",
     description:
-      "Señalética industrial y corporativa en Valparaíso. Soluciones de seguridad y orientación para interiores y exteriores. Materiales resistentes a la intemperie.",
+      "Señalética industrial y corporativa en Viña del Mar, Valparaiso y V Region. Soluciones de seguridad y orientación para interiores y exteriores. Materiales resistentes a la intemperie.",
     image: "/light/assets/imgs/works/letrero_covisa.webp",
     category: "Señaléticas",
     keywords:
-      "señalética industrial, señalización de seguridad, letreros corporativos Valparaíso",
+      "señalética industrial, señalización de seguridad, letreros corporativos Viña del Mar, Valparaiso y V Region",
     priceRange: "Desde $18.000",
     brand: "Elephant Group",
   },
@@ -35,11 +35,11 @@ const portfolioData = [
     title: "ADHESIVOS",
     subtitle: "personalizados para empresas",
     description:
-      "Adhesivos y vinilos personalizados en Valparaíso. Desde etiquetas corporativas hasta gráficos para vidrieras y vehículos. Impresión de alta calidad para tu marca.",
+      "Adhesivos y vinilos personalizados en Viña del Mar, Valparaiso y V Region. Desde etiquetas corporativas hasta gráficos para vidrieras y vehículos. Impresión de alta calidad para tu marca.",
     image: "/light/assets/imgs/works/Adhesivos-Personalizarme.webp",
     category: "Adhesivos",
     keywords:
-      "adhesivos personalizados, vinilos publicitarios, etiquetas corporativas Valparaíso",
+      "adhesivos personalizados, vinilos publicitarios, etiquetas corporativas Viña del Mar, Valparaiso y V Region",
     priceRange: "Desde $8.000",
     brand: "Elephant Group",
   },
@@ -65,19 +65,22 @@ function Portfolio() {
       >
         <span itemProp="name">Elephant Group</span>
         <span itemProp="description">
-          Fabricación de implementos publicitarios en Valparaíso
+          Fabricación de implementos publicitarios en Viña del Mar, Valparaiso y
+          V Region
         </span>
         <span itemProp="telephone">+56951631370</span>
-        <span itemProp="areaServed">
-          Valparaíso, Viña del Mar, Región de Valparaíso
-        </span>
+        <span itemProp="areaServed">Viña del Mar, Valparaiso y V Region</span>
         <div
           itemProp="address"
           itemScope
           itemType="https://schema.org/PostalAddress"
         >
-          <span itemProp="addressLocality">Valparaíso</span>
-          <span itemProp="addressRegion">Valparaíso</span>
+          <span itemProp="addressLocality">
+            Viña del Mar, Valparaiso y V Region
+          </span>
+          <span itemProp="addressRegion">
+            Viña del Mar, Valparaiso y V Region
+          </span>
           <span itemProp="addressCountry">CL</span>
         </div>
       </div>
@@ -92,17 +95,17 @@ function Portfolio() {
               </span>
               <h2 className="eg-section-title" itemProp="name">
                 Implementos{" "}
-                <span style={{ color: "#fca311" }}>Publicitarios</span> en
-                Valparaíso
+                <span style={{ color: "#fca311" }}>Publicitarios</span> en Viña
+                del Mar, Valparaiso y V Region
               </h2>
               <p className="eg-section-description" itemProp="description">
                 Fabricación y venta de <strong>señalética industrial</strong>,{" "}
                 <strong>letreros corporativos</strong>,{" "}
                 <strong>material POP</strong>,{" "}
                 <strong>adhesivos personalizados</strong> y{" "}
-                <strong>merchandising</strong> en Valparaíso y Viña del Mar.
-                Diseño, impresión e instalación profesional para empresas y
-                negocios.
+                <strong>merchandising</strong> en Viña del Mar, Valparaiso y V
+                Region. Diseño, impresión e instalación profesional para
+                empresas y negocios.
               </p>
               <meta
                 itemProp="numberOfItems"
@@ -220,8 +223,8 @@ function Portfolio() {
                       <Link
                         href="/portfolio"
                         className="eg-portfolio-btn"
-                        aria-label={`Ver catálogo completo de ${item.title.toLowerCase()} en Valparaíso`}
-                        title={`${item.priceRange} - ${item.title} ${item.subtitle}`}
+                        aria-label={`Ver catálogo completo de ${item.title.toLowerCase()} en Viña del Mar, Valparaiso y V Region`}
+                        title={`${item.priceRange} - ${item.title} ${item.subtitle} en Viña del Mar, Valparaiso y V Region`}
                       >
                         Ver Catálogo
                         <svg
@@ -258,13 +261,13 @@ function Portfolio() {
                 <strong>pendones</strong> o <strong>material POP</strong>?
                 Explora nuestro <strong>catálogo completo</strong> con más de{" "}
                 <strong>50 productos publicitarios</strong> para empresas en
-                Valparaíso.
+                Viña del Mar, Valparaiso y V Region.
               </p>
               <Link
                 href="/portfolio"
                 className="eg-portfolio-view-all"
-                aria-label="Ver catálogo completo de implementos publicitarios en Valparaíso"
-                title="Catálogo completo de productos publicitarios - Elephant Group Valparaíso"
+                aria-label="Ver catálogo completo de implementos publicitarios en Viña del Mar, Valparaiso y V Region"
+                title="Catálogo completo de productos publicitarios - Elephant Group Viña del Mar, Valparaiso y V Region"
               >
                 Explorar Catálogo Completo
                 <svg

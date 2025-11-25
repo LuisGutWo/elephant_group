@@ -447,7 +447,8 @@ function Form() {
           </h1>
           <p className="eg-section-description" itemProp="description">
             Cuéntanos tu proyecto y recibe un presupuesto personalizado de{" "}
-            <strong>implementos publicitarios</strong> en Valparaíso
+            <strong>implementos publicitarios</strong> en Viña del Mar,
+            Valparaiso y V Region
           </p>
         </div>
 
@@ -494,9 +495,10 @@ function Form() {
         </div>
 
         <RBForm onSubmit={handleSubmit} noValidate role="form">
-          <div className="row d-flex flex-row">
-            <article className="col-lg-5">
-              <div className="sec-lg-head mb-60">
+          <div className="row d-flex flex-row flex-wrap">
+            {/* Datos del cliente */}
+            <article className="col-lg-5 col-12 mb-4 mb-lg-0">
+              <div className="sec-lg-head mb-4">
                 <h2 className="eg-section-title">
                   ¿Necesitas{" "}
                   <span className="accent-color">
@@ -507,7 +509,7 @@ function Form() {
                 <p className="eg-section-description">
                   Completa este formulario y recibe tu cotización en{" "}
                   <strong>menos de 24 horas</strong>. Trabajamos con empresas en
-                  Valparaíso ofreciendo:
+                  Viña del Mar, Valparaiso y V Region ofreciendo:
                 </p>
                 <ul className="benefits-list">
                   <li>✓ Señalética corporativa</li>
@@ -521,7 +523,6 @@ function Form() {
                 </p>
               </div>
               <div className="full-width">
-                {/* Usar componente modular para campos de contacto */}
                 <ContactInfoFields
                   form={form}
                   errors={errors}
@@ -532,8 +533,8 @@ function Form() {
               </div>
             </article>
 
-            <article className="col-lg-6 offset-lg-1 valign">
-              {/* Usar componentes modulares para detalles del producto */}
+            {/* Detalles del producto y botones de acción */}
+            <article className="col-lg-6 offset-lg-1 col-12">
               <ProductDetailsFields
                 details={details}
                 errors={errors}
@@ -549,13 +550,8 @@ function Form() {
                 fileError={fileError}
                 onFileChange={handleFileSelect}
               />
-            </article>
-          </div>
-
-          {/* Botones de acción mejorados */}
-          <div className="row">
-            <div className="col-12">
-              <div className="form-actions-elegant mt-5">
+              {/* Botones de acción debajo de productos */}
+              <div className="form-actions-elegant mt-4 d-flex flex-wrap gap-2 justify-content-center">
                 <Button
                   type="button"
                   variant="outline-secondary"
@@ -610,7 +606,7 @@ function Form() {
                   Completa al menos los campos básicos para enviar tu cotización
                 </p>
               )}
-            </div>
+            </article>
           </div>
         </RBForm>
 

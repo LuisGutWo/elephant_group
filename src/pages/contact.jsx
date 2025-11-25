@@ -27,30 +27,33 @@ function ContactPage() {
     <>
       <Head>
         <title>
-          Contacto | Elephant Group - Implementos Publicitarios en Valparaíso |
-          +56 9 5163 1370
+          Contacto | Elephant Group - Implementos Publicitarios en Viña del Mar,
+          Valparaiso y V Region | +56 9 5163 1370
         </title>
         <meta
           name="description"
-          content="Contáctanos para implementos publicitarios en Valparaíso y V Región. Material POP, señalética, gigantografías y merchandising. WhatsApp +56 9 5163 1370. Atención personalizada y respuesta rápida."
+          content="Contáctanos para implementos publicitarios en Viña del Mar, Valparaiso y V Region. Material POP, señalética, gigantografías y merchandising. WhatsApp +56 9 5163 1370. Atención personalizada y respuesta rápida."
         />
         <meta
           name="keywords"
-          content="contacto Elephant Group, teléfono publicidad Valparaíso, WhatsApp implementos publicitarios, contactar agencia publicidad V Región, solicitar cotización material POP, teléfono señalética Viña del Mar, contacto merchandising Chile, dirección Elephant Group"
+          content="contacto Elephant Group, teléfono publicidad Viña del Mar, Valparaiso y V Region, WhatsApp implementos publicitarios, contactar agencia publicidad V Región, solicitar cotización material POP, teléfono señalética Viña del Mar, contacto merchandising Chile, dirección Elephant Group"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="Elephant Group" />
         <meta
           property="og:title"
-          content="Contacto | Elephant Group - Implementos Publicitarios Valparaíso"
+          content="Contacto | Elephant Group - Implementos Publicitarios Viña del Mar, Valparaiso y V Region"
         />
         <meta
           property="og:description"
-          content="Contáctanos por WhatsApp +56 9 5163 1370 para implementos publicitarios en la V Región. Respuesta rápida y atención personalizada."
+          content="Contáctanos por WhatsApp +56 9 5163 1370 para implementos publicitarios en Viña del Mar, Valparaiso y V Region. Respuesta rápida y atención personalizada."
         />
         <meta property="og:type" content="website" />
         <meta name="geo.region" content="CL-VS" />
-        <meta name="geo.placename" content="Valparaíso" />
+        <meta
+          name="geo.placename"
+          content="Viña del Mar, Valparaiso y V Region"
+        />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Contacto | Elephant Group" />
         <meta
