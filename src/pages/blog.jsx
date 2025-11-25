@@ -38,13 +38,16 @@ function BlogPage() {
         />
         <meta
           name="keywords"
-          content="blog publicidad, blog diseño gráfico, tendencias impresión, marketing publicitario, señalética, branding, packaging, merchandising, impresión digital, impresión offset, Valparaíso"
+          content="blog publicidad, blog diseño gráfico, tendencias impresión, marketing publicitario, señalética, branding, packaging, merchandising, impresión digital, impresión offset, Viña del Mar, Valparaiso y V Region"
         />
         <meta name="author" content="Elephant Group" />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="Spanish" />
         <meta name="geo.region" content="CL-VS" />
-        <meta name="geo.placename" content="Valparaíso" />
+        <meta
+          name="geo.placename"
+          content="Viña del Mar, Valparaiso y V Region"
+        />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />

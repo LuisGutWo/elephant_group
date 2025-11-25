@@ -40,8 +40,9 @@ function Products() {
                 <p className="eg-section-description" itemProp="description">
                   <strong>Tótems</strong>, <strong>pendones roller</strong>,{" "}
                   <strong>señalética personalizada</strong> y{" "}
-                  <strong>stickers</strong> en Valparaíso. Los productos más
-                  solicitados por empresas para promoción y branding efectivo.
+                  <strong>stickers</strong> en Viña del Mar, Valparaiso y V
+                  Region. Los productos más solicitados por empresas para
+                  promoción y branding efectivo.
                 </p>
                 <meta
                   itemProp="numberOfItems"

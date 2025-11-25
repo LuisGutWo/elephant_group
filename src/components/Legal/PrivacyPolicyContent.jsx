@@ -444,7 +444,7 @@ function PrivacyPolicyContent() {
                   <div className="contact-item">
                     <h4>📍 Dirección</h4>
                     <p>
-                      Valparaíso, Región de Valparaíso
+                      Viña del Mar, Valparaiso y V Region
                       <br />
                       Chile
                     </p>

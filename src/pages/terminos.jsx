@@ -91,8 +91,8 @@ function TermsAndConditions() {
           "https://landingclientes.elephantgroup.cl/dark/assets/imgs/logo-light.webp",
         address: {
           "@type": "PostalAddress",
-          addressLocality: "Valparaíso",
-          addressRegion: "Región de Valparaíso",
+          addressLocality: "Viña del Mar, Valparaiso y V Region",
+          addressRegion: "V Region",
           postalCode: "2340000",
           addressCountry: "CL",
         },
@@ -204,7 +204,10 @@ function TermsAndConditions() {
 
         {/* Geo Tags */}
         <meta name="geo.region" content="CL-VS" />
-        <meta name="geo.placename" content="Valparaíso" />
+        <meta
+          name="geo.placename"
+          content="Viña del Mar, Valparaiso y V Region"
+        />
         <meta name="geo.position" content="-33.0472;-71.6127" />
         <meta name="ICBM" content="-33.0472, -71.6127" />
 

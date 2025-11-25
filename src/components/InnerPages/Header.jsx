@@ -28,8 +28,9 @@ function Header({ data, subBg }) {
               <br />
               <p>
                 Somos expertos en señalética, material POP, gigantografías y
-                merchandising en Valparaíso. Confía en nuestro equipo para
-                potenciar tu presencia y captar más clientes.
+                merchandising en Viña del Mar, Valparaiso y V Region. Confía en
+                nuestro equipo para potenciar tu presencia y captar más
+                clientes.
               </p>
             </div>
           </div>
