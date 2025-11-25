@@ -6,6 +6,8 @@ import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/InnerPages/Contact/Header";
 import Form from "@/components/InnerPages/Contact/Form";
 import FooterBottom from "@/components/Main/FooterBottom";
+import FooterImg from "@/components/Main/FooterImg";
+import Footer from "@/components/Main/Footer";
 
 function ContactPage() {
   useEffect(() => {
@@ -61,7 +63,8 @@ function ContactPage() {
       <Navbar mainBg />
       <main>
         <Header />
-        <Form />
+        <FooterImg />
+        <Footer />
       </main>
       <FooterBottom />
     </>

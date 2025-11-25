@@ -9,9 +9,9 @@ import data from "@/data/Main/clients.json";
 const swiperOptions = {
   modules: [Navigation, Autoplay, Parallax, EffectFade],
   slidesPerView: 6,
-  speed: 2000,
+  speed: 1600,
   autoplay: {
-    delay: 2500,
+    delay: 2000,
     disableOnInteraction: false,
     pauseOnMouseEnter: true,
   },
@@ -82,86 +82,72 @@ function Clients() {
 
   return (
     <section
-      className="elegant-clients-section section-padding"
+      className="eg-clients-bg section-padding eg-clients-modern"
       aria-labelledby="clients-heading"
       itemScope
       itemType="https://schema.org/Organization"
     >
       <div className="container">
-        {/* Header de sección unificado */}
-        <div className="clients-header-minimal">
-          <div className="text-center mb-5">
-            <span className="eg-section-eyebrow">Confianza y Experiencia</span>
-            <h2
-              id="clients-heading"
-              className="eg-section-title"
-              itemProp="description"
-            >
-              Empresas que <span className="accent-color">Confían</span> en
-              Nosotros
-            </h2>
-            <p className="eg-section-description">
-              Desde 2018, más de{" "}
-              <strong>100 empresas en Valparaíso y Chile</strong> han elegido
-              nuestros <strong>implementos publicitarios de calidad</strong>{" "}
-              para potenciar su marca.
-            </p>
-          </div>
+        <div className="text-center mb-5">
+          <span className="eg-section-eyebrow">Confianza y Experiencia</span>
+          <h2
+            id="clients-heading"
+            className="eg-section-title"
+            itemProp="description"
+          >
+            Empresas que <span className="accent-color">Confían</span> en
+            Nosotros
+          </h2>
+          <p className="eg-section-description">
+            Más de{" "}
+            <strong>
+              100 empresas en Valparaíso, Viña del Mar y la V Región
+            </strong>{" "}
+            han confiado en nuestros <strong>implementos publicitarios</strong>{" "}
+            para potenciar su marca.
+          </p>
         </div>
-
-        {/* Carousel minimalista */}
-        <div className="clients-carousel-minimal">
-          {/* Loading skeleton */}
-          {isLoading && (
-            <div className="clients-loading-minimal">
-              {[...Array(6)].map((_, index) => (
-                <div key={index} className="client-skeleton-minimal" />
-              ))}
-            </div>
-          )}
-
-          {/* Swiper carousel minimalista */}
+        <div
+          className="eg-clients-carousel-wrap"
+          aria-label="Empresas que confían en Elephant Group"
+          itemScope
+          itemType="https://schema.org/ItemList"
+        >
+          <meta itemProp="numberOfItems" content={data.length} />
           {loadSwiper && data && data.length > 0 && (
-            <div
-              className="clients-swiper-minimal"
-              itemScope
-              itemType="https://schema.org/ItemList"
+            <Swiper
+              {...swiperOptions}
+              className="eg-clients-carousel"
+              role="region"
+              aria-label="Carrusel de logos de clientes"
             >
-              <meta itemProp="numberOfItems" content={data.length} />
-              <Swiper
-                {...swiperOptions}
-                className="clients-swiper-elegant"
-                role="region"
-                aria-label="Portafolio de clientes - Empresas que confían en Elephant Group para implementos publicitarios"
-              >
-                {data.map((item, index) => (
-                  <SwiperSlide
-                    key={index}
-                    itemScope
-                    itemType="https://schema.org/Brand"
-                    itemProp="itemListElement"
-                  >
-                    <meta itemProp="position" content={index + 1} />
-                    <div className="client-card-minimal">
-                      <Image
-                        src={`/light${item}`}
-                        alt={`Cliente ${
-                          index + 1
-                        } - Empresa que confía en Elephant Group para implementos publicitarios y señalética en Valparaíso`}
-                        width={180}
-                        height={120}
-                        className="client-image-minimal"
-                        loading={index < 6 ? "eager" : "lazy"}
-                        quality={90}
-                        sizes="(max-width: 480px) 140px, (max-width: 768px) 160px, 180px"
-                        itemProp="logo"
-                        title={`Logo cliente ${index + 1} Elephant Group`}
-                      />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
+              {data.map((item, index) => (
+                <SwiperSlide
+                  key={index}
+                  itemScope
+                  itemType="https://schema.org/Brand"
+                  itemProp="itemListElement"
+                >
+                  <meta itemProp="position" content={index + 1} />
+                  <div className="eg-client-logo-wrap">
+                    <Image
+                      src={`/light${item}`}
+                      alt={`Logo cliente ${
+                        index + 1
+                      } - Empresa que confía en Elephant Group para implementos publicitarios en Valparaíso, Viña del Mar y la V Región`}
+                      width={160}
+                      height={100}
+                      className="eg-client-logo"
+                      loading={index < 6 ? "eager" : "lazy"}
+                      quality={90}
+                      sizes="(max-width: 480px) 120px, (max-width: 991px) 140px, 160px"
+                      itemProp="logo"
+                      title={`Logo cliente ${index + 1} Elephant Group`}
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           )}
         </div>
       </div>
