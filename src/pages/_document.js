@@ -23,6 +23,10 @@ export default function Document() {
           href="/light/assets/imgs/favicon.ico"
           type="image/x-icon"
         />
+        {/* ------ Manifest PWA ------ */}
+        <link rel="manifest" href="/manifest.json" />
+        {/* ------ Sitemap ------ */}
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
         {/* ------ Google Fonts ------ */}
         {/* Consolidated Google Fonts */}
         <link

@@ -60,6 +60,22 @@ function ContactPage() {
           name="twitter:description"
           content="WhatsApp +56 9 5163 1370 - Implementos publicitarios en Valparaíso"
         />
+        {/* ContactPoint Schema.org */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ContactPoint",
+              telephone: "+56 9 5163 1370",
+              contactType: "customer service",
+              areaServed: "CL",
+              availableLanguage: ["Spanish"],
+              email: "contacto@elephantgroup.cl",
+              url: "https://landingclientes.elephantgroup.cl/contact",
+            }),
+          }}
+        />
       </Head>
 
       <Loader />

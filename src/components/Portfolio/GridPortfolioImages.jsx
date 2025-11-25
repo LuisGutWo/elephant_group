@@ -223,7 +223,7 @@ function GridPortfolioImages() {
             <div className="modal-image-preview">
               <img
                 src={selectedProject.image}
-                alt={`${selectedProject.type} ${selectedProject.year}`}
+                alt={`Vista ampliada del proyecto ${selectedProject.type} realizado en ${selectedProject.year} por Elephant Group en Valparaíso y Viña del Mar`}
                 className="modal-preview-img"
               />
             </div>

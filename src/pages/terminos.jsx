@@ -133,6 +133,14 @@ function TermsAndConditions() {
   return (
     <>
       <Head>
+        <title>
+          Términos y Condiciones | Elephant Group - Servicios Publicitarios en
+          Valparaíso
+        </title>
+        <meta
+          name="description"
+          content="Términos y condiciones de Elephant Group para servicios de señalética, impresión, diseño gráfico y material POP en Valparaíso y Viña del Mar."
+        />
         {/* Primary Meta Tags */}
         <title>
           Términos y Condiciones - Elephant Group | Servicios Publicitarios

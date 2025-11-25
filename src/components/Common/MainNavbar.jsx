@@ -94,6 +94,9 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                   href="/home"
                   role="menuitem"
                   aria-label="Ir a página de inicio"
+                  {...(router.pathname === "/home" && {
+                    "aria-current": "page",
+                  })}
                 >
                   <span className="rolling-text">INICIO</span>
                 </Link>
@@ -112,6 +115,9 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                   role="menuitem"
                   aria-label="Ver servicios de imprenta"
                   aria-haspopup="true"
+                  {...(router.pathname.startsWith("/services") && {
+                    "aria-current": "page",
+                  })}
                 >
                   <span className="rolling-text">SERVICIOS</span>
                 </Link>
@@ -125,6 +131,10 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                       }`}
                       href="/services/impresion-digital"
                       role="menuitem"
+                      {...(router.pathname ===
+                        "/services/impresion-digital" && {
+                        "aria-current": "page",
+                      })}
                     >
                       Impresión Digital
                     </Link>
@@ -138,6 +148,9 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                       }`}
                       href="/services/impresion-offset"
                       role="menuitem"
+                      {...(router.pathname === "/services/impresion-offset" && {
+                        "aria-current": "page",
+                      })}
                     >
                       Impresión Offset
                     </Link>
@@ -151,6 +164,9 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                       }`}
                       href="/services/gran-formato"
                       role="menuitem"
+                      {...(router.pathname === "/services/gran-formato" && {
+                        "aria-current": "page",
+                      })}
                     >
                       Gran Formato
                     </Link>
@@ -164,6 +180,9 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                       }`}
                       href="/services/acabados"
                       role="menuitem"
+                      {...(router.pathname === "/services/acabados" && {
+                        "aria-current": "page",
+                      })}
                     >
                       Acabados y Terminaciones
                     </Link>
@@ -177,6 +196,9 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                       }`}
                       href="/services/diseno"
                       role="menuitem"
+                      {...(router.pathname === "/services/diseno" && {
+                        "aria-current": "page",
+                      })}
                     >
                       Diseño Gráfico
                     </Link>
@@ -191,6 +213,9 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                   href="/portfolio"
                   role="menuitem"
                   aria-label="Ver portafolio de trabajos realizados"
+                  {...(router.pathname === "/portfolio" && {
+                    "aria-current": "page",
+                  })}
                 >
                   <span className="rolling-text">PORTAFOLIO</span>
                 </Link>
@@ -203,6 +228,9 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                   href="/quote"
                   role="menuitem"
                   aria-label="Solicitar cotización de servicios"
+                  {...(router.pathname === "/quote" && {
+                    "aria-current": "page",
+                  })}
                 >
                   <span className="rolling-text">COTIZACIÓN</span>
                 </Link>
@@ -215,6 +243,9 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                   href="/contact"
                   role="menuitem"
                   aria-label="Contactar con Elephant Group"
+                  {...(router.pathname === "/contact" && {
+                    "aria-current": "page",
+                  })}
                 >
                   <span className="rolling-text">CONTACTO</span>
                 </Link>

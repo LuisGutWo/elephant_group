@@ -30,6 +30,38 @@ function PortfolioPage() {
   return (
     <>
       <Head>
+        {/* BreadcrumbList Schema.org */}
+        <title>
+          Portafolio | Elephant Group - Trabajos de Publicidad en Viña del Mar,
+          Valparaiso y V Region
+        </title>
+        <meta
+          name="description"
+          content="Portafolio de proyectos publicitarios realizados por Elephant Group en Valparaíso y Viña del Mar: señalética, impresión digital, diseño gráfico y material POP."
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Inicio",
+                  item: "https://landingclientes.elephantgroup.cl/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Portafolio",
+                  item: "https://landingclientes.elephantgroup.cl/portfolio",
+                },
+              ],
+            }),
+          }}
+        />
         <title>
           Portafolio | Elephant Group - Trabajos de Publicidad en Viña del Mar,
           Valparaiso y V Region
