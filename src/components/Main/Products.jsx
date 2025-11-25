@@ -106,9 +106,6 @@ function Products() {
                   <div className="eg-product-meta">
                     <meta itemProp="priceCurrency" content="CLP" />
                   </div>
-                  <p className="eg-product-desc">
-                    {item.keywords.split(", ").join(", ")}
-                  </p>
                   <div className="eg-product-actions">
                     <Link
                       href="/quote"
