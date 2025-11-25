@@ -13,7 +13,7 @@ function Products() {
   // Datos enriquecidos con keywords SEO
   const enrichedData = data.map((item) => ({
     ...item,
-    keywords: `${item.title.toLowerCase()}, implementos publicitarios valparaíso`,
+    keywords: `${item.title.toLowerCase()}`,
     brand: "Elephant Group",
     availability: "https://schema.org/InStock",
     priceRange: item.id <= 3 ? "$15.000 - $45.000" : "$5.000 - $25.000",
@@ -52,12 +52,12 @@ function Products() {
           </div>
 
           {/* Grid de productos optimizado */}
-          <div className="modern-products-grid">
+          <div className="eg-products-grid">
             {enrichedData.map((item, idx) => (
-              <div
+              <article
                 key={item.id}
-                className={`modern-product-card ${
-                  hoveredCard === idx ? "hovered" : ""
+                className={`eg-product-card${
+                  hoveredCard === idx ? " hovered" : ""
                 }`}
                 onMouseEnter={() => setHoveredCard(idx)}
                 onMouseLeave={() => setHoveredCard(null)}
@@ -65,48 +65,68 @@ function Products() {
                 itemScope
                 itemType="https://schema.org/Product"
               >
-                {/* Badge con número */}
-                <div
-                  className="product-badge"
-                  aria-label={`Producto número ${item.number}`}
-                >
-                  {item.number}
-                </div>
-
-                {/* Imagen con overlay */}
-                <div className="product-image-container">
+                <div className="eg-product-image-wrap">
                   <Image
                     src={item.image}
-                    alt={`${item.title} ${
-                      item.subtitle ? "- " + item.subtitle : ""
-                    } | Elephant Group Valparaíso`}
+                    alt={`${item.title}${
+                      item.subtitle ? " - " + item.subtitle : ""
+                    } | Elephant Group Valparaíso, Viña del Mar, V Región`}
                     width={400}
                     height={300}
-                    className="product-image"
+                    className="eg-product-image"
                     itemProp="image"
                     style={{
                       objectFit: "cover",
                       width: "100%",
                       height: "100%",
                     }}
+                    sizes="(max-width: 600px) 100vw, 400px"
+                    priority={idx < 3}
                   />
-                  <div className="image-overlay"></div>
+                  <span
+                    className="eg-product-badge"
+                    aria-label={`Producto destacado: ${item.title}`}
+                  >
+                    {item.number}
+                  </span>
                 </div>
-
-                {/* Contenido con Schema.org */}
-                <div className="product-content">
-                  <div className="product-info">
-                    <h3 className="product-title" itemProp="name">
-                      {item.title}
-                    </h3>
-                    {item.subtitle && (
-                      <p className="product-subtitle" itemProp="description">
-                        {item.subtitle}
-                      </p>
-                    )}
+                <div className="eg-product-content">
+                  <h3 className="eg-product-title" itemProp="name">
+                    {item.title}
+                  </h3>
+                  {item.subtitle && (
+                    <span
+                      className="eg-product-subtitle"
+                      itemProp="description"
+                    >
+                      {item.subtitle}
+                    </span>
+                  )}
+                  <div className="eg-product-meta">
+                    <meta itemProp="priceCurrency" content="CLP" />
                   </div>
-
-                  {/* Meta datos SEO ocultos */}
+                  <p className="eg-product-desc">
+                    {item.keywords.split(", ").join(", ")}
+                  </p>
+                  <div className="eg-product-actions">
+                    <Link
+                      href="/quote"
+                      className="eg-btn eg-btn-primary"
+                      aria-label={`Solicitar cotización de ${item.title}`}
+                      title={`Cotizar ${item.title}`}
+                    >
+                      Cotizar
+                    </Link>
+                    <Link
+                      href="/portfolio"
+                      className="eg-btn eg-btn-secondary"
+                      aria-label={`Ver más productos similares a ${item.title}`}
+                      title="Ver catálogo completo de productos"
+                    >
+                      Ver más
+                    </Link>
+                  </div>
+                  {/* SEO meta ocultos */}
                   <div style={{ display: "none" }}>
                     <span
                       itemProp="brand"
@@ -138,48 +158,8 @@ function Products() {
                     />
                     <meta itemProp="keywords" content={item.keywords} />
                   </div>
-
-                  {/* Botones de acción optimizados */}
-                  <div className="product-actions">
-                    <Link
-                      href="/quote"
-                      className="btn-primary-modern"
-                      aria-label={`Solicitar cotización de ${item.title}`}
-                      title={`Cotizar ${item.title} - ${item.priceRange}`}
-                    >
-                      <span>COTIZAR</span>
-                      <svg
-                        className="btn-icon"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M5 12h14m-7-7l7 7-7 7"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </Link>
-
-                    <Link
-                      href="/portfolio"
-                      className="btn-secondary-modern"
-                      aria-label={`Ver más productos similares a ${item.title}`}
-                      title="Ver catálogo completo de productos"
-                    >
-                      <span>VER MÁS</span>
-                    </Link>
-                  </div>
                 </div>
-
-                {/* Efecto de brillo */}
-                <div className="shine-effect"></div>
-              </div>
+              </article>
             ))}
           </div>
 
@@ -196,7 +176,7 @@ function Products() {
                   href="/quote"
                   className="btn-cta-modern"
                   aria-label="Solicitar cotización personalizada de productos publicitarios"
-                  title="Cotización gratuita en 24 horas - Elephant Group Valparaíso"
+                  title="Cotización gratuita en 24 horas - Elephant Group"
                 >
                   <span>Solicitar Cotización Gratuita</span>
                   <div className="btn-glow"></div>
