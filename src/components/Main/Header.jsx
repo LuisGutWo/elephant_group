@@ -14,12 +14,12 @@ import Link from "next/link";
 
 const swiperOptions = {
   modules: [Navigation, Autoplay, Pagination, Parallax],
-  //   autoplay: {
-  //     delay: 5000,
-  //     disableOnInteraction: false,
-  //     pauseOnMouseEnter: false,
-  //     waitForTransition: true,
-  //   },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+    waitForTransition: true,
+  },
   effect: "fade",
   speed: 1500,
   parallax: true,

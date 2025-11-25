@@ -1,48 +1,37 @@
+import EMAIL_API from "@/config/emailApi";
+import { useAutoSave } from "@/utils/hooks/useAutoSave";
 import React, { useState, useEffect, useMemo, useCallback } from "react";
-import {
-  Form as RBForm,
-  Button,
-  Alert,
-  ProgressBar,
-  Modal,
-} from "react-bootstrap";
+import { Form as RBForm, Button, ProgressBar, Modal } from "react-bootstrap";
 import { FaWhatsapp, FaEye, FaCheckCircle } from "react-icons/fa";
 import ContactInfoFields from "./ContactInfoFields";
 import ProductDetailsFields from "./ProductDetailsFields";
 import FileUploadField from "./FileUploadField";
+
 import { useFormValidation } from "@/utils/hooks/useFormValidation";
 import { useFileUpload } from "@/utils/hooks/useFileUpload";
-import { useAutoSave } from "@/utils/hooks/useAutoSave";
+
 import {
+  calculateProgress,
+  loadFromLocalStorage,
   sanitizeInput,
   formatPhoneNumber,
-  calculateProgress,
   generateWhatsAppMessage,
-  fetchWithRetry,
-  loadFromLocalStorage,
 } from "@/utils/formHelpers";
-import EMAIL_API from "@/config/emailApi";
 
-// Constantes fuera del componente para evitar recreación
-const PRODUCT_TYPES = [
-  { value: "impreso", label: "Impreso" },
-  { value: "textil", label: "Textil" },
-  { value: "packaging", label: "Packaging" },
-];
-
-const PRODUCTS_BY_TYPE = {
-  impreso: [
-    "Volantes",
-    "Brochure",
-    "Afiche",
+const PRODUCT_TYPES = {
+  impresos: [
     "Tarjeta de presentación",
     "Sticker",
     "Calendario",
     "Carpeta",
+    "Volante",
+    "Folleto",
+    "Póster",
+    "Banner",
     "Otros",
   ],
   textil: ["Polera", "Gorro", "Bolsa"],
-  packaging: ["Caja", "Etiqueta", "Envelope"],
+  packaging: ["Caja", "Etiqueta", "Envelope", "Otros"],
 };
 
 const MATERIALS = ["Papel couchê", "Cartulina", "Vinilo", "Algodón"];
@@ -70,6 +59,8 @@ function Form() {
     comments: "",
   });
   const [status, setStatus] = useState({ type: "", message: "" });
+  const [showStatusModal, setShowStatusModal] = useState(false);
+  const STATUS_AUTO_CLOSE = 4000; // ms
   const [loading, setLoading] = useState(false);
   const [lastSubmit, setLastSubmit] = useState(0);
   const [showPreview, setShowPreview] = useState(false);
@@ -122,6 +113,18 @@ function Form() {
     () => calculateProgress(form, details),
     [form, details]
   );
+
+  // Mostrar modal cuando status cambia a éxito o error
+  useEffect(() => {
+    if (status.type === "success" || status.type === "error") {
+      setShowStatusModal(true);
+      const timer = setTimeout(() => {
+        setShowStatusModal(false);
+        setStatus({ type: "", message: "" });
+      }, STATUS_AUTO_CLOSE);
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
 
   // Usar constantes definidas fuera del componente
 
@@ -417,7 +420,7 @@ function Form() {
 
   // Memoizar productos disponibles
   const currentProducts = useMemo(
-    () => PRODUCTS_BY_TYPE[details.productType] || [],
+    () => PRODUCT_TYPES[details.productType] || [],
     [details.productType]
   );
 
@@ -473,38 +476,46 @@ function Form() {
           </div>
         )}
 
-        {/* Mensajes de estado mejorados */}
-        <div role="status" aria-live="assertive" aria-atomic="true">
-          {status.type === "success" && (
-            <Alert
-              variant="success"
-              className="form-alert form-alert-success d-flex align-items-center gap-3"
-            >
-              <FaCheckCircle size={24} className="alert-icon" />
-              <div>
-                <strong>¡Solicitud enviada!</strong>
-                <p className="mb-0 mt-1">{status.message}</p>
-              </div>
-            </Alert>
-          )}
-          {status.type === "error" && (
-            <Alert variant="danger" className="form-alert form-alert-error">
-              <strong>Error:</strong> {status.message}
-            </Alert>
-          )}
-        </div>
+        {/* Modal de estado (éxito/error) */}
+        <Modal
+          show={showStatusModal}
+          onHide={() => {
+            setShowStatusModal(false);
+            setStatus({ type: "", message: "" });
+          }}
+          centered
+          backdrop="static"
+          keyboard={true}
+          className="status-modal-elegant"
+        >
+          <Modal.Header
+            closeButton
+            className={
+              status.type === "success" ? "border-success" : "border-danger"
+            }
+          >
+            <Modal.Title className="d-flex align-items-center gap-2">
+              {status.type === "success" ? (
+                <FaCheckCircle size={22} color="#25D366" />
+              ) : (
+                <span style={{ fontSize: 22, color: "#dc3545" }}>⛔</span>
+              )}
+              {status.type === "success" ? "¡Solicitud enviada!" : "Error"}
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p className="mb-0">{status.message}</p>
+          </Modal.Body>
+        </Modal>
 
         <RBForm onSubmit={handleSubmit} noValidate role="form">
           <div className="row d-flex flex-row flex-wrap">
             {/* Datos del cliente */}
             <article className="col-lg-5 col-12 mb-4 mb-lg-0">
-              <div className="sec-lg-head mb-4">
+              <div className="sec-lg-head mb-50">
                 <h2 className="eg-section-title">
-                  ¿Necesitas{" "}
-                  <span className="accent-color">
-                    Implementos Publicitarios
-                  </span>
-                  ?
+                  Solicita tu cotizacion{" "}
+                  <b className="accent-color fst-italic ">EXPRESS</b>
                 </h2>
                 <p className="eg-section-description">
                   Completa este formulario y recibe tu cotización en{" "}
@@ -517,10 +528,6 @@ function Form() {
                   <li>✓ Gigantografías y letreros</li>
                   <li>✓ Merchandising de calidad</li>
                 </ul>
-                <p className="form-cta-text">
-                  <strong>Presupuestos competitivos</strong> y asesoría
-                  personalizada.
-                </p>
               </div>
               <div className="full-width">
                 <ContactInfoFields
@@ -541,7 +548,10 @@ function Form() {
                 touched={touched}
                 onChange={handleDetailChange}
                 onBlur={handleBlur}
-                productTypes={PRODUCT_TYPES}
+                productTypes={Object.keys(PRODUCT_TYPES).map((key) => ({
+                  value: key,
+                  label: key.charAt(0).toUpperCase() + key.slice(1),
+                }))}
                 currentProducts={currentProducts}
                 materials={MATERIALS}
                 sizes={SIZES}
@@ -554,32 +564,80 @@ function Form() {
               <div className="form-actions-elegant mt-4 d-flex flex-wrap gap-2 justify-content-center">
                 <Button
                   type="button"
-                  variant="outline-secondary"
+                  variant="secondary"
                   onClick={handlePreview}
                   disabled={loading || progress < 50}
                   className="btn-elegant btn-preview"
                   aria-label="Previsualizar mensaje antes de enviar"
-                  title="Ver cómo se verá tu mensaje"
+                  title="Previsualizar mensaje de WhatsApp"
+                  style={{
+                    minWidth: 160,
+                    fontWeight: 600,
+                    borderRadius: 8,
+                    boxShadow: "0 2px 8px #6c757d22",
+                    border: "1.5px solid #6c757d",
+                    background: "#f8f9fa",
+                    color: "#343a40",
+                    transition: "all 0.2s",
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.background = "#e2e6ea";
+                    e.currentTarget.style.color = "#212529";
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.background = "#f8f9fa";
+                    e.currentTarget.style.color = "#343a40";
+                  }}
                 >
                   <FaEye />
-                  <span>Vista Previa</span>
+                  <span className="ms-2">Previsualizar WhatsApp</span>
                 </Button>
                 <Button
-                  variant="outline-secondary"
+                  variant="secondary"
                   onClick={resetDetails}
                   disabled={loading}
                   className="btn-elegant btn-reset"
-                  aria-label="Limpiar formulario"
-                  title="Limpiar todos los campos"
+                  aria-label="Borrar todo el formulario"
+                  title="Borrar todos los campos"
+                  style={{
+                    minWidth: 120,
+                    fontWeight: 600,
+                    borderRadius: 8,
+                    boxShadow: "0 2px 8px #6c757d22",
+                    border: "1.5px solid #6c757d",
+                    background: "#f8f9fa",
+                    color: "#343a40",
+                    transition: "all 0.2s",
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.background = "#e2e6ea";
+                    e.currentTarget.style.color = "#212529";
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.background = "#f8f9fa";
+                    e.currentTarget.style.color = "#343a40";
+                  }}
                 >
-                  Limpiar
+                  Borrar Todo
                 </Button>
                 <Button
                   type="submit"
-                  className="btn-elegant btn-whatsapp"
+                  className="btn-elegant btn-whatsapp whatsapp-green"
+                  style={{
+                    background: "#25D366",
+                    color: "#fff",
+                    border: "none",
+                    boxShadow: "0 2px 8px #25d36644",
+                  }}
                   disabled={loading || isProcessing || progress < 30}
                   aria-label="Enviar cotización por WhatsApp"
                   title="Tu solicitud será enviada por WhatsApp"
+                  onMouseOver={(e) =>
+                    (e.currentTarget.style.background = "#1ebe57")
+                  }
+                  onMouseOut={(e) =>
+                    (e.currentTarget.style.background = "#25D366")
+                  }
                 >
                   {loading || isProcessing ? (
                     <>
@@ -593,74 +651,14 @@ function Form() {
                   ) : (
                     <>
                       <FaWhatsapp size={20} />
-                      <span>Enviar por WhatsApp</span>
+                      <span className="ms-3">Enviar por WhatsApp</span>
                     </>
                   )}
                 </Button>
               </div>
-              {progress < 30 && (
-                <p
-                  className="text-center text-muted mt-3"
-                  style={{ fontSize: "0.875rem" }}
-                >
-                  Completa al menos los campos básicos para enviar tu cotización
-                </p>
-              )}
             </article>
           </div>
         </RBForm>
-
-        {/* Modal de Vista Previa Mejorado */}
-        <Modal
-          show={showPreview}
-          onHide={handleClosePreview}
-          size="lg"
-          centered
-          className="preview-modal-elegant"
-        >
-          <Modal.Header closeButton className="border-0 pb-0">
-            <Modal.Title className="w-100">
-              <div className="d-flex align-items-center gap-2">
-                <FaWhatsapp size={24} color="#25D366" />
-                <span>Vista Previa - WhatsApp</span>
-              </div>
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body className="pt-2">
-            <p className="text-muted mb-3" style={{ fontSize: "0.9rem" }}>
-              Así es como se verá tu mensaje al enviarlo por WhatsApp:
-            </p>
-            <div className="whatsapp-preview-container">
-              {generateWhatsAppMessage(form, {
-                ...details,
-                fileName: fileDetails.fileName,
-              })}
-            </div>
-          </Modal.Body>
-          <Modal.Footer className="border-0 pt-0">
-            <Button
-              variant="outline-secondary"
-              onClick={handleClosePreview}
-              className="btn-elegant"
-            >
-              Editar
-            </Button>
-            <Button
-              className="btn-elegant btn-whatsapp"
-              onClick={() => {
-                handleClosePreview();
-                document
-                  .querySelector("form")
-                  .dispatchEvent(
-                    new Event("submit", { cancelable: true, bubbles: true })
-                  );
-              }}
-            >
-              <FaWhatsapp className="me-2" size={18} />
-              Confirmar y Enviar
-            </Button>
-          </Modal.Footer>
-        </Modal>
       </div>
     </section>
   );
