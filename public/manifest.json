@@ -1,0 +1,16 @@
+{
+    "name": "Elephant Group",
+    "short_name": "Elephant",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#0a0a0a",
+    "description": "Especialistas en señalética, material POP, gigantografías y merchandising en Valparaíso. Soluciones publicitarias para empresas.",
+    "icons": [
+        {
+            "src": "/light/assets/imgs/favicon.ico",
+            "sizes": "64x64 32x32 24x24 16x16",
+            "type": "image/x-icon"
+        }
+    ]
+}

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-//= Scripts
-import loadBackgroudImages from "@/common/loadBackgroudImages";
+import Image from "next/image";
 
 //= Modules
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -66,21 +65,28 @@ function Story() {
                 {...swiperOptions}
                 className="swiper-container parallax-slider"
               >
-                {data.gallery.map((_item, index) => {
-                  const randomIndex = Math.floor(
-                    Math.random() * data.gallery.length
-                  );
-                  const randomImage = data.gallery[randomIndex].image;
-                  return (
-                    <SwiperSlide key={index}>
-                      <div
-                        className="bg-img radius-10 md-mb50"
-                        data-background={randomImage}
-                        data-swiper-parallax-opacity="0.5"
-                      ></div>
-                    </SwiperSlide>
-                  );
-                })}
+                {data.gallery.map((item, index) => (
+                  <SwiperSlide key={index}>
+                    <div
+                      className="bg-img radius-10 md-mb50"
+                      style={{
+                        position: "relative",
+                        width: "100%",
+                        aspectRatio: "6/1",
+                        minHeight: 120,
+                      }}
+                    >
+                      <Image
+                        src={item.image}
+                        alt={`Proyecto ${item.type} ${item.year}`}
+                        fill
+                        style={{ objectFit: "cover", borderRadius: "10px" }}
+                        sizes="(max-width: 991px) 100vw, 400px"
+                        priority={index === 0}
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
               </Swiper>
             )}
           </div>
@@ -90,22 +96,28 @@ function Story() {
                 {...swiperOptions}
                 className="swiper-container parallax-slider"
               >
-                {data.gallery.map((_item, index) => {
-                  const randomIndex = Math.floor(
-                    Math.random() * data.gallery.length
-                  );
-                  const randomImage = data.gallery[randomIndex].image;
-
-                  return (
-                    <SwiperSlide key={index}>
-                      <div
-                        className="bg-img radius-10"
-                        data-background={randomImage}
-                        data-swiper-parallax-opacity="0.5"
-                      ></div>
-                    </SwiperSlide>
-                  );
-                })}
+                {data.gallery.map((item, index) => (
+                  <SwiperSlide key={index}>
+                    <div
+                      className="bg-img radius-10"
+                      style={{
+                        position: "relative",
+                        width: "100%",
+                        aspectRatio: "6/1",
+                        minHeight: 120,
+                      }}
+                    >
+                      <Image
+                        src={item.image}
+                        alt={`Proyecto ${item.type} ${item.year}`}
+                        fill
+                        style={{ objectFit: "cover", borderRadius: "10px" }}
+                        sizes="(max-width: 991px) 100vw, 800px"
+                        priority={index === 0}
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
               </Swiper>
             )}
           </div>

@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
+import NextImage from "next/image";
 import { useRouter } from "next/router";
 import gsap from "gsap";
 
@@ -150,7 +151,7 @@ function Loader() {
 
   // Efecto para precargar la imagen
   useEffect(() => {
-    const img = new Image();
+    const img = new window.Image();
     img.src = logoSrc;
     img.onload = () => {
       console.log("Logo precargado correctamente");
@@ -175,14 +176,21 @@ function Loader() {
       {/* Contenido del loader */}
       <div className="loader-content">
         <div className="loader-logo">
-          <img
+          <NextImage
             src={logoSrc}
-            alt="Elephant Group"
+            alt="Logo animado de Elephant Group - Imprenta y servicios gráficos en Valparaíso"
             className="loader-logo-img"
-            loading="eager"
+            width={180}
+            height={60}
+            priority
             onError={(e) => {
               console.warn("Error loading image, using fallback");
-              e.target.src = "/dark/assets/imgs/logo2-dark.webp";
+              if (
+                e.target &&
+                e.target.src !== "/dark/assets/imgs/logo2-dark.webp"
+              ) {
+                e.target.src = "/dark/assets/imgs/logo2-dark.webp";
+              }
             }}
           />
         </div>

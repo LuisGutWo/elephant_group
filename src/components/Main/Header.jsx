@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 //= Modules
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, Pagination, Parallax } from "swiper/modules";
@@ -87,12 +87,14 @@ function Header() {
               >
                 {/* Imagen de fondo mejorada */}
                 <div className="bg-img">
-                  <img
+                  <Image
                     src={item.background}
                     alt={`Elephant Group - ${item.title} - Implementos publicitarios y señalética en Valparaíso, V Región Chile`}
-                    loading={index === 0 ? "eager" : "lazy"}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    priority={index === 0}
+                    sizes="100vw"
                     data-swiper-parallax="0.3"
-                    itemProp="contentUrl"
                     title={`${item.title} - Elephant Group`}
                   />
                   <meta itemProp="description" content={item.subtitle} />

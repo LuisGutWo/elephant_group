@@ -135,6 +135,14 @@ function PrivacyPolicy() {
   return (
     <>
       <Head>
+        <title>
+          Política de Privacidad | Elephant Group - Protección de Datos y
+          Transparencia
+        </title>
+        <meta
+          name="description"
+          content="Política de privacidad de Elephant Group. Conoce cómo protegemos y gestionamos tu información personal de manera responsable y transparente en Valparaíso y Viña del Mar."
+        />
         {/* Primary Meta Tags */}
         <title>
           Política de Privacidad - Elephant Group | Protección de Datos

@@ -37,6 +37,51 @@ function HomePage() {
           content="Especialistas en señalética, material POP, gigantografías y merchandising en Valparaíso. Soluciones publicitarias para empresas. Cotiza con Elephant Group."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Organization Schema.org */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Elephant Group",
+              url: "https://landingclientes.elephantgroup.cl/",
+              logo: "https://landingclientes.elephantgroup.cl/light/assets/imgs/logo-light.webp",
+              description:
+                "Especialistas en señalética, material POP, gigantografías y merchandising en Valparaíso. Soluciones publicitarias para empresas.",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Viña del Mar, Valparaíso, Chile",
+                addressCountry: "CL",
+              },
+              telephone: "+56 9 5163 1370",
+              email: "contacto@elephantgroup.cl",
+              sameAs: [
+                "https://www.facebook.com/elephantgroupchile",
+                "https://www.instagram.com/elephantgroupchile/",
+                "https://www.linkedin.com/company/elephantgroupchile/",
+              ],
+            }),
+          }}
+        />
+        {/* WebSite Schema.org */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Elephant Group",
+              url: "https://landingclientes.elephantgroup.cl/",
+              potentialAction: {
+                "@type": "SearchAction",
+                target:
+                  "https://landingclientes.elephantgroup.cl/?s={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
       </Head>
 
       <Loader />

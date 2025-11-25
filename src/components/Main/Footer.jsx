@@ -90,8 +90,45 @@ function Footer({ subBg }) {
 
   return (
     <footer className={subBg ? "sub-bg pt-80" : ""}>
+      {/* Organization y ContactPoint Schema.org para refuerzo SEO global */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Elephant Group",
+            url: "https://landingclientes.elephantgroup.cl/",
+            logo: "https://landingclientes.elephantgroup.cl/light/assets/imgs/logo-light.webp",
+            description:
+              "Especialistas en señalética, material POP, gigantografías y merchandising en Valparaíso. Soluciones publicitarias para empresas.",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "3 Oriente 974 (entre 10 y 11 Norte)",
+              addressLocality: "Viña del Mar",
+              addressRegion: "Valparaíso",
+              addressCountry: "CL",
+            },
+            telephone: "+56 9 93239203",
+            email: "contacto@elephantgroup.cl",
+            sameAs: [
+              "https://www.facebook.com/elephantgroupchile",
+              "https://www.instagram.com/elephantgroupchile/",
+              "https://www.linkedin.com/company/elephantgroupchile/",
+            ],
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+56 9 93239203",
+              contactType: "customer service",
+              areaServed: "CL",
+              availableLanguage: ["Spanish"],
+              email: "contacto@elephantgroup.cl",
+            },
+          }),
+        }}
+      />
       <div className="eg-footer-top">
-        <div className="container eg-footer-inner">
+        <div className="container eg-footer-inner footer-responsive-minimal">
           <div className="eg-contact-col">
             <h3>CONTACTO</h3>
             <ul className="eg-contact-list">
@@ -127,9 +164,9 @@ function Footer({ subBg }) {
               </li>
             </ul>
           </div>
-
-          <div className="eg-form-col d-flex flex-column">
-            <div className="eg-form-card">
+          {/* El formulario SIEMPRE va debajo en mobile, y a la derecha en desktop */}
+          <div className="eg-form-col footer-form-mobile-bottom">
+            <div className="eg-form-card eg-form-card-minimal">
               <h4 className="text-right mb-20">ENVIAR UN MENSAJE</h4>
               {status.type === "success" && (
                 <div className="eg-alert success">{status.msg}</div>
@@ -137,7 +174,6 @@ function Footer({ subBg }) {
               {status.type === "error" && (
                 <div className="eg-alert error">{status.msg}</div>
               )}
-
               <form
                 onSubmit={handleSubmit}
                 className="eg-contact-form"
@@ -178,19 +214,19 @@ function Footer({ subBg }) {
                 </div>
               </form>
             </div>
-            <div className="eg-socials">
-              <h4 className="text-dark">SÍGUENOS EN</h4>
-              <a href="#" aria-label="Instagram" className="eg-social">
-                {instagramSvg}
-              </a>
-              <a href="#" aria-label="Facebook" className="eg-social">
-                {facebookSvg}
-              </a>
-              <a href="#" aria-label="LinkedIn" className="eg-social">
-                {linkedinSvg}
-              </a>
-            </div>
           </div>
+        </div>
+        {/* Redes sociales SOLO visibles debajo de CONTACTO en mobile, y a la derecha del formulario en desktop */}
+        <div className="eg-socials minimal eg-socials-footer-adaptive">
+          <a href="#" aria-label="Instagram" className="eg-social">
+            {instagramSvg}
+          </a>
+          <a href="#" aria-label="Facebook" className="eg-social">
+            {facebookSvg}
+          </a>
+          <a href="#" aria-label="LinkedIn" className="eg-social">
+            {linkedinSvg}
+          </a>
         </div>
       </div>
     </footer>
