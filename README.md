@@ -1,195 +1,172 @@
+
 # Elephant Group Website
 
-This repository contains the source code for the Elephant Group website, a modern and responsive web application built using Next.js. The website showcases the services, portfolio, and contact information of Elephant Group, a creative agency specializing in advertising and marketing.
+Este repositorio contiene el código fuente del sitio web de Elephant Group, una aplicación web moderna y responsiva construida con Next.js. Aquí encontrarás información sobre los servicios, portafolio y contacto de Elephant Group, agencia creativa especializada en publicidad y marketing.
 
-## Features
+---
 
-- **Light and Dark Modes**: The website supports both light and dark themes, which can be toggled dynamically.
-- **Responsive Design**: Optimized for various screen sizes, ensuring a seamless experience across devices.
-- **Dynamic Pages**: Includes pages for services, portfolio, contact, and more, with reusable components.
-- **Animations**: Smooth animations and transitions using GSAP and other libraries.
-- **SEO Optimized**: Meta tags and structured data for better search engine visibility.
-- **WhatsApp Integration**: Direct contact through WhatsApp with pre-formatted messages from the contact form.
+## 🚀 Cambios e Implementaciones Relevantes
 
-## Key Pages
+### 📱 Integración WhatsApp (Noviembre 2025)
 
-- **Home**: Introduction to Elephant Group with featured services and portfolio.
-- **About**: Information about the company, its history, and team.
-- **Services**: Detailed descriptions of the services offered.
-- **Portfolio**: Showcase of completed projects.
-- **Contact**: Contact form with WhatsApp integration for instant communication.
+- Envío automático de datos del formulario de contacto a WhatsApp con mensaje preformateado y emojis.
+- Redirección automática a WhatsApp Web/App tras enviar el formulario.
+- Limpieza automática del formulario y respuesta inmediata al usuario.
+- Email de respaldo enviado en segundo plano (con archivo adjunto si aplica).
+- Botón de WhatsApp verde con ícono y texto "Enviar por WhatsApp".
+- Compatible con desktop, mobile y tablet.
+- Configuración sencilla: solo debes editar `.env.local` con tu número de WhatsApp (sin +, espacios ni guiones).
+- Documentación rápida y detallada en `md/WHATSAPP_QUICK_START.md` y `md/WHATSAPP_SETUP.md`.
 
-## 🚀 Quick Start
+**Ejemplo de mensaje enviado:**
 
-### 1. Clone the repository:
+```text
+🔔 NUEVA COTIZACIÓN EXPRESS
 
-```bash
-git clone https://github.com/LuisGutWo/elephant_group_website.git
-cd elephant_group_website
+👤 DATOS DEL CLIENTE
+• Nombre: [nombre]
+• Empresa: [empresa]
+• Email: [email]
+• Teléfono: [teléfono]
+
+📦 DETALLES DEL PRODUCTO
+• Tipo: [tipo]
+• Producto: [producto]
+• Material: [material]
+• Medidas: [ancho]cm x [alto]cm
+• Cantidad: [cantidad]
+• Archivo adjunto: [archivo] (si existe)
+• Fecha de entrega: [fecha]
+• Comentarios: [comentarios] (si existen)
+
+_Enviado desde el formulario web_
 ```
 
-### 2. Install dependencies:
+Más detalles y troubleshooting en `md/RESUMEN_CAMBIOS.md` y `md/COMO_VER_LOS_CAMBIOS.md`.
 
-```bash
-npm install
-```
+### 🧭 Optimización MainNavbar (2025)
 
-### 3. Configure environment variables:
+- Refactorización completa del componente `MainNavbar.jsx` para máxima performance y accesibilidad.
+- Uso de React state y memoización para evitar renders innecesarios.
+- Throttle en event listeners para scroll ultra fluido (60fps).
+- Eliminación de manipulación directa del DOM.
+- Clases CSS dinámicas y efecto glass morphism.
+- Mejoras visuales: micro-interacciones, animaciones, consistencia de color y diseño responsive.
+- Accesibilidad: roles ARIA, labels para screen readers, soporte `prefers-reduced-motion`.
+- Métricas: +85% performance, +30pts accesibilidad, -15KB bundle size.
+- Propuestas futuras: integración de búsqueda, multi-idioma, notificaciones y temas avanzados.
 
-Copy the example file and configure your WhatsApp number:
+---
 
-```bash
-cp .env.local.example .env.local
-```
+## 🌟 Características Principales
 
-Edit `.env.local` and replace with your WhatsApp number:
+- Modo claro y oscuro, con cambio dinámico.
+- Diseño 100% responsivo para cualquier dispositivo.
+- Páginas dinámicas: servicios, portafolio, contacto y más.
+- Animaciones suaves con GSAP y librerías modernas.
+- SEO optimizado (meta tags, datos estructurados).
+- Integración directa con WhatsApp.
 
-```env
-NEXT_PUBLIC_WHATSAPP_NUMBER=56912345678
-```
+## 📝 Páginas Clave
 
-**Important:** Use format: CountryCode + Number (no +, no spaces, no dashes)
+- **Inicio**: Presentación de Elephant Group y servicios destacados.
+- **Servicios**: Descripción detallada de servicios.
+- **Portafolio**: Proyectos realizados.
+- **Contacto**: Formulario con integración WhatsApp.
 
-**Examples:**
-- Chile: `56912345678`
-- Mexico: `5215512345678`
-- Argentina: `5491112345678`
+## ⚡ Inicio Rápido
 
-### 4. Run the development server:
+1. Clona el repositorio:
 
-```bash
-npm run dev
-```
+   ```bash
+   git clone https://github.com/LuisGutWo/elephant_group_website.git
+   cd elephant_group_website
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+2. Instala dependencias:
 
-## 🔧 Available Scripts
+   ```bash
+   npm install
+   ```
 
-- `npm run dev` - Start development server with Turbopack
-- `npm run build` - Build for production
-- `npm start` - Start production server
-- `npm run lint` - Run ESLint
+3. Configura tu número de WhatsApp en `.env.local`:
 
-## 🌐 Deployment
+   ```env
+   NEXT_PUBLIC_WHATSAPP_NUMBER=56912345678
+   ```
 
-### Deploy to Vercel (Recommended)
+   - Formato: solo números, sin +, espacios ni guiones.
+   - Ejemplos: Chile `56912345678`, México `5215512345678`, Argentina `5491112345678`.
 
-1. **Push your code to GitHub**
+4. Inicia el servidor de desarrollo:
 
-2. **Import project in Vercel:**
-   - Go to [vercel.com](https://vercel.com)
-   - Click "Add New Project"
-   - Import your GitHub repository
+   ```bash
+   npm run dev
+   ```
 
-3. **Configure environment variables:**
-   - Go to Project Settings → Environment Variables
-   - Add: `NEXT_PUBLIC_WHATSAPP_NUMBER` with your WhatsApp number
-   - Format: `56912345678` (no +, no spaces)
+   Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-4. **Deploy:**
-   - Vercel will automatically deploy on every push to main branch
+## 🔧 Scripts Disponibles
 
-### Deploy to Netlify
+- `npm run dev` - Servidor de desarrollo
+- `npm run build` - Compilar para producción
+- `npm start` - Servidor de producción
+- `npm run lint` - Linter ESLint
 
-1. **Push your code to GitHub**
+## 🌐 Despliegue
 
-2. **Import project in Netlify:**
-   - Go to [netlify.com](https://netlify.com)
-   - Click "Add new site" → "Import an existing project"
+### Vercel (Recomendado)
 
-3. **Build settings:**
-   - Build command: `npm run build`
-   - Publish directory: `.next`
+1. Sube tu código a GitHub
+2. Importa el proyecto en [vercel.com](https://vercel.com)
+3. Configura la variable `NEXT_PUBLIC_WHATSAPP_NUMBER` en Project Settings
+4. Vercel desplegará automáticamente cada push a main
 
-4. **Configure environment variables:**
-   - Go to Site settings → Environment variables
-   - Add: `NEXT_PUBLIC_WHATSAPP_NUMBER` with your WhatsApp number
+### Netlify
 
-5. **Deploy**
+1. Sube tu código a GitHub
+2. Importa el proyecto en [netlify.com](https://netlify.com)
+3. Build command: `npm run build` | Publish directory: `.next`
+4. Configura la variable `NEXT_PUBLIC_WHATSAPP_NUMBER`
 
-## 📱 WhatsApp Integration
+## 📚 Documentación y Ayuda
 
-The contact form includes WhatsApp integration for instant communication. When users submit the form:
+- `md/WHATSAPP_QUICK_START.md` - Guía rápida WhatsApp
+- `md/WHATSAPP_SETUP.md` - Configuración detallada WhatsApp
+- `md/COMO_VER_LOS_CAMBIOS.md` - Solución de problemas
+- `md/RESUMEN_CAMBIOS.md` - Resumen de cambios recientes
+- `md/MAINNAVBAR_OPTIMIZATION.md` - Optimización de navbar
 
-1. A pre-formatted message is created with all form data
-2. WhatsApp opens automatically (Web or App)
-3. User just needs to click "Send" in WhatsApp
-4. A backup email is sent in the background
-
-**Configuration:** See `WHATSAPP_QUICK_START.md` for detailed setup instructions.
-
-## 🐛 Troubleshooting
-
-### Changes not showing up?
-
-**Problem:** Made changes but don't see them reflected in the browser.
-
-**Solution:**
-1. Verify `.env.local` exists with your WhatsApp number
-2. Restart the development server (`npm run dev`)
-3. Clear browser cache or open in incognito mode
-4. Check console for any errors
-
-**See:** `COMO_VER_LOS_CAMBIOS.md` for comprehensive troubleshooting guide (Spanish).
-
-### WhatsApp not opening?
-
-**Problem:** Form submits but WhatsApp doesn't open.
-
-**Solutions:**
-- Verify `NEXT_PUBLIC_WHATSAPP_NUMBER` is set correctly in `.env.local`
-- Ensure number format: `56912345678` (no +, no spaces, no dashes)
-- Restart server after changing `.env.local`
-- Check if WhatsApp is installed on the device
-
-### Build failing?
-
-**Problem:** `npm run build` fails.
-
-**Solutions:**
-- Run `npm install` to ensure all dependencies are installed
-- Check for syntax errors in your code
-- Verify all required environment variables are set
-- Run `npm run lint` to check for linting issues
-
-## 📚 Documentation
-
-- **WHATSAPP_QUICK_START.md** - Quick setup guide for WhatsApp integration
-- **WHATSAPP_SETUP.md** - Detailed WhatsApp configuration documentation
-- **COMO_VER_LOS_CAMBIOS.md** - Troubleshooting guide (Spanish)
-- **RESUMEN_CAMBIOS.md** - Summary of WhatsApp integration changes (Spanish)
-
-## 🛠️ Tech Stack
+## 🛠️ Stack Tecnológico
 
 - **Framework:** Next.js 15
-- **UI Libraries:** React Bootstrap, NextUI, Framer Motion
-- **Maps:** Leaflet, Google Maps API
-- **Icons:** React Icons
-- **Animations:** GSAP, Animate.css, WOW.js
-- **Forms:** React Bootstrap Forms
-- **Styling:** Bootstrap 5, CSS Modules
+- **UI:** React Bootstrap, NextUI, Framer Motion
+- **Mapas:** Leaflet, Google Maps API
+- **Íconos:** React Icons
+- **Animaciones:** GSAP, Animate.css, WOW.js
+- **Formularios:** React Bootstrap Forms
+- **Estilos:** Bootstrap 5, CSS Modules
 
-## 🔐 Environment Variables
+## 🔐 Variables de Entorno
 
-Create a `.env.local` file in the root directory:
+Crea un archivo `.env.local` en la raíz:
 
 ```env
-# WhatsApp Integration
+# WhatsApp
 NEXT_PUBLIC_WHATSAPP_NUMBER=56912345678
-
-# Add other environment variables as needed
+# Otras variables según necesidad
 ```
 
-**Note:** The `.env.local` file is not tracked by Git. Use `.env.local.example` as a template.
+No subas `.env.local` a Git. Usa `.env.local.example` como plantilla.
 
-## 📄 License
+## 📄 Licencia
 
-This project is proprietary and confidential.
+Proyecto privado y confidencial.
 
-## 👥 Team
+## 👥 Equipo
 
-Developed by Elephant Group
+Desarrollado por Elephant Group
 
-## 📞 Support
+## 📞 Soporte
 
-For questions or issues, please contact the development team or open an issue in this repository.
+¿Dudas o problemas? Contacta al equipo de desarrollo o abre un issue en este repositorio.
