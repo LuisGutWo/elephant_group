@@ -6,7 +6,6 @@ import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/Main/Header";
 import Products from "@/components/Main/Products";
 import Clients from "@/components/Main/Clients";
-import Services from "@/components/Main/Services";
 import AboutUs from "@/components/Main/AboutUs";
 import Portfolio from "@/components/Main/Portfolio";
 import FooterImg from "@/components/Main/FooterImg";
@@ -68,7 +67,6 @@ function HomePage() {
       <Header />
       <Products />
       <Clients />
-      <Services />
       <main>
         <section id="contact" aria-labelledby="contact-title">
           <Form />
