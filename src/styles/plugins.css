@@ -1,9 +1,8 @@
 /* ----------------------------------------------------------------
 			[ All Css Plugins & Helper Classes File ]
------------------------------------------------------------------*/
 
 /* == bootstrap == */
-@import url("plugins/bootstrap.min.css");
+@import url("./plugins/bootstrap.min.css");
 
 /* == animate css == */
 @import url("plugins/animate.min.css");
