@@ -4,7 +4,8 @@ import Script from "next/script";
 import Head from "next/head";
 //= Common Styles
 import "swiper/css/bundle";
-import "@/styles/globals.css";
+// import "@/styles/globals.css";
+import "@/styles/globals.purged.css";
 import "@/styles/whatsapp-widget.css";
 
 function App({ Component, pageProps }) {

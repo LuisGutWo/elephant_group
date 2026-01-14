@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Head from "next/head";
+import SeoHead from "@/components/Common/SeoHead";
 import Layout from "@/layouts/default";
 import Loader from "@/components/Common/Loader";
 import Navbar from "@/components/Common/MainNavbar";
@@ -31,35 +31,18 @@ function QuotePage() {
 
   return (
     <>
-      <Head>
-        <title>
-          Cotización | Elephant Group - Presupuesto de Implementos Publicitarios
-        </title>
-        <meta
-          name="description"
-          content="Solicita tu cotización personalizada de implementos publicitarios en Valparaíso. Material POP, señalética, gigantografías y merchandising. Respuesta en 24 horas. Presupuesto sin compromiso."
-        />
-        <meta
-          name="keywords"
-          content="cotización publicidad, presupuesto implementos publicitarios, cotizar material POP, precio señalética, presupuesto merchandising, cotización gigantografías Viña del Mar, Valparaiso y V Region, solicitar presupuesto publicidad V Región"
-        />
-        <meta name="author" content="Elephant Group" />
-        <meta
-          property="og:title"
-          content="Cotización | Elephant Group - Presupuesto Implementos Publicitarios"
-        />
-        <meta
-          property="og:description"
-          content="Solicita tu cotización personalizada. Respuesta en 24 horas. Material POP, señalética y merchandising en Viña del Mar, Valparaiso y V Region."
-        />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Cotización | Elephant Group" />
-        <meta
-          name="twitter:description"
-          content="Solicita tu presupuesto personalizado de implementos publicitarios. Respuesta en 24 horas."
-        />
-      </Head>
+      <SeoHead
+        title="Cotización | Elephant Group - Presupuesto de Implementos Publicitarios"
+        description="Solicita tu cotización personalizada de implementos publicitarios en Valparaíso. Material POP, señalética, gigantografías y merchandising. Respuesta en 24 horas. Presupuesto sin compromiso."
+        keywords="cotización publicidad, presupuesto implementos publicitarios, cotizar material POP, precio señalética, presupuesto merchandising, cotización gigantografías Viña del Mar, Valparaiso y V Region, solicitar presupuesto publicidad V Región"
+        author="Elephant Group"
+        ogTitle="Cotización | Elephant Group - Presupuesto Implementos Publicitarios"
+        ogDescription="Solicita tu cotización personalizada. Respuesta en 24 horas. Material POP, señalética y merchandising en Viña del Mar, Valparaiso y V Region."
+        ogType="website"
+        twitterCard="summary_large_image"
+        twitterTitle="Cotización | Elephant Group"
+        twitterDescription="Solicita tu presupuesto personalizado de implementos publicitarios. Respuesta en 24 horas."
+      />
 
       <Loader />
       <Navbar mainBg />

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Head from "next/head";
+import SeoHead from "@/components/Common/SeoHead";
 import Loader from "@/components/Common/Loader";
 import MainNavbar from "@/components/Common/MainNavbar";
 import TermsHeader from "@/components/Legal/TermsHeader";
@@ -132,104 +132,38 @@ function TermsAndConditions() {
 
   return (
     <>
-      <Head>
-        <title>
-          Términos y Condiciones | Elephant Group - Servicios Publicitarios en
-          Valparaíso
-        </title>
-        <meta
-          name="description"
-          content="Términos y condiciones de Elephant Group para servicios de señalética, impresión, diseño gráfico y material POP en Valparaíso y Viña del Mar."
-        />
-        {/* Primary Meta Tags */}
-        <title>
-          Términos y Condiciones - Elephant Group | Servicios Publicitarios
-        </title>
-        <meta
-          name="title"
-          content="Términos y Condiciones - Elephant Group | Servicios Publicitarios"
-        />
-        <meta
-          name="description"
-          content="Términos y condiciones de uso de servicios de Elephant Group. Conoce nuestras políticas de cotización, pagos, plazos de entrega, garantías y responsabilidades para implementos publicitarios y señalética."
-        />
-        <meta
-          name="keywords"
-          content="términos y condiciones, términos de servicio, condiciones generales, políticas comerciales, contrato de servicio, garantías, devoluciones, Elephant Group, Valparaíso, Chile"
-        />
-        <meta name="author" content="Elephant Group" />
-        <meta name="robots" content="index, follow" />
-        <meta name="language" content="Spanish" />
-        <meta name="revisit-after" content="7 days" />
-
-        {/* Canonical URL */}
-        <link
-          rel="canonical"
-          href="https://landingclientes.elephantgroup.cl/terminos"
-        />
-
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://landingclientes.elephantgroup.cl/terminos"
-        />
-        <meta
-          property="og:title"
-          content="Términos y Condiciones - Elephant Group"
-        />
-        <meta
-          property="og:description"
-          content="Condiciones generales que regulan el uso de nuestros servicios de implementos publicitarios, señalética y diseño gráfico. Información sobre cotizaciones, pagos, plazos y garantías."
-        />
-        <meta
-          property="og:image"
-          content="https://landingclientes.elephantgroup.cl/dark/assets/imgs/logo-light.webp"
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:locale" content="es_CL" />
-        <meta property="og:site_name" content="Elephant Group" />
-
-        {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:url"
-          content="https://landingclientes.elephantgroup.cl/terminos"
-        />
-        <meta
-          property="twitter:title"
-          content="Términos y Condiciones - Elephant Group"
-        />
-        <meta
-          property="twitter:description"
-          content="Conoce nuestras condiciones generales de servicio: políticas de cotización, pagos, plazos, garantías y responsabilidades."
-        />
-        <meta
-          property="twitter:image"
-          content="https://landingclientes.elephantgroup.cl/dark/assets/imgs/logo-light.webp"
-        />
-
-        {/* Geo Tags */}
-        <meta name="geo.region" content="CL-VS" />
-        <meta
-          name="geo.placename"
-          content="Viña del Mar, Valparaiso y V Region"
-        />
-        <meta name="geo.position" content="-33.0472;-71.6127" />
-        <meta name="ICBM" content="-33.0472, -71.6127" />
-
-        {/* Additional Meta Tags */}
-        <meta name="theme-color" content="#fca311" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </Head>
+      <SeoHead
+        title="Términos y Condiciones | Elephant Group - Servicios Publicitarios en Valparaíso"
+        description="Términos y condiciones de Elephant Group para servicios de señalética, impresión, diseño gráfico y material POP en Valparaíso y Viña del Mar."
+        keywords="términos y condiciones, términos de servicio, condiciones generales, políticas comerciales, contrato de servicio, garantías, devoluciones, Elephant Group, Valparaíso, Chile"
+        author="Elephant Group"
+        robots="index, follow"
+        language="Spanish"
+        revisitAfter="7 days"
+        canonical="https://landingclientes.elephantgroup.cl/terminos"
+        ogType="website"
+        ogUrl="https://landingclientes.elephantgroup.cl/terminos"
+        ogTitle="Términos y Condiciones - Elephant Group"
+        ogDescription="Condiciones generales que regulan el uso de nuestros servicios de implementos publicitarios, señalética y diseño gráfico. Información sobre cotizaciones, pagos, plazos y garantías."
+        ogImage="https://landingclientes.elephantgroup.cl/dark/assets/imgs/logo-light.webp"
+        ogImageWidth="1200"
+        ogImageHeight="630"
+        ogLocale="es_CL"
+        ogSiteName="Elephant Group"
+        twitterCard="summary_large_image"
+        twitterUrl="https://landingclientes.elephantgroup.cl/terminos"
+        twitterTitle="Términos y Condiciones - Elephant Group"
+        twitterDescription="Conoce nuestras condiciones generales de servicio: políticas de cotización, pagos, plazos, garantías y responsabilidades."
+        twitterImage="https://landingclientes.elephantgroup.cl/dark/assets/imgs/logo-light.webp"
+        geoRegion="CL-VS"
+        geoPlacename="Viña del Mar, Valparaiso y V Region"
+        geoPosition="-33.0472;-71.6127"
+        icbm="-33.0472, -71.6127"
+        themeColor="#fca311"
+        formatDetection="telephone=no"
+        xUaCompatible="ie=edge"
+        structuredData={structuredData}
+      />
 
       <Loader />
       <MainNavbar mainBg />

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Head from "next/head";
+import SeoHead from "@/components/Common/SeoHead";
 import Layout from "@/layouts/default";
 import Loader from "@/components/Common/Loader";
 import Navbar from "@/components/Common/MainNavbar";
@@ -25,58 +25,13 @@ function ContactPage() {
 
   return (
     <>
-      <Head>
-        <title>
-          Contacto | Elephant Group - Implementos Publicitarios en Viña del Mar,
-          Valparaiso y V Region | +56 9 5163 1370
-        </title>
-        <meta
-          name="description"
-          content="Contáctanos para implementos publicitarios en Viña del Mar, Valparaiso y V Region. Material POP, señalética, gigantografías y merchandising. WhatsApp +56 9 5163 1370. Atención personalizada y respuesta rápida."
-        />
-        <meta
-          name="keywords"
-          content="contacto Elephant Group, teléfono publicidad Viña del Mar, Valparaiso y V Region, WhatsApp implementos publicitarios, contactar agencia publicidad V Región, solicitar cotización material POP, teléfono señalética Viña del Mar, contacto merchandising Chile, dirección Elephant Group"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="author" content="Elephant Group" />
-        <meta
-          property="og:title"
-          content="Contacto | Elephant Group - Implementos Publicitarios Viña del Mar, Valparaiso y V Region"
-        />
-        <meta
-          property="og:description"
-          content="Contáctanos por WhatsApp +56 9 5163 1370 para implementos publicitarios en Viña del Mar, Valparaiso y V Region. Respuesta rápida y atención personalizada."
-        />
-        <meta property="og:type" content="website" />
-        <meta name="geo.region" content="CL-VS" />
-        <meta
-          name="geo.placename"
-          content="Viña del Mar, Valparaiso y V Region"
-        />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Contacto | Elephant Group" />
-        <meta
-          name="twitter:description"
-          content="WhatsApp +56 9 5163 1370 - Implementos publicitarios en Valparaíso"
-        />
-        {/* ContactPoint Schema.org */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ContactPoint",
-              telephone: "+56 9 5163 1370",
-              contactType: "customer service",
-              areaServed: "CL",
-              availableLanguage: ["Spanish"],
-              email: "contacto@elephantgroup.cl",
-              url: "https://landingclientes.elephantgroup.cl/contact",
-            }),
-          }}
-        />
-      </Head>
+      <SeoHead
+        title="Contacto | Elephant Group"
+        description="Contáctanos para soluciones de diseño gráfico, impresión digital y señalética en Valparaíso y Viña del Mar. Atención personalizada para empresas."
+        keywords="contacto, agencia creativa, diseño gráfico, impresión digital, señalética, Valparaíso, Viña del Mar, Elephant Group"
+        author="Elephant Group"
+        canonical="https://landingclientes.elephantgroup.cl/contacto"
+      />
 
       <Loader />
       <Navbar mainBg />

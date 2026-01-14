@@ -14,6 +14,8 @@ import Footer from "@/components/Main/Footer";
 import Form from "@/components/InnerPages/Contact/Form";
 import FooterBottom from "@/components/Main/FooterBottom";
 
+import SeoHead from "@/components/Common/SeoHead";
+
 function HomePage() {
   useEffect(() => {
     if (document && document.body) {
@@ -28,6 +30,13 @@ function HomePage() {
 
   return (
     <>
+      <SeoHead
+        title="Inicio | Elephant Group - Agencia Creativa"
+        description="Agencia creativa en Valparaíso y Viña del Mar. Diseño gráfico, impresión digital, señalética y soluciones publicitarias para empresas."
+        keywords="agencia creativa, diseño gráfico, impresión digital, señalética, publicidad, Valparaíso, Viña del Mar, Elephant Group"
+        author="Elephant Group"
+        canonical="https://landingclientes.elephantgroup.cl/"
+      />
       <Head>
         <title>
           Elephant Group | Implementos Publicitarios y Señalética en Valparaíso
@@ -46,63 +55,28 @@ function HomePage() {
               "@type": "Organization",
               name: "Elephant Group",
               url: "https://landingclientes.elephantgroup.cl/",
-              logo: "https://landingclientes.elephantgroup.cl/light/assets/imgs/logo-light.webp",
-              description:
-                "Especialistas en señalética, material POP, gigantografías y merchandising en Valparaíso. Soluciones publicitarias para empresas.",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Viña del Mar, Valparaíso, Chile",
-                addressCountry: "CL",
-              },
-              telephone: "+56 9 5163 1370",
-              email: "contacto@elephantgroup.cl",
+              logo: "/logo.png",
               sameAs: [
                 "https://www.facebook.com/elephantgroupchile",
                 "https://www.instagram.com/elephantgroupchile/",
-                "https://www.linkedin.com/company/elephantgroupchile/",
               ],
             }),
           }}
         />
-        {/* WebSite Schema.org */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Elephant Group",
-              url: "https://landingclientes.elephantgroup.cl/",
-              potentialAction: {
-                "@type": "SearchAction",
-                target:
-                  "https://landingclientes.elephantgroup.cl/?s={search_term_string}",
-                "query-input": "required name=search_term_string",
-              },
-            }),
-          }}
-        />
       </Head>
-
-      <Loader />
-      <Navbar mainBg />
-      <main className="main-bg position-re" id="main-content" role="main">
-        <Header />
-        <section id="portfolio" aria-labelledby="portfolio-title">
-          <Portfolio />
-        </section>
-        <section id="products" aria-labelledby="products-title">
-          <Products />
-        </section>
-        <section id="clients" aria-labelledby="clients-title">
-          <Clients />
-        </section>
+      <Navbar />
+      <Header />
+      <Products />
+      <Clients />
+      <Services />
+      <main>
         <section id="contact" aria-labelledby="contact-title">
           <Form />
         </section>
         <section id="about" aria-labelledby="about-title">
           <AboutUs />
         </section>
+        <Portfolio />
       </main>
       <FooterImg />
       <Footer />

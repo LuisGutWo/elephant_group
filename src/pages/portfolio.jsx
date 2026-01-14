@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Head from "next/head";
+import SeoHead from "@/components/Common/SeoHead";
 import Layout from "@/layouts/default";
 import Loader from "@/components/Common/Loader";
 import Navbar from "@/components/Common/MainNavbar";
@@ -29,95 +29,87 @@ function PortfolioPage() {
 
   return (
     <>
-      <Head>
-        {/* BreadcrumbList Schema.org */}
-        <title>
-          Portafolio | Elephant Group - Trabajos de Publicidad en Viña del Mar,
-          Valparaiso y V Region
-        </title>
-        <meta
-          name="description"
-          content="Portafolio de proyectos publicitarios realizados por Elephant Group en Valparaíso y Viña del Mar: señalética, impresión digital, diseño gráfico y material POP."
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Inicio",
-                  item: "https://landingclientes.elephantgroup.cl/",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Portafolio",
-                  item: "https://landingclientes.elephantgroup.cl/portfolio",
-                },
-              ],
-            }),
-          }}
-        />
-        <title>
-          Portafolio | Elephant Group - Trabajos de Publicidad en Viña del Mar,
-          Valparaiso y V Region
-        </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          name="description"
-          content="Galería de trabajos realizados por Elephant Group en Viña del Mar, Valparaiso y V Region. Letreros CNC, señalética industrial, impresión digital, diseño gráfico y más de 500 proyectos publicitarios exitosos desde 2018."
-        />
-        <meta
-          name="keywords"
-          content="portafolio publicitario Viña del Mar, Valparaiso y V Region, trabajos publicidad Viña del Mar, letreros CNC, señalética industrial, impresión digital, diseño gráfico, cortes CNC Viña del Mar, Valparaiso y V Region, implementos publicitarios, proyectos branding, galería trabajos Elephant Group"
-        />
-        <meta name="author" content="Elephant Group" />
-        <meta name="robots" content="index, follow" />
-        {/* Geo Tags */}
-        <meta name="geo.region" content="CL-VS" />
-        <meta
-          name="geo.placename"
-          content="Viña del Mar, Valparaiso y V Region"
-        />
-        <meta name="geo.position" content="-33.0472;-71.6127" />
-        <meta name="ICBM" content="-33.0472, -71.6127" />
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content="Portafolio de Trabajos Publicitarios - Elephant Group Viña del Mar, Valparaiso y V Region"
-        />
-        <meta
-          property="og:description"
-          content="Descubre más de 500 proyectos publicitarios realizados en Viña del Mar, Valparaiso y V Region. Letreros CNC, señalética, impresión digital y diseño gráfico."
-        />
-        <meta
-          property="og:image"
-          content="/light/assets/imgs/works/work_publicity.webp"
-        />
-        <meta property="og:url" content="https://elephantgroup.cl/portfolio" />
-        <meta property="og:site_name" content="Elephant Group" />
-        <meta property="og:locale" content="es_CL" />
-        {/* Twitter Cards */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Portafolio Publicitario - Elephant Group"
-        />
-        <meta
-          name="twitter:description"
-          content="Galería de trabajos: Letreros CNC, señalética, impresión digital en Viña del Mar, Valparaiso y V Region"
-        />
-        <meta
-          name="twitter:image"
-          content="/light/assets/imgs/works/work_publicity.webp"
-        />
-        <link rel="canonical" href="https://elephantgroup.cl/portfolio" />
-      </Head>
+      <SeoHead
+        title="Portafolio | Elephant Group - Trabajos de Publicidad en Viña del Mar, Valparaiso y V Region"
+        description="Portafolio de proyectos publicitarios realizados por Elephant Group en Valparaíso y Viña del Mar: señalética, impresión digital, diseño gráfico y material POP."
+        keywords="portafolio publicitario Viña del Mar, Valparaiso y V Region, trabajos publicidad Viña del Mar, letreros CNC, señalética industrial, impresión digital, diseño gráfico, cortes CNC Viña del Mar, Valparaiso y V Region, implementos publicitarios, proyectos branding, galería trabajos Elephant Group"
+        author="Elephant Group"
+        robots="index, follow"
+        geoRegion="CL-VS"
+        geoPlacename="Viña del Mar, Valparaiso y V Region"
+        geoPosition="-33.0472;-71.6127"
+        icbm="-33.0472, -71.6127"
+        ogType="website"
+        ogTitle="Portafolio de Trabajos Publicitarios - Elephant Group Viña del Mar, Valparaiso y V Region"
+        ogDescription="Descubre más de 500 proyectos publicitarios realizados en Viña del Mar, Valparaiso y V Region. Letreros CNC, señalética, impresión digital y diseño gráfico."
+        ogImage="/light/assets/imgs/works/work_publicity.webp"
+        ogUrl="https://elephantgroup.cl/portfolio"
+        ogSiteName="Elephant Group"
+        ogLocale="es_CL"
+        twitterCard="summary_large_image"
+        twitterTitle="Portafolio Publicitario - Elephant Group"
+        twitterDescription="Galería de trabajos: Letreros CNC, señalética, impresión digital en Viña del Mar, Valparaiso y V Region"
+        twitterImage="/light/assets/imgs/works/work_publicity.webp"
+        canonical="https://elephantgroup.cl/portfolio"
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Inicio",
+                item: "https://landingclientes.elephantgroup.cl/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Portafolio",
+                item: "https://landingclientes.elephantgroup.cl/portfolio",
+              },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Elephant Group",
+            description:
+              "Fabricación de implementos publicitarios en Viña del Mar, Valparaiso y V Region",
+            url: "https://elephantgroup.cl",
+            logo: "https://elephantgroup.cl/light/assets/imgs/logo-dark.webp",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Viña del Mar, Valparaiso y V Region",
+              addressRegion: "V Region",
+              addressCountry: "CL",
+            },
+            areaServed: [
+              { "@type": "City", name: "Viña del Mar, Valparaiso y V Region" },
+            ],
+            telephone: "+56951631370",
+            email: "contacto@elephantgroup.cl",
+            foundingDate: "2018",
+            slogan: "Implementos publicitarios que destacan tu marca",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "ImageGallery",
+            name: "Portafolio de Trabajos Publicitarios - Elephant Group",
+            description:
+              "Galería de más de 500 proyectos de letreros CNC, señalética, impresión digital y diseño gráfico realizados en Viña del Mar, Valparaiso y V Region",
+            url: "https://elephantgroup.cl/portfolio",
+            provider: {
+              "@type": "Organization",
+              name: "Elephant Group",
+              areaServed: ["Viña del Mar, Valparaiso y V Region"],
+            },
+            numberOfItems: "500+",
+            keywords:
+              "letreros CNC, señalética industrial, impresión digital, diseño gráfico, Viña del Mar, Valparaiso y V Region",
+          },
+        ]}
+      />
 
       <Loader />
       <Navbar mainBg />

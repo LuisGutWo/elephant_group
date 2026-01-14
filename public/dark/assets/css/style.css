@@ -9670,7 +9670,12 @@ header.in-box {
   }
   .navbar .navbar-collapse {
     background-color: #191919;
-    max-height: 440px;
+    max-height: 30rem;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    z-index: 9999;
     overflow: auto;
   }
   .navbar .navbar-collapse::-webkit-scrollbar {
@@ -9684,6 +9689,10 @@ header.in-box {
     padding: 0;
     width: 100%;
     max-width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .navbar .logo {
     max-width: 100px !important;

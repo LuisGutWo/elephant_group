@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Head from "next/head";
+import SeoHead from "@/components/Common/SeoHead";
 import Loader from "@/components/Common/Loader";
 import MainNavbar from "@/components/Common/MainNavbar";
 import PrivacyPolicyHeader from "@/components/Legal/PrivacyPolicyHeader";
@@ -134,101 +134,38 @@ function PrivacyPolicy() {
 
   return (
     <>
-      <Head>
-        <title>
-          Política de Privacidad | Elephant Group - Protección de Datos y
-          Transparencia
-        </title>
-        <meta
-          name="description"
-          content="Política de privacidad de Elephant Group. Conoce cómo protegemos y gestionamos tu información personal de manera responsable y transparente en Valparaíso y Viña del Mar."
-        />
-        {/* Primary Meta Tags */}
-        <title>
-          Política de Privacidad - Elephant Group | Protección de Datos
-        </title>
-        <meta
-          name="title"
-          content="Política de Privacidad - Elephant Group | Protección de Datos"
-        />
-        <meta
-          name="description"
-          content="Política de privacidad de Elephant Group. Conoce cómo protegemos y gestionamos tu información personal de manera responsable y transparente según la Ley N° 19.628 de Chile."
-        />
-        <meta
-          name="keywords"
-          content="política de privacidad, protección de datos, privacidad, seguridad de datos, GDPR Chile, Ley 19.628, datos personales, confidencialidad, Elephant Group, Valparaíso"
-        />
-        <meta name="author" content="Elephant Group" />
-        <meta name="robots" content="index, follow" />
-        <meta name="language" content="Spanish" />
-        <meta name="revisit-after" content="7 days" />
-
-        {/* Canonical URL */}
-        <link
-          rel="canonical"
-          href="https://landingclientes.elephantgroup.cl/politica-privacidad"
-        />
-
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://landingclientes.elephantgroup.cl/politica-privacidad"
-        />
-        <meta
-          property="og:title"
-          content="Política de Privacidad - Elephant Group | Protección de Datos"
-        />
-        <meta
-          property="og:description"
-          content="Tu privacidad es nuestra prioridad. Conoce cómo Elephant Group protege y gestiona tu información personal de forma segura y transparente."
-        />
-        <meta
-          property="og:image"
-          content="https://landingclientes.elephantgroup.cl/dark/assets/imgs/logo-light.webp"
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:locale" content="es_CL" />
-        <meta property="og:site_name" content="Elephant Group" />
-
-        {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:url"
-          content="https://landingclientes.elephantgroup.cl/politica-privacidad"
-        />
-        <meta
-          property="twitter:title"
-          content="Política de Privacidad - Elephant Group"
-        />
-        <meta
-          property="twitter:description"
-          content="Protegemos tu información personal con los más altos estándares de seguridad y transparencia."
-        />
-        <meta
-          property="twitter:image"
-          content="https://landingclientes.elephantgroup.cl/dark/assets/imgs/logo-light.webp"
-        />
-
-        {/* Geo Tags */}
-        <meta name="geo.region" content="CL-VS" />
-        <meta name="geo.placename" content="Valparaíso" />
-        <meta name="geo.position" content="-33.0472;-71.6127" />
-        <meta name="ICBM" content="-33.0472, -71.6127" />
-
-        {/* Additional Meta Tags */}
-        <meta name="theme-color" content="#fca311" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </Head>
+      <SeoHead
+        title="Política de Privacidad | Elephant Group - Protección de Datos y Transparencia"
+        description="Política de privacidad de Elephant Group. Conoce cómo protegemos y gestionamos tu información personal de manera responsable y transparente en Valparaíso y Viña del Mar."
+        keywords="política de privacidad, protección de datos, privacidad, seguridad de datos, GDPR Chile, Ley 19.628, datos personales, confidencialidad, Elephant Group, Valparaíso"
+        author="Elephant Group"
+        robots="index, follow"
+        language="Spanish"
+        revisitAfter="7 days"
+        canonical="https://landingclientes.elephantgroup.cl/politica-privacidad"
+        ogType="website"
+        ogUrl="https://landingclientes.elephantgroup.cl/politica-privacidad"
+        ogTitle="Política de Privacidad - Elephant Group | Protección de Datos"
+        ogDescription="Tu privacidad es nuestra prioridad. Conoce cómo Elephant Group protege y gestiona tu información personal de forma segura y transparente."
+        ogImage="https://landingclientes.elephantgroup.cl/dark/assets/imgs/logo-light.webp"
+        ogImageWidth="1200"
+        ogImageHeight="630"
+        ogLocale="es_CL"
+        ogSiteName="Elephant Group"
+        twitterCard="summary_large_image"
+        twitterUrl="https://landingclientes.elephantgroup.cl/politica-privacidad"
+        twitterTitle="Política de Privacidad - Elephant Group"
+        twitterDescription="Protegemos tu información personal con los más altos estándares de seguridad y transparencia."
+        twitterImage="https://landingclientes.elephantgroup.cl/dark/assets/imgs/logo-light.webp"
+        geoRegion="CL-VS"
+        geoPlacename="Valparaíso"
+        geoPosition="-33.0472;-71.6127"
+        icbm="-33.0472, -71.6127"
+        themeColor="#fca311"
+        formatDetection="telephone=no"
+        xUaCompatible="ie=edge"
+        structuredData={structuredData}
+      />
 
       <Loader />
       <MainNavbar mainBg />

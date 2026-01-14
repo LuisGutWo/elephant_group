@@ -10,8 +10,9 @@ import {
   Parallax,
   EffectFade,
 } from "swiper/modules";
-//= Data
+
 import data from "@/data/Main/portfolioGalleryPage.json";
+import loadBackgroudImages from "@/common/loadBackgroudImages";
 
 const swiperOptions = {
   modules: [Navigation, Autoplay, Pagination, Parallax, EffectFade],
