@@ -1,4 +1,3 @@
-
 # Elephant Group Website
 
 Este repositorio contiene el código fuente del sitio web de Elephant Group, una aplicación web moderna y responsiva construida con Next.js. Aquí encontrarás información sobre los servicios, portafolio y contacto de Elephant Group, agencia creativa especializada en publicidad y marketing.
@@ -55,6 +54,19 @@ Más detalles y troubleshooting en `md/RESUMEN_CAMBIOS.md` y `md/COMO_VER_LOS_CA
 - Accesibilidad: roles ARIA, labels para screen readers, soporte `prefers-reduced-motion`.
 - Métricas: +85% performance, +30pts accesibilidad, -15KB bundle size.
 - Propuestas futuras: integración de búsqueda, multi-idioma, notificaciones y temas avanzados.
+
+---
+
+## 🚀 Migración para despliegue en Vercel (2026)
+
+- Los endpoints de contacto y cotización han sido migrados a rutas API de Next.js (`/api/send-contact` y `/api/send-simple-contact`).
+- Ya **no se requiere PHP ni funciones Netlify** para el backend de formularios en Vercel.
+- Configura las siguientes variables en Vercel:
+  - `NEXT_PUBLIC_WHATSAPP_NUMBER`
+  - `SMTP_HOST`, `SMTP_USER`, `SMTP_PASS`, `CONTACT_RECIPIENT`
+- Revisa `.env.local.example` para el formato correcto.
+- El archivo `src/config/emailApi.js` detecta automáticamente el entorno (Vercel, Netlify, cPanel) y usa la API adecuada.
+- Si usas Vercel, los formularios funcionarán automáticamente usando las rutas API JS/TS.
 
 ---
 
