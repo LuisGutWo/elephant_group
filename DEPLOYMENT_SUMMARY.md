@@ -1,5 +1,18 @@
 # Resumen: Despliegue Multi-Plataforma (Netlify + cPanel)
 
+## 🆕 Cambios recientes (enero 2026)
+
+## Navegación y buenas prácticas Next.js
+
+- Todos los enlaces internos de la aplicación han sido migrados para usar el componente `<Link>` de Next.js, asegurando navegación optimizada y sin recarga de página.
+- Se corrigieron todos los `<a href="#">` y enlaces internos para evitar advertencias y errores de accesibilidad y cumplimiento con Next.js.
+- Los enlaces externos (redes sociales, Mercado Libre, mailto, tel) se mantienen con `<a>` y atributos de seguridad (`target="_blank"`, `rel="noopener noreferrer"`).
+- Se revisaron y ajustaron los componentes: MainNavbar, Footer, FooterBottom, Header, Portfolio, Products, y todas las secciones de servicios.
+- Se eliminaron todos los usos incorrectos de `<a>` para navegación interna.
+- El código ahora cumple con las mejores prácticas de accesibilidad y SEO para enlaces.
+
+Estos cambios garantizan compatibilidad total con Vercel, Netlify y cualquier entorno Next.js moderno.
+
 ## 📋 Situación Actual
 
 El proyecto ahora tiene **soporte dual** para funcionar tanto en:
@@ -35,7 +48,7 @@ import EMAIL_API from '../config/emailApi';
 fetch(EMAIL_API.sendContact, { /* ... */ });
 // En Netlify → /.netlify/functions/send-contact
 // En cPanel  → /api/send-contact.php
-```
+```bash
 
 ---
 
@@ -58,7 +71,7 @@ fetch(EMAIL_API.sendContact, { /* ... */ });
 
 ### Documentación
 
-4. **`CPANEL_DEPLOYMENT.md`**
+1. **`CPANEL_DEPLOYMENT.md`**
    - Guía completa paso a paso
    - Instalación de PHPMailer
    - Configuración SMTP
@@ -106,7 +119,8 @@ Sube a cPanel:
 
 Configura en **Netlify Dashboard → Environment variables**:
 
-```
+```bash
+
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=tu-email@gmail.com
@@ -176,7 +190,6 @@ npm run build
 ## 📊 Comparación
 
 | Aspecto | Netlify Functions | cPanel PHP |
-|---------|-------------------|------------|
 | **Tecnología** | Node.js serverless | PHP tradicional |
 | **Archivos adjuntos** | ✅ Soportado | ✅ Soportado |
 | **Auto-deploy** | ✅ Git push | ❌ Manual (FTP) |
