@@ -64,15 +64,17 @@ const FooterBottom = () => {
 
           {/* Logo - segundo, centrado en medio */}
           <div className="eg-footer-logo-container">
-            <Image
-              src={logoSrc}
-              alt="Elephant Group - Implementos publicitarios en Valparaíso"
-              className="eg-footer-logo"
-              width={180}
-              height={60}
-              priority
-              itemProp="logo"
-            />
+            <Link href="/" aria-label="Ir a la página principal" itemProp="url">
+              <Image
+                src={logoSrc}
+                alt="Elephant Group - Implementos publicitarios en Valparaíso"
+                className="eg-footer-logo"
+                width={180}
+                height={60}
+                priority
+                itemProp="logo"
+              />
+            </Link>
           </div>
 
           {/* Copyright - último, pequeño y centrado */}

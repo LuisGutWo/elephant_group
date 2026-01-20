@@ -1,3 +1,4 @@
+import { Divider } from "@heroui/react";
 import React from "react";
 
 function BlogHeader() {
@@ -23,7 +24,7 @@ function BlogHeader() {
       />
 
       <section
-        className="container mt-80"
+        className="container"
         itemScope
         itemType="https://schema.org/Blog"
       >
@@ -43,6 +44,7 @@ function BlogHeader() {
                 publicitario.
               </p>
             </div>
+            <Divider />
           </div>
         </div>
       </section>
