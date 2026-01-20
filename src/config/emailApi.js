@@ -4,46 +4,52 @@
  */
 
 // Detectar entorno
-const isNetlify =
-  process.env.NEXT_PUBLIC_NETLIFY === "true" ||
-  (typeof window !== "undefined" &&
-    window.location.hostname.includes("netlify"));
 
+const isVercel =
+  typeof window !== "undefined" &&
+  window.location.hostname.endsWith("vercel.app");
+const isNetlify =
+  typeof window !== "undefined" && window.location.hostname.includes("netlify");
 const isDevelopment = process.env.NODE_ENV === "development";
 const isLocalhost =
   typeof window !== "undefined" &&
   (window.location.hostname === "localhost" ||
     window.location.hostname === "127.0.0.1");
 
-// URLs de las APIs
 export const EMAIL_API = {
   sendContact:
     isDevelopment && isLocalhost
-      ? "http://localhost:3001/send-contact" // Mock server para desarrollo
+      ? "http://localhost:3001/send-contact"
+      : isVercel
+      ? "/api/send-contact"
       : isNetlify
       ? "/.netlify/functions/send-contact"
       : "/api/send-contact.php",
-
   sendSimpleContact:
     isDevelopment && isLocalhost
-      ? "http://localhost:3001/send-simple-contact" // Mock server para desarrollo
+      ? "http://localhost:3001/send-simple-contact"
+      : isVercel
+      ? "/api/send-simple-contact"
       : isNetlify
       ? "/.netlify/functions/send-simple-contact"
       : "/api/send-simple-contact.php",
 };
 
-// Información del entorno
 export const ENV_INFO = {
   platform:
     isDevelopment && isLocalhost
       ? "Development (Mock)"
+      : isVercel
+      ? "Vercel"
       : isNetlify
       ? "Netlify"
       : "cPanel/PHP",
-  isServerless: isNetlify,
+  isServerless: isVercel || isNetlify,
   apiType:
     isDevelopment && isLocalhost
       ? "Mock Server"
+      : isVercel
+      ? "Next.js API Routes"
       : isNetlify
       ? "Netlify Functions"
       : "PHP Scripts",
