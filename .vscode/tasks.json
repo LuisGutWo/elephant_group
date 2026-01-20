@@ -1,0 +1,39 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build Next.js project for Vercel",
+			"type": "shell",
+			"command": "npm run build",
+			"args": [],
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "Export Next.js static site (if needed)",
+			"type": "shell",
+			"command": "npx next export",
+			"args": [],
+			"problemMatcher": []
+		},
+		{
+			"label": "Build Next.js project for Vercel (API enabled)",
+			"type": "shell",
+			"command": "npm run build",
+			"args": [],
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "Reintentar build Next.js tras verificar quote.jsx",
+			"type": "shell",
+			"command": "npm run build",
+			"args": [],
+			"problemMatcher": [
+				"$tsc"
+			]
+		}
+	]
+}
