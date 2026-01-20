@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const FooterBottom = () => {
-  const logoSrc = "/dark/assets/imgs/logo-light.webp";
+  const logoSrc = "/assets/dark/imgs/logo-light.webp";
 
   return (
     <footer

@@ -8,7 +8,7 @@ function BlogHeader() {
       <div
         className="background-pattern"
         style={{
-          backgroundImage: "url(/dark/assets/imgs/background/work-127.webp)",
+          backgroundImage: "url(/assets/dark/imgs/background/work-127.webp)",
           position: "absolute",
           top: 0,
           left: 0,

@@ -10,7 +10,7 @@ function Header() {
       <div
         className="background-img"
         style={{
-          backgroundImage: "url(/dark/assets/imgs/background/work-127.webp)",
+          backgroundImage: "url(/assets/dark/imgs/background/work-127.webp)",
         }}
         aria-hidden="true"
       />

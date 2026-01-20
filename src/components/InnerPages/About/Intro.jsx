@@ -25,7 +25,7 @@ function Intro() {
             <div className="imgs mb-80">
               <div className="img1 wow fadeInUp">
                 <img
-                  src="/light/assets/imgs/about/work-127.webp"
+                  src="/assets/light/imgs/about/work-127.webp"
                   alt="Elephant Group background designe work image"
                   loading="lazy"
                   className="radius-10"
@@ -33,7 +33,7 @@ function Intro() {
               </div>
               <div className="img2 wow fadeInLeft">
                 <img
-                  src="/light/assets/imgs/about/work-122.webp"
+                  src="/assets/light/imgs/about/work-122.webp"
                   alt="Elephant Group background designe work image"
                   loading="lazy"
                   className="radius-10"

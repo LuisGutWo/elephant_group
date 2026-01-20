@@ -5,7 +5,7 @@ const FooterImg = () => {
   return (
     <div className="eg-footer-image-inner">
       <Image
-        src="/light/assets/imgs/header/footer_image_letrero.webp"
+        src="/assets/light/imgs/header/footer_image_letrero.webp"
         alt="Letrero publicitario de Elephant Group en Valparaíso - Imagen decorativa del pie de página"
         className="eg-footer-main-image"
         width={600}

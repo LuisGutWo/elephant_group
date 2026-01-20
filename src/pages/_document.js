@@ -16,11 +16,11 @@ export default function Document() {
         />
         <meta name="author" content="Elephant Group" />
         {/* ------ Favicon ------ */}
-        <link rel="shortcut icon" href="/light/assets/imgs/favicon.ico" />
-        <link rel="apple-touch-icon" href="/light/assets/imgs/favicon.ico" />
+        <link rel="shortcut icon" href="/assets/light/imgs/favicon.ico" />
+        <link rel="apple-touch-icon" href="/assets/light/imgs/favicon.ico" />
         <link
           rel="icon"
-          href="/light/assets/imgs/favicon.ico"
+          href="/assets/light/imgs/favicon.ico"
           type="image/x-icon"
         />
         {/* ------ Manifest PWA ------ */}
@@ -51,8 +51,8 @@ export default function Document() {
         {/* ------ Portfolio Debug Script ------ */}
         <script async src="/assets/js/portfolio-debug.js"></script>
         {/* ------ Light Theme Stylesheets ------ */}
-        <link rel="stylesheet" href="/light/assets/css/plugins.css" />
-        <link rel="stylesheet" href="/light/assets/css/style.purged.css" />
+        <link rel="stylesheet" href="/assets/light/css/plugins.css" />
+        <link rel="stylesheet" href="/assets/light/css/style.purged.css" />
         <link rel="stylesheet" href="/assets/css/portfolio-masonry.css" />
         <link rel="stylesheet" href="/assets/css/portfolio-fix.css" />
         <link rel="stylesheet" href="/assets/css/portfolio-isotope.css" />

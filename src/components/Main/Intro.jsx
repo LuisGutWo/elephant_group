@@ -29,7 +29,7 @@ function Intro() {
               </div>
               <div className="half-circle-img">
                 <img
-                  src="/light/assets/imgs/about/elephant_group_bg.webp"
+                  src="/assets/light/imgs/about/elephant_group_bg.webp"
                   alt="Elephant Group - Background Image of the about section"
                   loading="lazy"
                   className="img-fluid"

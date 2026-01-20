@@ -2,32 +2,32 @@
     {
         "id": 1,
         "number": "01",
-        "background": "/light/assets/imgs/header/mercadito_main_banner.png",
-        "backgroundMobile": "/light/assets/imgs/header/mercadito_mobile_banner.png",
+        "background": "/assets/light/imgs/header/mercadito_main_banner.png",
+        "backgroundMobile": "/assets/light/imgs/header/mercadito_mobile_banner.png",
         "title": "LETREROS VOLUMÉTRICOS.",
         "subtitle": "Soluciones Gráficas que destacan y transforman tu marca."
     },
     {
         "id": 2,
         "number": "02",
-        "background": "/dark/assets/imgs/works/letreros_muestra_varios.webp",
-        "backgroundMobile": "/dark/assets/imgs/header/banner_impresion_mobile.webp",
+        "background": "/assets/dark/imgs/works/letreros_muestra_varios.webp",
+        "backgroundMobile": "/assets/dark/imgs/header/banner_impresion_mobile.webp",
         "title": "SEÑALÉTICAS",
         "subtitle": "Diseño y fabricación de señaléticas personalizadas para empresas, oficinas y espacios públicos."
     },
     {
         "id": 3,
         "number": "03",
-        "background": "/dark/assets/imgs/works/work-6-metro.webp",
-        "backgroundMobile": "/dark/assets/imgs/header/banner_impresion_mobile.webp",
+        "background": "/assets/dark/imgs/works/work-6-metro.webp",
+        "backgroundMobile": "/assets/dark/imgs/header/banner_impresion_mobile.webp",
         "title": "IMPRESIÓN DIGITAL",
         "subtitle": "Impresión de alta calidad en diversos formatos y materiales para potenciar tu marca."
     },
     {
         "id": 4,
         "number": "04",
-        "background": "/light/assets/imgs/products/etiquetas_a_medida.webp",
-        "backgroundMobile": "/dark/assets/imgs/header/banner_diseno_mobile.webp",
+        "background": "/assets/light/imgs/products/etiquetas_a_medida.webp",
+        "backgroundMobile": "/assets/dark/imgs/header/banner_diseno_mobile.webp",
         "title": "STICKERS",
         "subtitle": "Stickers personalizados para promoción, decoración y branding, resistentes y de gran impacto visual."
     }

@@ -30,7 +30,7 @@ function Services() {
               >
                 <div className="mb-40">
                   <img
-                    src={`/light${item.image}`}
+                    src={`/assets/light${item.image}`}
                     alt="Service Icon Image - Elephant Group"
                     className="img-fluid w-100 h-100 mb-20"
                     style={{ maxWidth: "100px", maxHeight: "100px" }}

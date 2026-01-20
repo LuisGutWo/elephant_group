@@ -6,7 +6,7 @@ function HeaderPortfolio({ data }) {
   }
   if (!data.subTitle || !data.title) {
     throw new Error(
-      "Data is missing required properties in HeaderPortfolio component"
+      "Data is missing required properties in HeaderPortfolio component",
     );
   }
   return (
@@ -20,7 +20,7 @@ function HeaderPortfolio({ data }) {
       <div
         className="background-img"
         style={{
-          backgroundImage: "url(/light/assets/imgs/works/work_publicity.webp)",
+          backgroundImage: "url(/assets/light/imgs/works/work_publicity.webp)",
         }}
         aria-hidden="true"
       />

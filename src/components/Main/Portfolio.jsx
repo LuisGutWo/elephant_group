@@ -10,7 +10,7 @@ const portfolioData = [
     subtitle: "publicitarios y corporativos",
     description:
       "Fabricación de letreros publicitarios en Viña del Mar, Valparaiso y V Region. Diseños personalizados en trovicel, acrílico y aluminio compuesto. Instalación profesional para locales comerciales y oficinas.",
-    image: "/light/assets/imgs/works/corte_el_brioche.webp",
+    image: "/assets/light/imgs/works/corte_el_brioche.webp",
     category: "Letreros",
     keywords:
       "letreros publicitarios, letreros corporativos, señalización comercial Viña del Mar, Valparaiso y V Region",
@@ -23,7 +23,7 @@ const portfolioData = [
     subtitle: "industriales y corporativas",
     description:
       "Señalética industrial y corporativa en Viña del Mar, Valparaiso y V Region. Soluciones de seguridad y orientación para interiores y exteriores. Materiales resistentes a la intemperie.",
-    image: "/light/assets/imgs/works/letrero_covisa.webp",
+    image: "/assets/light/imgs/works/letrero_covisa.webp",
     category: "Señaléticas",
     keywords:
       "señalética industrial, señalización de seguridad, letreros corporativos Viña del Mar, Valparaiso y V Region",
@@ -36,7 +36,7 @@ const portfolioData = [
     subtitle: "personalizados para empresas",
     description:
       "Adhesivos y vinilos personalizados en Viña del Mar, Valparaiso y V Region. Desde etiquetas corporativas hasta gráficos para vidrieras y vehículos. Impresión de alta calidad para tu marca.",
-    image: "/light/assets/imgs/works/Adhesivos-Personalizarme.webp",
+    image: "/assets/light/imgs/works/Adhesivos-Personalizarme.webp",
     category: "Adhesivos",
     keywords:
       "adhesivos personalizados, vinilos publicitarios, etiquetas corporativas Viña del Mar, Valparaiso y V Region",

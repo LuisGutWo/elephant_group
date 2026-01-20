@@ -11,18 +11,18 @@ function BlogGrid() {
   // Mapeo de imágenes por categoría
   const getCategoryImage = (category) => {
     const imageMap = {
-      "Diseño Gráfico": "/dark/assets/imgs/works/diseno_servicestab.webp",
-      Señalética: "/dark/assets/imgs/works/letrero_restaurante.webp",
-      Marketing: "/dark/assets/imgs/works/publicidad_tela_pvc_1.webp",
-      Impresión: "/dark/assets/imgs/works/impresion_image_covisa.webp",
-      Branding: "/dark/assets/imgs/works/cafeteria_violeta.webp",
-      Publicidad: "/dark/assets/imgs/works/letreros_varios.webp",
-      Packaging: "/dark/assets/imgs/works/corte_casa_colibri.webp",
-      Merchandising: "/dark/assets/imgs/works/grafica_adehesiva_cooler.webp",
+      "Diseño Gráfico": "/assets/dark/imgs/works/diseno_servicestab.webp",
+      Señalética: "/assets/dark/imgs/works/letrero_restaurante.webp",
+      Marketing: "/assets/dark/imgs/works/publicidad_tela_pvc_1.webp",
+      Impresión: "/assets/dark/imgs/works/impresion_image_covisa.webp",
+      Branding: "/assets/dark/imgs/works/cafeteria_violeta.webp",
+      Publicidad: "/assets/dark/imgs/works/letreros_varios.webp",
+      Packaging: "/assets/dark/imgs/works/corte_casa_colibri.webp",
+      Merchandising: "/assets/dark/imgs/works/grafica_adehesiva_cooler.webp",
     };
     return (
       imageMap[category] ||
-      "/dark/assets/imgs/works/letreros_muestra_varios.webp"
+      "/assets/dark/imgs/works/letreros_muestra_varios.webp"
     );
   };
 
@@ -31,15 +31,15 @@ function BlogGrid() {
     selectedCategory === "Todos"
       ? articlesData.articles
       : articlesData.articles.filter(
-          (article) => article.category === selectedCategory
+          (article) => article.category === selectedCategory,
         );
 
-  // Paginación
+  // Pagination
   const indexOfLastArticle = currentPage * articlesPerPage;
   const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
   const currentArticles = filteredArticles.slice(
     indexOfFirstArticle,
-    indexOfLastArticle
+    indexOfLastArticle,
   );
   const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
 

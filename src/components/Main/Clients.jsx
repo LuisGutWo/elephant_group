@@ -68,7 +68,7 @@ function Clients() {
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     const section = document.querySelector(".modern-clients-section");
@@ -112,7 +112,7 @@ function Clients() {
           itemType="https://schema.org/ItemList"
         >
           <meta itemProp="numberOfItems" content={data.length} />
-          {loadSwiper && data && data.length > 0 && (
+          {loadSwiper && data && (
             <Swiper
               {...swiperOptions}
               className="eg-clients-carousel"
@@ -129,7 +129,7 @@ function Clients() {
                   <meta itemProp="position" content={index + 1} />
                   <div className="eg-client-logo-wrap">
                     <Image
-                      src={`/light${item}`}
+                      src={item}
                       alt={`Logo cliente ${
                         index + 1
                       } - Empresa que confía en Elephant Group para implementos publicitarios en Valparaíso, Viña del Mar y la V Región`}

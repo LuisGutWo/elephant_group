@@ -24,7 +24,7 @@ function ServicesTab() {
                 <div className="item">
                   <div className="img">
                     <img
-                      src="/light/assets/imgs/works/casa_colibri_servicestab.webp"
+                      src="/assets/light/imgs/works/casa_colibri_servicestab.webp"
                       alt="Proyecto Casa Colibrí - Letrero publicitario realizado por Elephant Group en Valparaíso"
                       loading="lazy"
                     />
@@ -32,7 +32,7 @@ function ServicesTab() {
                   <div className="cont sub-bg">
                     <div className="icon-img-100 mb-40">
                       <img
-                        src="/light/assets/imgs/serv-icons/4.webp"
+                        src="/assets/light/imgs/serv-icons/4.webp"
                         alt="Ícono de Corte CNC - Servicio de corte en Elephant Group"
                         loading="lazy"
                       />
@@ -57,14 +57,14 @@ function ServicesTab() {
                 <div className="item">
                   <div className="img">
                     <img
-                      src="/light/assets/imgs/works/diseno_servicestab.webp"
+                      src="/assets/light/imgs/works/diseno_servicestab.webp"
                       alt="Ejemplo de diseño gráfico profesional realizado por Elephant Group"
                     />
                   </div>
                   <div className="cont sub-bg">
                     <div className="icon-img-100 mb-40">
                       <img
-                        src="/light/assets/imgs/serv-icons/1.webp"
+                        src="/assets/light/imgs/serv-icons/1.webp"
                         alt="Ícono de diseño gráfico - Elephant Group"
                       />
                     </div>
@@ -88,14 +88,14 @@ function ServicesTab() {
                 <div className="item">
                   <div className="img">
                     <img
-                      src="/light/assets/imgs/works/impresion_servicestab.webp"
+                      src="/assets/light/imgs/works/impresion_servicestab.webp"
                       alt="Ejemplo de impresión digital de gran formato por Elephant Group"
                     />
                   </div>
                   <div className="cont sub-bg">
                     <div className="icon-img-100 mb-40">
                       <img
-                        src="/light/assets/imgs/serv-icons/2.webp"
+                        src="/assets/light/imgs/serv-icons/2.webp"
                         alt="Ícono de impresión digital - Elephant Group"
                       />
                     </div>
@@ -121,14 +121,14 @@ function ServicesTab() {
                 <div className="item">
                   <div className="img">
                     <img
-                      src="/light/assets/imgs/works/desarrollo_servicestab.webp"
+                      src="/assets/light/imgs/works/desarrollo_servicestab.webp"
                       alt="Ejemplo de desarrollo web personalizado por Elephant Group"
                     />
                   </div>
                   <div className="cont sub-bg">
                     <div className="icon-img-100 mb-40">
                       <img
-                        src="/light/assets/imgs/serv-icons/0.webp"
+                        src="/assets/light/imgs/serv-icons/0.webp"
                         alt="Ícono de desarrollo web - Elephant Group"
                       />
                     </div>

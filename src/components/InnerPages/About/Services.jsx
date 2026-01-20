@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 //= Assets
 const catalogoPDF = `${process.env.PUBLIC_URL || ""}/catalogo_impresion.pdf`;
 //= Data
@@ -74,9 +75,11 @@ function Services() {
                 className="d-flex flex-wrap flex-column justify-content-center align-items-center arrow mt-40"
               >
                 <div className="mb-40">
-                  <img
-                    src={`/light${item.image}`}
+                  <Image
+                    src={`/assets/light${item.image}`}
                     alt="Service Icon Image - Elephant Group"
+                    width={100}
+                    height={100}
                     className="img-fluid w-100 h-100 mb-20"
                     style={{ maxWidth: "100px", maxHeight: "100px" }}
                   />

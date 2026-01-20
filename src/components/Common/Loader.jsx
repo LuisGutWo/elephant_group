@@ -5,7 +5,7 @@ import gsap from "gsap";
 
 function Loader() {
   const router = useRouter();
-  const [logoSrc, setLogoSrc] = useState("/dark/assets/imgs/logo2-dark.webp");
+  const [logoSrc, setLogoSrc] = useState("/assets/dark/imgs/logo2-dark.webp");
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -16,8 +16,8 @@ function Loader() {
     // Establecer el logo apropiado
     setLogoSrc(
       isDark
-        ? "/dark/assets/imgs/logo2-dark.webp"
-        : "/dark/assets/imgs/logo2-light.webp",
+        ? "/assets/dark/imgs/logo2-dark.webp"
+        : "/assets/dark/imgs/logo2-light.webp",
     );
 
     return () => {
@@ -157,7 +157,7 @@ function Loader() {
     };
     img.onerror = () => {
       console.warn("Error cargando logo, usando fallback");
-      setLogoSrc("/light/assets/imgs/logo2-dark.webp");
+      setLogoSrc("/assets/dark/imgs/logo2-dark.webp");
     };
 
     // Cleanup function para React
@@ -186,9 +186,9 @@ function Loader() {
               console.warn("Error loading image, using fallback");
               if (
                 e.target &&
-                e.target.src !== "/dark/assets/imgs/logo2-dark.webp"
+                e.target.src !== "/assets/dark/imgs/logo2-dark.webp"
               ) {
-                e.target.src = "/dark/assets/imgs/logo2-dark.webp";
+                e.target.src = "/assets/dark/imgs/logo2-dark.webp";
               }
             }}
           />

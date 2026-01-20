@@ -6,7 +6,7 @@
             "excerpt": "Descubre las últimas tendencias en diseño gráfico que están revolucionando la industria publicitaria este año.",
             "category": "Diseño Gráfico",
             "date": "2025-01-15",
-            "image": "/light/assets/imgs/blog/design-trends.webp",
+            "image": "public/assets/light/imgs/works/diseno_servicestab.webp",
             "externalUrl": "https://www.creativebloq.com/features/graphic-design-trends",
             "source": "Creative Bloq"
         },
@@ -16,7 +16,7 @@
             "excerpt": "Cómo una buena señalización puede mejorar la experiencia del cliente y aumentar las ventas en tu negocio.",
             "category": "Señalética",
             "date": "2025-01-10",
-            "image": "/light/assets/imgs/blog/signage.webp",
+            "image": "public/assets/light/imgs/works/letreros_varios.webp",
             "externalUrl": "https://www.signs.com/blog/importance-of-signage/",
             "source": "Signs.com"
         },
@@ -26,7 +26,7 @@
             "excerpt": "Aprende cómo el material punto de venta puede impulsar tus campañas de marketing y captar la atención del consumidor.",
             "category": "Marketing",
             "date": "2025-01-05",
-            "image": "/light/assets/imgs/blog/pop-marketing.webp",
+            "image": "public/assets/light/imgs/works/publicidad_tela_pvc_1.webp",
             "externalUrl": "https://www.hubspot.com/marketing-statistics",
             "source": "HubSpot"
         },
@@ -36,7 +36,7 @@
             "excerpt": "Comparativa completa entre impresión digital y offset para ayudarte a tomar la mejor decisión según tu proyecto.",
             "category": "Impresión",
             "date": "2024-12-28",
-            "image": "/light/assets/imgs/blog/printing-comparison.webp",
+            "image": "public/assets/light/imgs/works/impresion_image_covisa.webp",
             "externalUrl": "https://www.printingindustry.com/article/2023/10/digital-vs-offset-printing",
             "source": "Printing Industry"
         },
@@ -46,7 +46,7 @@
             "excerpt": "Claves para crear una identidad de marca sólida que conecte con tu audiencia y perdure en el tiempo.",
             "category": "Branding",
             "date": "2024-12-20",
-            "image": "/light/assets/imgs/blog/branding.webp",
+            "image": "public/assets/light/imgs/works/work-6-metro.webp",
             "externalUrl": "https://www.99designs.com/blog/tips/branding-101/",
             "source": "99designs"
         },
@@ -56,7 +56,7 @@
             "excerpt": "Estrategias para aprovechar al máximo la publicidad exterior y generar impacto en tu mercado objetivo.",
             "category": "Publicidad",
             "date": "2024-12-15",
-            "image": "/light/assets/imgs/blog/outdoor-advertising.webp",
+            "image": "public/assets/light/imgs/works/work-8-metro.webp",
             "externalUrl": "https://www.oaaa.org/AboutOutdoorAdvertising.aspx",
             "source": "OAAA"
         },
@@ -66,7 +66,7 @@
             "excerpt": "Descubre cómo el packaging ecológico no solo beneficia al planeta, sino también a tu marca y consumidores.",
             "category": "Packaging",
             "date": "2024-12-10",
-            "image": "/light/assets/imgs/blog/sustainable-packaging.webp",
+            "image": "public/assets/light/imgs/works/work-2-metro.webp",
             "externalUrl": "https://www.packagingdigest.com/sustainable-packaging",
             "source": "Packaging Digest"
         },
@@ -76,7 +76,7 @@
             "excerpt": "Guía completa sobre cómo seleccionar la tipografía adecuada para comunicar el mensaje de tu marca eficazmente.",
             "category": "Diseño Gráfico",
             "date": "2024-12-05",
-            "image": "/light/assets/imgs/blog/typography.webp",
+            "image": "public/assets/light/imgs/works/work-7-metro.webp",
             "externalUrl": "https://www.canva.com/learn/typography-design/",
             "source": "Canva"
         },
@@ -86,7 +86,7 @@
             "excerpt": "Ideas creativas de merchandising personalizado para fortalecer la cultura empresarial y el sentido de pertenencia.",
             "category": "Merchandising",
             "date": "2024-11-28",
-            "image": "/light/assets/imgs/blog/corporate-merch.webp",
+            "image": "public/assets/light/imgs/works/letrero_emporio_la_rosa.webp",
             "externalUrl": "https://www.forbes.com/sites/forbesagencycouncil/2023/08/15/the-power-of-corporate-merchandise/",
             "source": "Forbes"
         },
@@ -96,7 +96,7 @@
             "excerpt": "Cómo los colores influyen en las emociones del consumidor y cómo aplicarlos estratégicamente en tus campañas.",
             "category": "Marketing",
             "date": "2024-11-22",
-            "image": "/light/assets/imgs/blog/color-psychology.webp",
+            "image": "public/assets/light/imgs/works/menu_restaurante_entrada.webp",
             "externalUrl": "https://www.verywellmind.com/color-psychology-2795824",
             "source": "Verywell Mind"
         },
@@ -106,7 +106,7 @@
             "excerpt": "Todo lo que necesitas saber sobre impresión de gran formato para maximizar la visibilidad de tu marca.",
             "category": "Impresión",
             "date": "2024-11-15",
-            "image": "/light/assets/imgs/blog/large-format.webp",
+            "image": "public/assets/light/imgs/works/publicidad_tela_pvc_1.webp",
             "externalUrl": "https://www.largeformatreview.com/",
             "source": "Large Format Review"
         },
@@ -116,7 +116,7 @@
             "excerpt": "Estrategias de marketing experiencial que generan conexiones emocionales duraderas con los consumidores.",
             "category": "Marketing",
             "date": "2024-11-10",
-            "image": "/light/assets/imgs/blog/experiential-marketing.webp",
+            "image": "public/assets/light/imgs/works/impresion_servicestab.webp",
             "externalUrl": "https://www.eventmarketer.com/experiential-marketing/",
             "source": "Event Marketer"
         }

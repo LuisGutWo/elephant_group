@@ -2,56 +2,56 @@
     {
         "id": 1,
         "number": "01",
-        "image": "/light/assets/imgs/products/totem_fierro.webp",
+        "image": "/assets/light/imgs/products/totem_fierro.webp",
         "title": "TÓTEM DE FIERRO",
         "subtitle": "+ GRAFICA TROVICEL 150X75 CMS."
     },
     {
         "id": 2,
         "number": "02",
-        "image": "/light/assets/imgs/products/letrero_tela_pvc.webp",
+        "image": "/assets/light/imgs/products/letrero_tela_pvc.webp",
         "title": "LETREROS TELA PVC A MEDIDA",
         "subtitle": ""
     },
     {
         "id": 3,
         "number": "03",
-        "image": "/light/assets/imgs/products/pendon_roller.webp",
+        "image": "/assets/light/imgs/products/pendon_roller.webp",
         "title": "PENDÓN ROLLER",
         "subtitle": "80X200 CMS."
     },
     {
         "id": 4,
         "number": "04",
-        "image": "/light/assets/imgs/products/stickers_prepicados.webp",
+        "image": "/assets/light/imgs/products/stickers_prepicados.webp",
         "title": "STICKERS PREPICADOS",
         "subtitle": "40X10 CMS"
     },
     {
         "id": 5,
         "number": "05",
-        "image": "/light/assets/imgs/products/stickers.webp",
+        "image": "/assets/light/imgs/products/stickers.webp",
         "title": "STICKERS",
         "subtitle": "5X5 CMS."
     },
     {
         "id": 6,
         "number": "06",
-        "image": "/light/assets/imgs/products/señaletica_a_medida.webp",
+        "image": "/assets/light/imgs/products/señaletica_a_medida.webp",
         "title": "SEÑALÉTICAS A MEDIDA.",
         "subtitle": ""
     },
     {
         "id": 7,
         "number": "07",
-        "image": "/light/assets/imgs/products/letrero_restaurant_medida.webp",
+        "image": "/assets/light/imgs/products/letrero_restaurant_medida.webp",
         "title": "LETRERO RESTAURANTE A MEDIDA.",
         "subtitle": "Soluciones Gráficas que destacan y transforman tu marca."
     },
     {
         "id": 8,
         "number": "08",
-        "image": "/light/assets/imgs/products/etiquetas_a_medida.webp",
+        "image": "/assets/light/imgs/products/etiquetas_a_medida.webp",
         "title": "ETIQUETAS A MEDIDA.",
         "subtitle": ""
     }
