@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "engines": {
-        "node": ">=18.17.0"
+        "node": "20.x"
     },
     "scripts": {
         "dev": "npm run dev:email & npm run dev:next",
@@ -16,7 +16,7 @@
     },
     "dependencies": {
         "@googlemaps/js-api-loader": "^1.16.8",
-        "@nextui-org/react": "^2.6.11",
+        "@heroui/react": "^2.8.7",
         "@popperjs/core": "^2.11.8",
         "animate.css": "^4.1.1",
         "bootstrap": "^5.3.5",
