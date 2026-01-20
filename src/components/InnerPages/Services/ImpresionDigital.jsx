@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 function ImpresionDigital() {
   return (
@@ -131,16 +132,20 @@ function ImpresionDigital() {
                 <h4 className="mb-30">Servicios Relacionados</h4>
                 <ul className="services-links">
                   <li>
-                    <a href="/services/impresion-offset">Impresión Offset</a>
+                    <Link href="/services/impresion-offset">
+                      Impresión Offset
+                    </Link>
                   </li>
                   <li>
-                    <a href="/services/gran-formato">Gran Formato</a>
+                    <Link href="/services/gran-formato">Gran Formato</Link>
                   </li>
                   <li>
-                    <a href="/services/acabados">Acabados y Terminaciones</a>
+                    <Link href="/services/acabados">
+                      Acabados y Terminaciones
+                    </Link>
                   </li>
                   <li>
-                    <a href="/services/diseno">Diseño Gráfico</a>
+                    <Link href="/services/diseno">Diseño Gráfico</Link>
                   </li>
                 </ul>
               </div>

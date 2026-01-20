@@ -282,13 +282,31 @@ function Footer({ subBg }) {
         </div>
         {/* Redes sociales SOLO visibles debajo de CONTACTO en mobile, y a la derecha del formulario en desktop */}
         <div className="eg-socials minimal eg-socials-footer-adaptive">
-          <a href="#" aria-label="Instagram" className="eg-social">
+          <a
+            href="https://www.instagram.com/elephantgroupchile/"
+            aria-label="Instagram"
+            className="eg-social"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {instagramSvg}
           </a>
-          <a href="#" aria-label="Facebook" className="eg-social">
+          <a
+            href="https://www.facebook.com/elephantgroupchile"
+            aria-label="Facebook"
+            className="eg-social"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {facebookSvg}
           </a>
-          <a href="#" aria-label="LinkedIn" className="eg-social">
+          <a
+            href="https://www.linkedin.com/company/elephantgroupchile/"
+            aria-label="LinkedIn"
+            className="eg-social"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {linkedinSvg}
           </a>
         </div>
