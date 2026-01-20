@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
 import NextImage from "next/image";
 import { useRouter } from "next/router";
@@ -18,7 +17,7 @@ function Loader() {
     setLogoSrc(
       isDark
         ? "/dark/assets/imgs/logo2-dark.webp"
-        : "/dark/assets/imgs/logo2-light.webp"
+        : "/dark/assets/imgs/logo2-light.webp",
     );
 
     return () => {
@@ -60,7 +59,7 @@ function Loader() {
             duration: 0.3,
             ease: "power2.out",
           },
-          "-=0.3"
+          "-=0.3",
         )
         // Animación de la barra de progreso
         .to(
@@ -70,7 +69,7 @@ function Loader() {
             duration: 1.0,
             ease: "power2.out",
           },
-          "-=0.1"
+          "-=0.1",
         )
         // Pequeña celebración al completar
         .to(".loader-logo", {
@@ -89,7 +88,7 @@ function Loader() {
             duration: 0.2,
             ease: "power2.in",
           },
-          "-=0.1"
+          "-=0.1",
         )
         // Desvanecimiento final
         .to(".loader-wrap", {
@@ -111,7 +110,7 @@ function Loader() {
             duration: 0.6,
             ease: "power3.out",
           },
-          "-=0.4"
+          "-=0.4",
         )
         .from(
           "header .container",
@@ -121,7 +120,7 @@ function Loader() {
             duration: 0.5,
             ease: "power2.out",
           },
-          "-=0.5"
+          "-=0.5",
         );
     } catch (error) {
       console.error("Error in Loader component:", error);
@@ -138,7 +137,7 @@ function Loader() {
             },
           });
         }
-      }, 2500);
+      }, 2000);
     }
 
     return () => {

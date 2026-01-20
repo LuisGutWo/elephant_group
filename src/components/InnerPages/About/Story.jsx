@@ -66,8 +66,8 @@ function Story() {
                 {...swiperOptions}
                 className="swiper-container parallax-slider"
               >
-                {data.gallery.map((item, index) => (
-                  <SwiperSlide key={index}>
+                {[0, 1, 4, 5, 6, 2, 3].map((i) => (
+                  <SwiperSlide key={i}>
                     <div
                       className="bg-img radius-10 md-mb50"
                       style={{
@@ -78,12 +78,13 @@ function Story() {
                       }}
                     >
                       <Image
-                        src={item.image}
-                        alt={`Proyecto ${item.type} ${item.year}`}
+                        src={data.gallery[i].image}
+                        alt={`Proyecto ${data.gallery[i].type} ${data.gallery[i].year}`}
                         fill
                         style={{ objectFit: "cover", borderRadius: "10px" }}
                         sizes="(max-width: 991px) 100vw, 400px"
-                        priority={index === 0}
+                        priority={i === 0}
+                        loading={i === 0 ? "eager" : "lazy"}
                       />
                     </div>
                   </SwiperSlide>
@@ -97,8 +98,8 @@ function Story() {
                 {...swiperOptions}
                 className="swiper-container parallax-slider"
               >
-                {data.gallery.map((item, index) => (
-                  <SwiperSlide key={index}>
+                {[2, 3, 0, 1, 4, 5, 6].map((i) => (
+                  <SwiperSlide key={i}>
                     <div
                       className="bg-img radius-10"
                       style={{
@@ -109,12 +110,13 @@ function Story() {
                       }}
                     >
                       <Image
-                        src={item.image}
-                        alt={`Proyecto ${item.type} ${item.year}`}
+                        src={data.gallery[i].image}
+                        alt={`Proyecto ${data.gallery[i].type} ${data.gallery[i].year}`}
                         fill
                         style={{ objectFit: "cover", borderRadius: "10px" }}
                         sizes="(max-width: 991px) 100vw, 800px"
-                        priority={index === 0}
+                        priority={i === 2}
+                        loading={i === 2 ? "eager" : "lazy"}
                       />
                     </div>
                   </SwiperSlide>

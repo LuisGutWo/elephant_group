@@ -63,6 +63,7 @@ function HomePage() {
           }}
         />
       </Head>
+      <Loader />
       <Navbar />
       <Header />
       <Products />

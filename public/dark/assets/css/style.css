@@ -9682,7 +9682,7 @@ header.in-box {
     display: none;
   }
   .navbar.nav-scroll {
-    padding-top: 15px;
+    padding-top: 0 !important;
     padding-bottom: 15px;
   }
   .navbar .container {
