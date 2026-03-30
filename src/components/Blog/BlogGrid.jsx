@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { FaExternalLinkAlt, FaCalendarAlt, FaTag } from "react-icons/fa";
 import articlesData from "@/data/blog-articles.json";
@@ -6,6 +6,7 @@ import articlesData from "@/data/blog-articles.json";
 function BlogGrid() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [currentPage, setCurrentPage] = useState(1);
+  const [loadedImages, setLoadedImages] = useState({});
   const articlesPerPage = 6;
 
   // Mapeo de imágenes por categoría
@@ -53,6 +54,10 @@ function BlogGrid() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  useEffect(() => {
+    setLoadedImages({});
+  }, [selectedCategory, currentPage]);
+
   return (
     <section
       className="blog-grid section-padding"
@@ -89,12 +94,18 @@ function BlogGrid() {
             >
               {/* Imagen del artículo */}
               <div className="article-image">
+                {!loadedImages[article.id] && (
+                  <div className="article-image-skeleton" aria-hidden="true" />
+                )}
                 <Image
                   src={getCategoryImage(article.category)}
                   alt={`${article.category} - ${article.title}`}
                   fill
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: "cover", opacity: loadedImages[article.id] ? 1 : 0 }}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  onLoad={() =>
+                    setLoadedImages((prev) => ({ ...prev, [article.id]: true }))
+                  }
                 />
                 <div className="image-overlay"></div>
                 <div className="category-badge">
@@ -260,10 +271,28 @@ function BlogGrid() {
         }
 
         /* Imagen del artículo */
-        .article-image {
+         .article-image {
           position: relative;
           height: 240px;
           overflow: hidden;
+        }
+
+        .article-image-skeleton {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          background: linear-gradient(90deg, rgba(255, 255, 255, 0.06) 25%, rgba(255, 255, 255, 0.14) 50%, rgba(255, 255, 255, 0.06) 75%);
+          background-size: 200% 100%;
+          animation: article-skeleton-loading 1.4s ease-in-out infinite;
+        }
+
+        @keyframes article-skeleton-loading {
+          0% {
+            background-position: 200% 0;
+          }
+          100% {
+            background-position: -200% 0;
+          }
         }
 
         .article-image img {

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import SeoHead from "@/components/Common/SeoHead";
 import Layout from "@/layouts/default";
-import Loader from "@/components/Common/Loader";
 import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/InnerPages/Contact/Header";
 import FooterBottom from "@/components/Main/FooterBottom";
@@ -30,9 +29,7 @@ function ContactPage() {
         keywords="contacto, agencia creativa, diseño gráfico, impresión digital, señalética, Valparaíso, Viña del Mar, Elephant Group"
         author="Elephant Group"
         canonical="https://landingclientes.elephantgroup.cl/contacto"
-      />
-
-      <Loader />
+      />{" "}
       <Navbar mainBg />
       <main>
         <Header />

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import SeoHead from "@/components/Common/SeoHead";
 import Layout from "@/layouts/default";
-import Loader from "@/components/Common/Loader";
 import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/InnerPages/Header";
 import Services from "@/components/InnerPages/About/Services";
@@ -64,9 +63,7 @@ function ServicesPage() {
             },
           },
         }}
-      />
-
-      <Loader />
+      />{" "}
       <Navbar mainBg />
       <main>
         <Header data={headerMetadata} subBg={true} />

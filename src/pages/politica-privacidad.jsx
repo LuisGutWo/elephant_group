@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import SeoHead from "@/components/Common/SeoHead";
-import Loader from "@/components/Common/Loader";
 import MainNavbar from "@/components/Common/MainNavbar";
 import PrivacyPolicyHeader from "@/components/Legal/PrivacyPolicyHeader";
 import PrivacyPolicyContent from "@/components/Legal/PrivacyPolicyContent";
@@ -165,9 +164,7 @@ function PrivacyPolicy() {
         formatDetection="telephone=no"
         xUaCompatible="ie=edge"
         structuredData={structuredData}
-      />
-
-      <Loader />
+      />{" "}
       <MainNavbar mainBg />
       <main id="main-content">
         <PrivacyPolicyHeader />

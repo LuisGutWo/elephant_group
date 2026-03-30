@@ -11,6 +11,7 @@ import Footer from "@/components/Main/Footer";
 import FooterBottom from "@/components/Main/FooterBottom";
 
 import SeoHead from "@/components/Common/SeoHead";
+import Clients from "@/components/Main/Clients";
 
 function HomePage() {
   useEffect(() => {
@@ -63,12 +64,13 @@ function HomePage() {
       <Loader />
       <Navbar />
       <Header />
-      <Portfolio />
       <main>
         <section id="about" aria-labelledby="about-title">
           <AboutUs />
         </section>
       </main>
+      <Portfolio />
+      <Clients />
       <FooterImg />
       <Footer />
       <FooterBottom />

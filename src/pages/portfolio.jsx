@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import SeoHead from "@/components/Common/SeoHead";
 import Layout from "@/layouts/default";
-import Loader from "@/components/Common/Loader";
 import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/Portfolio/HeaderPortfolio";
 import GridPortfolioImages from "@/components/Portfolio/GridPortfolioImages";
@@ -109,16 +108,13 @@ function PortfolioPage() {
               "letreros CNC, señalética industrial, impresión digital, diseño gráfico, Viña del Mar, Valparaiso y V Region",
           },
         ]}
-      />
-
-      <Loader />
+      />{" "}
       <Navbar mainBg />
       <main className="main-bg">
         <Header data={headerMetadata} />
         <GridPortfolioImages />
       </main>
       <FooterBottom subBg />
-
       {/* Schema.org Structured Data */}
       <script
         type="application/ld+json"

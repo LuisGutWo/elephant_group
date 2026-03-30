@@ -50,33 +50,14 @@ const swiperOptions = {
 
 function Clients() {
   const [loadSwiper, setLoadSwiper] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [animateStats, setAnimateStats] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoadSwiper(true);
-      setIsLoading(false);
-    }, 300);
-
-    // Intersection Observer para animar estadísticas
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setAnimateStats(true);
-          }
-        });
-      },
-      { threshold: 0.3 },
-    );
-
-    const section = document.querySelector(".modern-clients-section");
-    if (section) observer.observe(section);
+    }, 250);
 
     return () => {
       clearTimeout(timer);
-      if (section) observer.unobserve(section);
     };
   }, []);
 
@@ -89,7 +70,7 @@ function Clients() {
     >
       <div className="container">
         <div className="text-center mb-5">
-          <span className="eg-section-eyebrow">Confianza y Experiencia</span>
+          <span className="eg-section-eyebrow">Confíanza y Experiencia</span>
           <h2
             id="clients-heading"
             className="eg-section-title"
@@ -100,7 +81,7 @@ function Clients() {
           </h2>
           <p className="eg-section-description">
             Más de{" "}
-            <strong>100 empresas en Viña del Mar, Valparaiso y V Region</strong>{" "}
+            <strong>100 empresas en Viña del Mar, Valparaíso y V Region</strong>{" "}
             han confiado en nuestros <strong>implementos publicitarios</strong>{" "}
             para potenciar su marca.
           </p>
@@ -112,7 +93,18 @@ function Clients() {
           itemType="https://schema.org/ItemList"
         >
           <meta itemProp="numberOfItems" content={data.length} />
-          {loadSwiper && data && (
+
+          {!loadSwiper ? (
+            <div className="clients-loading-minimal" aria-live="polite" aria-busy="true">
+              {Array.from({ length: 6 }).map((_, index) => (
+                <div
+                  key={index}
+                  className="client-skeleton-minimal"
+                  role="presentation"
+                />
+              ))}
+            </div>
+          ) : (
             <Swiper
               {...swiperOptions}
               className="eg-clients-carousel"
@@ -132,7 +124,7 @@ function Clients() {
                       src={item}
                       alt={`Logo cliente ${
                         index + 1
-                      } - Empresa que confía en Elephant Group para implementos publicitarios en Valparaíso, Viña del Mar y la V Región`}
+                      } - Empresa que confia en Elephant Group para implementos publicitarios en Valparaíso, Viña del Mar y la V Region`}
                       width={160}
                       height={100}
                       className="eg-client-logo"

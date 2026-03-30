@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import SeoHead from "@/components/Common/SeoHead";
-import Loader from "@/components/Common/Loader";
 import MainNavbar from "@/components/Common/MainNavbar";
 import TermsHeader from "@/components/Legal/TermsHeader";
 import TermsContent from "@/components/Legal/TermsContent";
@@ -163,9 +162,7 @@ function TermsAndConditions() {
         formatDetection="telephone=no"
         xUaCompatible="ie=edge"
         structuredData={structuredData}
-      />
-
-      <Loader />
+      />{" "}
       <MainNavbar mainBg />
       <main id="main-content">
         <TermsHeader />

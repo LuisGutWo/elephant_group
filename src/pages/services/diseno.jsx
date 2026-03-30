@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 import Layout from "@/layouts/default";
-import Loader from "@/components/Common/Loader";
 import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/InnerPages/Header";
 import DisenoGrafico from "@/components/InnerPages/Services/DisenoGrafico";
@@ -48,9 +47,7 @@ function DisenoGraficoPage() {
           rel="canonical"
           href="https://landingclientes.elephantgroup.cl/services/diseno"
         />
-      </Head>
-
-      <Loader />
+      </Head>{" "}
       <Navbar mainBg />
       <main>
         <Header data={headerMetadata} subBg={true} />

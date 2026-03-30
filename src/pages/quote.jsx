@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import SeoHead from "@/components/Common/SeoHead";
 import Layout from "@/layouts/default";
-import Loader from "@/components/Common/Loader";
 import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/InnerPages/Header";
 import Story from "@/components/InnerPages/About/Story";
@@ -44,9 +43,7 @@ function QuotePage() {
         twitterCard="summary_large_image"
         twitterTitle="Cotización | Elephant Group"
         twitterDescription="Solicita tu presupuesto personalizado de implementos publicitarios. Respuesta en 24 horas."
-      />
-
-      <Loader />
+      />{" "}
       <Navbar mainBg />
       <main>
         <Header data={headerMetadata} />

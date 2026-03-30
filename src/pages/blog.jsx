@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import SeoHead from "@/components/Common/SeoHead";
 import Layout from "@/layouts/default";
-import Loader from "@/components/Common/Loader";
 import Navbar from "@/components/Common/MainNavbar";
 import BlogHeader from "@/components/Blog/BlogHeader";
 import BlogGrid from "@/components/Blog/BlogGrid";
@@ -107,16 +106,13 @@ function BlogPage() {
             ],
           },
         ]}
-      />
-
-      <Loader />
+      />{" "}
       <Navbar mainBg />
       <main className="main-bg">
         <BlogHeader />
         <BlogGrid />
       </main>
       <FooterBottom />
-
       {/* Schema.org Structured Data */}
       <script
         type="application/ld+json"
@@ -144,7 +140,6 @@ function BlogPage() {
           }),
         }}
       />
-
       {/* Breadcrumb Schema */}
       <script
         type="application/ld+json"
@@ -169,7 +164,6 @@ function BlogPage() {
           }),
         }}
       />
-
       {/* Organization Schema */}
       <script
         type="application/ld+json"

@@ -1,6 +1,6 @@
 /* =============================================
    Portfolio Elegant Styles
-   Minimal design with #fca311 accent
+   Minimal design with #d29f13 accent
    ============================================= */
 
 /* ============= Section Base ============= */
@@ -12,7 +12,7 @@
 
 /* ============= Header Styles ============= */
 .portfolio-eyebrow {
-  color: #fca311;
+  color: #d29f13;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -98,7 +98,7 @@
 }
 
 .eg-portfolio-image:focus {
-  outline: 2px solid #fca311;
+  outline: 2px solid #d29f13;
   outline-offset: 2px;
 }
 
@@ -182,8 +182,8 @@
 .eg-portfolio-btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(252, 163, 17, 0.15);
-  border-color: #fca311;
-  color: #fca311;
+  border-color: #d29f13;
+  color: #d29f13;
   text-decoration: none;
 }
 
@@ -222,12 +222,12 @@
   align-items: center;
   gap: 0.75rem;
   color: #ffffff;
-  background: #fca311;
+  background: #d29f13;
   font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
   padding: 0.875rem 1.75rem;
-  border: 1px solid #fca311;
+  border: 1px solid #d29f13;
   border-radius: 4px;
   transition: all 0.3s ease;
   letter-spacing: -0.01em;

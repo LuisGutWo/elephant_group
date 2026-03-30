@@ -7,6 +7,7 @@ import "swiper/css/bundle";
 // import "@/styles/globals.css";
 import "@/styles/globals.purged.css";
 import "@/styles/whatsapp-widget.css";
+import RouteProgress from "@/components/Common/RouteProgress";
 
 function App({ Component, pageProps }) {
   const getLayout = Component?.getLayout ?? ((page) => page);
@@ -25,6 +26,7 @@ function App({ Component, pageProps }) {
         />
       </Head>
 
+      <RouteProgress />
       <Component {...pageProps} />
 
       {[
