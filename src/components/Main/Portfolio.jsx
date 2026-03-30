@@ -8,8 +8,7 @@ const portfolioData = [
     id: 1,
     title: "LETREROS",
     subtitle: "publicitarios y corporativos",
-    description:
-      "Fabricación de letreros publicitarios en Viña del Mar, Valparaiso y V Region. Diseños personalizados en trovicel, acrílico y aluminio compuesto. Instalación profesional para locales comerciales y oficinas.",
+    description: "Para destacar tu negocio y atraer clientes.",
     image: "/assets/light/imgs/works/corte_el_brioche.webp",
     category: "Letreros",
     keywords:
@@ -20,9 +19,8 @@ const portfolioData = [
   {
     id: 2,
     title: "SEÑALÉTICAS",
-    subtitle: "industriales y corporativas",
-    description:
-      "Señalética industrial y corporativa en Viña del Mar, Valparaiso y V Region. Soluciones de seguridad y orientación para interiores y exteriores. Materiales resistentes a la intemperie.",
+    subtitle: "industriales",
+    description: "Cumple normativa y mejora la seguridad.",
     image: "/assets/light/imgs/works/letrero_covisa.webp",
     category: "Señaléticas",
     keywords:
@@ -33,9 +31,8 @@ const portfolioData = [
   {
     id: 3,
     title: "ADHESIVOS",
-    subtitle: "personalizados para empresas",
-    description:
-      "Adhesivos y vinilos personalizados en Viña del Mar, Valparaiso y V Region. Desde etiquetas corporativas hasta gráficos para vidrieras y vehículos. Impresión de alta calidad para tu marca.",
+    subtitle: "personalizados",
+    description: "Refuerza tu marca en cada espacio.",
     image: "/assets/light/imgs/works/Adhesivos-Personalizarme.webp",
     category: "Adhesivos",
     keywords:
@@ -90,23 +87,9 @@ function Portfolio() {
         <div className="eg-portfolio-header">
           <div className="row justify-content-center">
             <div className="col-lg-8 text-center">
-              <span className="eg-section-eyebrow">
-                Catálogo de Productos 2025
-              </span>
               <h2 className="eg-section-title" itemProp="name">
-                Implementos{" "}
-                <span style={{ color: "#fca311" }}>Publicitarios</span> en Viña
-                del Mar, Valparaiso y V Region
+                Nuestros Productos{" "}
               </h2>
-              <p className="eg-section-description" itemProp="description">
-                Fabricación y venta de <strong>señalética industrial</strong>,{" "}
-                <strong>letreros corporativos</strong>,{" "}
-                <strong>material POP</strong>,{" "}
-                <strong>adhesivos personalizados</strong> y{" "}
-                <strong>merchandising</strong> en Viña del Mar, Valparaiso y V
-                Region. Diseño, impresión e instalación profesional para
-                empresas y negocios.
-              </p>
               <meta
                 itemProp="numberOfItems"
                 content={String(portfolioData.length)}
@@ -153,14 +136,11 @@ function Portfolio() {
                     </div>
                   </div>
 
-                  <div className="eg-portfolio-content">
+                  <div className="eg-portfolio-content text-center">
                     <div className="eg-portfolio-header-badge">
                       <h3 className="eg-portfolio-card-title" itemProp="name">
                         {item.title}
                       </h3>
-                      <span className="eg-portfolio-card-subtitle">
-                        {item.subtitle}
-                      </span>
                     </div>
 
                     <p
@@ -249,44 +229,6 @@ function Portfolio() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="eg-portfolio-cta">
-          <div className="row justify-content-center">
-            <div className="col-lg-8 text-center">
-              <p className="portfolio-cta-text">
-                ¿Necesitas <strong>gigantografías</strong>,{" "}
-                <strong>pendones</strong> o <strong>material POP</strong>?
-                Explora nuestro <strong>catálogo completo</strong> con más de{" "}
-                <strong>50 productos publicitarios</strong> para empresas en
-                Viña del Mar, Valparaiso y V Region.
-              </p>
-              <Link
-                href="/portfolio"
-                className="eg-portfolio-view-all"
-                aria-label="Ver catálogo completo de implementos publicitarios en Viña del Mar, Valparaiso y V Region"
-                title="Catálogo completo de productos publicitarios - Elephant Group Viña del Mar, Valparaiso y V Region"
-              >
-                Explorar Catálogo Completo
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M7 17L17 7M17 7H7M17 7V17"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </Link>
-            </div>
           </div>
         </div>
 

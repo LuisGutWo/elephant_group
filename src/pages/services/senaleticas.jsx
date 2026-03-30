@@ -4,11 +4,10 @@ import Layout from "@/layouts/default";
 import Loader from "@/components/Common/Loader";
 import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/InnerPages/Header";
-import ImpresionDigital from "@/components/InnerPages/Services/ImpresionDigital";
-import Form from "@/components/InnerPages/Contact/Form";
 import FooterBottom from "@/components/Main/FooterBottom";
+import Señaleticas from "@/components/InnerPages/Services/Señaleticas";
 
-function ImpresionDigitalPage() {
+function SenaleticasPage() {
   useEffect(() => {
     const body = document?.body;
     if (body) {
@@ -24,26 +23,27 @@ function ImpresionDigitalPage() {
 
   const headerMetadata = {
     subTitle: "SERVICIOS",
-    title: "Impresión Digital de Alta Calidad",
-    text: "IMPRESIÓN DIGITAL",
+    title: "Señaléticas Profesionales para Empresas",
+    text: "SEÑALÉTICAS",
+    background: "/assets/light/imgs/works/letreros_muestra_varios.webp",
   };
 
   return (
     <>
       <Head>
-        <title>Elephant Group - Impresión Digital | Valparaíso</title>
+        <title>Elephant Group - Señaléticas Profesionales | Valparaíso</title>
         <meta
           name="description"
-          content="Servicio de impresión digital de alta calidad en Valparaíso. Tarjetas, flyers, catálogos y documentos corporativos con entrega rápida y precios competitivos."
+          content="Servicio de señaléticas profesionales en Valparaíso para empresas, oficinas y comercios. Diseñamos, fabricamos e instalamos señalética corporativa, de orientación y seguridad."
         />
         <meta
           name="keywords"
-          content="impresión digital, imprenta Valparaíso, tarjetas de presentación, flyers, catálogos, impresión rápida"
+          content="señaléticas, señalética Valparaíso, señalética corporativa, señalética de seguridad, señalética interior y exterior, Elephant Group"
         />
         <meta name="author" content="Elephant Group" />
         <link
           rel="canonical"
-          href="https://landingclientes.elephantgroup.cl/services/impresion-digital"
+          href="https://landingclientes.elephantgroup.cl/services/senaleticas"
         />
       </Head>
 
@@ -51,14 +51,13 @@ function ImpresionDigitalPage() {
       <Navbar mainBg />
       <main>
         <Header data={headerMetadata} subBg={true} />
-        <ImpresionDigital />
-        <Form />
+        <Señaleticas />
       </main>
       <FooterBottom />
     </>
   );
 }
 
-ImpresionDigitalPage.getLayout = (page) => <Layout>{page}</Layout>;
+SenaleticasPage.getLayout = (page) => <Layout>{page}</Layout>;
 
-export default ImpresionDigitalPage;
+export default SenaleticasPage;

@@ -4,7 +4,6 @@ import Layout from "@/layouts/default";
 import Loader from "@/components/Common/Loader";
 import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/InnerPages/Contact/Header";
-import Form from "@/components/InnerPages/Contact/Form";
 import FooterBottom from "@/components/Main/FooterBottom";
 import FooterImg from "@/components/Main/FooterImg";
 import Footer from "@/components/Main/Footer";

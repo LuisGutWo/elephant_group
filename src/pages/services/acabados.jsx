@@ -5,7 +5,6 @@ import Loader from "@/components/Common/Loader";
 import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/InnerPages/Header";
 import Acabados from "@/components/InnerPages/Services/Acabados";
-import Form from "@/components/InnerPages/Contact/Form";
 import FooterBottom from "@/components/Main/FooterBottom";
 
 function AcabadosPage() {
@@ -54,7 +53,6 @@ function AcabadosPage() {
       <main>
         <Header data={headerMetadata} subBg={true} />
         <Acabados />
-        <Form />
       </main>
       <FooterBottom />
     </>

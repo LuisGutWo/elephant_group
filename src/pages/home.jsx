@@ -4,13 +4,10 @@ import Layout from "@/layouts/default";
 import Loader from "@/components/Common/Loader";
 import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/Main/Header";
-import Products from "@/components/Main/Products";
-import Clients from "@/components/Main/Clients";
 import AboutUs from "@/components/Main/AboutUs";
 import Portfolio from "@/components/Main/Portfolio";
 import FooterImg from "@/components/Main/FooterImg";
 import Footer from "@/components/Main/Footer";
-import Form from "@/components/InnerPages/Contact/Form";
 import FooterBottom from "@/components/Main/FooterBottom";
 
 import SeoHead from "@/components/Common/SeoHead";
@@ -66,16 +63,11 @@ function HomePage() {
       <Loader />
       <Navbar />
       <Header />
-      <Products />
-      <Clients />
+      <Portfolio />
       <main>
-        <section id="contact" aria-labelledby="contact-title">
-          <Form />
-        </section>
         <section id="about" aria-labelledby="about-title">
           <AboutUs />
         </section>
-        <Portfolio />
       </main>
       <FooterImg />
       <Footer />

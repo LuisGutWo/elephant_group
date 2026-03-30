@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-function ImpresionDigital() {
+function Señaleticas() {
   return (
     <section className="services-details section-padding">
       <div className="container">
@@ -9,32 +9,36 @@ function ImpresionDigital() {
           <div className="col-lg-8">
             <div className="content">
               <div className="mb-50">
-                <h2 className="mb-20">Impresión Digital de Alta Calidad</h2>
+                <h2 className="mb-20">Señalética Profesional para Empresas</h2>
                 <p className="mb-30">
-                  Nuestro servicio de impresión digital ofrece resultados
-                  excepcionales con la última tecnología en equipos de
-                  impresión. Ideal para tirajes cortos y medianos con entrega
-                  rápida y calidad profesional.
+                  Nuestro servicio de señalética está pensado para empresas,
+                  oficinas, locales comerciales y espacios institucionales que
+                  necesitan orientar, informar e identificar sus áreas con una
+                  imagen clara y profesional. Desarrollamos soluciones visuales
+                  funcionales, duraderas y alineadas con la identidad de cada
+                  marca.
                 </p>
                 <p className="mb-30">
-                  La impresión digital nos permite ofrecer flexibilidad en
-                  cantidades, personalización de cada pieza y costos
-                  competitivos para proyectos urgentes o de bajo volumen.
+                  Fabricamos señaléticas interiores y exteriores utilizando
+                  materiales resistentes y terminaciones de calidad. Combinamos
+                  diseño, impresión, corte CNC e instalación para entregar un
+                  sistema completo de comunicación visual adaptado a cada
+                  proyecto.
                 </p>
               </div>
 
               <div className="mb-50">
-                <h3 className="mb-30">Aplicaciones y Productos</h3>
+                <h3 className="mb-30">Tipos de Señalética</h3>
                 <div className="row">
                   <div className="col-md-6 mb-30">
                     <div className="item-box">
                       <h5 className="mb-15">
                         <i className="fas fa-check-circle text-orange me-2"></i>
-                        Tarjetas de Presentación
+                        Señalética Corporativa
                       </h5>
                       <p>
-                        Impresión de alta calidad en diversos tipos de papel y
-                        acabados.
+                        Identificación de recepciones, oficinas, salas y áreas
+                        internas con una estética coherente con tu marca.
                       </p>
                     </div>
                   </div>
@@ -42,11 +46,11 @@ function ImpresionDigital() {
                     <div className="item-box">
                       <h5 className="mb-15">
                         <i className="fas fa-check-circle text-orange me-2"></i>
-                        Flyers y Volantes
+                        Señales de Orientación
                       </h5>
                       <p>
-                        Perfectos para campañas publicitarias y eventos
-                        promocionales.
+                        Sistemas visuales para guiar recorridos, accesos,
+                        salidas, estacionamientos y puntos de atención.
                       </p>
                     </div>
                   </div>
@@ -54,10 +58,11 @@ function ImpresionDigital() {
                     <div className="item-box">
                       <h5 className="mb-15">
                         <i className="fas fa-check-circle text-orange me-2"></i>
-                        Catálogos y Revistas
+                        Señalética de Seguridad
                       </h5>
                       <p>
-                        Presentación profesional de tus productos y servicios.
+                        Señales informativas, preventivas y normativas para
+                        espacios laborales, comerciales e industriales.
                       </p>
                     </div>
                   </div>
@@ -65,11 +70,35 @@ function ImpresionDigital() {
                     <div className="item-box">
                       <h5 className="mb-15">
                         <i className="fas fa-check-circle text-orange me-2"></i>
-                        Documentos Corporativos
+                        Señalética Exterior
                       </h5>
                       <p>
-                        Papelería, formularios, carpetas y material
-                        administrativo.
+                        Soluciones resistentes para fachadas, accesos y zonas
+                        expuestas, pensadas para alta visibilidad y duración.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-md-6 mb-30">
+                    <div className="item-box">
+                      <h5 className="mb-15">
+                        <i className="fas fa-check-circle text-orange me-2"></i>
+                        Directorios y Placas Informativas
+                      </h5>
+                      <p>
+                        Placas, totems y directorios para identificar áreas,
+                        niveles, servicios y espacios de atención al público.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-md-6 mb-30">
+                    <div className="item-box">
+                      <h5 className="mb-15">
+                        <i className="fas fa-check-circle text-orange me-2"></i>
+                        Fabricación e Instalación Integral
+                      </h5>
+                      <p>
+                        Ejecutamos el proyecto completo desde el diseño hasta el
+                        montaje final para asegurar uniformidad y calidad.
                       </p>
                     </div>
                   </div>
@@ -77,14 +106,16 @@ function ImpresionDigital() {
               </div>
 
               <div className="mb-50">
-                <h3 className="mb-30">Ventajas de la Impresión Digital</h3>
+                <h3 className="mb-30">Ventajas de Nuestra Señalética</h3>
                 <ul className="list-style-check">
-                  <li>Entrega rápida - Plazos desde 24 horas</li>
-                  <li>Tiradas cortas sin costo adicional</li>
-                  <li>Personalización variable de cada pieza</li>
-                  <li>Calidad fotográfica y colores vibrantes</li>
-                  <li>Pruebas de color sin cargo extra</li>
-                  <li>Sustentable - Menor desperdicio de material</li>
+                  <li>
+                    Diseño funcional y alineado con la identidad de tu marca
+                  </li>
+                  <li>Materiales durables para interior y exterior</li>
+                  <li>Mejor orientación y experiencia dentro del espacio</li>
+                  <li>Producción personalizada según medidas y necesidades</li>
+                  <li>Instalación profesional y terminaciones limpias</li>
+                  <li>Alta visibilidad, orden y comunicación efectiva</li>
                 </ul>
               </div>
             </div>
@@ -96,20 +127,20 @@ function ImpresionDigital() {
                 <h4 className="mb-30">Especificaciones Técnicas</h4>
                 <div className="info-list">
                   <div className="item mb-20">
-                    <h6>Formatos</h6>
-                    <p>Desde A6 hasta 330x480mm</p>
+                    <h6>Aplicaciones</h6>
+                    <p>Interior, exterior, orientación y seguridad</p>
                   </div>
                   <div className="item mb-20">
-                    <h6>Gramajes</h6>
-                    <p>80gr hasta 350gr</p>
+                    <h6>Materiales</h6>
+                    <p>Acrílico, PVC, trovicel, aluminio y vinilo</p>
                   </div>
                   <div className="item mb-20">
-                    <h6>Tipos de Papel</h6>
-                    <p>Bond, Couché, Texturados, Especiales</p>
+                    <h6>Terminaciones</h6>
+                    <p>Corte CNC, impresión, laminado y montaje</p>
                   </div>
                   <div className="item mb-20">
-                    <h6>Acabados</h6>
-                    <p>Laminado, UV, Barniz, Troquelado</p>
+                    <h6>Personalización</h6>
+                    <p>Medidas, formas y gráfica adaptadas al proyecto</p>
                   </div>
                 </div>
               </div>
@@ -132,20 +163,20 @@ function ImpresionDigital() {
                 <h4 className="mb-30">Servicios Relacionados</h4>
                 <ul className="services-links">
                   <li>
-                    <Link href="/services/impresion-offset">
-                      Impresión Offset
+                    <Link href="/services/letreros">
+                      Letreros Personalizados
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/gran-formato">Gran Formato</Link>
+                    <Link href="/services/corte-cnc">Corte CNC</Link>
                   </li>
                   <li>
-                    <Link href="/services/acabados">
-                      Acabados y Terminaciones
+                    <Link href="/services/impresion-digital">
+                      Impresión Digital
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/diseno">Diseño Gráfico</Link>
+                    <Link href="/services/diseno">Diseño Personalizado</Link>
                   </li>
                 </ul>
               </div>
@@ -319,4 +350,4 @@ function ImpresionDigital() {
   );
 }
 
-export default ImpresionDigital;
+export default Señaleticas;

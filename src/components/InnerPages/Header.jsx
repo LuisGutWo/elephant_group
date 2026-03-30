@@ -1,6 +1,6 @@
 import React from "react";
 
-function Header({ data, subBg }) {
+function Header({ data, subBg, background }) {
   if (!data) {
     throw new Error("Data is null in Header component");
   }
@@ -9,6 +9,13 @@ function Header({ data, subBg }) {
   }
   return (
     <header className="eg-header-base">
+      <div
+        className="background-img"
+        style={{
+          backgroundImage: `url(${background || data.background})`,
+        }}
+        aria-hidden="true"
+      />
       <div className="background-img" />
       <div className="container mt-80">
         <div className="row align-items-center">

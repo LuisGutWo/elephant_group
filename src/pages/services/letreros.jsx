@@ -4,11 +4,10 @@ import Layout from "@/layouts/default";
 import Loader from "@/components/Common/Loader";
 import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/InnerPages/Header";
-import GranFormato from "@/components/InnerPages/Services/GranFormato";
-import Form from "@/components/InnerPages/Contact/Form";
+import Letreros from "@/components/InnerPages/Services/Letreros";
 import FooterBottom from "@/components/Main/FooterBottom";
 
-function GranFormatoPage() {
+function LetrerosPage() {
   useEffect(() => {
     const body = document?.body;
     if (body) {
@@ -24,28 +23,27 @@ function GranFormatoPage() {
 
   const headerMetadata = {
     subTitle: "SERVICIOS",
-    title: "Impresión de Gran Formato",
-    text: "GRAN FORMATO",
+    title: "Letreros Profesionales Personalizados",
+    text: "LETREROS",
+    background: "/assets/light/imgs/header/mercadito_main_banner.png",
   };
 
   return (
     <>
       <Head>
-        <title>
-          Elephant Group - Gran Formato | Gigantografías y Banners Valparaíso
-        </title>
+        <title>Elephant Group - Letreros Profesionales | Valparaíso</title>
         <meta
           name="description"
-          content="Impresión de gran formato en Valparaíso. Gigantografías, banners, vinilos, roll ups y señalética. Alto impacto visual para publicidad exterior y eventos."
+          content="Servicio de letreros profesionales en Valparaíso para empresas y comercios. Diseñamos, fabricamos e instalamos letreros corporativos, rótulos, letreros CNC e impresos."
         />
         <meta
           name="keywords"
-          content="gran formato, gigantografías Valparaíso, banners, vinilos adhesivos, roll up, pendones, señalética, publicidad exterior"
+          content="letreros, letreros Valparaíso, letreros publicitarios, rótulos corporativos, letreros CNC, letreros impresos, Elephant Group"
         />
         <meta name="author" content="Elephant Group" />
         <link
           rel="canonical"
-          href="https://landingclientes.elephantgroup.cl/services/gran-formato"
+          href="https://landingclientes.elephantgroup.cl/services/letreros"
         />
       </Head>
 
@@ -53,14 +51,13 @@ function GranFormatoPage() {
       <Navbar mainBg />
       <main>
         <Header data={headerMetadata} subBg={true} />
-        <GranFormato />
-        <Form />
+        <Letreros />
       </main>
       <FooterBottom />
     </>
   );
 }
 
-GranFormatoPage.getLayout = (page) => <Layout>{page}</Layout>;
+LetrerosPage.getLayout = (page) => <Layout>{page}</Layout>;
 
-export default GranFormatoPage;
+export default LetrerosPage;

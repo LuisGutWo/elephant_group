@@ -176,7 +176,7 @@ img {
 .about-features {
   display: flex;
   flex-direction: row;
-  gap: 28px;
+  gap: 4rem;
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
@@ -188,22 +188,22 @@ img {
   text-align: center;
 }
 .about-icon {
-  width: 64px;
-  height: 64px;
+  width: 5rem;
+  height: 5rem;
   margin: 0 auto 12px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .about-item h4 {
-  font-size: 14px;
-  color: #f7a800;
+  font-size: 3rem;
+  color: #d29f13;
   margin-bottom: 8px;
   font-weight: 700;
 }
 .about-item p {
-  font-size: 13px;
-  color: #666;
+  font-size: 1rem;
+  color: #4e4e4e;
   margin: 0;
   line-height: 1.4;
 }
@@ -317,7 +317,7 @@ img {
   pointer-events: none;
   position: fixed;
   padding: 0.3rem;
-  background-color: #fca311;
+  background-color: #d29f13;
   border-radius: 50%;
   mix-blend-mode: difference;
   transition: transform 0.3s ease, opacity 0.4s ease;
@@ -387,7 +387,7 @@ img {
 }
 
 .progress-wrap svg.progress-circle path {
-  stroke: #fca311;
+  stroke: #d29f13;
   stroke-width: 5;
   box-sizing: border-box;
   transition: all 400ms linear;
@@ -475,7 +475,7 @@ img {
 
 .main-marq .box .item h4 .icon {
   font-family: "Sora", sans-serif;
-  color: #fca311;
+  color: #d29f13;
   margin-bottom: -15px;
 }
 
@@ -906,14 +906,14 @@ body.loaded {
   padding: 0 3rem 0 1.8rem;
 }
 .top__navbar-list li a {
-  color: #fca311;
+  color: #d29f13;
   text-decoration: none;
   font-size: small;
   margin: 0;
   padding: 0.3rem;
 }
 .top__navbar-item {
-  color: #fca311;
+  color: #d29f13;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -929,7 +929,7 @@ body.loaded {
 }
 .top__navbar-button {
   z-index: 3;
-  background-color: #fca311;
+  background-color: #d29f13;
   color: #25282a;
   border: none;
   padding: 0 0.25rem;
@@ -1170,7 +1170,7 @@ body.loaded {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #fca311;
+  background: #d29f13;
 }
 
 .sec-lg-head .dot-titl:before {
@@ -1183,7 +1183,7 @@ body.loaded {
 
 .sec-lg-head .dot-titl.colorbg-1:before,
 .sec-lg-head .dot-titl.colorbg-1:after {
-  background: #fca311;
+  background: #d29f13;
 }
 
 .sec-lg-head .dot-titl.colorbg-3:before,
@@ -1299,7 +1299,7 @@ body.loaded {
   top: 0;
   width: 8px;
   height: 150px;
-  background: #fca311;
+  background: #d29f13;
 }
 
 .intro-about .imgs .img1:before {
@@ -1331,7 +1331,7 @@ body.loaded {
 .pg-about .story-headline {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #fca311;
+  color: #d29f13;
   margin-bottom: 1.5rem;
   line-height: 1.4;
 }
@@ -1513,11 +1513,9 @@ body.loaded {
   background: #999;
 }
 
-
 #tabs .tab-content {
   display: none;
 }
-
 
 #tabs .tab-content.current {
   display: block;
@@ -1548,9 +1546,9 @@ body.loaded {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: bottom center;
-     object-position: bottom center;
+  object-position: bottom center;
 }
 .eg-footer-top {
   padding: 60px 0 40px;
@@ -1606,7 +1604,7 @@ body.loaded {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #fca311;
+  background: #d29f13;
   color: #0b0b0b !important;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
@@ -1649,7 +1647,7 @@ body.loaded {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #fca311;
+  background: #d29f13;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
   font-size: 16px;
@@ -1721,7 +1719,7 @@ body.loaded {
   font-weight: 600;
 }
 .btn-primary {
-  background: #f7a800;
+  background: #d29f13;
   color: #111;
 }
 
@@ -2148,7 +2146,7 @@ footer .logo a {
   .order1 {
     order: 1 !important;
   }
-  
+
   .md-hide {
     display: none;
   }

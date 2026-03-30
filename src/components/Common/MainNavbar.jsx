@@ -119,107 +119,60 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                     "aria-current": "page",
                   })}
                 >
-                  <span className="rolling-text">SERVICIOS</span>
+                  <span className="rolling-text">PRODUCTOS</span>
                 </Link>
                 <ul className="dropdown-menu" role="menu">
                   <li role="none">
                     <Link
                       className={`dropdown-item${
-                        router.pathname === "/services/impresion-digital"
+                        router.pathname === "/services/letreros"
                           ? " is-active"
                           : ""
                       }`}
-                      href="/services/impresion-digital"
+                      href="/services/letreros"
                       role="menuitem"
-                      {...(router.pathname ===
-                        "/services/impresion-digital" && {
+                      {...(router.pathname === "/services/letreros" && {
                         "aria-current": "page",
                       })}
                     >
-                      Impresión Digital
+                      Letreros
                     </Link>
                   </li>
                   <li role="none">
                     <Link
                       className={`dropdown-item${
-                        router.pathname === "/services/impresion-offset"
+                        router.pathname === "/services/senaleticas"
                           ? " is-active"
                           : ""
                       }`}
-                      href="/services/impresion-offset"
+                      href="/services/senaleticas"
                       role="menuitem"
-                      {...(router.pathname === "/services/impresion-offset" && {
+                      {...(router.pathname === "/services/senaleticas" && {
                         "aria-current": "page",
                       })}
                     >
-                      Impresión Offset
+                      Señaleticas
                     </Link>
                   </li>
                   <li role="none">
                     <Link
                       className={`dropdown-item${
-                        router.pathname === "/services/gran-formato"
+                        router.pathname === "/services/adhesivos"
                           ? " is-active"
                           : ""
                       }`}
-                      href="/services/gran-formato"
+                      href="/services/adhesivos"
                       role="menuitem"
-                      {...(router.pathname === "/services/gran-formato" && {
+                      {...(router.pathname === "/services/adhesivos" && {
                         "aria-current": "page",
                       })}
                     >
-                      Gran Formato
-                    </Link>
-                  </li>
-                  <li role="none">
-                    <Link
-                      className={`dropdown-item${
-                        router.pathname === "/services/acabados"
-                          ? " is-active"
-                          : ""
-                      }`}
-                      href="/services/acabados"
-                      role="menuitem"
-                      {...(router.pathname === "/services/acabados" && {
-                        "aria-current": "page",
-                      })}
-                    >
-                      Acabados y Terminaciones
-                    </Link>
-                  </li>
-                  <li role="none">
-                    <Link
-                      className={`dropdown-item${
-                        router.pathname === "/services/diseno"
-                          ? " is-active"
-                          : ""
-                      }`}
-                      href="/services/diseno"
-                      role="menuitem"
-                      {...(router.pathname === "/services/diseno" && {
-                        "aria-current": "page",
-                      })}
-                    >
-                      Diseño Gráfico
+                      Adhesivos
                     </Link>
                   </li>
                 </ul>
               </li>
-              <li className="nav-item" role="none">
-                <Link
-                  className={`nav-link${
-                    router.pathname === "/portfolio" ? " is-active" : ""
-                  }`}
-                  href="/portfolio"
-                  role="menuitem"
-                  aria-label="Ver portafolio de trabajos realizados"
-                  {...(router.pathname === "/portfolio" && {
-                    "aria-current": "page",
-                  })}
-                >
-                  <span className="rolling-text">PORTAFOLIO</span>
-                </Link>
-              </li>
+
               <li className="nav-item" role="none">
                 <Link
                   className={`nav-link${

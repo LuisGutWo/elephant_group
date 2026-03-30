@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-function GranFormato() {
+function Letreros() {
   return (
     <section className="services-details section-padding">
       <div className="container">
@@ -9,33 +9,35 @@ function GranFormato() {
           <div className="col-lg-8">
             <div className="content">
               <div className="mb-50">
-                <h2 className="mb-20">Impresión de Gran Formato</h2>
+                <h2 className="mb-20">Letreros Profesionales Personalizados</h2>
                 <p className="mb-30">
-                  Nuestro servicio de impresión de gran formato está diseñado
-                  para proyectos de alto impacto visual. Utilizamos tecnología
-                  de punta para producir gráficos de gran tamaño con colores
-                  vibrantes y detalles excepcionales.
+                  Nuestro servicio de letreros está diseñado para comercios,
+                  empresas y negocios que desean destacar con identidad visual
+                  profesional. Creamos letreros de alto impacto visual
+                  utilizando tecnología de corte CNC y impresión de gran formato
+                  con colores vibrantes y detalles excepcionales.
                 </p>
                 <p className="mb-30">
-                  Ideal para publicidad exterior, señalética, eventos, ferias y
-                  cualquier aplicación que requiera visibilidad y presencia.
-                  Trabajamos con diversos materiales y acabados según las
-                  necesidades de cada proyecto.
+                  Ideal para fachadas, interiores, señalética corporativa y
+                  aplicaciones que requieran máxima visibilidad. Trabajamos con
+                  diversos materiales como acrílicos, trovicel, madera, aluminio
+                  compuesto y vinilos según las necesidades de tu proyecto.
                 </p>
               </div>
 
               <div className="mb-50">
-                <h3 className="mb-30">Productos de Gran Formato</h3>
+                <h3 className="mb-30">Tipos de Letreros</h3>
                 <div className="row">
                   <div className="col-md-6 mb-30">
                     <div className="item-box">
                       <h5 className="mb-15">
                         <i className="fas fa-check-circle text-orange me-2"></i>
-                        Gigantografías y Banners
+                        Letreros Cortados CNC
                       </h5>
                       <p>
-                        Para fachadas, eventos y publicidad exterior de alto
-                        impacto.
+                        Letreros precisos y personalizados cortados en acrílico,
+                        madera, aluminio compuesto y trovicel para fachadas y
+                        espacios interiores.
                       </p>
                     </div>
                   </div>
@@ -43,11 +45,11 @@ function GranFormato() {
                     <div className="item-box">
                       <h5 className="mb-15">
                         <i className="fas fa-check-circle text-orange me-2"></i>
-                        Vinilos Adhesivos
+                        Letreros Impresos
                       </h5>
                       <p>
-                        Para vidrieras, vehículos, paredes y superficies
-                        diversas.
+                        Letreros de gran formato impresos en vinilo adhesivo,
+                        tela PVC, canvas y magnéticos con colores vibrantes.
                       </p>
                     </div>
                   </div>
@@ -55,11 +57,11 @@ function GranFormato() {
                     <div className="item-box">
                       <h5 className="mb-15">
                         <i className="fas fa-check-circle text-orange me-2"></i>
-                        Roll Up y Pendones
+                        Rótulos y Nombres Corporativos
                       </h5>
                       <p>
-                        Sistemas portátiles ideales para ferias y
-                        presentaciones.
+                        Identificación de empresa y comercios con diseño
+                        personalizados que reflejan tu identidad corporativa.
                       </p>
                     </div>
                   </div>
@@ -67,10 +69,11 @@ function GranFormato() {
                     <div className="item-box">
                       <h5 className="mb-15">
                         <i className="fas fa-check-circle text-orange me-2"></i>
-                        Señalética y Letreros
+                        Señalética Profesional
                       </h5>
                       <p>
-                        Soluciones para identificación corporativa y navegación.
+                        Señales de navegación, información y orientación para
+                        comercios, oficinas y espacios públicos.
                       </p>
                     </div>
                   </div>
@@ -78,11 +81,11 @@ function GranFormato() {
                     <div className="item-box">
                       <h5 className="mb-15">
                         <i className="fas fa-check-circle text-orange me-2"></i>
-                        Backlight y Frontlight
+                        Letreros Iluminados
                       </h5>
                       <p>
-                        Lonas especiales para cajas de luz y publicidad
-                        iluminada.
+                        Letreros con retroiluminación para máxima visibilidad
+                        nocturna y presencia impactante.
                       </p>
                     </div>
                   </div>
@@ -90,11 +93,11 @@ function GranFormato() {
                     <div className="item-box">
                       <h5 className="mb-15">
                         <i className="fas fa-check-circle text-orange me-2"></i>
-                        Decoración de Espacios
+                        Instalación y Montaje Profesional
                       </h5>
                       <p>
-                        Murales, fotomurales y gráficas para ambientación
-                        interior.
+                        Instalación especializada en fachadas, interiores y
+                        espacios especiales con garantía de calidad.
                       </p>
                     </div>
                   </div>
@@ -102,14 +105,17 @@ function GranFormato() {
               </div>
 
               <div className="mb-50">
-                <h3 className="mb-30">Ventajas del Gran Formato</h3>
+                <h3 className="mb-30">Ventajas de Nuestros Letreros</h3>
                 <ul className="list-style-check">
-                  <li>Alto impacto visual y visibilidad</li>
+                  <li>Diseño personalizado para tu identidad corporativa</li>
                   <li>Múltiples materiales y acabados disponibles</li>
-                  <li>Resistente a intemperie para uso exterior</li>
-                  <li>Instalación y montaje especializado</li>
-                  <li>Durabilidad y resistencia garantizada</li>
-                  <li>Colores vibrantes y definición HD</li>
+                  <li>Resistencia a intemperie para uso exterior prolongado</li>
+                  <li>Instalación y montaje especializado incluido</li>
+                  <li>Colores vibrantes y definición de calidad profesional</li>
+                  <li>
+                    Asesoramiento en ubicación y orientación para máxima
+                    visibilidad
+                  </li>
                 </ul>
               </div>
             </div>
@@ -121,20 +127,20 @@ function GranFormato() {
                 <h4 className="mb-30">Especificaciones Técnicas</h4>
                 <div className="info-list">
                   <div className="item mb-20">
-                    <h6>Anchos Disponibles</h6>
-                    <p>Hasta 5 metros de ancho</p>
+                    <h6>Tamaños Disponibles</h6>
+                    <p>Desde pequeños rótulos hasta 5+ metros</p>
                   </div>
                   <div className="item mb-20">
-                    <h6>Largo</h6>
-                    <p>Sin límite de metraje</p>
+                    <h6>Materiales Principales</h6>
+                    <p>Acrílico, Trovicel, Madera, Aluminio, Vinilo</p>
                   </div>
                   <div className="item mb-20">
-                    <h6>Materiales</h6>
-                    <p>Lona, Vinilo, Tela, PVC, Foam, Acrílico</p>
+                    <h6>Acabados</h6>
+                    <p>Brillante, Mate, Translúcido, Iluminado</p>
                   </div>
                   <div className="item mb-20">
-                    <h6>Resolución</h6>
-                    <p>1440 DPI calidad fotográfica</p>
+                    <h6>Precisión de Corte</h6>
+                    <p>CNC con tolerancia de ±1mm</p>
                   </div>
                 </div>
               </div>
@@ -157,22 +163,22 @@ function GranFormato() {
                 <h4 className="mb-30">Servicios Relacionados</h4>
                 <ul className="services-links">
                   <li>
+                    <Link href="/services/corte-cnc">
+                      Corte CNC Profesional
+                    </Link>
+                  </li>
+                  <li>
                     <Link href="/services/impresion-digital">
-                      Impresión Digital
+                      Impresión Digital Gran Formato
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/impresion-offset">
-                      Impresión Offset
-                    </Link>
+                    <Link href="/services/diseno">Diseño Personalizado</Link>
                   </li>
                   <li>
-                    <Link href="/services/acabados">
-                      Acabados y Terminaciones
+                    <Link href="/services/instalacion">
+                      Instalación y Montaje
                     </Link>
-                  </li>
-                  <li>
-                    <Link href="/services/diseno">Diseño Gráfico</Link>
                   </li>
                 </ul>
               </div>
@@ -346,4 +352,4 @@ function GranFormato() {
   );
 }
 
-export default GranFormato;
+export default Letreros;

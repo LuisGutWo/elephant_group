@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-function ImpresionOffset() {
+function Adhesivos() {
   return (
     <section className="services-details section-padding">
       <div className="container">
@@ -9,33 +9,35 @@ function ImpresionOffset() {
           <div className="col-lg-8">
             <div className="content">
               <div className="mb-50">
-                <h2 className="mb-20">Impresión Offset de Alto Volumen</h2>
+                <h2 className="mb-20">
+                  Adhesivos Publicitarios Personalizados
+                </h2>
                 <p className="mb-30">
-                  La impresión offset es la tecnología ideal para grandes
-                  tirajes, ofreciendo la mejor calidad de impresión con costos
-                  optimizados. Perfecta para proyectos que requieren
-                  consistencia y acabados profesionales.
+                  Nuestro servicio de adhesivos está orientado a potenciar la
+                  visibilidad de tu marca en vitrinas, muros, vehículos y puntos
+                  de venta. Producimos adhesivos personalizados con alta calidad
+                  de impresión, colores vibrantes y excelente adherencia.
                 </p>
                 <p className="mb-30">
-                  Con nuestra maquinaria offset de última generación,
-                  garantizamos colores precisos, detalles nítidos y resultados
-                  uniformes en toda la tirada, independiente del volumen
-                  solicitado.
+                  Trabajamos con distintos materiales y terminaciones para
+                  interior y exterior, incluyendo adhesivos de larga duración,
+                  removibles y de uso promocional. Entregamos soluciones a
+                  medida según superficie, tamaño y objetivo comercial.
                 </p>
               </div>
 
               <div className="mb-50">
-                <h3 className="mb-30">Productos Offset</h3>
+                <h3 className="mb-30">Tipos de Adhesivos</h3>
                 <div className="row">
                   <div className="col-md-6 mb-30">
                     <div className="item-box">
                       <h5 className="mb-15">
                         <i className="fas fa-check-circle text-orange me-2"></i>
-                        Libros y Publicaciones
+                        Vinilo Adhesivo Impreso
                       </h5>
                       <p>
-                        Impresión de alta calidad para editoriales y
-                        publicaciones corporativas.
+                        Gráficas personalizadas para vitrinas, muros, paneles y
+                        superficies lisas con terminación profesional.
                       </p>
                     </div>
                   </div>
@@ -43,11 +45,11 @@ function ImpresionOffset() {
                     <div className="item-box">
                       <h5 className="mb-15">
                         <i className="fas fa-check-circle text-orange me-2"></i>
-                        Packaging y Embalaje
+                        Empavonados y Decorativos
                       </h5>
                       <p>
-                        Cajas, etiquetas y envases con impresión de alta
-                        definición.
+                        Soluciones para vidrios y oficinas que entregan
+                        privacidad, diseño y control visual del espacio.
                       </p>
                     </div>
                   </div>
@@ -55,10 +57,11 @@ function ImpresionOffset() {
                     <div className="item-box">
                       <h5 className="mb-15">
                         <i className="fas fa-check-circle text-orange me-2"></i>
-                        Material Publicitario
+                        Adhesivos de Corte
                       </h5>
                       <p>
-                        Folletos, brochures y catálogos en grandes cantidades.
+                        Letras, logotipos y formas en corte preciso para
+                        branding corporativo y señalización.
                       </p>
                     </div>
                   </div>
@@ -66,25 +69,50 @@ function ImpresionOffset() {
                     <div className="item-box">
                       <h5 className="mb-15">
                         <i className="fas fa-check-circle text-orange me-2"></i>
-                        Papelería Corporativa
+                        Adhesivos Vehiculares
                       </h5>
-                      <p>Hojas membretadas, sobres y documentos oficiales.</p>
+                      <p>
+                        Rotulación para autos, flotas y utilitarios con
+                        materiales resistentes a clima y lavado.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-md-6 mb-30">
+                    <div className="item-box">
+                      <h5 className="mb-15">
+                        <i className="fas fa-check-circle text-orange me-2"></i>
+                        Etiquetas Adhesivas
+                      </h5>
+                      <p>
+                        Etiquetas para productos, envases y promociones en
+                        distintos tamaños, formatos y tirajes.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-md-6 mb-30">
+                    <div className="item-box">
+                      <h5 className="mb-15">
+                        <i className="fas fa-check-circle text-orange me-2"></i>
+                        Instalación de Adhesivos
+                      </h5>
+                      <p>
+                        Montaje profesional para asegurar acabado limpio,
+                        alineado y sin burbujas en cada aplicación.
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="mb-50">
-                <h3 className="mb-30">Ventajas de la Impresión Offset</h3>
+                <h3 className="mb-30">Ventajas de Nuestros Adhesivos</h3>
                 <ul className="list-style-check">
-                  <li>
-                    Mejor precio en grandes volúmenes (desde 500 unidades)
-                  </li>
-                  <li>Calidad superior y colores exactos</li>
-                  <li>Amplia variedad de papeles y gramajes</li>
-                  <li>Pantone y tintas especiales disponibles</li>
-                  <li>Acabados profesionales y de lujo</li>
-                  <li>Consistencia perfecta en toda la tirada</li>
+                  <li>Alta adherencia y durabilidad en interior y exterior</li>
+                  <li>Personalización completa de tamaños, formas y diseños</li>
+                  <li>Materiales removibles o permanentes según necesidad</li>
+                  <li>Impresión de alta definición con colores intensos</li>
+                  <li>Aplicación profesional en vitrinas, muros y vehículos</li>
+                  <li>Soluciones efectivas para branding y promociones</li>
                 </ul>
               </div>
             </div>
@@ -96,24 +124,24 @@ function ImpresionOffset() {
                 <h4 className="mb-30">Especificaciones Técnicas</h4>
                 <div className="info-list">
                   <div className="item mb-20">
-                    <h6>Formatos</h6>
-                    <p>Hasta 70x100cm</p>
+                    <h6>Aplicaciones</h6>
+                    <p>Vitrinas, vidrios, muros, vehículos y exhibidores</p>
                   </div>
                   <div className="item mb-20">
-                    <h6>Gramajes</h6>
-                    <p>60gr hasta 400gr</p>
+                    <h6>Materiales</h6>
+                    <p>Vinilo blanco, transparente, microperforado y más</p>
                   </div>
                   <div className="item mb-20">
-                    <h6>Tipos de Papel</h6>
-                    <p>Todos los disponibles en mercado</p>
+                    <h6>Terminaciones</h6>
+                    <p>Brillante, mate, laminado y corte personalizado</p>
                   </div>
                   <div className="item mb-20">
-                    <h6>Tintas</h6>
-                    <p>CMYK, Pantone, Metálicas, UV</p>
+                    <h6>Resistencia</h6>
+                    <p>Opciones para uso interior y exterior prolongado</p>
                   </div>
                   <div className="item mb-20">
-                    <h6>Tirada Mínima</h6>
-                    <p>Desde 500 unidades</p>
+                    <h6>Instalación</h6>
+                    <p>Servicio especializado de aplicación y montaje</p>
                   </div>
                 </div>
               </div>
@@ -136,20 +164,16 @@ function ImpresionOffset() {
                 <h4 className="mb-30">Servicios Relacionados</h4>
                 <ul className="services-links">
                   <li>
-                    <Link href="/services/impresion-digital">
-                      Impresión Digital
-                    </Link>
+                    <Link href="/services/letreros">Letreros</Link>
                   </li>
                   <li>
-                    <Link href="/services/gran-formato">Gran Formato</Link>
+                    <Link href="/services/senaleticas">Señaléticas</Link>
                   </li>
                   <li>
-                    <Link href="/services/acabados">
-                      Acabados y Terminaciones
-                    </Link>
+                    <Link href="/services/diseno">Diseño Personalizado</Link>
                   </li>
                   <li>
-                    <Link href="/services/diseno">Diseño Gráfico</Link>
+                    <Link href="/quote">Cotización</Link>
                   </li>
                 </ul>
               </div>
@@ -323,4 +347,4 @@ function ImpresionOffset() {
   );
 }
 
-export default ImpresionOffset;
+export default Adhesivos;

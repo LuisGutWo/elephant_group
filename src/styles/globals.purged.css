@@ -108,7 +108,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #fca311 !important;
+  background: #d29f13 !important;
   border-radius: 50%;
   width: 2.25rem;
   height: 2.25rem;
@@ -310,7 +310,7 @@
 }
 .eg-clients-carousel .swiper-button-next,
 .eg-clients-carousel .swiper-button-prev {
-  color: #fca311;
+  color: #d29f13;
   background: rgba(255, 255, 255, 0.85);
   border-radius: 50%;
   width: 36px;
@@ -322,7 +322,7 @@
 }
 .eg-clients-carousel .swiper-button-next:hover,
 .eg-clients-carousel .swiper-button-prev:hover {
-  background: #fca311;
+  background: #d29f13;
   color: #fff;
 }
 .eg-clients-carousel .swiper-button-next {
@@ -415,7 +415,7 @@
   box-shadow: 0 8px 32px rgba(30, 30, 30, 0.13),
     0 2px 8px rgba(30, 30, 30, 0.08);
   transform: translateY(-4px) scale(1.012);
-  border-color: #fca311;
+  border-color: #d29f13;
 }
 .eg-product-image-wrap {
   position: relative;
@@ -442,7 +442,7 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: #fca311;
+  background: #d29f13;
   color: #fff;
   font-size: 1rem;
   font-weight: 700;
@@ -472,7 +472,7 @@
   line-height: 1.2;
 }
 .eg-product-subtitle {
-  color: #fca311;
+  color: #d29f13;
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
@@ -503,14 +503,14 @@
   cursor: pointer;
 }
 .eg-btn-primary {
-  background: #fca311;
+  background: #d29f13;
   color: #fff;
-  border: 1.5px solid #fca311;
+  border: 1.5px solid #d29f13;
 }
 .eg-btn-primary:hover {
   background: #fff;
-  color: #fca311;
-  border: 1.5px solid #fca311;
+  color: #d29f13;
+  border: 1.5px solid #d29f13;
   box-shadow: 0 2px 8px rgba(252, 163, 17, 0.13);
 }
 .eg-btn-secondary {
@@ -520,8 +520,8 @@
 }
 .eg-btn-secondary:hover {
   background: #f7f7f7;
-  color: #fca311;
-  border: 1.5px solid #fca311;
+  color: #d29f13;
+  border: 1.5px solid #d29f13;
 }
 @media (max-width: 991px) {
   .eg-products-grid {
@@ -555,7 +555,7 @@
 }
 /* ====================== Section Headers Unificados ====================== */
 .eg-section-eyebrow {
-  color: #fca311;
+  color: #cfcfcf;
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -573,14 +573,14 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #fca311;
+  background: #cfcfcf;
 }
 .eg-section-title {
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 700;
   line-height: 1.15;
   color: #1a1a1a;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   letter-spacing: -0.01em;
 }
 .eg-section-description {
@@ -595,6 +595,7 @@
 @media (max-width: 767px) {
   .eg-section-title {
     font-size: 1.5rem;
+    margin-bottom: 2rem;
   }
   .eg-section-description {
     font-size: 1rem;
@@ -615,7 +616,7 @@
   bottom: 0;
   width: 100%;
   height: 2px;
-  background: var(--color-primary, #fca311);
+  background: var(--color-primary, #d29f13);
   border-radius: 2px;
   transform: scaleX(0);
   transform-origin: left;
@@ -632,7 +633,7 @@
 .navbar .nav-link.is-active,
 .navbar .dropdown-item:hover,
 .navbar .dropdown-item.is-active {
-  color: var(--color-primary, #fca311) !important;
+  color: var(--color-primary, #d29f13) !important;
 }
 .navbar .dropdown-toggle::after {
   display: none !important;
@@ -667,7 +668,7 @@
   margin-bottom: 1.5rem;
 }
 .eg-header-base .eg-header-eyebrow {
-  color: #fca311;
+  color: #d29f13;
   font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -685,7 +686,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #fca311;
+  background: #d29f13;
 }
 .eg-header-base .eg-header-title {
   font-size: clamp(2rem, 5vw, 3.5rem);
@@ -1079,7 +1080,7 @@ body {
 }
 
 .eg-footer-link:hover {
-  color: #fca311;
+  color: #d29f13;
 }
 
 .eg-footer-link::after {
@@ -1089,7 +1090,7 @@ body {
   left: 0;
   width: 0;
   height: 1px;
-  background-color: #fca311;
+  background-color: #d29f13;
   transition: width 0.3s ease;
 }
 
@@ -1098,7 +1099,7 @@ body {
 }
 
 .eg-footer-separator {
-  color: #fca311;
+  color: #d29f13;
   font-size: 0.875rem;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1341,7 +1342,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #fca311, #f77f00);
+  background: linear-gradient(135deg, #d29f13, #f77f00);
   color: #ffffff;
   padding: 0.75rem 1.5rem;
   border-radius: 0.75rem;
@@ -1380,7 +1381,7 @@ body {
 .eg-portfolio-btn:hover {
   transform: translateY(-0.125rem);
   box-shadow: 0 0.5rem 1rem rgba(252, 163, 17, 0.4);
-  background: linear-gradient(135deg, #f77f00, #fca311);
+  background: linear-gradient(135deg, #f77f00, #d29f13);
   color: #ffffff;
   text-decoration: none;
 }
@@ -1664,7 +1665,7 @@ body {
 }
 
 .arch-slider .top__navbar-button {
-  background: linear-gradient(135deg, #fca311, #e05b1a) !important;
+  background: linear-gradient(135deg, #d29f13, #e05b1a) !important;
   border: none !important;
   color: #ffffff !important;
   padding: 0.65rem 1.5rem !important;

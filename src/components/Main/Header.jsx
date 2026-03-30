@@ -119,9 +119,6 @@ function Header() {
                               statement={item.subtitle || ""}
                             />
                           </span>
-                          <h1 className="eg-section-title" itemProp="name">
-                            <StatementSplitter statement={item.title || ""} />
-                          </h1>
                           {/* No description aquí, solo eyebrow y title */}
                           <meta itemProp="provider" content="Elephant Group" />
                           <meta

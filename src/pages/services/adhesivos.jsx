@@ -4,11 +4,10 @@ import Layout from "@/layouts/default";
 import Loader from "@/components/Common/Loader";
 import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/InnerPages/Header";
-import ImpresionOffset from "@/components/InnerPages/Services/ImpresionOffset";
-import Form from "@/components/InnerPages/Contact/Form";
 import FooterBottom from "@/components/Main/FooterBottom";
+import Adhesivos from "@/components/InnerPages/Services/Adhesivos";
 
-function ImpresionOffsetPage() {
+function AdhesivosPage() {
   useEffect(() => {
     const body = document?.body;
     if (body) {
@@ -24,28 +23,27 @@ function ImpresionOffsetPage() {
 
   const headerMetadata = {
     subTitle: "SERVICIOS",
-    title: "Impresión Offset de Alto Volumen",
-    text: "IMPRESIÓN OFFSET",
+    title: "Adhesivos Personalizados para Empresas",
+    text: "ADHESIVOS",
+    background: "/assets/light/imgs/products/stickers.webp",
   };
 
   return (
     <>
       <Head>
-        <title>
-          Elephant Group - Impresión Offset | Grandes Tirajes Valparaíso
-        </title>
+        <title>Elephant Group - Adhesivos y Vinilos | Valparaíso</title>
         <meta
           name="description"
-          content="Impresión offset de alta calidad en Valparaíso. Ideal para grandes volúmenes: libros, revistas, packaging y material publicitario con la mejor relación calidad-precio."
+          content="Servicio de adhesivos personalizados en Valparaíso para vitrinas, muros, vidrios y vehículos. Diseñamos, imprimimos e instalamos vinilos, empavonados y rotulación con alta calidad y durabilidad."
         />
         <meta
           name="keywords"
-          content="impresión offset, imprenta offset Valparaíso, grandes tirajes, libros, revistas, packaging, impresión masiva"
+          content="adhesivos, vinilos adhesivos, empavonados, rotulación vehicular, adhesivos para vitrinas, adhesivos Valparaíso, Elephant Group"
         />
         <meta name="author" content="Elephant Group" />
         <link
           rel="canonical"
-          href="https://landingclientes.elephantgroup.cl/services/impresion-offset"
+          href="https://landingclientes.elephantgroup.cl/services/adhesivos"
         />
       </Head>
 
@@ -53,14 +51,13 @@ function ImpresionOffsetPage() {
       <Navbar mainBg />
       <main>
         <Header data={headerMetadata} subBg={true} />
-        <ImpresionOffset />
-        <Form />
+        <Adhesivos />
       </main>
       <FooterBottom />
     </>
   );
 }
 
-ImpresionOffsetPage.getLayout = (page) => <Layout>{page}</Layout>;
+AdhesivosPage.getLayout = (page) => <Layout>{page}</Layout>;
 
-export default ImpresionOffsetPage;
+export default AdhesivosPage;

@@ -5,8 +5,10 @@ import Loader from "@/components/Common/Loader";
 import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/InnerPages/Header";
 import Story from "@/components/InnerPages/About/Story";
-import Form from "@/components/InnerPages/Contact/Form";
 import FooterBottom from "@/components/Main/FooterBottom";
+import FooterImg from "@/components/Main/FooterImg";
+import Footer from "@/components/Main/Footer";
+import HeaderContact from "@/components/InnerPages/Contact/Header";
 
 function QuotePage() {
   useEffect(() => {
@@ -49,7 +51,9 @@ function QuotePage() {
       <main>
         <Header data={headerMetadata} />
         <Story />
-        <Form />
+        <HeaderContact />
+        <FooterImg />
+        <Footer />
       </main>
       <FooterBottom />
     </>

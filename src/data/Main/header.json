@@ -5,30 +5,30 @@
         "background": "/assets/light/imgs/header/mercadito_main_banner.png",
         "backgroundMobile": "/assets/light/imgs/header/mercadito_mobile_banner.png",
         "title": "LETREROS VOLUMÉTRICOS.",
-        "subtitle": "Soluciones Gráficas que destacan y transforman tu marca."
+        "subtitle": "Letreros, señaléticas y adhesivos para empresas Fabricación propia en Viña del Mar, con soluciones personalizadas y entrega confiable."
     },
     {
         "id": 2,
         "number": "02",
-        "background": "/assets/dark/imgs/works/letreros_muestra_varios.webp",
-        "backgroundMobile": "/assets/dark/imgs/header/banner_impresion_mobile.webp",
-        "title": "SEÑALÉTICAS",
-        "subtitle": "Diseño y fabricación de señaléticas personalizadas para empresas, oficinas y espacios públicos."
+        "background": "/assets/light/imgs/header/mercadito_main_banner.png",
+        "backgroundMobile": "/assets/light/imgs/header/mercadito_mobile_banner.png",
+        "title": "LETREROS VOLUMÉTRICOS.",
+        "subtitle": "Letreros, señaléticas y adhesivos para empresas Fabricación propia en Viña del Mar, con soluciones personalizadas y entrega confiable."
     },
     {
         "id": 3,
         "number": "03",
-        "background": "/assets/dark/imgs/works/work-6-metro.webp",
-        "backgroundMobile": "/assets/dark/imgs/header/banner_impresion_mobile.webp",
-        "title": "IMPRESIÓN DIGITAL",
-        "subtitle": "Impresión de alta calidad en diversos formatos y materiales para potenciar tu marca."
+        "background": "/assets/light/imgs/header/mercadito_main_banner.png",
+        "backgroundMobile": "/assets/light/imgs/header/mercadito_mobile_banner.png",
+        "title": "LETREROS VOLUMÉTRICOS.",
+        "subtitle": "Letreros, señaléticas y adhesivos para empresas Fabricación propia en Viña del Mar, con soluciones personalizadas y entrega confiable."
     },
     {
         "id": 4,
         "number": "04",
-        "background": "/assets/light/imgs/products/etiquetas_a_medida.webp",
-        "backgroundMobile": "/assets/dark/imgs/header/banner_diseno_mobile.webp",
-        "title": "STICKERS",
-        "subtitle": "Stickers personalizados para promoción, decoración y branding, resistentes y de gran impacto visual."
+        "background": "/assets/light/imgs/header/mercadito_main_banner.png",
+        "backgroundMobile": "/assets/light/imgs/header/mercadito_mobile_banner.png",
+        "title": "LETREROS VOLUMÉTRICOS.",
+        "subtitle": "Letreros, señaléticas y adhesivos para empresas Fabricación propia en Viña del Mar, con soluciones personalizadas y entrega confiable."
     }
 ]
