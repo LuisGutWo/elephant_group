@@ -101,7 +101,10 @@ function BlogGrid() {
                   src={getCategoryImage(article.category)}
                   alt={`${article.category} - ${article.title}`}
                   fill
-                  style={{ objectFit: "cover", opacity: loadedImages[article.id] ? 1 : 0 }}
+                  style={{
+                    objectFit: "cover",
+                    opacity: loadedImages[article.id] ? 1 : 0,
+                  }}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   onLoad={() =>
                     setLoadedImages((prev) => ({ ...prev, [article.id]: true }))
@@ -271,7 +274,7 @@ function BlogGrid() {
         }
 
         /* Imagen del artículo */
-         .article-image {
+        .article-image {
           position: relative;
           height: 240px;
           overflow: hidden;
@@ -281,7 +284,12 @@ function BlogGrid() {
           position: absolute;
           inset: 0;
           z-index: 0;
-          background: linear-gradient(90deg, rgba(255, 255, 255, 0.06) 25%, rgba(255, 255, 255, 0.14) 50%, rgba(255, 255, 255, 0.06) 75%);
+          background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.06) 25%,
+            rgba(255, 255, 255, 0.14) 50%,
+            rgba(255, 255, 255, 0.06) 75%
+          );
           background-size: 200% 100%;
           animation: article-skeleton-loading 1.4s ease-in-out infinite;
         }
