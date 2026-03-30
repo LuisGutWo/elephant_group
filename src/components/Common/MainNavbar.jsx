@@ -108,16 +108,13 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                 role="none"
               >
                 <Link
-                  className={`nav-link dropdown-toggle${
-                    router.pathname.startsWith("/services") ? " is-active" : ""
-                  }`}
-                  href="/services"
-                  role="menuitem"
-                  aria-label="Ver servicios de imprenta"
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
                   aria-haspopup="true"
-                  {...(router.pathname.startsWith("/services") && {
-                    "aria-current": "page",
-                  })}
+                  aria-expanded="false"
                 >
                   <span className="rolling-text">PRODUCTOS</span>
                 </Link>
