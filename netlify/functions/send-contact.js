@@ -25,7 +25,7 @@ export const handler = async (event) => {
 
   try {
     const { name, company, email, phone, details, message } = JSON.parse(
-      event.body || "{}"
+      event.body || "{}",
     );
 
     console.log("📝 Datos recibidos:", {
@@ -76,12 +76,15 @@ export const handler = async (event) => {
     }
 
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT || 587),
-      secure: Number(process.env.SMTP_PORT || 587) === 465,
+      host: "mail.elephantgroup.cl",
+      port: 587,
+      secure: false, // false para 587 (TLS)
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: "ventas@elephantgroup.cl",
+        pass: ")3NOEsL)inezyYmR",
+      },
+      tls: {
+        rejectUnauthorized: false,
       },
     });
 
@@ -250,7 +253,7 @@ Fecha: ${currentDate}
       try {
         console.log("📎 Procesando archivo adjunto...");
         const base64Match = details.fileData.match(
-          /^data:([^;]+);base64,(.+)$/
+          /^data:([^;]+);base64,(.+)$/,
         );
 
         if (base64Match) {
@@ -270,13 +273,13 @@ Fecha: ${currentDate}
             ? (details.fileSize / 1024 / 1024).toFixed(2)
             : "N/A";
           console.log(
-            `✅ Archivo adjunto preparado: ${details.fileName} (${fileSizeMB}MB, ${mimeType})`
+            `✅ Archivo adjunto preparado: ${details.fileName} (${fileSizeMB}MB, ${mimeType})`,
           );
         }
       } catch (attachError) {
         console.error(
           "❌ Error procesando archivo adjunto:",
-          attachError.message
+          attachError.message,
         );
       }
     }

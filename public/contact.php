@@ -2,7 +2,7 @@
 
 // configure
 $from = 'Demo contact form <demo@domain.com>';
-$sendTo = 'Test contact form <agutierrezwong@gmail.com>'; // Add Your Email
+$sendTo = 'Test contact form <ventas@elephantgroup.cl>'; // Add Your Email
 $subject = 'New message from contact form';
 $fields = array('name' => 'Nombre', 'subject' => 'Tema', 'email' => 'Email', 'message' => 'Mensaje'); // array variable name => Text to appear in the email
 $okMessage = 'Recibimos tu mensaje con éxito. Esperamos verlo pronto!';
@@ -26,7 +26,7 @@ try
         'Reply-To: ' . $from,
         'Return-Path: ' . $from,
     );
-    
+
     mail($sendTo, $subject, $emailText, implode("\n", $headers));
 
     $responseArray = array('type' => 'success', 'message' => $okMessage);

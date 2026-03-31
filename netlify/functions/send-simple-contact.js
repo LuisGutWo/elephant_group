@@ -70,12 +70,15 @@ export const handler = async (event) => {
     }
 
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT || 587),
-      secure: Number(process.env.SMTP_PORT || 587) === 465,
+      host: "mail.elephantgroup.cl",
+      port: 587,
+      secure: false, // false para 587 (TLS)
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: "ventas@elephantgroup.cl",
+        pass: ")3NOEsL)inezyYmR",
+      },
+      tls: {
+        rejectUnauthorized: false,
       },
     });
 

@@ -11,12 +11,15 @@ const PORT = 3001;
 
 // Configurar transporte de nodemailer
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT),
-  secure: false,
+  host: "mail.elephantgroup.cl",
+  port: 587,
+  secure: false, // false para 587 (STARTTLS)
   auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
+    user: "ventas@elephantgroup.cl",
+    pass: ")3NOEsL)inezyYmR",
+  },
+  tls: {
+    rejectUnauthorized: false,
   },
 });
 
@@ -122,7 +125,7 @@ const server = http.createServer(async (req, res) => {
         JSON.stringify({
           success: true,
           message: "Email sent successfully (DEV)",
-        })
+        }),
       );
     }
     // Ruta: /send-contact
@@ -150,13 +153,13 @@ const server = http.createServer(async (req, res) => {
         const fileSizeMB = fileSize / (1024 * 1024);
         console.log(
           `📎 [DEV] Procesando archivo: ${fileName} (${fileSizeMB.toFixed(
-            2
-          )}MB)`
+            2,
+          )}MB)`,
         );
 
         if (fileSizeMB > 8) {
           fileNote = `<p style="color: #ff6b6b;"><strong>⚠️ Nota:</strong> El archivo "${fileName}" (${fileSizeMB.toFixed(
-            2
+            2,
           )}MB) era demasiado grande y no se adjuntó. Límite: 8MB</p>`;
         } else {
           const base64Data = fileData.split(",")[1] || fileData;
@@ -244,7 +247,7 @@ const server = http.createServer(async (req, res) => {
                     <div class="section-title">💬 Comentarios Adicionales</div>
                     <div class="info-row">${details.comments.replace(
                       /\n/g,
-                      "<br/>"
+                      "<br/>",
                     )}</div>
                   </div>
                 `
@@ -278,7 +281,7 @@ const server = http.createServer(async (req, res) => {
         JSON.stringify({
           success: true,
           message: "Quote request sent successfully (DEV)",
-        })
+        }),
       );
     } else {
       res.writeHead(404);
@@ -293,10 +296,10 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(PORT, () => {
   console.log(
-    `\n🚀 Servidor de email de desarrollo corriendo en http://localhost:${PORT}`
+    `\n🚀 Servidor de email de desarrollo corriendo en http://localhost:${PORT}`,
   );
   console.log(
-    `📧 SMTP configurado: ${process.env.SMTP_HOST}:${process.env.SMTP_PORT}`
+    `📧 SMTP configurado: ${process.env.SMTP_HOST}:${process.env.SMTP_PORT}`,
   );
   console.log(`📬 Destinatario: ${process.env.CONTACT_RECIPIENT}\n`);
 });
