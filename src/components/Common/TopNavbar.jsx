@@ -6,13 +6,13 @@ const TopNavbar = ({ mainBg, curve }) => {
   const handleWhatsAppClick = () => {
     if (window == null || window.location == null) {
       console.error(
-        "Error while opening WhatsApp link: Window or window.location is null"
+        "Error while opening WhatsApp link: Window or window.location is null",
       );
       return;
     }
 
     const url =
-      "https://api.whatsapp.com/send?phone=+56920390272&text=Hola,%20somos%20Elephant%20Group...%20en%20que%20podemos%20ayudarte?";
+      "https://api.whatsapp.com/send?phone=+56993239203&text=Hola,%20somos%20Elephant%20Group...%20en%20que%20podemos%20ayudarte?";
 
     try {
       window.open(url, "_blank", "noopener noreferrer");
@@ -53,9 +53,9 @@ const TopNavbar = ({ mainBg, curve }) => {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="#fca311"
+              width="20"
+              height="20"
+              fill="#d29f13"
               className="bi bi-instagram"
               viewBox="0 0 16 16"
             >
@@ -70,9 +70,9 @@ const TopNavbar = ({ mainBg, curve }) => {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="#fca311"
+              width="20"
+              height="20"
+              fill="#d29f13"
               className="bi bi-facebook"
               viewBox="0 0 16 16"
             >
@@ -86,7 +86,7 @@ const TopNavbar = ({ mainBg, curve }) => {
           <FaWhatsapp
             className="whatsapp-icon"
             size={18}
-            color="#fca311"
+            color="#d29f13"
             onClick={handleWhatsAppClick}
             style={{ cursor: "pointer" }}
             aria-label="WhatsApp"
@@ -103,7 +103,7 @@ const TopNavbar = ({ mainBg, curve }) => {
             aria-label="Cotiza ahora"
             onClick={handleQuoteClick}
           >
-            <span>Cotiza ahora</span>
+            <span className="btn-text">Cotiza ahora</span>
             <svg
               className="btn-icon"
               width="16"

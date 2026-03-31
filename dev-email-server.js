@@ -11,12 +11,12 @@ const PORT = 3001;
 
 // Configurar transporte de nodemailer
 const transporter = nodemailer.createTransport({
-  host: "mail.elephantgroup.cl",
-  port: 587,
+  host: process.env.SMTP_HOST,
+  port: process.env.SMTP_PORT,
   secure: false, // false para 587 (STARTTLS)
   auth: {
-    user: "ventas@elephantgroup.cl",
-    pass: ")3NOEsL)inezyYmR",
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
   },
   tls: {
     rejectUnauthorized: false,

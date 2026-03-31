@@ -762,14 +762,19 @@ body {
 
 /* TopNavbar Button Styles */
 .topnav-quote-btn {
-  padding: 0.6rem 1.25rem !important;
-  font-size: 0.875rem !important;
+  padding: 0.4rem 1rem !important;
+  font-size: 0.5rem !important;
   border-radius: 0.5rem !important;
+
+  .btn-text {
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+  }
 }
 
 .topnav-quote-btn .btn-icon {
-  width: 14px;
-  height: 14px;
+  width: 10px;
+  height: 10px;
 }
 
 /* Responsive para TopNavbar */
@@ -798,7 +803,7 @@ body {
   .top__navbar-social {
     display: flex !important;
     justify-content: flex-start !important;
-    gap: 0.5rem;
+    gap: 6px;
     flex: 0 0 auto;
   }
 
@@ -807,14 +812,13 @@ body {
   }
 
   .top__navbar-item .nav-link {
-    padding: 0.25rem 0.5rem;
     display: flex;
     align-items: center;
   }
 
   .top__navbar-item .nav-link svg {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
   }
 
   /* Logo más pequeño en mobile */

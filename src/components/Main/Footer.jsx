@@ -53,31 +53,58 @@ function Footer({ subBg }) {
     setForm((s) => ({ ...s, [name]: value }));
   };
 
-  // Validación simple de email
+  // Validación robusta de email
   const isValidEmail = (email) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    // RFC 5322 compliant regex (simplificada)
+    return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+      email,
+    );
+  };
+
+  // Validar si el texto es solo espacios o caracteres repetidos
+  const isSpammy = (text) => {
+    if (!text) return true;
+    const trimmed = text.trim();
+    if (trimmed.length < 10) return true;
+    // Detectar si es solo un caracter repetido
+    if (/^(.)\1+$/.test(trimmed)) return true;
+    return false;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      if (
-        !form ||
-        !form.name.trim() ||
-        !form.email.trim() ||
-        !form.message.trim()
-      ) {
+      // Validaciones robustas
+      const name = form.name.trim();
+      const email = form.email.trim();
+      const message = form.message.trim();
+
+      if (!name || !email || !message) {
         setStatus({
           type: "error",
           msg: "Por favor complete nombre, correo y mensaje válidos.",
         });
         return;
       }
-      if (!isValidEmail(form.email.trim())) {
+      if (name.length < 3 || name.length > 50) {
         setStatus({
           type: "error",
-          msg: "Ingrese un correo electrónico válido.",
+          msg: "El nombre debe tener entre 3 y 50 caracteres.",
+        });
+        return;
+      }
+      if (!isValidEmail(email) || email.length > 80) {
+        setStatus({
+          type: "error",
+          msg: "Ingrese un correo electrónico válido (máx. 80 caracteres).",
+        });
+        return;
+      }
+      if (isSpammy(message) || message.length > 1000) {
+        setStatus({
+          type: "error",
+          msg: "El mensaje debe tener entre 10 y 1000 caracteres y no ser repetitivo.",
         });
         return;
       }
@@ -93,16 +120,16 @@ function Footer({ subBg }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: form.name.trim(),
-          email: form.email.trim(),
-          message: form.message.trim(),
+          name,
+          email,
+          message,
         }),
       });
 
       if (!response.ok) {
         const errorText = await response.text();
         console.error(
-          `[Footer] Error al enviar mensaje: ${response.status} - ${errorText}`
+          `[Footer] Error al enviar mensaje: ${response.status} - ${errorText}`,
         );
         throw new Error(`Error sending message: ${response.status}`);
       }
