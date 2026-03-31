@@ -108,7 +108,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #d29f13 !important;
+  background: #c9961a !important;
   border-radius: 50%;
   width: 2.25rem;
   height: 2.25rem;
@@ -310,7 +310,7 @@
 }
 .eg-clients-carousel .swiper-button-next,
 .eg-clients-carousel .swiper-button-prev {
-  color: #d29f13;
+  color: #c9961a;
   background: rgba(255, 255, 255, 0.85);
   border-radius: 50%;
   width: 36px;
@@ -322,7 +322,7 @@
 }
 .eg-clients-carousel .swiper-button-next:hover,
 .eg-clients-carousel .swiper-button-prev:hover {
-  background: #d29f13;
+  background: #c9961a;
   color: #fff;
 }
 .eg-clients-carousel .swiper-button-next {
@@ -415,7 +415,7 @@
   box-shadow: 0 8px 32px rgba(30, 30, 30, 0.13),
     0 2px 8px rgba(30, 30, 30, 0.08);
   transform: translateY(-4px) scale(1.012);
-  border-color: #d29f13;
+  border-color: #c9961a;
 }
 .eg-product-image-wrap {
   position: relative;
@@ -442,7 +442,7 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: #d29f13;
+  background: #c9961a;
   color: #fff;
   font-size: 1rem;
   font-weight: 700;
@@ -472,7 +472,7 @@
   line-height: 1.2;
 }
 .eg-product-subtitle {
-  color: #d29f13;
+  color: #c9961a;
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
@@ -503,14 +503,14 @@
   cursor: pointer;
 }
 .eg-btn-primary {
-  background: #d29f13;
+  background: #c9961a;
   color: #fff;
-  border: 1.5px solid #d29f13;
+  border: 1.5px solid #c9961a;
 }
 .eg-btn-primary:hover {
   background: #fff;
-  color: #d29f13;
-  border: 1.5px solid #d29f13;
+  color: #c9961a;
+  border: 1.5px solid #c9961a;
   box-shadow: 0 2px 8px rgba(252, 163, 17, 0.13);
 }
 .eg-btn-secondary {
@@ -520,8 +520,8 @@
 }
 .eg-btn-secondary:hover {
   background: #f7f7f7;
-  color: #d29f13;
-  border: 1.5px solid #d29f13;
+  color: #c9961a;
+  border: 1.5px solid #c9961a;
 }
 @media (max-width: 991px) {
   .eg-products-grid {
@@ -616,7 +616,7 @@
   bottom: 0;
   width: 100%;
   height: 2px;
-  background: var(--color-primary, #d29f13);
+  background: var(--color-primary, #c9961a);
   border-radius: 2px;
   transform: scaleX(0);
   transform-origin: left;
@@ -633,7 +633,7 @@
 .navbar .nav-link.is-active,
 .navbar .dropdown-item:hover,
 .navbar .dropdown-item.is-active {
-  color: var(--color-primary, #d29f13) !important;
+  color: var(--color-primary, #c9961a) !important;
 }
 .navbar .dropdown-toggle::after {
   display: none !important;
@@ -668,7 +668,7 @@
   margin-bottom: 1.5rem;
 }
 .eg-header-base .eg-header-eyebrow {
-  color: #d29f13;
+  color: #c9961a;
   font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -686,7 +686,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #d29f13;
+  background: #c9961a;
 }
 .eg-header-base .eg-header-title {
   font-size: clamp(2rem, 5vw, 3.5rem);
@@ -1084,7 +1084,7 @@ body {
 }
 
 .eg-footer-link:hover {
-  color: #d29f13;
+  color: #c9961a;
 }
 
 .eg-footer-link::after {
@@ -1094,7 +1094,7 @@ body {
   left: 0;
   width: 0;
   height: 1px;
-  background-color: #d29f13;
+  background-color: #c9961a;
   transition: width 0.3s ease;
 }
 
@@ -1103,7 +1103,7 @@ body {
 }
 
 .eg-footer-separator {
-  color: #d29f13;
+  color: #c9961a;
   font-size: 0.875rem;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1346,7 +1346,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #d29f13, #f77f00);
+  background: linear-gradient(135deg, #c9961a, #f77f00);
   color: #ffffff;
   padding: 0.75rem 1.5rem;
   border-radius: 0.75rem;
@@ -1385,7 +1385,7 @@ body {
 .eg-portfolio-btn:hover {
   transform: translateY(-0.125rem);
   box-shadow: 0 0.5rem 1rem rgba(252, 163, 17, 0.4);
-  background: linear-gradient(135deg, #f77f00, #d29f13);
+  background: linear-gradient(135deg, #f77f00, #c9961a);
   color: #ffffff;
   text-decoration: none;
 }
@@ -1669,7 +1669,7 @@ body {
 }
 
 .arch-slider .top__navbar-button {
-  background: linear-gradient(135deg, #d29f13, #e05b1a) !important;
+  background: linear-gradient(135deg, #c9961a, #e05b1a) !important;
   border: none !important;
   color: #ffffff !important;
   padding: 0.65rem 1.5rem !important;
