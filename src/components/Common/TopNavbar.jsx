@@ -44,18 +44,16 @@ const TopNavbar = ({ mainBg, curve }) => {
     <nav className="top__navbar">
       <div className="top__navbar-list container">
         {/* Redes sociales - Izquierda */}
-        <div className="top__navbar-item top__navbar-social">
+        <div className="top__navbar-social">
           <a
-            className="nav-link"
+            className="top__navbar-link"
             href="https://www.instagram.com/elephantgroupchile/"
             rel="noopener noreferrer"
             aria-label="Instagram"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="#d29f13"
+              fill="#C9961A"
               className="bi bi-instagram"
               viewBox="0 0 16 16"
             >
@@ -63,16 +61,14 @@ const TopNavbar = ({ mainBg, curve }) => {
             </svg>
           </a>
           <a
-            className="nav-link"
+            className="top__navbar-link"
             href="https://web.facebook.com/elephantgroupchile"
             rel="noopener noreferrer"
             aria-label="Facebook"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="#d29f13"
+              fill="#C9961A"
               className="bi bi-facebook"
               viewBox="0 0 16 16"
             >
@@ -98,7 +94,7 @@ const TopNavbar = ({ mainBg, curve }) => {
             +56 9 5163 1370
           </span>
           <button
-            className="btn-primary-modern topnav-quote-btn"
+            className="btn-primary-modern top__navbar-button"
             type="button"
             aria-label="Cotiza ahora"
             onClick={handleQuoteClick}

@@ -60,7 +60,7 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
             aria-label="Elephant Group - Ir a inicio"
           >
             <img
-              src="/assets/light/imgs/logo-dark.webp"
+              src="/assets/light/imgs/logo-eg-new.webp"
               alt="Elephant Group - Imprenta y servicios gráficos en Valparaíso"
               width="140"
               height="auto"
