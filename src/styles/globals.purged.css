@@ -1,3 +1,85 @@
+/* Padding reducido solo para el botón Cotiza ahora en el TopNavbar */
+.top-navbar-quote-btn-small {
+  padding: 0.28rem 0.7rem !important;
+  font-size: 0.98rem !important;
+}
+/* Coolvetica Condensed Rg Regular font-face */
+@font-face {
+  font-family: "Coolvetica Condensed Rg";
+  src: url("/assets/light/fonts/FontsFree-Net-coolvetica-condensed-rg.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-size: 18px;
+  letter-spacing: 0.03em;
+}
+body,
+input,
+textarea,
+select,
+button {
+  font-family: "Coolvetica Condensed Rg", Arial, Helvetica, sans-serif !important;
+  font-size: 1.08rem;
+  letter-spacing: 0.025em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0.04em;
+  font-family: "Coolvetica Condensed Rg", Arial, Helvetica, sans-serif !important;
+}
+h1 {
+  font-size: 2.8rem;
+}
+h2 {
+  font-size: 2.2rem;
+}
+h3 {
+  font-size: 1.7rem;
+}
+h4 {
+  font-size: 1.3rem;
+}
+h5 {
+  font-size: 1.1rem;
+}
+h6 {
+  font-size: 1rem;
+}
+/* Swiper Modern Button Styles */
+.swiper-button-next,
+.swiper-button-prev {
+  background: linear-gradient(135deg, #c9961a 0%, #e05b1a 100%);
+  color: #c9961a !important;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  box-shadow: 0 2px 12px rgba(201, 150, 26, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  transition: background 0.25s, color 0.25s, transform 0.18s;
+  border: none;
+  opacity: 0.92;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #b8b8b8;
+  color: #c9961a !important;
+  transform: scale(1.08);
+  opacity: 1;
+  box-shadow: 0 4px 18px rgba(201, 150, 26, 0.28);
+}
 /* Fix: Navbar mobile - mantener altura fija y collapse sobre contenido */
 @media (max-width: 991px) {
   .navbar {
@@ -49,6 +131,7 @@
     min-width: 260px;
     max-width: 420px;
     margin: 0 auto 0 0;
+    padding: 3rem;
   }
   .footer-responsive-minimal .eg-form-col {
     order: 2;
@@ -59,7 +142,6 @@
     /* Unificación de estilos base y utilidades */
     * {
       margin: 0;
-      padding: 0;
       box-sizing: border-box;
       outline: none;
       list-style: none;
@@ -518,18 +600,20 @@
   justify-content: flex-start;
 }
 .eg-product-title {
-  font-size: 1.25rem;
+  font-size: 1.55rem;
   font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 0.25rem;
-  line-height: 1.2;
+  line-height: 1.18;
+  letter-spacing: 0.045em;
 }
 .eg-product-subtitle {
   color: #c9961a;
-  font-size: 1rem;
+  font-size: 1.13rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
   display: block;
+  letter-spacing: 0.04em;
 }
 .eg-product-meta {
   display: flex;
@@ -544,16 +628,17 @@
 }
 .eg-btn {
   display: inline-block;
-  font-size: 0.97rem;
+  font-size: 1.13rem;
   font-weight: 600;
   border-radius: 0.5rem;
-  padding: 0.5rem 1.2rem;
+  padding: 0.6rem 1.5rem;
   text-decoration: none;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   box-shadow: 0 1px 4px rgba(30, 30, 30, 0.04);
   border: none;
   outline: none;
   cursor: pointer;
+  letter-spacing: 0.04em;
 }
 .eg-btn-primary {
   background: #c9961a;
@@ -609,10 +694,10 @@
 /* ====================== Section Headers Unificados ====================== */
 .eg-section-eyebrow {
   color: #cfcfcf;
-  font-size: 1rem;
+  font-size: 1.13rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   margin-bottom: 0.5rem;
   position: relative;
   padding-left: 18px;
@@ -629,21 +714,22 @@
   background: #cfcfcf;
 }
 .eg-section-title {
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.13;
   color: #1a1a1a;
   margin-bottom: 3rem;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.03em;
 }
 .eg-section-description {
-  font-size: 1.125rem;
+  font-size: 1.18rem;
   color: #666;
   line-height: 1.7;
   margin-bottom: 2rem;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  letter-spacing: 0.02em;
 }
 @media (max-width: 767px) {
   .eg-section-title {
@@ -661,6 +747,14 @@
   position: relative;
   padding-bottom: 6px;
 }
+
+/* Utilidad para sobrescribir tamaño de fuente de links del main navbar */
+.main-navbar-link-override {
+  font-size: 1.35rem !important;
+  letter-spacing: 0.06em !important;
+  line-height: 1.2 !important;
+}
+
 .navbar .nav-link::after,
 .navbar .dropdown-item::after {
   content: "";
@@ -722,10 +816,10 @@
 }
 .eg-header-base .eg-header-eyebrow {
   color: #c9961a;
-  font-size: 0.875rem;
+  font-size: 1.08rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.15rem;
+  letter-spacing: 0.19em;
   margin-bottom: 1rem;
   position: relative;
   padding-left: 20px;
@@ -742,11 +836,11 @@
   background: #c9961a;
 }
 .eg-header-base .eg-header-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.7rem, 6vw, 4.1rem);
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.13;
   margin-bottom: 1.5rem;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.04em;
   color: #1a1a1a;
 }
 .eg-header-base .eg-header-description {
@@ -1566,19 +1660,21 @@ body {
 }
 
 .eg-portfolio-card-title {
-  font-size: 1.375rem;
+  font-size: 1.65rem;
   font-weight: 700;
   color: #1f2937;
   margin-bottom: 0.25rem;
-  line-height: 1.3;
+  line-height: 1.22;
+  letter-spacing: 0.045em;
 }
 
 .eg-portfolio-card-subtitle {
   color: #545a64;
-  font-size: 0.875rem;
+  font-size: 1.08rem;
   font-weight: 500;
   text-transform: lowercase;
   font-style: italic;
+  letter-spacing: 0.04em;
 }
 
 .eg-portfolio-card-description {
@@ -1597,7 +1693,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #c9961a, #f77f00);
+  background: linear-gradient(135deg, #e3ad25, #c9961a);
   color: #ffffff;
   padding: 0.75rem 1.5rem;
   border-radius: 0.75rem;
@@ -1636,7 +1732,7 @@ body {
 .eg-portfolio-btn:hover {
   transform: translateY(-0.125rem);
   box-shadow: 0 0.5rem 1rem rgba(252, 163, 17, 0.4);
-  background: linear-gradient(135deg, #f77f00, #c9961a);
+  background: linear-gradient(135deg, #ebb327, #c9961a);
   color: #ffffff;
   text-decoration: none;
 }
@@ -1920,7 +2016,7 @@ body {
 }
 
 .arch-slider .top__navbar-button {
-  background: linear-gradient(135deg, #c9961a, #e05b1a) !important;
+  background: linear-gradient(135deg, #c9961a, #c59c32) !important;
   border: none !important;
   color: #ffffff !important;
   padding: 0.65rem 1.5rem !important;
@@ -1946,7 +2042,7 @@ body {
 .arch-slider .top__navbar-button:hover {
   transform: translateY(-0.125rem);
   box-shadow: 0 0.5rem 1.5625rem rgba(243, 115, 29, 0.4);
-  background: linear-gradient(135deg, #e05b1a, #d44914) !important;
+  background: linear-gradient(135deg, #b18617, #916d13) !important;
 }
 
 .arch-slider .top__navbar-button:hover svg {
@@ -2132,14 +2228,14 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
-  padding: 0.5rem 1rem;
-  background: linear-gradient(135deg, #eab308, #f59e0b);
+  padding: 0.65rem 1.3rem;
+  background: linear-gradient(135deg, #c9961a, #b28617);
   color: #000;
   text-decoration: none;
   border-radius: 0.5rem;
   font-weight: 600;
-  font-size: 0.75rem;
-  letter-spacing: 0.025em;
+  font-size: 1.05rem;
+  letter-spacing: 0.045em;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -2199,7 +2295,7 @@ body {
   position: relative;
   display: inline-flex;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1.1rem 2.3rem;
   background: linear-gradient(
     135deg,
     rgba(234, 179, 8, 0.2),
@@ -2209,7 +2305,8 @@ body {
   text-decoration: none;
   border-radius: 1rem;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.18rem;
+  letter-spacing: 0.055em;
   border: 1px solid rgba(234, 179, 8, 0.3);
   backdrop-filter: blur(20px);
   transition: all 0.3s ease;

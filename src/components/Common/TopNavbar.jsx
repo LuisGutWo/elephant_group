@@ -93,28 +93,14 @@ const TopNavbar = ({ mainBg, curve }) => {
           >
             +56 9 5163 1370
           </span>
+
           <button
-            className="btn-primary-modern top__navbar-button"
+            className="btn-primary-modern top__navbar-button top-navbar-quote-btn-small"
             type="button"
             aria-label="Cotiza ahora"
             onClick={handleQuoteClick}
           >
             <span className="btn-text">Cotiza ahora</span>
-            <svg
-              className="btn-icon"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-            >
-              <path
-                d="M1 8h14M9 1l7 7-7 7"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
           </button>
         </div>
       </div>

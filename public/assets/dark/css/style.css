@@ -3039,7 +3039,6 @@ body.loaded {
 .navbar .navbar-nav .nav-link {
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 13px;
   font-weight: 600;
   color: #f8f9fa;
   padding: 20px 10px 15px 10px;
@@ -3049,6 +3048,8 @@ body.loaded {
 .navbar .navbar-nav .nav-link .rolling-text {
   height: 30px;
   line-height: 30px;
+  font-size: 3rem !important;
+  font-weight: 400 !important;
 }
 
 .navbar .navbar-nav .dropdown-menu {

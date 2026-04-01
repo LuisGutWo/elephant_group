@@ -2,7 +2,7 @@
     {
         "id": 1,
         "number": "01",
-        "background": "/assets/light/imgs/header/mercadito_main_banner.png",
+        "background": "/assets/light/imgs/header/banner-new-img.webp",
         "backgroundMobile": "/assets/light/imgs/header/mercadito_mobile_banner.png",
         "title": "LETREROS VOLUMÉTRICOS.",
         "subtitle": "Letreros, señaléticas y adhesivos para empresas Fabricación propia en Viña del Mar, con soluciones personalizadas y entrega confiable."
@@ -10,25 +10,25 @@
     {
         "id": 2,
         "number": "02",
-        "background": "/assets/light/imgs/header/mercadito_main_banner.png",
+        "background": "/assets/light/imgs/header/banner-stickers.webp",
         "backgroundMobile": "/assets/light/imgs/header/mercadito_mobile_banner.png",
-        "title": "LETREROS VOLUMÉTRICOS.",
-        "subtitle": "Letreros, señaléticas y adhesivos para empresas Fabricación propia en Viña del Mar, con soluciones personalizadas y entrega confiable."
+        "title": "ADHESIVOS PERSONALIZADOS.",
+        "subtitle": "Adhesivos personalizados para empresas, eventos y promociones. Fabricación propia en Viña del Mar, con diseños únicos y entrega confiable."
     },
     {
         "id": 3,
         "number": "03",
-        "background": "/assets/light/imgs/header/mercadito_main_banner.png",
+        "background": "/assets/light/imgs/header/banner-senaleticas.webp",
         "backgroundMobile": "/assets/light/imgs/header/mercadito_mobile_banner.png",
-        "title": "LETREROS VOLUMÉTRICOS.",
-        "subtitle": "Letreros, señaléticas y adhesivos para empresas Fabricación propia en Viña del Mar, con soluciones personalizadas y entrega confiable."
+        "title": "SEÑALETICAS INDUSTRIALES.",
+        "subtitle": "Señaléticas industriales personalizadas para empresas. Fabricación propia en Viña del Mar, con soluciones duraderas y entrega confiable."
     },
     {
         "id": 4,
         "number": "04",
-        "background": "/assets/light/imgs/header/mercadito_main_banner.png",
+        "background": "/assets/light/imgs/header/letrero-festin.webp",
         "backgroundMobile": "/assets/light/imgs/header/mercadito_mobile_banner.png",
-        "title": "LETREROS VOLUMÉTRICOS.",
-        "subtitle": "Letreros, señaléticas y adhesivos para empresas Fabricación propia en Viña del Mar, con soluciones personalizadas y entrega confiable."
+        "title": "LETREROS",
+        "subtitle": "Letreros personalizados para empresas, eventos y promociones. Fabricación propia en Viña del Mar, con diseños únicos y entrega confiable."
     }
 ]

@@ -88,7 +88,7 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
             <ul className="navbar-nav" role="menubar">
               <li className="nav-item" role="none">
                 <Link
-                  className={`nav-link${
+                  className={`nav-link main-navbar-link-override${
                     router.pathname === "/home" ? " is-active" : ""
                   }`}
                   href="/home"
@@ -108,7 +108,7 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
                 role="none"
               >
                 <Link
-                  className="nav-link dropdown-toggle"
+                  className="nav-link dropdown-toggle main-navbar-link-override"
                   href="#"
                   id="navbarDropdown"
                   role="button"
@@ -172,7 +172,7 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
 
               <li className="nav-item" role="none">
                 <Link
-                  className={`nav-link${
+                  className={`nav-link main-navbar-link-override${
                     router.pathname === "/quote" ? " is-active" : ""
                   }`}
                   href="/quote"
@@ -187,7 +187,7 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
               </li>
               <li className="nav-item" role="none">
                 <Link
-                  className={`nav-link${
+                  className={`nav-link main-navbar-link-override${
                     router.pathname === "/contact" ? " is-active" : ""
                   }`}
                   href="/contact"

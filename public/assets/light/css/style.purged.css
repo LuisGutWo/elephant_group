@@ -1366,7 +1366,7 @@ body.loaded {
 }
 .eg-footer-image-inner::after {
   content: "";
-  background-color: #0b0b0bc0;
+  background-color: #0b0b0b1f;
   opacity: 0.9;
   top: 0;
   left: 0;
@@ -1504,12 +1504,12 @@ body.loaded {
 }
 .eg-form-card {
   background: #e7e7e7;
-  padding: 3rem 3rem 2rem 3rem;
+  padding: 3rem !important;
   top: -18rem;
   position: absolute;
   border-radius: 15px;
   width: 100%;
-  max-width: 30rem;
+  max-width: 33rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 .eg-form-card h4 {
