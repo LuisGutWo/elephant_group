@@ -5,8 +5,16 @@
 }
 /* Coolvetica Condensed Rg Regular font-face */
 @font-face {
-  font-family: "Coolvetica";
-  src: url("/assets/light/fonts/FontsFree-Net-coolvetica.ttf")
+  font-family: "Coolvetica Condensed Rg Regular";
+  src: url("/assets/light/fonts/FontsFree-Net-coolvetica-regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Coolvetica Condensed Rg Regular";
+  src: url("/assets/dark/fonts/FontsFree-Net-coolvetica-regular.ttf")
     format("truetype");
   font-weight: normal;
   font-style: normal;
@@ -14,15 +22,23 @@
 }
 
 html {
-  font-size: 16px;
-  letter-spacing: 0.03em;
+  font-size: 1.3rem;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: "Coolvetica Condensed Rg Regular", Arial, Helvetica, sans-serif !important;
+  letter-spacing: 0.025em;
 }
 body,
 input,
 textarea,
 select,
 button {
-  font-family: "Coolvetica", Arial, Helvetica, sans-serif !important;
+  font-family: "Coolvetica Condensed Rg Regular", Arial, Helvetica, sans-serif !important;
   font-size: 1rem;
   letter-spacing: 0.025em;
 }
@@ -33,26 +49,26 @@ h3,
 h4,
 h5,
 h6 {
-  letter-spacing: 0.04em;
-  font-family: "Coolvetica", Arial, Helvetica, sans-serif !important;
+  letter-spacing: 0.05em;
+  font-family: "Coolvetica Condensed Rg Regular", Arial, Helvetica, sans-serif !important;
 }
 h1 {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
 }
 h2 {
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 h3 {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 h4 {
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 h5 {
-  font-size: 1.1rem;
+  font-size: 0.8rem;
 }
 h6 {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 /* Swiper Modern Button Styles */
 .swiper-button-next,
@@ -750,10 +766,10 @@ h6 {
 
 /* Utilidad para sobrescribir tamaño de fuente de links del main navbar */
 .main-navbar-link-override {
-  font-size: 0.9rem !important;
-  letter-spacing: 0.05em !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.1em !important;
   text-transform: uppercase !important;
-  font-weight: 400 !important;
+  font-weight: 600 !important;
   color: #25282a !important;
 }
 
@@ -948,7 +964,7 @@ body {
 }
 
 .top__navbar-list {
-  height: 3rem;
+  height: 2.5rem;
   width: 100%;
   list-style: none;
   display: flex;
@@ -1017,7 +1033,7 @@ body {
   align-items: center;
   gap: 4px;
   flex: 0 0 auto;
-  height: 2.25rem;
+  height: 2rem;
 }
 
 .top__navbar-link {
@@ -1025,16 +1041,16 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0;
-  padding: 0.2rem !important;
+  padding: 0.15rem !important;
 }
 
 .top__navbar-social svg {
   width: 100%;
   height: 100%;
-  max-width: 1.5em;
-  max-height: 1.5em;
-  min-width: 1em;
-  min-height: 1em;
+  max-width: 1.2em;
+  max-height: 1.2em;
+  min-width: 0.8em;
+  min-height: 0.8em;
   display: block;
 }
 
@@ -1382,7 +1398,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 1rem 0 1rem;
   max-width: 1200px;
   margin: 0 auto;
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
@@ -1461,12 +1477,12 @@ body {
 .eg-footer-copyright {
   text-align: center;
   width: 100%;
-  margin-top: 0.5rem;
+  margin-top: 1.3rem;
 }
 
 .eg-footer-copyright small {
-  color: #888;
-  font-size: 0.75rem;
+  color: #81818194;
+  font-size: 0.3rem;
   line-height: 1.5;
   display: block;
 }
@@ -1498,7 +1514,7 @@ body {
   }
 
   .eg-footer-copyright small {
-    font-size: 0.6875rem;
+    font-size: 0.5rem;
   }
 }
 
@@ -1522,7 +1538,7 @@ body {
   }
 
   .eg-footer-copyright small {
-    font-size: 0.8125rem;
+    font-size: 0.6rem;
   }
 }
 
