@@ -1369,7 +1369,7 @@ img.left {
 }
 
 .section-padding {
-  padding: 4rem 0;
+  padding: 2rem 0 3rem 0 !important;
 }
 
 .section-ptb {
@@ -3038,8 +3038,9 @@ body.loaded {
 
 .navbar .navbar-nav .nav-link {
   text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 600;
+  letter-spacing: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: 400;
   color: #f8f9fa;
   padding: 20px 10px 15px 10px;
   margin: 0 15px;

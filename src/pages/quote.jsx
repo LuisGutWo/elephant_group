@@ -43,10 +43,13 @@ function QuotePage() {
         twitterCard="summary_large_image"
         twitterTitle="Cotización | Elephant Group"
         twitterDescription="Solicita tu presupuesto personalizado de implementos publicitarios. Respuesta en 24 horas."
-      />{" "}
+      />
       <Navbar mainBg />
       <main>
-        <Header data={headerMetadata} />
+        <Header
+          data={headerMetadata}
+          background="/assets/light/imgs/background/viña-del-mar.webp"
+        />
         <Story />
         <HeaderContact />
         <FooterImg />

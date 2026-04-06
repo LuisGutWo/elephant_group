@@ -38,7 +38,19 @@ function AboutUs() {
                 height={100}
               />
             </div>
-            <h3 className="about-item-title" style={{ fontSize: "1rem" }}>
+            <h3
+              className="about-item-title"
+              style={{
+                fontSize: "1.03rem",
+                fontWeight: "400",
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+                color: "#1a1a1a",
+                marginBottom: "0.5rem",
+                position: "relative",
+                paddingLeft: "18px",
+              }}
+            >
               MATERIALES PROFESIONALES Y DURADEROS
             </h3>
           </article>
@@ -53,7 +65,19 @@ function AboutUs() {
                 height={100}
               />
             </div>
-            <h3 className="about-item-title" style={{ fontSize: "1rem" }}>
+            <h3
+              className="about-item-title"
+              style={{
+                fontSize: "1.03rem",
+                fontWeight: "400",
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+                color: "#1a1a1a",
+                marginBottom: "0.5rem",
+                position: "relative",
+                paddingLeft: "18px",
+              }}
+            >
               FABRICACIÓN PROPIA (NO INTERMEDIARIOS)
             </h3>
           </article>
@@ -68,7 +92,19 @@ function AboutUs() {
                 height={100}
               />
             </div>
-            <h3 className="about-item-title" style={{ fontSize: "1rem" }}>
+            <h3
+              className="about-item-title"
+              style={{
+                fontSize: "1.03rem",
+                fontWeight: "400",
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+                color: "#1a1a1a",
+                marginBottom: "0.5rem",
+                position: "relative",
+                paddingLeft: "18px",
+              }}
+            >
               PRODUCCIÓN ÁGIL SEGÚN NECESIDAD
             </h3>
           </article>

@@ -5,42 +5,25 @@
 }
 /* Coolvetica Condensed Rg Regular font-face */
 @font-face {
-  font-family: "Coolvetica Condensed Rg Regular";
+  font-family: Coolvetica Condensed Rg Regular, Arial, Helvetica, sans-serif !important;
+  letter-spacing: 0.035em;
   src: url("/assets/light/fonts/FontsFree-Net-coolvetica-regular.ttf")
     format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
-@font-face {
-  font-family: "Coolvetica Condensed Rg Regular";
-  src: url("/assets/dark/fonts/FontsFree-Net-coolvetica-regular.ttf")
-    format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-html {
-  font-size: 1.3rem;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-family: "Coolvetica Condensed Rg Regular", Arial, Helvetica, sans-serif !important;
-  letter-spacing: 0.025em;
 }
 body,
 input,
 textarea,
 select,
 button {
-  font-family: "Coolvetica Condensed Rg Regular", Arial, Helvetica, sans-serif !important;
+  font-family: Coolvetica Condensed Rg Regular, Arial, Helvetica, sans-serif !important;
   font-size: 1rem;
-  letter-spacing: 0.025em;
+  letter-spacing: 0.035em;
 }
 
 h1,
@@ -167,8 +150,6 @@ h6 {
       color: #0d0d0d;
       background-color: #f2f0ef;
       font-size: 14px;
-      font-family: "Poppins", sans-serif;
-      font-family: "Sora", sans-serif;
       overflow-x: hidden !important;
     }
 
@@ -730,7 +711,7 @@ h6 {
   background: #cfcfcf;
 }
 .eg-section-title {
-  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-size: clamp(2rem, 3vw, 2.8rem);
   font-weight: 700;
   line-height: 1.13;
   color: #1a1a1a;
@@ -738,14 +719,14 @@ h6 {
   letter-spacing: 0.03em;
 }
 .eg-section-description {
-  font-size: 1.18rem;
+  font-size: 1.3rem;
   color: #666;
   line-height: 1.7;
   margin-bottom: 2rem;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em !important;
 }
 @media (max-width: 767px) {
   .eg-section-title {
@@ -767,9 +748,9 @@ h6 {
 /* Utilidad para sobrescribir tamaño de fuente de links del main navbar */
 .main-navbar-link-override {
   font-size: 1rem !important;
-  letter-spacing: 0.1em !important;
+  letter-spacing: 0.2em !important;
   text-transform: uppercase !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   color: #25282a !important;
 }
 
@@ -1678,7 +1659,7 @@ body {
 }
 
 .eg-portfolio-card-title {
-  font-size: 1.65rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: #1f2937;
   margin-bottom: 0.25rem;
@@ -1923,17 +1904,18 @@ body {
 /* Mejorar la estabilidad y responsive del header slider */
 /* Alto fijo para el header, independiente del alto de las imágenes */
 /* Alto fijo para el header, ahora 35rem */
+
 .arch-slider {
   position: relative;
   width: 100%;
-  height: 35rem;
+  height: auto;
   overflow: hidden;
 }
 
 /* El slider interno también debe respetar el alto fijo */
 .arch-slider .parallax-slider {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 /* Cada slide debe tener el mismo alto fijo */
@@ -1941,7 +1923,7 @@ body {
 .arch-slider .swiper-slide {
   position: relative;
   width: 100%;
-  height: 35rem;
+  height: auto;
   display: flex;
   align-items: center;
   overflow: hidden;
