@@ -187,7 +187,7 @@ function TermsContent() {
                     <h4>Merchandising</h4>
                     <ul>
                       <li>Productos promocionales personalizados</li>
-                      <li>Articulos corporativos</li>
+                      <li>Artículos corporativos</li>
                       <li>Packaging y embalaje</li>
                     </ul>
                   </div>
@@ -791,7 +791,7 @@ function TermsContent() {
         .intro-section {
           margin-bottom: 50px;
           padding-bottom: 40px;
-          border-bottom: 2px solid #fca311;
+          border-bottom: 2px solid #c9961a;
         }
 
         .lead-text {
@@ -828,7 +828,7 @@ function TermsContent() {
           justify-content: center;
           width: 50px;
           height: 50px;
-          background: linear-gradient(135deg, #fca311, #f37a1d);
+          background: linear-gradient(135deg, #c9961a, #f37a1d);
           color: #ffffff;
           border-radius: 12px;
           font-size: 1.25rem;
@@ -870,7 +870,7 @@ function TermsContent() {
           content: "→";
           position: absolute;
           left: 0;
-          color: #fca311;
+          color: #c9961a;
           font-weight: 700;
           font-size: 1.2rem;
         }
@@ -894,7 +894,7 @@ function TermsContent() {
         .definition-card:hover {
           transform: translateY(-4px);
           box-shadow: 0 8px 20px rgba(252, 163, 17, 0.15);
-          border-color: #fca311;
+          border-color: #c9961a;
         }
 
         .definition-card h4 {
@@ -949,7 +949,7 @@ function TermsContent() {
           content: "•";
           position: absolute;
           left: 8px;
-          color: #fca311;
+          color: #c9961a;
           font-weight: 700;
         }
 
@@ -973,7 +973,7 @@ function TermsContent() {
 
         .payment-info-box {
           background: rgba(252, 163, 17, 0.1);
-          border-left-color: #fca311;
+          border-left-color: #c9961a;
         }
 
         .payment-info-box h4 {
@@ -1008,7 +1008,7 @@ function TermsContent() {
         .service-item:hover {
           transform: translateY(-4px);
           box-shadow: 0 8px 20px rgba(252, 163, 17, 0.15);
-          border-color: #fca311;
+          border-color: #c9961a;
         }
 
         .service-icon {
@@ -1042,7 +1042,7 @@ function TermsContent() {
           content: "✓";
           position: absolute;
           left: 0;
-          color: #fca311;
+          color: #c9961a;
           font-weight: 700;
         }
 
@@ -1068,7 +1068,7 @@ function TermsContent() {
           height: calc(100% + 32px);
           background: linear-gradient(
             to bottom,
-            #fca311,
+            #c9961a,
             rgba(252, 163, 17, 0.3)
           );
         }
@@ -1079,7 +1079,7 @@ function TermsContent() {
           justify-content: center;
           width: 48px;
           height: 48px;
-          background: linear-gradient(135deg, #fca311, #f37a1d);
+          background: linear-gradient(135deg, #c9961a, #f37a1d);
           color: #ffffff;
           border-radius: 50%;
           font-size: 1.25rem;
@@ -1128,7 +1128,7 @@ function TermsContent() {
         }
 
         .payment-card:hover {
-          border-color: #fca311;
+          border-color: #c9961a;
           transform: translateY(-4px);
           box-shadow: 0 8px 20px rgba(252, 163, 17, 0.15);
         }
@@ -1203,7 +1203,7 @@ function TermsContent() {
           content: "•";
           position: absolute;
           left: 0;
-          color: #fca311;
+          color: #c9961a;
           font-weight: 700;
         }
 
@@ -1227,7 +1227,7 @@ function TermsContent() {
         .liability-item:hover {
           transform: translateY(-4px);
           box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-          border-color: #fca311;
+          border-color: #c9961a;
         }
 
         .liability-icon {
@@ -1250,7 +1250,7 @@ function TermsContent() {
 
         /* Jurisdiction Box */
         .jurisdiction-box {
-          background: linear-gradient(135deg, #fca311, #f37a1d);
+          background: linear-gradient(135deg, #c9961a, #f37a1d);
           color: #ffffff;
           padding: 24px;
           border-radius: 12px;
@@ -1302,13 +1302,13 @@ function TermsContent() {
           content: "•";
           position: absolute;
           left: 8px;
-          color: #fca311;
+          color: #c9961a;
           font-weight: 700;
         }
 
         /* Contacto Final */
         .contact-section {
-          background: linear-gradient(135deg, #fca311, #f37a1d);
+          background: linear-gradient(135deg, #c9961a, #f37a1d);
           border-radius: 16px;
           padding: 40px;
           margin-top: 60px;
@@ -1356,7 +1356,7 @@ function TermsContent() {
         }
 
         .contact-item a {
-          color: #fca311;
+          color: #c9961a;
           font-weight: 600;
           transition: color 0.3s ease;
         }

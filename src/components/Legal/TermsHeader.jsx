@@ -163,11 +163,11 @@ function TermsHeader() {
         }
 
         .breadcrumb-item a:hover {
-          color: #fca311;
+          color: #c9961a;
         }
 
         .breadcrumb-item.active {
-          color: #fca311;
+          color: #c9961a;
           font-weight: 600;
         }
 
@@ -184,7 +184,7 @@ function TermsHeader() {
         }
 
         .sub-title {
-          color: #fca311;
+          color: #c9961a;
           font-size: 1rem;
           font-weight: 600;
           text-transform: uppercase;
@@ -198,7 +198,7 @@ function TermsHeader() {
         .dot-decoration {
           width: 8px;
           height: 8px;
-          background: #fca311;
+          background: #c9961a;
           border-radius: 50%;
           display: inline-block;
           animation: pulse 2s ease-in-out infinite;

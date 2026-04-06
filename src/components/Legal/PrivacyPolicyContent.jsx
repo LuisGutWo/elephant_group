@@ -317,7 +317,7 @@ function PrivacyPolicyContent() {
                 <div className="info-box contact-box">
                   <h4>Ejercer tus Derechos</h4>
                   <p>
-                    Para ejercer cualquiera de estos derechos, contáctanos en:
+                    Para ejercer cualquiera de estos derechos, Contáctanos en:
                   </p>
                   <p>
                     <strong>Email:</strong>{" "}
@@ -425,7 +425,7 @@ function PrivacyPolicyContent() {
                 </h2>
                 <p>
                   Si tienes preguntas, inquietudes o solicitudes relacionadas
-                  con esta Política de Privacidad, contáctanos:
+                  con esta Política de Privacidad, Contáctanos:
                 </p>
 
                 <div className="contact-info-grid">
@@ -478,7 +478,7 @@ function PrivacyPolicyContent() {
         .intro-section {
           margin-bottom: 50px;
           padding-bottom: 40px;
-          border-bottom: 2px solid #fca311;
+          border-bottom: 2px solid #c9961a;
         }
 
         .lead-text {
@@ -515,7 +515,7 @@ function PrivacyPolicyContent() {
           justify-content: center;
           width: 50px;
           height: 50px;
-          background: linear-gradient(135deg, #fca311, #f37a1d);
+          background: linear-gradient(135deg, #c9961a, #f37a1d);
           color: #ffffff;
           border-radius: 12px;
           font-size: 1.25rem;
@@ -557,7 +557,7 @@ function PrivacyPolicyContent() {
           content: "→";
           position: absolute;
           left: 0;
-          color: #fca311;
+          color: #c9961a;
           font-weight: 700;
           font-size: 1.2rem;
         }
@@ -572,7 +572,7 @@ function PrivacyPolicyContent() {
           padding: 12px 20px;
           margin-bottom: 12px;
           background: rgba(252, 163, 17, 0.05);
-          border-left: 4px solid #fca311;
+          border-left: 4px solid #c9961a;
           border-radius: 8px;
           font-size: 1rem;
           color: #2c3e50;
@@ -600,7 +600,7 @@ function PrivacyPolicyContent() {
         .right-card:hover {
           transform: translateY(-4px);
           box-shadow: 0 8px 20px rgba(252, 163, 17, 0.15);
-          border-color: #fca311;
+          border-color: #c9961a;
         }
 
         .card-icon {
@@ -666,7 +666,7 @@ function PrivacyPolicyContent() {
 
         .contact-box {
           background: rgba(252, 163, 17, 0.1);
-          border-left-color: #fca311;
+          border-left-color: #c9961a;
         }
 
         .contact-box h4 {
@@ -674,7 +674,7 @@ function PrivacyPolicyContent() {
         }
 
         .contact-box a {
-          color: #fca311;
+          color: #c9961a;
           font-weight: 600;
           text-decoration: none;
           transition: color 0.3s ease;
@@ -697,7 +697,7 @@ function PrivacyPolicyContent() {
         }
 
         .cookies-table thead {
-          background: #fca311;
+          background: #c9961a;
           color: #ffffff;
         }
 
@@ -732,7 +732,7 @@ function PrivacyPolicyContent() {
 
         /* Contacto Final */
         .contact-section {
-          background: linear-gradient(135deg, #fca311, #f37a1d);
+          background: linear-gradient(135deg, #c9961a, #f37a1d);
           border-radius: 16px;
           padding: 40px;
           margin-top: 60px;
@@ -780,7 +780,7 @@ function PrivacyPolicyContent() {
         }
 
         .contact-item a {
-          color: #fca311;
+          color: #c9961a;
           font-weight: 600;
           transition: color 0.3s ease;
         }
