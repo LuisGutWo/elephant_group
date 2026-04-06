@@ -3,7 +3,7 @@ import Head from "next/head";
 import Layout from "@/layouts/default";
 import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/InnerPages/Header";
-import Acabados from "@/components/InnerPages/Services/Acabados";
+
 import FooterBottom from "@/components/Main/FooterBottom";
 
 function AcabadosPage() {
@@ -49,7 +49,6 @@ function AcabadosPage() {
       <Navbar mainBg />
       <main>
         <Header data={headerMetadata} subBg={true} />
-        <Acabados />
       </main>
       <FooterBottom />
     </>

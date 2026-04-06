@@ -3,7 +3,7 @@ import Head from "next/head";
 import Layout from "@/layouts/default";
 import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/InnerPages/Header";
-import DisenoGrafico from "@/components/InnerPages/Services/DisenoGrafico";
+
 import Form from "@/components/InnerPages/Contact/Form";
 import FooterBottom from "@/components/Main/FooterBottom";
 
@@ -51,7 +51,7 @@ function DisenoGraficoPage() {
       <Navbar mainBg />
       <main>
         <Header data={headerMetadata} subBg={true} />
-        <DisenoGrafico />
+
         <Form />
       </main>
       <FooterBottom />
