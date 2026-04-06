@@ -10,18 +10,18 @@
     "*.cns.h": "c"
   },
   "cSpell.language": "en,es",
-  "cSpell.enabledLanguageIds": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "json",
-    "jsonc",
-    "markdown",
-    "css",
-    "scss",
-    "html"
-  ],
+  "cSpell.enabledFileTypes": {
+    "javascript": true,
+    "javascriptreact": true,
+    "typescript": true,
+    "typescriptreact": true,
+    "json": true,
+    "jsonc": true,
+    "markdown": true,
+    "css": true,
+    "scss": true,
+    "html": true
+  },
   "cSpell.words": [
     "aboutus",
     "acceleration",
