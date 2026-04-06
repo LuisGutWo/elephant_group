@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import data from "@/data/Main/portfolioGalleryPage.json";
+import Image from "next/image";
 
 function GridPortfolioImages() {
   const [activeFilter, setActiveFilter] = useState("*");
@@ -44,7 +45,7 @@ function GridPortfolioImages() {
       setFilteredItems(data?.gallery || []);
     } else {
       const filtered = data?.gallery?.filter((item) =>
-        item.filter.includes(filterValue.replace(".", ""))
+        item.filter.includes(filterValue.replace(".", "")),
       );
       setFilteredItems(filtered);
     }
@@ -123,12 +124,15 @@ function GridPortfolioImages() {
                   aria-label={`Ver opciones para ${item?.type} ${item?.year}`}
                   type="button"
                 >
-                  <img
+                  <Image
                     src={item?.image}
                     alt={`${item?.type} ${item?.year} - Proyecto publicitario Elephant Group Valparaíso y Viña del Mar`}
                     className="item-image"
                     itemProp="contentUrl"
                     loading="lazy"
+                    layout="responsive"
+                    width={500} // Ajusta según el tamaño real
+                    height={300} // Ajusta según el tamaño real
                   />
 
                   {/* Schema.org metadata */}
@@ -221,10 +225,13 @@ function GridPortfolioImages() {
 
             {/* Imagen Preview */}
             <div className="modal-image-preview">
-              <img
+              <Image
                 src={selectedProject.image}
                 alt={`Vista ampliada del proyecto ${selectedProject.type} realizado en ${selectedProject.year} por Elephant Group en Valparaíso y Viña del Mar`}
                 className="modal-preview-img"
+                layout="responsive"
+                width={800}
+                height={600}
               />
             </div>
 
@@ -269,7 +276,7 @@ function GridPortfolioImages() {
         .portfolio-gallery-section {
           --color-bg: #2a2a2a;
           --color-bg-dark: #242424;
-          --color-primary: #fca311;
+          --color-primary: #c9961a;
           --color-primary-alt: #ff9500;
           --color-white: #ffffff;
           --color-black: #000000;
@@ -629,7 +636,7 @@ function GridPortfolioImages() {
 
         .modal-year {
           display: inline-block;
-          background: linear-gradient(135deg, #fca311 0%, #ff9500 100%);
+          background: linear-gradient(135deg, #c9961a 0%, #ff9500 100%);
           color: #000000;
           padding: 6px 14px;
           border-radius: 8px;
@@ -732,22 +739,22 @@ function GridPortfolioImages() {
         }
 
         :global(.modal-btn-catalog:hover) {
-          background: #fca311;
+          background: #c9961a;
           color: #000000;
-          border-color: #fca311;
+          border-color: #c9961a;
           transform: translateY(-2px);
         }
 
         :global(.modal-btn-quote) {
           background: transparent;
-          color: #fca311;
-          border: 2px solid #fca311;
+          color: #c9961a;
+          border: 2px solid #c9961a;
         }
 
         :global(.modal-btn-quote:hover) {
-          background: #fca311;
+          background: #c9961a;
           color: #000000;
-          border-color: #fca311;
+          border-color: #c9961a;
           transform: translateY(-2px);
         }
 

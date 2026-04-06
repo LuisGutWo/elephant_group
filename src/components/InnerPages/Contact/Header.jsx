@@ -24,15 +24,6 @@ function Header() {
               <h1 className="eg-header-title" itemProp="headline" tabIndex={0}>
                 Ponte en contacto con nosotros
                 <br />
-                <span
-                  style={{
-                    color: "#fca311",
-                    fontSize: "1.5rem",
-                    fontWeight: 400,
-                  }}
-                >
-                  Solicita tu presupuesto o haz tus consultas aquí
-                </span>
               </h1>
             </div>
           </div>

@@ -100,13 +100,13 @@ try {
     $currentDate = date('d/m/Y H:i:s');
 
     // Texto plano
-    $textBody = "NUEVO MENSAJE DESDE EL FORMULARIO\n\n";
+    $textBody = "NUEVO MENSAJE DESDE EL FORMULARIO DE LA WEB\n\n";
     $textBody .= "DATOS DEL CLIENTE:\n";
     $textBody .= "Nombre: $name\n";
     $textBody .= "Email: $email\n\n";
     $textBody .= "MENSAJE:\n$message\n\n";
     $textBody .= "──────────────────────────────────────\n";
-    $textBody .= "Enviado desde el formulario simple del footer\n";
+    $textBody .= "Enviado desde la web\n";
     $textBody .= "Fecha: $currentDate\n";
 
     $mail->Body = $textBody;
@@ -147,7 +147,7 @@ try {
       </div>
 
       <div class='footer'>
-        <p>Enviado desde el formulario simple del footer</p>
+        <p>Enviado desde la web</p>
         <p>$currentDate</p>
       </div>
     </div>

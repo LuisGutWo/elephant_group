@@ -1,7 +1,7 @@
 /* Padding reducido solo para el botón Cotiza ahora en el TopNavbar */
 .top-navbar-quote-btn-small {
-  padding: 0.28rem 0.7rem !important;
-  font-size: 0.98rem !important;
+  padding: 0.18rem 0.55rem !important;
+  font-size: 0.85rem !important;
 }
 /* Coolvetica Condensed Rg Regular font-face */
 @font-face {
@@ -235,6 +235,7 @@ h6 {
   }
 }
 /* Unificar estilos de iconos de contacto y redes sociales en el footer */
+/* Unificar iconos de contacto y redes sociales en el footer */
 .eg-contact-list .eg-icon,
 .eg-socials.minimal .eg-social {
   display: inline-flex;
@@ -242,8 +243,13 @@ h6 {
   justify-content: center;
   background: #c9961a !important;
   border-radius: 50%;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+  aspect-ratio: 1/1;
   font-size: 1.35rem;
   color: #222;
   box-shadow: 0 2px 8px rgba(252, 163, 17, 0.08);
@@ -747,10 +753,10 @@ h6 {
 
 /* Utilidad para sobrescribir tamaño de fuente de links del main navbar */
 .main-navbar-link-override {
-  font-size: 1rem !important;
+  font-size: 0.9rem !important;
   letter-spacing: 0.2em !important;
   text-transform: uppercase !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   color: #25282a !important;
 }
 
