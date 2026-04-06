@@ -194,7 +194,7 @@ function Letreros() {
         }
 
         .content h2 {
-          color: #fca311;
+          color: #c9961a;
           font-weight: 700;
         }
 
@@ -236,7 +236,7 @@ function Letreros() {
         }
 
         .text-orange {
-          color: #fca311;
+          color: #c9961a;
         }
 
         .list-style-check {
@@ -256,7 +256,7 @@ function Letreros() {
           content: "✓";
           position: absolute;
           left: 0;
-          color: #fca311;
+          color: #c9961a;
           font-weight: bold;
           font-size: 20px;
         }
@@ -274,7 +274,7 @@ function Letreros() {
         }
 
         .widget-box h4 {
-          color: #fca311;
+          color: #c9961a;
           font-weight: 700;
           font-size: 22px;
         }
@@ -300,8 +300,8 @@ function Letreros() {
           display: inline-block;
           padding: 12px 30px;
           background: transparent;
-          color: #fca311;
-          border: 2px solid #fca311;
+          color: #c9961a;
+          border: 2px solid #c9961a;
           border-radius: 30px;
           text-decoration: none;
           transition: all 0.3s ease;
@@ -311,7 +311,7 @@ function Letreros() {
         }
 
         .butn:hover {
-          background: #fca311;
+          background: #c9961a;
           color: #000000;
         }
 
@@ -335,8 +335,8 @@ function Letreros() {
         }
 
         .services-links a:hover {
-          color: #fca311;
-          border-left-color: #fca311;
+          color: #c9961a;
+          border-left-color: #c9961a;
           padding-left: 20px;
         }
 
