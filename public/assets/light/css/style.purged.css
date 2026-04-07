@@ -1363,6 +1363,10 @@ body.loaded {
   display: flex;
   align-items: flex-start;
   justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    height: 100%;
+  }
 }
 .eg-footer-image-inner::after {
   content: "";
@@ -1381,6 +1385,11 @@ body.loaded {
   object-fit: cover;
   -o-object-position: bottom center;
   object-position: bottom center;
+
+  @media screen and (max-width: 768px) {
+    object-position: center center;
+    object-fit: contain;
+  }
 }
 .eg-footer-top {
   padding: 60px 0 40px;
@@ -1569,52 +1578,6 @@ body.loaded {
   transform: translateY(-1px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
-
-.eg-footer-bottom-inner {
-  background: #111 !important;
-  color: #c9961a !important;
-}
-
-.eg-footer-bottom {
-  font-family: Inter, Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background: #0b0b0b;
-  color: #ddd;
-  padding: 14px 0;
-  position: relative;
-  overflow: hidden;
-}
-.eg-footer-bottom::after {
-  content: "";
-  background-image: url(../imgs/patterns/asx7.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  opacity: 0.15;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  pointer-events: none;
-  mix-blend-mode: multiply;
-}
-/* Footer styles moved to globals.css for better mobile optimization */
-/* Legacy styles kept for backward compatibility but overridden in globals.css */
-.eg-footer-bottom-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  background-color: transparent;
-}
-
-/* Legacy footer styles - now handled in globals.css with better responsive design */
 
 @media (max-width: 900px) {
   .eg-footer-inner {

@@ -1,3 +1,10 @@
+@media (max-width: 991px) {
+  .swiper-nav-ctrl,
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+}
 /* ====================== [ Refuerzo de accesibilidad táctil en mobile ] ====================== */
 @media (max-width: 600px) {
   button,
@@ -256,29 +263,21 @@ h6 {
 .eg-socials-footer-adaptive {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
   margin: 0.5rem 0 3.5rem 0;
   padding-left: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 2rem;
 }
 @media (min-width: 901px) {
   .eg-socials-footer-adaptive {
     width: 100%;
     justify-content: center;
-    margin: 1.2rem auto 0 auto;
+    margin: 1.2rem auto 2rem auto;
     padding: 0;
     position: static;
     left: auto;
     right: auto;
-  }
-}
-@media (min-width: 901px) {
-  .eg-socials-footer-adaptive {
-    position: static;
-    width: 100%;
-    justify-content: center;
-    margin: 1.2rem auto 0 auto;
-    padding: 0;
   }
 }
 /* Reducir margen inferior de la clase eg-form para el formulario del footer */
@@ -410,6 +409,7 @@ a:focus {
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
     position: static;
     z-index: auto;
     box-sizing: border-box;
@@ -420,6 +420,19 @@ a:focus {
     margin-top: 0;
     position: static;
     z-index: auto;
+  }
+
+  /* Invertir orden: formulario arriba, contacto abajo */
+  .footer-responsive-minimal .eg-form-col {
+    order: 1;
+  }
+  .footer-responsive-minimal .eg-contact-col {
+    order: 2;
+  }
+  /* Asegurar que las redes sociales queden siempre debajo */
+  .footer-responsive-minimal .eg-socials-footer-adaptive {
+    order: 3;
+    width: 100%;
   }
 }
 @media (max-width: 600px) {
@@ -813,8 +826,12 @@ input[type="submit"].eg-btn-primary:hover {
   letter-spacing: 0.04em !important;
 }
 @media (max-width: 767px) {
+  .eg-portfolio.section-padding {
+    padding-top: 1.5rem !important;
+    margin-top: 0 !important;
+  }
   .eg-section-title {
-    font-size: 1.5rem;
+    font-size: 2.1rem;
     margin-bottom: 2rem;
   }
   .eg-section-description {
@@ -962,11 +979,6 @@ input[type="submit"].eg-btn-primary:hover {
     font-size: 0.875rem;
   }
 }
-/* Aplica el fondo oscuro a todo el footer bottom */
-.eg-footer-bottom {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-}
-
 body {
   padding: 0 !important;
 }
@@ -1456,6 +1468,12 @@ body {
 
 /* ====================== [ Footer Bottom - Diseño Original ] ====================== */
 
+/* Aplica el fondo oscuro a todo el footer bottom */
+
+.eg-footer-bottom {
+  background: #1a1a1a !important;
+}
+
 /* Contenedor principal */
 .eg-footer-bottom-inner {
   display: flex;
@@ -1466,7 +1484,7 @@ body {
   padding: 0.75rem 1rem 0 1rem;
   max-width: 1200px;
   margin: 0 auto;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background: transparent;
 }
 
 /* Logo del footer - primero, centrado arriba */
