@@ -9155,8 +9155,7 @@ header.in-box {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-
-.product-details .overview .tab-content .add-review .star-rating label:hover,
+.product-details .overview .tab-content .add-review .star-rating label:focus {
   color: #c9961a;
 }
 
