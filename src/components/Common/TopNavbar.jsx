@@ -53,7 +53,7 @@ const TopNavbar = ({ mainBg, curve }) => {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              fill="#C9961A"
+              fill="#c9961a"
               className="bi bi-instagram"
               viewBox="0 0 16 16"
             >
@@ -68,7 +68,7 @@ const TopNavbar = ({ mainBg, curve }) => {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              fill="#C9961A"
+              fill="#c9961a"
               className="bi bi-facebook"
               viewBox="0 0 16 16"
             >

@@ -215,14 +215,80 @@
 }
 
 /* Modal Preview */
+
+/* Animación de entrada para el fondo del modal */
+.preview-modal-elegant .modal-backdrop {
+  animation: fadeInModal 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animación de entrada para el contenido del modal */
 .preview-modal-elegant .modal-content {
   border: none;
   border-radius: 12px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  animation: slideUpModal 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpModal {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .preview-modal-elegant .modal-header {
   padding: 1.5rem 1.5rem 1rem;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3.5rem;
+}
+/* Botón de cierre accesible y siempre visible */
+.preview-modal-elegant .modal-header .btn-close,
+.preview-modal-elegant .modal-header .modal-close {
+  position: relative;
+  background: none;
+  border: none;
+  color: #c9961a;
+  font-size: 1.75rem;
+  line-height: 1;
+  padding: 0.25em 0.5em;
+  margin-left: auto;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  border-radius: 50%;
+  box-shadow: none;
+}
+
+.preview-modal-elegant .modal-header .btn-close:focus,
+.preview-modal-elegant .modal-header .modal-close:focus {
+  outline: 2px solid #c9961a;
+  outline-offset: 2px;
+  background: rgba(201, 150, 26, 0.08);
+}
+
+.preview-modal-elegant .modal-header .btn-close:hover,
+.preview-modal-elegant .modal-header .modal-close:hover {
+  color: #fff;
+  background: #c9961a;
 }
 
 .preview-modal-elegant .modal-title {

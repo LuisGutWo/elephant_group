@@ -238,14 +238,14 @@ function BlogGrid() {
         }
 
         .filter-btn:hover {
-          border-color: #fca311;
-          color: #fca311;
+          border-color: #c9961a;
+          color: #c9961a;
           transform: translateY(-2px);
         }
 
         .filter-btn.active {
-          background: #fca311;
-          border-color: #fca311;
+          background: #c9961a;
+          border-color: #c9961a;
           color: #000000;
         }
 

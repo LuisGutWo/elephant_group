@@ -58,7 +58,7 @@ function BlogHeader() {
         }
 
         .sub-title {
-          color: #fca311;
+          color: #c9961a;
           font-size: 14px;
           font-weight: 600;
           letter-spacing: 2px;
@@ -76,7 +76,7 @@ function BlogHeader() {
           width: 5px;
           height: 5px;
           border-radius: 50%;
-          background: #fca311;
+          background: #c9961a;
         }
 
         .caption h1 {

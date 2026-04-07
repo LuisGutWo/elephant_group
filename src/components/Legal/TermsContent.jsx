@@ -828,7 +828,7 @@ function TermsContent() {
           justify-content: center;
           width: 50px;
           height: 50px;
-          background: linear-gradient(135deg, #c9961a, #f37a1d);
+          background: linear-gradient(135deg, #c9961a, #c9961a);
           color: #ffffff;
           border-radius: 12px;
           font-size: 1.25rem;
@@ -1079,7 +1079,7 @@ function TermsContent() {
           justify-content: center;
           width: 48px;
           height: 48px;
-          background: linear-gradient(135deg, #c9961a, #f37a1d);
+          background: linear-gradient(135deg, #c9961a, #c9961a);
           color: #ffffff;
           border-radius: 50%;
           font-size: 1.25rem;
@@ -1250,7 +1250,7 @@ function TermsContent() {
 
         /* Jurisdiction Box */
         .jurisdiction-box {
-          background: linear-gradient(135deg, #c9961a, #f37a1d);
+          background: linear-gradient(135deg, #c9961a, #c9961a);
           color: #ffffff;
           padding: 24px;
           border-radius: 12px;
@@ -1308,7 +1308,7 @@ function TermsContent() {
 
         /* Contacto Final */
         .contact-section {
-          background: linear-gradient(135deg, #c9961a, #f37a1d);
+          background: linear-gradient(135deg, #c9961a, #c9961a);
           border-radius: 16px;
           padding: 40px;
           margin-top: 60px;
@@ -1362,7 +1362,7 @@ function TermsContent() {
         }
 
         .contact-item a:hover {
-          color: #f37a1d;
+          color: #c9961a;
           text-decoration: underline;
         }
 

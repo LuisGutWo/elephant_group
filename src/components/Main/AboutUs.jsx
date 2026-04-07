@@ -34,17 +34,19 @@ function AboutUs() {
               <Image
                 src="/assets/light/imgs/serv-icons/pencil-icon.svg"
                 alt="Icono de calidad"
-                width={100}
-                height={100}
+                width={120}
+                height={120}
               />
             </div>
             <h3
               className="about-item-title"
               style={{
-                fontSize: "1.03rem",
-                fontWeight: "400",
+                fontSize: "1.02rem",
+                fontWeight: "600",
                 letterSpacing: "0.06em",
                 textTransform: "uppercase",
+                textAlign: "center",
+                textJustify: "auto",
                 color: "#1a1a1a",
                 marginBottom: "0.5rem",
                 position: "relative",
@@ -61,17 +63,19 @@ function AboutUs() {
               <Image
                 src="/assets/light/imgs/serv-icons/tool-icon.svg"
                 alt="Icono de personalización"
-                width={100}
-                height={100}
+                width={120}
+                height={120}
               />
             </div>
             <h3
               className="about-item-title"
               style={{
-                fontSize: "1.03rem",
-                fontWeight: "400",
+                fontSize: "1.02rem",
+                fontWeight: "600",
                 letterSpacing: "0.06em",
                 textTransform: "uppercase",
+                textAlign: "center",
+                textJustify: "auto",
                 color: "#1a1a1a",
                 marginBottom: "0.5rem",
                 position: "relative",
@@ -88,17 +92,19 @@ function AboutUs() {
               <Image
                 src="/assets/light/imgs/serv-icons/clock-icon.svg"
                 alt="Icono de rapidez"
-                width={100}
-                height={100}
+                width={120}
+                height={120}
               />
             </div>
             <h3
               className="about-item-title"
               style={{
-                fontSize: "1.03rem",
-                fontWeight: "400",
+                fontSize: "1.02rem",
+                fontWeight: "600",
                 letterSpacing: "0.06em",
                 textTransform: "uppercase",
+                textAlign: "center",
+                textJustify: "auto",
                 color: "#1a1a1a",
                 marginBottom: "0.5rem",
                 position: "relative",

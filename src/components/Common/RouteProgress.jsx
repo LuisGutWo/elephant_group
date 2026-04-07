@@ -39,7 +39,7 @@ function RouteProgress() {
         width: active ? "100%" : "0%",
         height: "3px",
         zIndex: 9999,
-        background: "linear-gradient(90deg, #fca311 0%, #ffd166 100%)",
+        background: "#c9961a",
         boxShadow: active ? "0 0 12px rgba(252,163,17,0.7)" : "none",
         transition: active
           ? "width 0.35s ease-out, box-shadow 0.2s ease-out"

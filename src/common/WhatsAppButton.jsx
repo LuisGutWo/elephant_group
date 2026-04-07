@@ -37,7 +37,7 @@ const WhatsAppButton = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const whatsappNumber = "56920390272";
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_PHONE;
 
   const quickActions = [
     {
@@ -65,7 +65,7 @@ const WhatsAppButton = () => {
 
   const handleQuickAction = (message) => {
     const url = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(
-      message
+      message,
     )}`;
     window.open(url, "_blank", "noopener noreferrer");
     setIsExpanded(false);
@@ -74,7 +74,7 @@ const WhatsAppButton = () => {
   const handleMainClick = () => {
     if (!isExpanded) {
       const url = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(
-        "Hola! Quiero más información sobre sus servicios."
+        "Hola! Quiero más información sobre sus servicios.",
       )}`;
       window.open(url, "_blank", "noopener noreferrer");
     }
@@ -159,7 +159,7 @@ const WhatsAppButton = () => {
 
               <div className="chat-preview">
                 <div className="chat-bubble">
-                  <p>¡Hola! 👋</p>
+                  <p>¡Hola!👋, somos Elephant Group,</p>
                   <p>¿Cómo podemos ayudarte?</p>
                   <span className="chat-time">Ahora</span>
                 </div>

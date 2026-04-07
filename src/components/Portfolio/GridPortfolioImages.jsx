@@ -194,9 +194,22 @@ function GridPortfolioImages() {
           aria-modal="true"
           aria-labelledby="modal-title"
         >
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="modal-content"
+            onClick={(e) => e.stopPropagation()}
+            tabIndex={-1}
+          >
             {/* Header del Modal */}
-            <div className="modal-header">
+            <div
+              className="modal-header"
+              style={{
+                position: "sticky",
+                top: 0,
+                background: "rgba(30,30,30,0.98)",
+                zIndex: 2,
+                paddingTop: 8,
+              }}
+            >
               <div className="modal-title-section">
                 <h2 id="modal-title" className="modal-title">
                   {selectedProject.type}
@@ -208,6 +221,23 @@ function GridPortfolioImages() {
                 onClick={handleCloseModal}
                 aria-label="Cerrar modal"
                 type="button"
+                tabIndex={0}
+                style={{
+                  background: "none",
+                  border: "none",
+                  color: "#fff",
+                  fontSize: 28,
+                  cursor: "pointer",
+                  padding: 8,
+                  marginLeft: 12,
+                  outline: "none",
+                  zIndex: 3,
+                  position: "relative",
+                  transition: "color 0.2s",
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") handleCloseModal();
+                }}
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -216,6 +246,7 @@ function GridPortfolioImages() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  style={{ width: 28, height: 28 }}
                 >
                   <line x1="18" y1="6" x2="6" y2="18" />
                   <line x1="6" y1="6" x2="18" y2="18" />
@@ -277,7 +308,7 @@ function GridPortfolioImages() {
           --color-bg: #2a2a2a;
           --color-bg-dark: #242424;
           --color-primary: #c9961a;
-          --color-primary-alt: #ff9500;
+          --color-primary-alt: #c9961a;
           --color-white: #ffffff;
           --color-black: #000000;
           --spacing-base: 30px;
@@ -594,7 +625,7 @@ function GridPortfolioImages() {
           align-items: center;
           justify-content: center;
           padding: 20px;
-          animation: fadeIn 0.3s ease;
+          animation: fadeInModal 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .modal-content {
@@ -602,13 +633,35 @@ function GridPortfolioImages() {
           border-radius: 20px;
           max-width: 520px;
           width: 100%;
-          max-height: fit-content;
+          max-height: 90vh;
           display: flex;
           flex-direction: column;
           box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8),
             0 0 0 2px rgba(252, 163, 17, 0.6);
-          animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          animation: slideUpModal 0.45s cubic-bezier(0.4, 0, 0.2, 1);
           overflow: hidden;
+        }
+        .modal-content {
+          overflow-y: auto;
+        }
+
+        @keyframes fadeInModal {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        @keyframes slideUpModal {
+          from {
+            transform: translateY(60px);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
         }
 
         .modal-header {
@@ -636,7 +689,7 @@ function GridPortfolioImages() {
 
         .modal-year {
           display: inline-block;
-          background: linear-gradient(135deg, #c9961a 0%, #ff9500 100%);
+          background: #c9961a;
           color: #000000;
           padding: 6px 14px;
           border-radius: 8px;

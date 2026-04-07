@@ -160,7 +160,7 @@ function PrivacyPolicy() {
         geoPlacename="Valparaíso"
         geoPosition="-33.0472;-71.6127"
         icbm="-33.0472, -71.6127"
-        themeColor="#fca311"
+        themeColor="#c9961a"
         formatDetection="telephone=no"
         xUaCompatible="ie=edge"
         structuredData={structuredData}

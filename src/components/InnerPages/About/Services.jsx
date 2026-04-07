@@ -87,7 +87,7 @@ function Services() {
                 <h4
                   className="mb-15"
                   key={item.id}
-                  style={{ color: "#fca311" }}
+                  style={{ color: "#c9961a" }}
                 >
                   {item.title}
                 </h4>

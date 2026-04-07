@@ -333,7 +333,7 @@ img {
 }
 
 .butn-circle.colorbg-2:after {
-  background: #fca311;
+  background: #c9961a;
 }
 
 .butn-circle.colorbg-3:after {
@@ -505,7 +505,7 @@ img {
   pointer-events: none;
   position: fixed;
   padding: 0.3rem;
-  background-color: #fca311;
+  background-color: #c9961a;
   border-radius: 50%;
   mix-blend-mode: difference;
   -webkit-transition: opacity 0.4s ease, -webkit-transform 0.3s ease;
@@ -738,7 +738,7 @@ img {
 }
 
 .progress-wrap svg.progress-circle path {
-  stroke: #fca311;
+  stroke: #c9961a;
   stroke-width: 4;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -3486,7 +3486,7 @@ body.loaded {
 }
 
 .hamenu .menu-links::-webkit-scrollbar-thumb {
-  background: #fca311;
+  background: #c9961a;
   border-radius: 10px;
 }
 
@@ -8690,7 +8690,7 @@ header.in-box {
 }
 
 .main-shop .sidebar .categories li:hover {
-  color: #fca311;
+  color: #c9961a;
 }
 
 .main-shop .sidebar .categories li:last-of-type {
@@ -8738,7 +8738,7 @@ header.in-box {
   right: 25%;
   position: absolute;
   border-radius: 0;
-  background: #fca311;
+  background: #c9961a;
 }
 
 .main-shop .sidebar .price-range .range-input {
@@ -8761,7 +8761,7 @@ header.in-box {
   height: 17px;
   width: 5px;
   border: none;
-  background: #fca311;
+  background: #c9961a;
   pointer-events: auto;
   -webkit-appearance: none;
 }
@@ -8770,7 +8770,7 @@ header.in-box {
   height: 17px;
   width: 5px;
   border: none;
-  background: #fca311;
+  background: #c9961a;
   pointer-events: auto;
   -moz-appearance: none;
 }
@@ -8827,7 +8827,7 @@ header.in-box {
 
 .main-shop .sidebar .best-sale .line-list .cont h5 {
   font-size: 17px;
-  color: #fca311;
+  color: #c9961a;
 }
 
 .main-shop .sidebar .tags .tags-links a {
@@ -8843,7 +8843,7 @@ header.in-box {
 
 .main-shop .sidebar .tags .tags-links a:hover {
   background: transparent;
-  color: #fca311;
+  color: #c9961a;
 }
 
 .main-shop .shop-products .top-side .select-hidden {
@@ -9016,7 +9016,7 @@ header.in-box {
 
 .main-shop .shop-products .item .cont h5 {
   font-size: 20px;
-  color: #fca311;
+  color: #c9961a;
 }
 
 .main-shop .shop-products .pagination li {
@@ -9157,21 +9157,7 @@ header.in-box {
 }
 
 .product-details .overview .tab-content .add-review .star-rating label:hover,
-.product-details
-  .overview
-  .tab-content
-  .add-review
-  .star-rating
-  label:hover
-  ~ label,
-.product-details
-  .overview
-  .tab-content
-  .add-review
-  .star-rating
-  input[type="radio"]:checked
-  ~ label {
-  color: #fca311;
+  color: #c9961a;
 }
 
 .product-details .overview .tab-content .add-review .form input,
