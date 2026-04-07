@@ -333,7 +333,7 @@ function Footer({ subBg }) {
                 <div className="eg-form-actions">
                   <button
                     type="submit"
-                    className="btn btn-primary text-light"
+                    className="btn eg-btn-primary"
                     disabled={loading}
                     aria-label={loading ? "Enviando mensaje" : "Enviar mensaje"}
                   >

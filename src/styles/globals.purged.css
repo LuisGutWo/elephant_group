@@ -163,6 +163,12 @@ h6 {
     overflow-y: auto;
     border-top: 1px solid #ececec;
   }
+
+  /* Corregir fondo del botón hamburguesa en mobile */
+  .navbar-toggler {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
 }
 @media (min-width: 901px) {
   .footer-responsive-minimal {
@@ -714,6 +720,16 @@ a:focus {
   background: #fff;
   color: #c9961a;
   border: 1.5px solid #c9961a;
+  box-shadow: 0 2px 8px rgba(252, 163, 17, 0.13);
+}
+
+/* Reforzar hover para botones principales aunque existan reglas globales con !important */
+button.eg-btn-primary:hover,
+.eg-btn.eg-btn-primary:hover,
+input[type="submit"].eg-btn-primary:hover {
+  background: #fff !important;
+  color: #c9961a !important;
+  border: 1.5px solid #c9961a !important;
   box-shadow: 0 2px 8px rgba(252, 163, 17, 0.13);
 }
 .eg-btn-secondary {

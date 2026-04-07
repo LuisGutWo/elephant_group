@@ -111,7 +111,7 @@ function Form() {
   // Calcular progreso del formulario
   const progress = useMemo(
     () => calculateProgress(form, details),
-    [form, details]
+    [form, details],
   );
 
   // Mostrar modal cuando status cambia a éxito o error
@@ -148,7 +148,7 @@ function Form() {
         });
       }
     },
-    [touched, validateField, form]
+    [touched, validateField, form],
   );
 
   const handleDetailChange = useCallback(
@@ -172,7 +172,7 @@ function Form() {
         });
       }
     },
-    [touched, validateField, details]
+    [touched, validateField, details],
   );
 
   // El manejo de archivos ahora se hace con el hook useFileUpload
@@ -218,7 +218,7 @@ function Form() {
       const payloadSize = JSON.stringify(payload).length;
       const payloadSizeMB = (payloadSize / 1024 / 1024).toFixed(2);
       console.log(
-        `📏 Tamaño del payload: ${payloadSizeMB}MB (${payloadSize} bytes)`
+        `📏 Tamaño del payload: ${payloadSizeMB}MB (${payloadSize} bytes)`,
       );
 
       // Manejar archivos grandes
@@ -226,14 +226,14 @@ function Form() {
       if (detailsData.fileData && payloadSize > 8000000) {
         // ~8MB
         console.warn(
-          `⚠️ Payload muy grande (${payloadSizeMB}MB), removiendo archivo adjunto para email de respaldo`
+          `⚠️ Payload muy grande (${payloadSizeMB}MB), removiendo archivo adjunto para email de respaldo`,
         );
         console.log(
           `📁 Archivo original: ${detailsData.fileName} (${
             detailsData.fileSize
               ? (detailsData.fileSize / 1024 / 1024).toFixed(2) + "MB"
               : "tamaño desconocido"
-          })`
+          })`,
         );
         payload.details = {
           ...payload.details,
@@ -252,7 +252,7 @@ function Form() {
           ? (detailsData.fileSize / 1024 / 1024).toFixed(2)
           : "N/A";
         console.log(
-          `📎 Incluyendo archivo en email: ${detailsData.fileName} (${fileSizeMB}MB)`
+          `📎 Incluyendo archivo en email: ${detailsData.fileName} (${fileSizeMB}MB)`,
         );
       }
 
@@ -276,7 +276,7 @@ function Form() {
         const emailResult = await emailResponse.json();
         console.log(
           "✅ Email de respaldo enviado correctamente:",
-          emailResult.message
+          emailResult.message,
         );
         if (emailResult.messageId) {
           console.log("🆔 Message ID:", emailResult.messageId);
@@ -287,7 +287,7 @@ function Form() {
           "⚠️ Error al enviar email de respaldo (",
           emailResponse.status,
           "):",
-          errorText
+          errorText,
         );
       }
     } catch (emailErr) {
@@ -296,7 +296,7 @@ function Form() {
       } else {
         console.error(
           "❌ Error inesperado en email de respaldo:",
-          emailErr.message
+          emailErr.message,
         );
       }
       // No mostramos error al usuario ya que WhatsApp es el canal principal
@@ -361,7 +361,7 @@ function Form() {
 
         // Crear URL de WhatsApp
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-          message
+          message,
         )}`;
 
         console.log("✅ WhatsApp URL generada");
@@ -415,13 +415,13 @@ function Form() {
       resetDetails,
       clearAllErrors,
       clearSaved,
-    ]
+    ],
   );
 
   // Memoizar productos disponibles
   const currentProducts = useMemo(
     () => PRODUCT_TYPES[details.productType] || [],
-    [details.productType]
+    [details.productType],
   );
 
   // Manejar vista previa del mensaje
