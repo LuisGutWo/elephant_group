@@ -219,9 +219,12 @@ function GridPortfolioImages() {
               <button
                 className="modal-close"
                 onClick={handleCloseModal}
-                aria-label="Cerrar modal"
+                aria-label="Cerrar modal de proyecto"
+                aria-describedby="modal-close-desc"
+                aria-controls="modal-title"
                 type="button"
                 tabIndex={0}
+                role="button"
                 style={{
                   background: "none",
                   border: "none",
@@ -239,6 +242,9 @@ function GridPortfolioImages() {
                   if (e.key === "Enter" || e.key === " ") handleCloseModal();
                 }}
               >
+                <span id="modal-close-desc" className="visually-hidden">
+                  Cierra el modal y regresa a la galería de proyectos.
+                </span>
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"

@@ -269,40 +269,87 @@ function Footer({ subBg }) {
                 onSubmit={handleSubmit}
                 className="eg-contact-form"
                 noValidate
+                aria-label="Formulario de contacto principal"
               >
-                <label className="input-label">Nombre</label>
+                <label className="input-label" htmlFor="footer-name">
+                  Nombre
+                </label>
                 <input
+                  id="footer-name"
                   name="name"
                   value={form.name}
                   onChange={handleChange}
                   required
+                  aria-required="true"
+                  aria-label="Nombre completo"
+                  aria-describedby="footer-name-desc"
+                  aria-invalid={
+                    status.type === "error" && !form.name ? "true" : "false"
+                  }
                 />
-                <label className="input-label">Correo electrónico</label>
+                <span id="footer-name-desc" className="visually-hidden">
+                  Campo obligatorio. Ingrese su nombre completo.
+                </span>
+                <label className="input-label" htmlFor="footer-email">
+                  Correo electrónico
+                </label>
                 <input
+                  id="footer-email"
                   name="email"
                   type="email"
                   value={form.email}
                   onChange={handleChange}
                   required
+                  aria-required="true"
+                  aria-label="Correo electrónico"
+                  aria-describedby="footer-email-desc"
+                  aria-invalid={
+                    status.type === "error" && !form.email ? "true" : "false"
+                  }
                 />
-                <label className="input-label">Mensaje</label>
+                <span id="footer-email-desc" className="visually-hidden">
+                  Campo obligatorio. Ingrese un correo electrónico válido.
+                </span>
+                <label className="input-label" htmlFor="footer-message">
+                  Mensaje
+                </label>
                 <textarea
+                  id="footer-message"
                   name="message"
-                  type="text"
                   value={form.message}
                   onChange={handleChange}
                   rows="4"
                   required
+                  aria-required="true"
+                  aria-label="Mensaje"
+                  aria-describedby="footer-message-desc"
+                  aria-invalid={
+                    status.type === "error" && !form.message ? "true" : "false"
+                  }
                 />
+                <span id="footer-message-desc" className="visually-hidden">
+                  Campo obligatorio. Escriba su mensaje.
+                </span>
                 <div className="eg-form-actions">
                   <button
                     type="submit"
                     className="btn btn-primary text-light"
                     disabled={loading}
+                    aria-label={loading ? "Enviando mensaje" : "Enviar mensaje"}
                   >
                     {loading ? "ENVIANDO..." : "ENVIAR"}
                   </button>
                 </div>
+                {/* Feedback accesible para lectores de pantalla */}
+                {status.type && (
+                  <div
+                    role="status"
+                    aria-live="polite"
+                    className="visually-hidden"
+                  >
+                    {status.msg}
+                  </div>
+                )}
               </form>
             </div>
           </div>

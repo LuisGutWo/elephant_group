@@ -1,3 +1,41 @@
+/* ====================== [ Refuerzo de accesibilidad táctil en mobile ] ====================== */
+@media (max-width: 600px) {
+  button,
+  .btn,
+  .eg-btn,
+  .btn-primary-modern,
+  .eg-btn-primary,
+  .top-navbar-quote-btn-small,
+  .top__navbar-button {
+    min-width: 44px !important;
+    min-height: 44px !important;
+    font-size: 1rem !important;
+    padding: 0.7rem 1.1rem !important;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  textarea {
+    min-height: 44px;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .eg-form-card-minimal input,
+  .eg-form-card-minimal textarea {
+    margin-bottom: 1.1rem;
+  }
+
+  .eg-form-card-minimal button,
+  .eg-form-card-minimal .btn,
+  .eg-form-card-minimal .eg-btn {
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+  }
+}
 /* Quitar outline/box-shadow en focus para todos los links del navbar y el logo */
 .navbar .nav-link:focus,
 .navbar .dropdown-item:focus,
@@ -110,7 +148,7 @@ h6 {
     position: absolute;
     top: 64px;
     left: 0;
-    width: 100vw;
+    width: 100%;
     background: #fff;
     box-shadow: 0 4px 16px rgba(30, 30, 30, 0.1);
     transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
