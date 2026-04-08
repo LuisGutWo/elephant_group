@@ -294,9 +294,16 @@ function GridPortfolioImages() {
               </Link>
 
               <Link
-                href="/quote"
+                href="/contact"
                 className="modal-btn modal-btn-quote"
                 aria-label="Solicitar presupuesto"
+                onClick={() => {
+                  setShowModal(false);
+                  setSelectedProject(null);
+                  document.body.style.overflow = "auto";
+                  const navbar = document.querySelector(".navbar");
+                  if (navbar) navbar.style.position = "";
+                }}
               >
                 Solicitar Presupuesto
               </Link>

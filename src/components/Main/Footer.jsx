@@ -228,7 +228,10 @@ function Footer({ subBg }) {
             </ul>
           </div>
           {/* El formulario SIEMPRE va debajo en mobile, y a la derecha en desktop */}
-          <div className="eg-form-col footer-form-mobile-bottom">
+          <div
+            className="eg-form-col footer-form-mobile-bottom"
+            id="cotizacion-form"
+          >
             <div className="eg-form-card eg-form-card-minimal">
               <h4 className="text-right mb-20">ENVIAR UN MENSAJE</h4>
 

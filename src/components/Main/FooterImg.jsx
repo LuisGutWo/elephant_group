@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const FooterImg = () => {
   return (
-    <div className="eg-footer-image-inner">
+    <div className="eg-footer-image-inner" id="footer-image">
       <Image
         src="/assets/light/imgs/header/Banner_Contacto.webp"
         alt="Letrero publicitario de Elephant Group en Valparaíso - Imagen decorativa del pie de página"

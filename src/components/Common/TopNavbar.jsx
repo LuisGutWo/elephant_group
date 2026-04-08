@@ -1,8 +1,10 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { FaWhatsapp } from "react-icons/fa";
+import { useRouter } from "next/router";
 
 const TopNavbar = ({ mainBg, curve }) => {
+  const router = useRouter();
   const handleWhatsAppClick = () => {
     if (window == null || window.location == null) {
       console.error(
@@ -23,20 +25,24 @@ const TopNavbar = ({ mainBg, curve }) => {
 
   const handleQuoteClick = (e) => {
     e.preventDefault();
-    const formSection = document.getElementById("cotizacion-form");
+    if (router.pathname === "/" || router.pathname === "/home") {
+      const formSection = document.getElementById("footer-image");
 
-    if (formSection) {
-      const navbarHeight = 80;
-      const elementPosition = formSection.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - navbarHeight;
+      if (formSection) {
+        const navbarHeight = 80;
+        const elementPosition = formSection.getBoundingClientRect().top;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - navbarHeight;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      } else {
+        console.warn("Formulario no encontrado en la página");
+      }
     } else {
-      console.warn("Formulario no encontrado en la página");
+      router.push("/contact");
     }
   };
 
@@ -49,6 +55,7 @@ const TopNavbar = ({ mainBg, curve }) => {
             className="top__navbar-link"
             href="https://www.instagram.com/elephantgroupchile/"
             rel="noopener noreferrer"
+            target="_blank"
             aria-label="Instagram"
           >
             <svg
@@ -64,6 +71,7 @@ const TopNavbar = ({ mainBg, curve }) => {
             className="top__navbar-link"
             href="https://web.facebook.com/elephantgroupchile"
             rel="noopener noreferrer"
+            target="_blank"
             aria-label="Facebook"
           >
             <svg

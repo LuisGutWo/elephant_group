@@ -1,7 +1,7 @@
 <?php
 
 // configure
-$from = 'Demo contact form <demo@domain.com>';
+$from = 'Demo contact form <mail@elephantgroup.cl>';
 $sendTo = 'Test contact form <ventas@elephantgroup.cl>'; // Add Your Email
 $subject = 'New message from contact form';
 $fields = array('name' => 'Nombre', 'subject' => 'Tema', 'email' => 'Email', 'message' => 'Mensaje'); // array variable name => Text to appear in the email

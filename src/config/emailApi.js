@@ -24,7 +24,7 @@ export const EMAIL_API = {
       ? "/api/send-contact"
       : isNetlify
       ? "/.netlify/functions/send-contact"
-      : "/api/send-contact.php",
+      : "/send-contact.php",
   sendSimpleContact:
     isDevelopment && isLocalhost
       ? "http://localhost:3001/send-simple-contact"
@@ -32,7 +32,7 @@ export const EMAIL_API = {
       ? "/api/send-simple-contact"
       : isNetlify
       ? "/.netlify/functions/send-simple-contact"
-      : "/api/send-simple-contact.php",
+      : "/send-simple-contact.php",
 };
 
 export const ENV_INFO = {
