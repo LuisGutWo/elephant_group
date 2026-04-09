@@ -28,6 +28,7 @@
     align-items: center;
   }
   .about-item {
+    flex: 1 1 200px;
     max-width: 90vw;
     min-width: 0;
     height: 1rem;
@@ -396,8 +397,7 @@ a:focus {
 }
 .eg-form-card-minimal {
   width: 100%;
-  max-width: 370px;
-  background: rgba(255, 255, 255, 0.97);
+  max-width: 420px;
   border-radius: 1.25rem;
   box-shadow: 0 6px 32px rgba(30, 30, 30, 0.18),
     0 2px 16px rgba(30, 30, 30, 0.1);
@@ -630,7 +630,7 @@ a:focus {
   opacity: 1;
 }
 .eg-clients-bg {
-  background: linear-gradient(135deg, #f8fafc 0%, #f3f4f6 100%);
+  background: #ededed;
   min-height: 480px;
   padding-top: 4.5rem;
   padding-bottom: 4.5rem;
@@ -641,11 +641,6 @@ a:focus {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
   }
-}
-/* Fondo claro y contrastante para sección Clientes */
-.eg-clients-bg {
-  background: linear-gradient(135deg, #f8fafc 0%, #f3f4f6 100%);
-  /* Alternativa: background: #f7f7f9; */
 }
 /* ====================== Products Grid Moderno ====================== */
 .eg-products-grid {

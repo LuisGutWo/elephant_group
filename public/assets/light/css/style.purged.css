@@ -63,7 +63,7 @@ img {
 /* New about section
 -----------------------------------------------------------------*/
 .eg-about {
-  background: #f7f7f7;
+  background: #ededed;
   color: #222;
   padding: 2rem 0;
 }
@@ -1512,7 +1512,7 @@ body.loaded {
   align-items: center;
 }
 .eg-form-card {
-  background: #e7e7e7;
+  background: #ededed;
   padding: 3rem !important;
   top: -18rem;
   position: absolute;
