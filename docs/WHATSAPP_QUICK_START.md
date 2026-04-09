@@ -1,3 +1,0 @@
-# WHATSAPP QUICK START
-
-(Contenido original de WHATSAPP_QUICK_START.md)

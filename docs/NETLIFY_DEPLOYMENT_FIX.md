@@ -1,3 +1,0 @@
-# NETLIFY DEPLOYMENT FIX
-
-(Contenido original de NETLIFY_DEPLOYMENT_FIX.md)
