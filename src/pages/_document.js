@@ -50,12 +50,7 @@ export default function Document() {
         ></script>
         {/* ------ Portfolio Debug Script ------ */}
         <script async src="/assets/js/portfolio-debug.js"></script>
-        {/* ------ Light Theme Stylesheets ------ */}
-        <link rel="stylesheet" href="/assets/light/css/plugins.css" />
-        <link rel="stylesheet" href="/assets/light/css/style.purged.css" />
-        <link rel="stylesheet" href="/assets/css/portfolio-masonry.css" />
-        <link rel="stylesheet" href="/assets/css/portfolio-fix.css" />
-        <link rel="stylesheet" href="/assets/css/portfolio-isotope.css" />
+        {/* ------ Light Theme Stylesheets migrados a _app.js ------ */}
       </Head>
       <body>
         <Main />

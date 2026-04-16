@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 //= Data
 import data from "@/data/Main/services.json";
@@ -29,11 +30,19 @@ function Services() {
                 className="d-flex flex-wrap flex-column justify-content-center align-items-center arrow mt-40"
               >
                 <div className="mb-40">
-                  <img
+                  <Image
                     src={`/assets/light${item.image}`}
                     alt="Service Icon Image - Elephant Group"
                     className="img-fluid w-100 h-100 mb-20"
-                    style={{ maxWidth: "100px", maxHeight: "100px" }}
+                    width={100}
+                    height={100}
+                    style={{
+                      maxWidth: "100px",
+                      maxHeight: "100px",
+                      width: "100%",
+                      height: "auto",
+                    }}
+                    priority={false}
                   />
                 </div>
                 <h4

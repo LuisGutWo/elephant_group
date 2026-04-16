@@ -7,6 +7,11 @@ import "swiper/css/bundle";
 // import "@/styles/globals.css";
 import "@/styles/globals.purged.css";
 import "@/styles/whatsapp-widget.css";
+import "../../public/assets/light/css/plugins.css";
+import "../../public/assets/light/css/style.purged.css";
+import "../../public/assets/css/portfolio-masonry.css";
+import "../../public/assets/css/portfolio-fix.css";
+import "../../public/assets/css/portfolio-isotope.css";
 import RouteProgress from "@/components/Common/RouteProgress";
 
 function App({ Component, pageProps }) {
@@ -63,9 +68,9 @@ function App({ Component, pageProps }) {
               console.error(`Error loading script ${src}:`, e?.message ?? e)
             }
           />
-        )
+        ),
       )}
-    </>
+    </>,
   );
 }
 
