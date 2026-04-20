@@ -302,7 +302,6 @@ h6 {
 /* Mobile: alineado a la izquierda y con mayor separación inferior */
 .eg-socials-footer-adaptive {
   width: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
   margin: 0.5rem 0 3.5rem 0;
@@ -311,13 +310,15 @@ h6 {
 }
 @media (min-width: 901px) {
   .eg-socials-footer-adaptive {
-    width: 100%;
-    justify-content: center;
-    margin: 1.2rem auto 2rem auto;
-    padding: 0;
-    position: static;
-    left: auto;
-    right: auto;
+    .eg-form-card-minimal {
+      width: 100%;
+      justify-content: center;
+      margin: 1.2rem auto 2rem auto;
+      padding: 0;
+      position: static;
+      left: auto;
+      right: auto;
+    }
   }
 }
 /* Reducir margen inferior de la clase eg-form para el formulario del footer */
@@ -460,18 +461,19 @@ a:focus {
     position: static;
     z-index: auto;
   }
-
   /* Invertir orden: formulario arriba, contacto abajo */
   .footer-responsive-minimal .eg-form-col {
     order: 1;
   }
-  .footer-responsive-minimal .eg-contact-col {
-    order: 2;
-  }
-  /* Asegurar que las redes sociales queden siempre debajo */
-  .footer-responsive-minimal .eg-socials-footer-adaptive {
-    order: 3;
-    width: 100%;
+  .footer-responsive-minimal .eg-form-col > .eg-socials.minimal {
+    .footer-responsive-minimal .eg-contact-col {
+      order: 2;
+    }
+    /* Asegurar que las redes sociales queden siempre debajo */
+    .footer-responsive-minimal .eg-socials-footer-adaptive {
+      order: 3;
+      width: 100%;
+    }
   }
 }
 @media (max-width: 600px) {

@@ -20,19 +20,11 @@ export const EMAIL_API = {
   sendContact:
     isDevelopment && isLocalhost
       ? "http://localhost:3001/send-contact"
-      : isVercel
-      ? "/api/send-contact"
-      : isNetlify
-      ? "/.netlify/functions/send-contact"
-      : "/send-contact.php",
+      : "/api/send-contact",
   sendSimpleContact:
     isDevelopment && isLocalhost
       ? "http://localhost:3001/send-simple-contact"
-      : isVercel
-      ? "/api/send-simple-contact"
-      : isNetlify
-      ? "/.netlify/functions/send-simple-contact"
-      : "/send-simple-contact.php",
+      : "/api/send-simple-contact",
 };
 
 export const ENV_INFO = {

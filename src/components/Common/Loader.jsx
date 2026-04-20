@@ -30,98 +30,115 @@ function Loader() {
 
     try {
       // Configuración inicial optimizada
-      gsap.set(".loader-wrap", { zIndex: 99999, opacity: 1 });
-      gsap.set(".loader-logo", { scale: 0.3, opacity: 0, rotation: -10 });
-      gsap.set(".loader-progress", { width: 0 });
-      gsap.set(".loader-text", { opacity: 0, y: 20 });
+      if (document.querySelector(".loader-wrap")) {
+        gsap.set(".loader-wrap", { zIndex: 99999, opacity: 1 });
+      }
+      if (document.querySelector(".loader-logo")) {
+        gsap.set(".loader-logo", { scale: 0.3, opacity: 0, rotation: -10 });
+      }
+      if (document.querySelector(".loader-progress")) {
+        gsap.set(".loader-progress", { width: 0 });
+      }
+      if (document.querySelector(".loader-text")) {
+        gsap.set(".loader-text", { opacity: 0, y: 20 });
+      }
 
-      tl = gsap.timeline({
-        onComplete: () => {
-          setIsLoading(false);
-        },
-      });
+      // Solo crear la animación si existen los elementos principales
+      if (
+        document.querySelector(".loader-logo") &&
+        document.querySelector(".loader-wrap")
+      ) {
+        tl = gsap.timeline({
+          onComplete: () => {
+            setIsLoading(false);
+          },
+        });
 
-      // Animación mejorada del logo
-      tl.to(".loader-logo", {
-        scale: 1,
-        opacity: 1,
-        rotation: 0,
-        duration: 0.8,
-        ease: "elastic.out(1, 0.5)",
-        delay: 0.2,
-      })
-        // Mostrar texto de carga
-        .to(
-          ".loader-text",
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.3,
-            ease: "power2.out",
-          },
-          "-=0.3",
-        )
-        // Animación de la barra de progreso
-        .to(
-          ".loader-progress",
-          {
-            width: "100%",
-            duration: 1.0,
-            ease: "power2.out",
-          },
-          "-=0.1",
-        )
-        // Pequeña celebración al completar
-        .to(".loader-logo", {
+        // Animación mejorada del logo
+        tl.to(".loader-logo", {
+          scale: 1,
+          opacity: 1,
+          rotation: 0,
+          duration: 0.8,
+          ease: "elastic.out(1, 0.5)",
+          delay: 0.2,
+        });
+        if (document.querySelector(".loader-text")) {
+          tl.to(
+            ".loader-text",
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.3,
+              ease: "power2.out",
+            },
+            "-=0.3",
+          );
+        }
+        if (document.querySelector(".loader-progress")) {
+          tl.to(
+            ".loader-progress",
+            {
+              width: "100%",
+              duration: 1.0,
+              ease: "power2.out",
+            },
+            "-=0.1",
+          );
+        }
+        tl.to(".loader-logo", {
           scale: 1.05,
           duration: 0.15,
           yoyo: true,
           repeat: 1,
           ease: "power2.inOut",
-        })
-        // Ocultar texto
-        .to(
-          ".loader-text",
-          {
-            opacity: 0,
-            y: -10,
-            duration: 0.2,
-            ease: "power2.in",
-          },
-          "-=0.1",
-        )
-        // Desvanecimiento final
-        .to(".loader-wrap", {
+        });
+        if (document.querySelector(".loader-text")) {
+          tl.to(
+            ".loader-text",
+            {
+              opacity: 0,
+              y: -10,
+              duration: 0.2,
+              ease: "power2.in",
+            },
+            "-=0.1",
+          );
+        }
+        tl.to(".loader-wrap", {
           opacity: 0,
           duration: 0.5,
           ease: "power2.inOut",
           delay: 0.3,
-        })
-        .to(".loader-wrap", {
+        }).to(".loader-wrap", {
           display: "none",
           zIndex: -1,
-        })
-        // Animación de entrada del contenido
-        .from(
-          "header",
-          {
-            y: -30,
-            opacity: 0,
-            duration: 0.6,
-            ease: "power3.out",
-          },
-          "-=0.4",
-        )
-        .from(
-          "header .container",
-          {
-            y: 20,
-            opacity: 0,
-            duration: 0.5,
-            ease: "power2.out",
-          },
-          "-=0.5",
-        );
+        });
+        if (document.querySelector("header")) {
+          tl.from(
+            "header",
+            {
+              y: -30,
+              opacity: 0,
+              duration: 0.6,
+              ease: "power3.out",
+            },
+            "-=0.4",
+          );
+        }
+        if (document.querySelector("header .container")) {
+          tl.from(
+            "header .container",
+            {
+              y: 20,
+              opacity: 0,
+              duration: 0.5,
+              ease: "power2.out",
+            },
+            "-=0.5",
+          );
+        }
+      }
     } catch (error) {
       console.error("Error in Loader component:", error);
       // Fallback mejorado

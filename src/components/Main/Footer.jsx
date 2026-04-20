@@ -34,7 +34,10 @@ function Footer({ subBg }) {
   }, [status]);
 
   useEffect(() => {
-    if (window.innerWidth > 991) {
+    if (
+      window.innerWidth > 991 &&
+      document.querySelector(".footer-container")
+    ) {
       gsap.set(".footer-container", { yPercent: -30 });
       const uncover = gsap.timeline({ paused: true });
       uncover.to(".footer-container", { yPercent: 0, ease: "none" });
@@ -185,7 +188,7 @@ function Footer({ subBg }) {
               contactType: "customer service",
               areaServed: "CL",
               availableLanguage: ["Spanish"],
-              email: "contacto@elephantgroup.cl",
+              email: "ventas@elephantgroup.cl",
             },
           }),
         }}
@@ -215,7 +218,7 @@ function Footer({ subBg }) {
                 <span className="eg-icon">{mailSvg}</span>
                 <div>
                   <strong>Correo electrónico</strong>
-                  <div>contacto@elephantgroup.cl</div>
+                  <div>ventas@elephantgroup.cl</div>
                 </div>
               </li>
               <li>
