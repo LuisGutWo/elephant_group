@@ -117,15 +117,17 @@ try {
 <head>
   <meta charset='UTF-8'>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-    .header { background-color: #007bff; color: white; padding: 20px; border-radius: 5px 5px 0 0; }
-    .content { background-color: #f9f9f9; padding: 20px; }
-    .section { background-color: white; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #007bff; }
-    .label { font-weight: bold; color: #555; }
-    .value { color: #333; margin-bottom: 10px; }
-    .message-box { background-color: #f5f5f5; padding: 15px; border-radius: 5px; white-space: pre-line; }
-    .footer { text-align: center; color: #777; font-size: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; }
+    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #25282a; background: #fffbe9; }
+    .container { max-width: 600px; margin: 0 auto; padding: 20px; background: #fff; border-radius: 1.2rem; box-shadow: 0 6px 32px rgba(201,150,26,0.13), 0 2px 16px rgba(30,30,30,0.08); border: 2px solid #c9961a; }
+    .header { background: linear-gradient(90deg, #c9961a 60%, #fffbe9 100%); color: #25282a; padding: 24px 20px; border-radius: 1.2rem 1.2rem 0 0; text-align: center; border-bottom: 2.5px solid #c9961a; }
+    .header h2 { margin: 0; font-size: 1.5rem; letter-spacing: 0.02em; }
+    .content { background: #fffbe9; padding: 20px; border-radius: 0 0 1.2rem 1.2rem; }
+    .section { background: #fff; padding: 18px; margin: 18px 0; border-radius: 0.8rem; border-left: 5px solid #c9961a; box-shadow: 0 2px 8px rgba(201,150,26,0.06); }
+    .label { font-weight: bold; color: #c9961a; }
+    .value { color: #25282a; margin-bottom: 10px; }
+    .message-box { background: #f5f5f5; padding: 15px; border-radius: 0.6rem; white-space: pre-line; border: 1px solid #ececec; }
+    .footer { text-align: center; color: #777; font-size: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #c9961a; }
+    a { color: #c9961a; text-decoration: none; }
   </style>
 </head>
 <body>
@@ -133,21 +135,18 @@ try {
     <div class='header'>
       <h2 style='margin: 0;'>✉️ $subject</h2>
     </div>
-
     <div class='content'>
       <div class='section'>
-        <h3 style='color: #007bff; margin-top: 0;'>👤 Datos del Cliente</h3>
+        <h3 style='color: #c9961a; margin-top: 0;'>👤 Datos del Cliente</h3>
         <div class='value'><span class='label'>Nombre:</span> $name</div>
         <div class='value'><span class='label'>Email:</span> <a href='mailto:$email'>$email</a></div>
       </div>
-
       <div class='section'>
-        <h3 style='color: #007bff; margin-top: 0;'>💬 Mensaje</h3>
+        <h3 style='color: #c9961a; margin-top: 0;'>💬 Mensaje</h3>
         <div class='message-box'>$message</div>
       </div>
-
       <div class='footer'>
-        <p>Enviado desde la web</p>
+        <p>Enviado desde la web Elephant Group</p>
         <p>$currentDate</p>
       </div>
     </div>
