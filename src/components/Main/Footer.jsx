@@ -7,7 +7,7 @@ import {
   linkedinSvg,
   mailSvg,
   timeSvg,
-  whatsAppSvg,
+  whatsAppSvg2,
 } from "@/data/icons";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -140,14 +140,14 @@ function Footer({ subBg }) {
       console.log("[Footer] Mensaje enviado correctamente");
       setStatus({
         type: "success",
-        msg: "Gracias — mensaje enviado. Le contactaremos pronto.",
+        msg: "¡Tu mensaje fue enviado con éxito! Nuestro equipo te responderá pronto. ¡Gracias por confiar en Elephant Group!",
       });
       setForm({ name: "", email: "", message: "" });
     } catch (err) {
       console.error("[Footer] Error en envío:", err);
       setStatus({
         type: "error",
-        msg: "Error enviando el mensaje. Intente nuevamente.",
+        msg: "No pudimos enviar tu mensaje. Por favor revisa tus datos o intenta nuevamente en unos minutos. Si el problema persiste, Contáctanos por WhatsApp o correo.",
       });
     } finally {
       setLoading(false);
@@ -208,7 +208,7 @@ function Footer({ subBg }) {
                 </div>
               </li>
               <li>
-                <span className="eg-icon">{whatsAppSvg}</span>
+                <span className="eg-icon">{whatsAppSvg2}</span>
                 <div>
                   <strong>Teléfono</strong>
                   <div>+56 9 93239203</div>
@@ -260,11 +260,13 @@ function Footer({ subBg }) {
                 >
                   <Modal.Title className="d-flex align-items-center gap-2">
                     {status.type === "success" ? (
-                      <span style={{ fontSize: 22, color: "#25D366" }}>✔️</span>
+                      <span style={{ fontSize: 24, color: "#25D366" }}>✔️</span>
                     ) : (
-                      <span style={{ fontSize: 22, color: "#dc3545" }}>⛔</span>
+                      <span style={{ fontSize: 24, color: "#dc3545" }}>⛔</span>
                     )}
-                    {status.type === "success" ? "¡Mensaje enviado!" : "Error"}
+                    {status.type === "success"
+                      ? "¡Enviado correctamente!"
+                      : "No se pudo enviar"}
                   </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -358,37 +360,39 @@ function Footer({ subBg }) {
                 )}
               </form>
             </div>
+            <div className="eg-footer-social">
+              <h5 className="eg-footer-social__title">Síguenos en:</h5>
+              <div className="eg-social-links">
+                <a
+                  href="https://www.instagram.com/elephantgroupchile/"
+                  aria-label="Instagram"
+                  className="eg-social"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {instagramSvg}
+                </a>
+                <a
+                  href="https://www.facebook.com/elephantgroupchile"
+                  aria-label="Facebook"
+                  className="eg-social"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {facebookSvg}
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/elephantgroupchile/"
+                  aria-label="LinkedIn"
+                  className="eg-social"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {linkedinSvg}
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-        {/* Redes sociales SOLO visibles debajo de CONTACTO en mobile, y a la derecha del formulario en desktop */}
-        <div className="eg-socials minimal eg-socials-footer-adaptive">
-          <a
-            href="https://www.instagram.com/elephantgroupchile/"
-            aria-label="Instagram"
-            className="eg-social"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {instagramSvg}
-          </a>
-          <a
-            href="https://www.facebook.com/elephantgroupchile"
-            aria-label="Facebook"
-            className="eg-social"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {facebookSvg}
-          </a>
-          <a
-            href="https://www.linkedin.com/company/elephantgroupchile/"
-            aria-label="LinkedIn"
-            className="eg-social"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {linkedinSvg}
-          </a>
         </div>
       </div>
     </footer>

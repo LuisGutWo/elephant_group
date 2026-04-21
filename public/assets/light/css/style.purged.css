@@ -112,7 +112,11 @@ img {
 /* Responsive */
 @media (max-width: 900px) {
   .about-features {
-    gap: 18px;
+    gap: 8rem;
+    margin-bottom: 5rem;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
   }
   .about-item {
     width: 100%;
@@ -1363,9 +1367,31 @@ body.loaded {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-
-  @media screen and (max-width: 768px) {
-    height: 100%;
+}
+@media (max-width: 900px) {
+  .eg-footer-image-inner {
+    height: 180px;
+    min-height: 120px;
+    max-height: 220px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+  }
+  .eg-footer-main-image {
+    object-fit: contain !important;
+    object-position: center center !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100px;
+    max-height: 220px;
+    display: block;
+  }
+}
+@media (max-width: 500px) {
+  .eg-footer-image-inner {
+    height: 120px;
+    min-height: 100px;
+    max-height: 150px;
   }
 }
 .eg-footer-image-inner::after {
@@ -1421,6 +1447,11 @@ body.loaded {
 .eg-contact-col {
   flex: 1 1 45%;
   max-width: 32.5rem;
+
+  @media screen and (max-width: 768px) {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
 .eg-contact-col h3 {
   font-size: 1.1rem;

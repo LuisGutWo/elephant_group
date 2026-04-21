@@ -70,7 +70,7 @@ function Clients() {
     >
       <div className="container">
         <div className="text-center mb-5">
-          <span className="eg-section-eyebrow">Confíanza y Experiencia</span>
+          <span className="eg-section-eyebrow">Confianza y Experiencia</span>
           <h2
             id="clients-heading"
             className="eg-section-title"
@@ -95,7 +95,11 @@ function Clients() {
           <meta itemProp="numberOfItems" content={data.length} />
 
           {!loadSwiper ? (
-            <div className="clients-loading-minimal" aria-live="polite" aria-busy="true">
+            <div
+              className="clients-loading-minimal"
+              aria-live="polite"
+              aria-busy="true"
+            >
               {Array.from({ length: 6 }).map((_, index) => (
                 <div
                   key={index}
@@ -124,7 +128,7 @@ function Clients() {
                       src={item}
                       alt={`Logo cliente ${
                         index + 1
-                      } - Empresa que confia en Elephant Group para implementos publicitarios en Valparaíso, Viña del Mar y la V Region`}
+                      } - Empresa que confía en Elephant Group para implementos publicitarios en Valparaíso, Viña del Mar y la V Region`}
                       width={160}
                       height={100}
                       className="eg-client-logo"
