@@ -1,5 +1,5 @@
 import EMAIL_API from "@/config/emailApi";
-import ReCAPTCHA from "react-google-recaptcha";
+import dynamic from "next/dynamic";
 import { useAutoSave } from "@/utils/hooks/useAutoSave";
 import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { Form as RBForm, Button, ProgressBar, Modal } from "react-bootstrap";
@@ -39,6 +39,10 @@ const MATERIALS = ["Papel couchê", "Cartulina", "Vinilo", "Algodón"];
 const SIZES = Array.from({ length: 40 }, (_, i) => (i + 1) * 5); // 5,10,...200 cm
 const QUANTITIES = Array.from({ length: 100 }, (_, i) => i + 1);
 
+const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"), {
+  ssr: false,
+});
+
 function Form() {
   // Estados principales del formulario
   const [form, setForm] = useState({
@@ -66,6 +70,25 @@ function Form() {
   const [loading, setLoading] = useState(false);
   const [lastSubmit, setLastSubmit] = useState(0);
   const [showPreview, setShowPreview] = useState(false);
+
+  const recaptchaSiteKey = useMemo(() => {
+    const isLocalhostClient =
+      typeof window !== "undefined" &&
+      (window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1");
+
+    if (isLocalhostClient) {
+      return (
+        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_LOCALHOST ||
+        "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+      );
+    }
+
+    return (
+      process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ||
+      "6LeAQwYtAAAAAJ3d21yVvBH364cTa931gbZujLg8"
+    );
+  }, []);
 
   // Hooks personalizados
   const {
@@ -201,7 +224,7 @@ function Form() {
   }, [clearFile, clearAllErrors]);
 
   // Función separada para enviar email de respaldo
-  const sendBackupEmail = async (formData, detailsData) => {
+  const sendBackupEmail = async (formData, detailsData, token) => {
     try {
       console.log("📧 Iniciando envío de email de respaldo...");
       console.log("📝 Datos a enviar:", {
@@ -214,7 +237,11 @@ function Form() {
         productType: detailsData.productType,
       });
 
-      const payload = { ...formData, details: detailsData };
+      const payload = {
+        ...formData,
+        details: detailsData,
+        recaptchaToken: token,
+      };
 
       // Calcular tamaño aproximado del payload
       const payloadSize = JSON.stringify(payload).length;
@@ -576,9 +603,10 @@ function Form() {
               {/* reCAPTCHA Google */}
               <div className="my-3 d-flex justify-content-center">
                 <ReCAPTCHA
-                  sitekey="6LeAQwYtAAAAAJ3d21yVvBH364cTa931gbZujLg8"
-                  onChange={setRecaptchaToken}
-                  value={recaptchaToken}
+                  sitekey={recaptchaSiteKey}
+                  onChange={(token) => setRecaptchaToken(token || "")}
+                  onExpired={() => setRecaptchaToken("")}
+                  onErrored={() => setRecaptchaToken("")}
                 />
               </div>
               {/* Botones de acción debajo de productos */}

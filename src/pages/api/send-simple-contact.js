@@ -125,7 +125,6 @@ export default async function handler(req, res) {
     res.status(200).json({ message: "Correo enviado correctamente" });
   } catch (err) {
     // Loguear error detallado solo en backend
-    // eslint-disable-next-line no-console
     console.error("[API] Error enviando correo:", err);
     // No mostrar detalles técnicos al usuario
     res
