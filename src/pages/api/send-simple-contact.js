@@ -97,12 +97,12 @@ export default async function handler(req, res) {
 
   try {
     const transporter = nodemailer.createTransport({
-      host: "mail.elephantgroup.cl",
+      host: SMTP_HOST,
       port: 587,
       secure: false, // false para 587 (TLS)
       auth: {
-        user: "ventas@elephantgroup.cl",
-        pass: ")3NOEsL)inezyYmR",
+        user: SMTP_USER,
+        pass: SMTP_PASS,
       },
       tls: {
         rejectUnauthorized: false,
