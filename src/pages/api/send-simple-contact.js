@@ -11,7 +11,39 @@ export default async function handler(req, res) {
     return;
   }
 
-  const { name, email, message } = req.body || {};
+  const { name, email, message, recaptchaToken } = req.body || {};
+  // Validar reCAPTCHA v2
+  if (!recaptchaToken) {
+    res.status(400).json({ message: "Falta el token de reCAPTCHA." });
+    return;
+  }
+  // Verificar con Google reCAPTCHA
+  const secretKey =
+    process.env.RECAPTCHA_SECRET_KEY ||
+    (process.env.NODE_ENV === "development"
+      ? "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe"
+      : "");
+  if (!secretKey) {
+    res.status(500).json({ message: "RECAPTCHA_SECRET_KEY no configurada." });
+    return;
+  }
+  try {
+    const recaptchaRes = await fetch(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`,
+      { method: "POST" },
+    );
+    const recaptchaData = await recaptchaRes.json();
+    if (!recaptchaData.success) {
+      res.status(400).json({
+        message: "Error de verificación reCAPTCHA. Intenta nuevamente.",
+        details: recaptchaData["error-codes"] || [],
+      });
+      return;
+    }
+  } catch (err) {
+    res.status(400).json({ message: "No se pudo verificar reCAPTCHA." });
+    return;
+  }
   // Sanitizar entradas para evitar XSS y caracteres peligrosos
   const sanitize = (str) => xss((str || "").trim());
   const trimmedName = sanitize(name);
@@ -41,20 +73,16 @@ export default async function handler(req, res) {
     return;
   }
   if (!isValidEmail(trimmedEmail) || trimmedEmail.length > 80) {
-    res
-      .status(400)
-      .json({
-        message: "Ingrese un correo electrónico válido (máx. 80 caracteres).",
-      });
+    res.status(400).json({
+      message: "Ingrese un correo electrónico válido (máx. 80 caracteres).",
+    });
     return;
   }
   if (isSpammy(trimmedMessage) || trimmedMessage.length > 1000) {
-    res
-      .status(400)
-      .json({
-        message:
-          "El mensaje debe tener entre 10 y 1000 caracteres y no ser repetitivo.",
-      });
+    res.status(400).json({
+      message:
+        "El mensaje debe tener entre 10 y 1000 caracteres y no ser repetitivo.",
+    });
     return;
   }
 

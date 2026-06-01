@@ -38,9 +38,10 @@ $data = json_decode($input, true);
 error_log("📨 API /send-simple-contact llamado");
 
 // Validar datos requeridos
-$name = isset($data['name']) ? trim($data['name']) : '';
+
+$name = isset($data['name']) ? htmlspecialchars(trim($data['name']), ENT_QUOTES, 'UTF-8') : '';
 $email = isset($data['email']) ? trim($data['email']) : '';
-$message = isset($data['message']) ? trim($data['message']) : '';
+$message = isset($data['message']) ? htmlspecialchars(trim($data['message']), ENT_QUOTES, 'UTF-8') : '';
 
 if (empty($name) || empty($email) || empty($message)) {
     http_response_code(400);

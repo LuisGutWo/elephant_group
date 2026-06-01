@@ -1,4 +1,5 @@
 import EMAIL_API from "@/config/emailApi";
+import ReCAPTCHA from "react-google-recaptcha";
 import { useAutoSave } from "@/utils/hooks/useAutoSave";
 import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { Form as RBForm, Button, ProgressBar, Modal } from "react-bootstrap";
@@ -59,6 +60,7 @@ function Form() {
     comments: "",
   });
   const [status, setStatus] = useState({ type: "", message: "" });
+  const [recaptchaToken, setRecaptchaToken] = useState("");
   const [showStatusModal, setShowStatusModal] = useState(false);
   const STATUS_AUTO_CLOSE = 4000; // ms
   const [loading, setLoading] = useState(false);
@@ -329,6 +331,15 @@ function Form() {
         return;
       }
 
+      // Validar reCAPTCHA
+      if (!recaptchaToken) {
+        setStatus({
+          type: "error",
+          message: "Por favor completa el reCAPTCHA para continuar.",
+        });
+        return;
+      }
+
       setLoading(true);
       setLastSubmit(now);
 
@@ -392,7 +403,8 @@ function Form() {
         clearSaved(); // Limpiar localStorage después de envío exitoso
 
         // Enviar email de respaldo de forma asíncrona
-        sendBackupEmail(formBackup, detailsBackup);
+        sendBackupEmail(formBackup, detailsBackup, recaptchaToken);
+        setRecaptchaToken(""); // Limpiar reCAPTCHA tras envío
       } catch (err) {
         console.error("❌ Error en envío:", err);
         setStatus({
@@ -405,16 +417,17 @@ function Form() {
       }
     },
     [
-      form,
-      details,
-      fileDetails,
       lastSubmit,
       validateAll,
+      form,
+      details,
+      recaptchaToken,
       focusFirstError,
-      processFile,
+      fileDetails,
       resetDetails,
       clearAllErrors,
       clearSaved,
+      processFile,
     ],
   );
 
@@ -560,6 +573,14 @@ function Form() {
                 fileError={fileError}
                 onFileChange={handleFileSelect}
               />
+              {/* reCAPTCHA Google */}
+              <div className="my-3 d-flex justify-content-center">
+                <ReCAPTCHA
+                  sitekey="6LeAQwYtAAAAAJ3d21yVvBH364cTa931gbZujLg8"
+                  onChange={setRecaptchaToken}
+                  value={recaptchaToken}
+                />
+              </div>
               {/* Botones de acción debajo de productos */}
               <div className="form-actions-elegant mt-4 d-flex flex-wrap gap-2 justify-content-center">
                 <Button

@@ -8,6 +8,7 @@ const nextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true,
+    qualities: [75, 90],
   },
   reactStrictMode: false,
   sassOptions: {

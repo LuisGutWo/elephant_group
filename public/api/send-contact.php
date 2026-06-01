@@ -34,21 +34,36 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // Cargar configuración
 require_once __DIR__ . '/config.php';
 
+
 // Obtener datos del POST
 $input = file_get_contents('php://input');
 $data = json_decode($input, true);
+
+// Validar reCAPTCHA
+$recaptcha = $data['recaptcha'] ?? '';
+$secret = '6LeAQwYtAAAAAL82YMcyEzSdgVbwCJsTmYlAjuLv';
+$recaptchaResponse = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$recaptcha");
+$recaptchaResult = json_decode($recaptchaResponse, true);
+if (!$recaptchaResult['success']) {
+  http_response_code(400);
+  echo json_encode(['message' => 'reCAPTCHA inválido']);
+  exit;
+}
 
 // Log de inicio
 error_log("📨 API /send-contact llamado");
 error_log("📝 Datos recibidos: " . print_r($data, true));
 
 // Validar datos requeridos
-$name = isset($data['name']) ? trim($data['name']) : '';
-$company = isset($data['company']) ? trim($data['company']) : '';
+
+$name = isset($data['name']) ? htmlspecialchars(trim($data['name']), ENT_QUOTES, 'UTF-8') : '';
+$company = isset($data['company']) ? htmlspecialchars(trim($data['company']), ENT_QUOTES, 'UTF-8') : '';
 $email = isset($data['email']) ? trim($data['email']) : '';
-$phone = isset($data['phone']) ? trim($data['phone']) : '';
-$message = isset($data['message']) ? trim($data['message']) : '';
-$details = isset($data['details']) ? $data['details'] : [];
+$phone = isset($data['phone']) ? htmlspecialchars(trim($data['phone']), ENT_QUOTES, 'UTF-8') : '';
+$message = isset($data['message']) ? htmlspecialchars(trim($data['message']), ENT_QUOTES, 'UTF-8') : '';
+$details = isset($data['details']) ? array_map(function($v) {
+  return is_string($v) ? htmlspecialchars(trim($v), ENT_QUOTES, 'UTF-8') : $v;
+}, $data['details']) : [];
 
 if (empty($name) || empty($company) || empty($email) || empty($phone)) {
     http_response_code(400);
@@ -235,23 +250,54 @@ try {
 
     // Adjuntar archivo si existe
     if (!empty($details['fileData']) && !empty($details['fileName'])) {
-        try {
-            error_log("📎 Procesando archivo adjunto...");
+      try {
+        error_log("📎 Procesando archivo adjunto...");
 
-            // Extraer base64
-            if (preg_match('/^data:([^;]+);base64,(.+)$/', $details['fileData'], $matches)) {
-                $mimeType = $matches[1];
-                $base64Data = $matches[2];
-                $fileData = base64_decode($base64Data);
-
-                if ($fileData !== false) {
-                    $mail->addStringAttachment($fileData, $details['fileName'], 'base64', $mimeType);
-                    error_log("✅ Archivo adjunto preparado: " . $details['fileName']);
-                }
-            }
-        } catch (Exception $e) {
-            error_log("❌ Error procesando archivo adjunto: " . $e->getMessage());
+        // Validación de archivo
+        $allowedExtensions = [
+          'pdf' => ['mime' => 'application/pdf', 'maxSize' => 8 * 1024 * 1024],
+          'jpg' => ['mime' => 'image/jpeg', 'maxSize' => 5 * 1024 * 1024],
+          'jpeg' => ['mime' => 'image/jpeg', 'maxSize' => 5 * 1024 * 1024],
+          'png' => ['mime' => 'image/png', 'maxSize' => 5 * 1024 * 1024],
+          'ai' => ['mime' => 'application/postscript', 'maxSize' => 10 * 1024 * 1024],
+          'eps' => ['mime' => 'application/postscript', 'maxSize' => 10 * 1024 * 1024],
+        ];
+        $fileName = $details['fileName'];
+        $ext = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+        if (!isset($allowedExtensions[$ext])) {
+          http_response_code(400);
+          echo json_encode(['message' => 'Formato de archivo no permitido. Solo PDF, JPG, JPEG, PNG, AI, EPS']);
+          exit;
         }
+
+        // Extraer base64
+        if (preg_match('/^data:([^;]+);base64,(.+)$/', $details['fileData'], $matches)) {
+          $mimeType = $matches[1];
+          $base64Data = $matches[2];
+          $fileData = base64_decode($base64Data);
+
+          // Validar tamaño
+          if (strlen($fileData) > $allowedExtensions[$ext]['maxSize']) {
+            http_response_code(400);
+            echo json_encode(['message' => 'Archivo demasiado grande. Máximo permitido para ' . strtoupper($ext) . ': ' . ($allowedExtensions[$ext]['maxSize'] / 1024 / 1024) . 'MB']);
+            exit;
+          }
+
+          // Validar MIME
+          if (strpos($mimeType, explode('/', $allowedExtensions[$ext]['mime'])[0]) === false) {
+            http_response_code(400);
+            echo json_encode(['message' => 'Tipo de archivo no válido. Se esperaba ' . strtoupper($ext)]);
+            exit;
+          }
+
+          if ($fileData !== false) {
+            $mail->addStringAttachment($fileData, $fileName, 'base64', $mimeType);
+            error_log("✅ Archivo adjunto preparado: " . $fileName);
+          }
+        }
+      } catch (Exception $e) {
+        error_log("❌ Error procesando archivo adjunto: " . $e->getMessage());
+      }
     }
 
     // Enviar email

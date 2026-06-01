@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import { Modal } from "react-bootstrap";
 import {
   facebookSvg,
@@ -13,6 +14,16 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import EMAIL_API from "../../config/emailApi";
 
+const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"), {
+  ssr: false,
+});
+
+const RECAPTCHA_SITE_KEY =
+  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ||
+  (process.env.NODE_ENV === "development"
+    ? "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+    : "6LeAQwYtAAAAAJ3d21yVvBH364cTa931gbZujLg8");
+
 gsap.registerPlugin(ScrollTrigger);
 
 function Footer({ subBg }) {
@@ -21,6 +32,12 @@ function Footer({ subBg }) {
   const [showStatusModal, setShowStatusModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const STATUS_AUTO_CLOSE = 4000; // ms
+  const [recaptchaToken, setRecaptchaToken] = useState("");
+  const [isClient, setIsClient] = useState(false);
+  // Asegurar renderizado solo en cliente (Next.js SSR fix)
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   // Mostrar modal cuando status cambia a éxito o error
   useEffect(() => {
     if (status.type === "success" || status.type === "error") {
@@ -112,11 +129,21 @@ function Footer({ subBg }) {
         return;
       }
 
+      // Validar reCAPTCHA
+      if (!recaptchaToken) {
+        setStatus({
+          type: "error",
+          msg: "Por favor completa el reCAPTCHA para continuar.",
+        });
+        return;
+      }
+
       setLoading(true);
       console.log("[Footer] Enviando mensaje:", {
         name: form.name.trim(),
         email: form.email.trim(),
         message: form.message.trim(),
+        recaptchaToken,
       });
 
       const response = await fetch(EMAIL_API.sendSimpleContact, {
@@ -126,6 +153,7 @@ function Footer({ subBg }) {
           name,
           email,
           message,
+          recaptchaToken,
         }),
       });
 
@@ -143,6 +171,7 @@ function Footer({ subBg }) {
         msg: "¡Tu mensaje fue enviado con éxito! Nuestro equipo te responderá pronto. ¡Gracias por confiar en Elephant Group!",
       });
       setForm({ name: "", email: "", message: "" });
+      setRecaptchaToken("");
     } catch (err) {
       console.error("[Footer] Error en envío:", err);
       setStatus({
@@ -338,16 +367,97 @@ function Footer({ subBg }) {
                 <span id="footer-message-desc" className="visually-hidden">
                   Campo obligatorio. Escriba su mensaje.
                 </span>
-                <div className="eg-form-actions">
+                {/* Google reCAPTCHA, botón y redes sociales, uno debajo del otro */}
+                <div
+                  className="eg-form-actions"
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: 12,
+                  }}
+                >
+                  {isClient && (
+                    <ReCAPTCHA
+                      sitekey={RECAPTCHA_SITE_KEY}
+                      onChange={(token) => setRecaptchaToken(token || "")}
+                      onExpired={() => {
+                        setRecaptchaToken("");
+                      }}
+                      onErrored={() => {
+                        setRecaptchaToken("");
+                      }}
+                    />
+                  )}
                   <button
                     type="submit"
                     className="btn eg-btn-primary"
                     disabled={loading}
                     aria-label={loading ? "Enviando mensaje" : "Enviar mensaje"}
+                    style={{ marginTop: 8, minWidth: 140 }}
                   >
                     {loading ? "ENVIANDO..." : "ENVIAR"}
                   </button>
+                  {/* Redes sociales debajo del botón */}
+                  <div className="eg-footer-social" style={{ width: "100%" }}>
+                    <h5
+                      className="eg-footer-social__title"
+                      style={{ textAlign: "center" }}
+                    >
+                      Síguenos en:
+                    </h5>
+                    <div
+                      className="eg-social-links"
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        gap: 16,
+                      }}
+                    >
+                      <a
+                        href="https://www.instagram.com/elephantgroupchile/"
+                        aria-label="Instagram"
+                        className="eg-social"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {instagramSvg}
+                      </a>
+                      <a
+                        href="https://www.facebook.com/elephantgroupchile"
+                        aria-label="Facebook"
+                        className="eg-social"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {facebookSvg}
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/company/elephantgroupchile/"
+                        aria-label="LinkedIn"
+                        className="eg-social"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {linkedinSvg}
+                      </a>
+                    </div>
+                  </div>
                 </div>
+                {/* Mensaje de entorno de desarrollo para reCAPTCHA */}
+                {process.env.NODE_ENV === "development" && (
+                  <div
+                    style={{
+                      color: "#c9961a",
+                      fontSize: 13,
+                      marginTop: 8,
+                      textAlign: "center",
+                    }}
+                  >
+                    <b>Modo desarrollo:</b> El reCAPTCHA puede mostrar
+                    advertencias si la clave no es válida para localhost.
+                  </div>
+                )}
                 {/* Feedback accesible para lectores de pantalla */}
                 {status.type && (
                   <div
@@ -359,38 +469,6 @@ function Footer({ subBg }) {
                   </div>
                 )}
               </form>
-            </div>
-            <div className="eg-footer-social">
-              <h5 className="eg-footer-social__title">Síguenos en:</h5>
-              <div className="eg-social-links">
-                <a
-                  href="https://www.instagram.com/elephantgroupchile/"
-                  aria-label="Instagram"
-                  className="eg-social"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {instagramSvg}
-                </a>
-                <a
-                  href="https://www.facebook.com/elephantgroupchile"
-                  aria-label="Facebook"
-                  className="eg-social"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {facebookSvg}
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/elephantgroupchile/"
-                  aria-label="LinkedIn"
-                  className="eg-social"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {linkedinSvg}
-                </a>
-              </div>
             </div>
           </div>
         </div>

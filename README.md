@@ -61,9 +61,7 @@ Más detalles y troubleshooting en `md/RESUMEN_CAMBIOS.md` y `md/COMO_VER_LOS_CA
 
 - Los endpoints de contacto y cotización han sido migrados a rutas API de Next.js (`/api/send-contact` y `/api/send-simple-contact`).
 - Ya **no se requiere PHP ni funciones Netlify** para el backend de formularios en Vercel.
-- Configura las siguientes variables en Vercel:
-  - `NEXT_PUBLIC_WHATSAPP_NUMBER`
-  - `SMTP_HOST`, `SMTP_USER`, `SMTP_PASS`, `CONTACT_RECIPIENT`
+- Configura las siguientes variables en Vercel: `NEXT_PUBLIC_WHATSAPP_NUMBER`, `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`, `RECAPTCHA_SECRET_KEY`, `SMTP_HOST`, `SMTP_USER`, `SMTP_PASS`, `CONTACT_RECIPIENT`.
 - Revisa `.env.local.example` para el formato correcto.
 - El archivo `src/config/emailApi.js` detecta automáticamente el entorno (Vercel, Netlify, cPanel) y usa la API adecuada.
 - Si usas Vercel, los formularios funcionarán automáticamente usando las rutas API JS/TS.
@@ -109,6 +107,16 @@ Más detalles y troubleshooting en `md/RESUMEN_CAMBIOS.md` y `md/COMO_VER_LOS_CA
 
    - Formato: solo números, sin +, espacios ni guiones.
    - Ejemplos: Chile `56912345678`, México `5215512345678`, Argentina `5491112345678`.
+
+   Opcional (recomendado para pruebas reales fuera de localhost):
+
+   ```env
+   NEXT_PUBLIC_RECAPTCHA_SITE_KEY=tu_site_key_v2
+   RECAPTCHA_SECRET_KEY=tu_secret_key_v2
+   ```
+
+   - En desarrollo (`localhost`), si no defines estas variables, el proyecto usa las claves de prueba oficiales de Google para reCAPTCHA v2.
+   - En producción, debes configurar tus claves reales en el proveedor de hosting (por ejemplo, Vercel).
 
 4. Inicia el servidor de desarrollo:
 
@@ -166,8 +174,23 @@ Crea un archivo `.env.local` en la raíz:
 ```env
 # WhatsApp
 NEXT_PUBLIC_WHATSAPP_NUMBER=56912345678
-# Otras variables según necesidad
+
+# reCAPTCHA v2 (Frontend + Backend)
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=tu_site_key_v2
+RECAPTCHA_SECRET_KEY=tu_secret_key_v2
+
+# SMTP (API de contacto)
+SMTP_HOST=smtp.tu-proveedor.com
+SMTP_USER=usuario
+SMTP_PASS=contrasena
+CONTACT_RECIPIENT=ventas@tudominio.com
 ```
+
+Notas:
+
+- `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` se usa en el cliente (Footer y formularios).
+- `RECAPTCHA_SECRET_KEY` se usa solo en backend para verificar el token.
+- Si falta `RECAPTCHA_SECRET_KEY` en producción, el endpoint de contacto devolverá error de configuración.
 
 No subas `.env.local` a Git. Usa `.env.local.example` como plantilla.
 
