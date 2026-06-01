@@ -1,5 +1,6 @@
 import EMAIL_API from "@/config/emailApi";
 import dynamic from "next/dynamic";
+import { getRecaptchaSiteKey } from "@/config/recaptcha";
 import { useAutoSave } from "@/utils/hooks/useAutoSave";
 import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { Form as RBForm, Button, ProgressBar, Modal } from "react-bootstrap";
@@ -71,24 +72,8 @@ function Form() {
   const [lastSubmit, setLastSubmit] = useState(0);
   const [showPreview, setShowPreview] = useState(false);
 
-  const recaptchaSiteKey = useMemo(() => {
-    const isLocalhostClient =
-      typeof window !== "undefined" &&
-      (window.location.hostname === "localhost" ||
-        window.location.hostname === "127.0.0.1");
-
-    if (isLocalhostClient) {
-      return (
-        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_LOCALHOST ||
-        "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-      );
-    }
-
-    return (
-      process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ||
-      "6LeAQwYtAAAAAJ3d21yVvBH364cTa931gbZujLg8"
-    );
-  }, []);
+  const recaptchaSiteKey = useMemo(() => getRecaptchaSiteKey(), []);
+  const isRecaptchaConfigured = Boolean(recaptchaSiteKey);
 
   // Hooks personalizados
   const {
@@ -359,6 +344,13 @@ function Form() {
       }
 
       // Validar reCAPTCHA
+      if (!isRecaptchaConfigured) {
+        setStatus({
+          type: "error",
+          message: "reCAPTCHA no está configurado para este entorno.",
+        });
+        return;
+      }
       if (!recaptchaToken) {
         setStatus({
           type: "error",
@@ -455,6 +447,7 @@ function Form() {
       clearAllErrors,
       clearSaved,
       processFile,
+      isRecaptchaConfigured,
     ],
   );
 
@@ -602,12 +595,25 @@ function Form() {
               />
               {/* reCAPTCHA Google */}
               <div className="my-3 d-flex justify-content-center">
-                <ReCAPTCHA
-                  sitekey={recaptchaSiteKey}
-                  onChange={(token) => setRecaptchaToken(token || "")}
-                  onExpired={() => setRecaptchaToken("")}
-                  onErrored={() => setRecaptchaToken("")}
-                />
+                {isRecaptchaConfigured ? (
+                  <ReCAPTCHA
+                    sitekey={recaptchaSiteKey}
+                    onChange={(token) => setRecaptchaToken(token || "")}
+                    onExpired={() => setRecaptchaToken("")}
+                    onErrored={() => setRecaptchaToken("")}
+                  />
+                ) : (
+                  <div
+                    style={{
+                      color: "#dc3545",
+                      fontSize: 13,
+                      textAlign: "center",
+                    }}
+                  >
+                    reCAPTCHA no configurado. Define
+                    NEXT_PUBLIC_RECAPTCHA_SITE_KEY en Vercel.
+                  </div>
+                )}
               </div>
               {/* Botones de acción debajo de productos */}
               <div className="form-actions-elegant mt-4 d-flex flex-wrap gap-2 justify-content-center">

@@ -13,6 +13,7 @@ import {
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import EMAIL_API from "../../config/emailApi";
+import { getRecaptchaSiteKey } from "@/config/recaptcha";
 
 const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"), {
   ssr: false,
@@ -28,25 +29,8 @@ function Footer({ subBg }) {
   const STATUS_AUTO_CLOSE = 4000; // ms
   const [recaptchaToken, setRecaptchaToken] = useState("");
   const [isClient, setIsClient] = useState(false);
-
-  const recaptchaSiteKey = (() => {
-    const isLocalhostClient =
-      typeof window !== "undefined" &&
-      (window.location.hostname === "localhost" ||
-        window.location.hostname === "127.0.0.1");
-
-    if (isLocalhostClient) {
-      return (
-        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_LOCALHOST ||
-        "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-      );
-    }
-
-    return (
-      process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ||
-      "6LeAQwYtAAAAAJ3d21yVvBH364cTa931gbZujLg8"
-    );
-  })();
+  const recaptchaSiteKey = React.useMemo(() => getRecaptchaSiteKey(), []);
+  const isRecaptchaConfigured = Boolean(recaptchaSiteKey);
   // Asegurar renderizado solo en cliente (Next.js SSR fix)
   useEffect(() => {
     setIsClient(true);
@@ -143,6 +127,13 @@ function Footer({ subBg }) {
       }
 
       // Validar reCAPTCHA
+      if (!isRecaptchaConfigured) {
+        setStatus({
+          type: "error",
+          msg: "reCAPTCHA no está configurado para este entorno.",
+        });
+        return;
+      }
       if (!recaptchaToken) {
         setStatus({
           type: "error",
@@ -390,7 +381,7 @@ function Footer({ subBg }) {
                     gap: 12,
                   }}
                 >
-                  {isClient && (
+                  {isClient && isRecaptchaConfigured && (
                     <ReCAPTCHA
                       sitekey={recaptchaSiteKey}
                       onChange={(token) => setRecaptchaToken(token || "")}
@@ -401,6 +392,18 @@ function Footer({ subBg }) {
                         setRecaptchaToken("");
                       }}
                     />
+                  )}
+                  {isClient && !isRecaptchaConfigured && (
+                    <div
+                      style={{
+                        color: "#dc3545",
+                        fontSize: 13,
+                        textAlign: "center",
+                      }}
+                    >
+                      reCAPTCHA no configurado. Define
+                      NEXT_PUBLIC_RECAPTCHA_SITE_KEY en Vercel.
+                    </div>
                   )}
                   <button
                     type="submit"
