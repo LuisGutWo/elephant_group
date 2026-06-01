@@ -18,12 +18,6 @@ const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"), {
   ssr: false,
 });
 
-const RECAPTCHA_SITE_KEY =
-  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ||
-  (process.env.NODE_ENV === "development"
-    ? "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-    : "6LeAQwYtAAAAAJ3d21yVvBH364cTa931gbZujLg8");
-
 gsap.registerPlugin(ScrollTrigger);
 
 function Footer({ subBg }) {
@@ -34,6 +28,25 @@ function Footer({ subBg }) {
   const STATUS_AUTO_CLOSE = 4000; // ms
   const [recaptchaToken, setRecaptchaToken] = useState("");
   const [isClient, setIsClient] = useState(false);
+
+  const recaptchaSiteKey = (() => {
+    const isLocalhostClient =
+      typeof window !== "undefined" &&
+      (window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1");
+
+    if (isLocalhostClient) {
+      return (
+        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_LOCALHOST ||
+        "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+      );
+    }
+
+    return (
+      process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ||
+      "6LeAQwYtAAAAAJ3d21yVvBH364cTa931gbZujLg8"
+    );
+  })();
   // Asegurar renderizado solo en cliente (Next.js SSR fix)
   useEffect(() => {
     setIsClient(true);
@@ -379,7 +392,7 @@ function Footer({ subBg }) {
                 >
                   {isClient && (
                     <ReCAPTCHA
-                      sitekey={RECAPTCHA_SITE_KEY}
+                      sitekey={recaptchaSiteKey}
                       onChange={(token) => setRecaptchaToken(token || "")}
                       onExpired={() => {
                         setRecaptchaToken("");
