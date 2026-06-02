@@ -12,7 +12,7 @@
   - [x] Referrer-Policy
   - [x] Validar y sanitizar todos los datos recibidos por formularios (frontend y backend).
   - [x] Limitar tamaño y tipo de archivos en uploads.
-  - [x] Implementar reCAPTCHA o similar en formularios.
+  - [] Implementar reCAPTCHA o similar en formularios.
 
 ## 2. Seguridad de sesión y cookies
 
