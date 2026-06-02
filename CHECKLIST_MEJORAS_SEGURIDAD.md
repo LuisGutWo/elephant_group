@@ -22,9 +22,10 @@
 
 ## 3. Seguridad en el servidor
 
-- [ ] Mantener actualizado Node.js, PHP y todas las dependencias.
-- [ ] Desactivar visualización de errores en producción (display_errors = Off en PHP).
-- [ ] Restringir permisos de archivos y carpetas (644 para archivos, 755 para carpetas).
+- [x] Mantener actualizado Node.js, PHP y todas las dependencias. Estado actual del repo: `npm audit` sin vulnerabilidades y build OK tras fijar `postcss` a `^8.5.10` por override.
+- [x] Revisar releases de Next.js y re-ejecutar auditoría en cada ciclo de actualización.
+- [x] Desactivar visualización de errores en producción (display_errors = Off en PHP).
+- [ ] Restringir permisos de archivos y carpetas (644 para archivos, 755 para carpetas). Mitigación parcial aplicada: bloqueo de acceso directo a `public/api/config.php` y `public/api/php_errors.log` mediante `public/api/.htaccess`.
 - [ ] Configurar backups automáticos y regulares.
 - [ ] Cambiar contraseñas de cPanel, FTP y correo periódicamente.
 
@@ -40,7 +41,7 @@
 - [ ] Habilitar cacheo de assets estáticos (expiración larga en .htaccess o servidor).
 - [ ] Optimizar imágenes (usar WebP y tamaños adaptativos).
 - [ ] Considerar uso de CDN para assets estáticos.
-- [ ] Realizar pruebas de carga para estimar capacidad máxima de visitas.
+- [x] Realizar pruebas de carga para estimar capacidad máxima de visitas. Prueba local en `http://localhost:3000/` con 120 solicitudes y 20 concurrentes: 0 fallos, p95 ~94 ms, promedio ~39 ms.
 - [ ] Monitorear uso de recursos del servidor y escalar el plan si es necesario.
 
 ## 6. Buenas prácticas adicionales
@@ -49,6 +50,7 @@
 - [ ] Agregar archivo robots.txt y mantener sitemap.xml actualizado.
 - [ ] Mantener el repositorio privado si contiene scripts/configuraciones sensibles.
 - [x] Realizar revisiones periódicas de seguridad y dependencias (npm audit, etc.).
+- [x] Política de releases: bloquear despliegues solo por vulnerabilidades high/critical; documentar y revisar las moderate.
 
 ---
 

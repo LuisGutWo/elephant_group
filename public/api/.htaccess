@@ -1,0 +1,5 @@
+Options -Indexes
+
+<FilesMatch "^(config\.php|php_errors\.log)$">
+    Require all denied
+</FilesMatch>
