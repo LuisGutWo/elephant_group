@@ -28,9 +28,11 @@ function Footer({ subBg }) {
   const [loading, setLoading] = useState(false);
   const STATUS_AUTO_CLOSE = 4000; // ms
   const [recaptchaToken, setRecaptchaToken] = useState("");
+  const [csrfToken, setCsrfToken] = useState("");
   const [isClient, setIsClient] = useState(false);
   const recaptchaSiteKey = React.useMemo(() => getRecaptchaSiteKey(), []);
   const isRecaptchaConfigured = Boolean(recaptchaSiteKey);
+  const usesSameOriginApi = EMAIL_API.sendSimpleContact.startsWith("/");
   // Asegurar renderizado solo en cliente (Next.js SSR fix)
   useEffect(() => {
     setIsClient(true);
@@ -64,6 +66,28 @@ function Footer({ subBg }) {
       });
     }
   }, []);
+
+  useEffect(() => {
+    if (!isClient || !usesSameOriginApi) return;
+
+    const loadCsrfToken = async () => {
+      try {
+        const res = await fetch("/api/csrf-token", {
+          method: "GET",
+          credentials: "include",
+        });
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data?.csrfToken) {
+          setCsrfToken(data.csrfToken);
+        }
+      } catch {
+        // Si falla la carga del token, se informa al intentar enviar.
+      }
+    };
+
+    loadCsrfToken();
+  }, [isClient, usesSameOriginApi]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -141,6 +165,13 @@ function Footer({ subBg }) {
         });
         return;
       }
+      if (usesSameOriginApi && !csrfToken) {
+        setStatus({
+          type: "error",
+          msg: "Token de seguridad no disponible. Recarga la página e intenta nuevamente.",
+        });
+        return;
+      }
 
       setLoading(true);
       console.log("[Footer] Enviando mensaje:", {
@@ -150,9 +181,14 @@ function Footer({ subBg }) {
         recaptchaToken,
       });
 
+      const headers = { "Content-Type": "application/json" };
+      if (usesSameOriginApi) {
+        headers["x-csrf-token"] = csrfToken;
+      }
+
       const response = await fetch(EMAIL_API.sendSimpleContact, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers,
         body: JSON.stringify({
           name,
           email,

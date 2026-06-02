@@ -66,6 +66,7 @@ function Form() {
   });
   const [status, setStatus] = useState({ type: "", message: "" });
   const [recaptchaToken, setRecaptchaToken] = useState("");
+  const [csrfToken, setCsrfToken] = useState("");
   const [showStatusModal, setShowStatusModal] = useState(false);
   const STATUS_AUTO_CLOSE = 4000; // ms
   const [loading, setLoading] = useState(false);
@@ -74,6 +75,28 @@ function Form() {
 
   const recaptchaSiteKey = useMemo(() => getRecaptchaSiteKey(), []);
   const isRecaptchaConfigured = Boolean(recaptchaSiteKey);
+  const usesSameOriginContactApi = EMAIL_API.sendContact.startsWith("/");
+
+  const safeDraftDetails = useMemo(
+    () => ({
+      productType: details.productType,
+      product: details.product,
+      material: details.material,
+      width: details.width,
+      height: details.height,
+      quantity: details.quantity,
+      deliveryDate: details.deliveryDate,
+    }),
+    [
+      details.productType,
+      details.product,
+      details.material,
+      details.width,
+      details.height,
+      details.quantity,
+      details.deliveryDate,
+    ],
+  );
 
   // Hooks personalizados
   const {
@@ -96,18 +119,24 @@ function Form() {
   } = useFileUpload();
 
   // Auto-guardar en localStorage
-  const { clearSaved } = useAutoSave("quotation-draft", form, details, true);
+  const { clearSaved } = useAutoSave(
+    "quotation-draft",
+    {},
+    safeDraftDetails,
+    true,
+  );
 
   // Cargar datos guardados al montar el componente
   useEffect(() => {
     const savedData = loadFromLocalStorage("quotation-draft");
     if (savedData) {
-      if (savedData.form) setForm(savedData.form);
       if (savedData.details) {
         setDetails((prev) => ({
           ...prev,
           ...savedData.details,
           fileData: null, // No cargar archivo (muy pesado)
+          fileName: "",
+          comments: "",
         }));
       }
       console.log("📥 Datos del formulario recuperados");
@@ -117,6 +146,28 @@ function Form() {
       // Cleanup function
     };
   }, []);
+
+  useEffect(() => {
+    if (!usesSameOriginContactApi) return;
+
+    const loadCsrfToken = async () => {
+      try {
+        const res = await fetch("/api/csrf-token", {
+          method: "GET",
+          credentials: "include",
+        });
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data?.csrfToken) {
+          setCsrfToken(data.csrfToken);
+        }
+      } catch {
+        // Si falla la carga del token, se informa al intentar enviar.
+      }
+    };
+
+    loadCsrfToken();
+  }, [usesSameOriginContactApi]);
 
   // Calcular progreso del formulario
   const progress = useMemo(
@@ -209,113 +260,121 @@ function Form() {
   }, [clearFile, clearAllErrors]);
 
   // Función separada para enviar email de respaldo
-  const sendBackupEmail = async (formData, detailsData, token) => {
-    try {
-      console.log("📧 Iniciando envío de email de respaldo...");
-      console.log("📝 Datos a enviar:", {
-        name: formData.name,
-        company: formData.company,
-        email: formData.email,
-        phone: formData.phone,
-        hasFile: !!detailsData.fileName,
-        fileName: detailsData.fileName,
-        productType: detailsData.productType,
-      });
+  const sendBackupEmail = useCallback(
+    async (formData, detailsData, recaptchaValue, csrfHeaderToken) => {
+      try {
+        console.log("📧 Iniciando envío de email de respaldo...");
+        console.log("📝 Datos a enviar:", {
+          name: formData.name,
+          company: formData.company,
+          email: formData.email,
+          phone: formData.phone,
+          hasFile: !!detailsData.fileName,
+          fileName: detailsData.fileName,
+          productType: detailsData.productType,
+        });
 
-      const payload = {
-        ...formData,
-        details: detailsData,
-        recaptchaToken: token,
-      };
-
-      // Calcular tamaño aproximado del payload
-      const payloadSize = JSON.stringify(payload).length;
-      const payloadSizeMB = (payloadSize / 1024 / 1024).toFixed(2);
-      console.log(
-        `📏 Tamaño del payload: ${payloadSizeMB}MB (${payloadSize} bytes)`,
-      );
-
-      // Manejar archivos grandes
-      let fileRemoved = false;
-      if (detailsData.fileData && payloadSize > 8000000) {
-        // ~8MB
-        console.warn(
-          `⚠️ Payload muy grande (${payloadSizeMB}MB), removiendo archivo adjunto para email de respaldo`,
-        );
-        console.log(
-          `📁 Archivo original: ${detailsData.fileName} (${
-            detailsData.fileSize
-              ? (detailsData.fileSize / 1024 / 1024).toFixed(2) + "MB"
-              : "tamaño desconocido"
-          })`,
-        );
-        payload.details = {
-          ...payload.details,
-          fileData: null,
-          fileNote: `Archivo adjunto demasiado grande para email: ${
-            detailsData.fileName
-          }${
-            detailsData.fileSize
-              ? ` (${(detailsData.fileSize / 1024 / 1024).toFixed(2)}MB)`
-              : ""
-          }`,
+        const payload = {
+          ...formData,
+          details: detailsData,
+          recaptchaToken: recaptchaValue,
         };
-        fileRemoved = true;
-      } else if (detailsData.fileData) {
-        const fileSizeMB = detailsData.fileSize
-          ? (detailsData.fileSize / 1024 / 1024).toFixed(2)
-          : "N/A";
+
+        // Calcular tamaño aproximado del payload
+        const payloadSize = JSON.stringify(payload).length;
+        const payloadSizeMB = (payloadSize / 1024 / 1024).toFixed(2);
         console.log(
-          `📎 Incluyendo archivo en email: ${detailsData.fileName} (${fileSizeMB}MB)`,
+          `📏 Tamaño del payload: ${payloadSizeMB}MB (${payloadSize} bytes)`,
         );
-      }
 
-      // Crear un AbortController para timeout (aumentamos a 30 segundos)
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 segundos timeout
-
-      const startTime = Date.now();
-      const emailResponse = await fetch(EMAIL_API.sendContact, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-        signal: controller.signal,
-      });
-
-      clearTimeout(timeoutId);
-      const duration = Date.now() - startTime;
-      console.log(`⏱️ Tiempo de respuesta: ${duration}ms`);
-
-      if (emailResponse.ok) {
-        const emailResult = await emailResponse.json();
-        console.log(
-          "✅ Email de respaldo enviado correctamente:",
-          emailResult.message,
-        );
-        if (emailResult.messageId) {
-          console.log("🆔 Message ID:", emailResult.messageId);
+        // Manejar archivos grandes
+        let fileRemoved = false;
+        if (detailsData.fileData && payloadSize > 8000000) {
+          // ~8MB
+          console.warn(
+            `⚠️ Payload muy grande (${payloadSizeMB}MB), removiendo archivo adjunto para email de respaldo`,
+          );
+          console.log(
+            `📁 Archivo original: ${detailsData.fileName} (${
+              detailsData.fileSize
+                ? (detailsData.fileSize / 1024 / 1024).toFixed(2) + "MB"
+                : "tamaño desconocido"
+            })`,
+          );
+          payload.details = {
+            ...payload.details,
+            fileData: null,
+            fileNote: `Archivo adjunto demasiado grande para email: ${
+              detailsData.fileName
+            }${
+              detailsData.fileSize
+                ? ` (${(detailsData.fileSize / 1024 / 1024).toFixed(2)}MB)`
+                : ""
+            }`,
+          };
+          fileRemoved = true;
+        } else if (detailsData.fileData) {
+          const fileSizeMB = detailsData.fileSize
+            ? (detailsData.fileSize / 1024 / 1024).toFixed(2)
+            : "N/A";
+          console.log(
+            `📎 Incluyendo archivo en email: ${detailsData.fileName} (${fileSizeMB}MB)`,
+          );
         }
-      } else {
-        const errorText = await emailResponse.text();
-        console.error(
-          "⚠️ Error al enviar email de respaldo (",
-          emailResponse.status,
-          "):",
-          errorText,
-        );
+
+        // Crear un AbortController para timeout (aumentamos a 30 segundos)
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 segundos timeout
+
+        const startTime = Date.now();
+        const headers = { "Content-Type": "application/json" };
+        if (usesSameOriginContactApi) {
+          headers["x-csrf-token"] = csrfHeaderToken;
+        }
+
+        const emailResponse = await fetch(EMAIL_API.sendContact, {
+          method: "POST",
+          headers,
+          body: JSON.stringify(payload),
+          signal: controller.signal,
+        });
+
+        clearTimeout(timeoutId);
+        const duration = Date.now() - startTime;
+        console.log(`⏱️ Tiempo de respuesta: ${duration}ms`);
+
+        if (emailResponse.ok) {
+          const emailResult = await emailResponse.json();
+          console.log(
+            "✅ Email de respaldo enviado correctamente:",
+            emailResult.message,
+          );
+          if (emailResult.messageId) {
+            console.log("🆔 Message ID:", emailResult.messageId);
+          }
+        } else {
+          const errorText = await emailResponse.text();
+          console.error(
+            "⚠️ Error al enviar email de respaldo (",
+            emailResponse.status,
+            "):",
+            errorText,
+          );
+        }
+      } catch (emailErr) {
+        if (emailErr.name === "AbortError") {
+          console.log("⏱️ Timeout del email de respaldo (30 segundos)");
+        } else {
+          console.error(
+            "❌ Error inesperado en email de respaldo:",
+            emailErr.message,
+          );
+        }
+        // No mostramos error al usuario ya que WhatsApp es el canal principal
       }
-    } catch (emailErr) {
-      if (emailErr.name === "AbortError") {
-        console.log("⏱️ Timeout del email de respaldo (30 segundos)");
-      } else {
-        console.error(
-          "❌ Error inesperado en email de respaldo:",
-          emailErr.message,
-        );
-      }
-      // No mostramos error al usuario ya que WhatsApp es el canal principal
-    }
-  };
+    },
+    [usesSameOriginContactApi],
+  );
 
   const handleSubmit = useCallback(
     async (e) => {
@@ -355,6 +414,14 @@ function Form() {
         setStatus({
           type: "error",
           message: "Por favor completa el reCAPTCHA para continuar.",
+        });
+        return;
+      }
+      if (usesSameOriginContactApi && !csrfToken) {
+        setStatus({
+          type: "error",
+          message:
+            "Token de seguridad no disponible. Recarga la página e intenta nuevamente.",
         });
         return;
       }
@@ -422,7 +489,7 @@ function Form() {
         clearSaved(); // Limpiar localStorage después de envío exitoso
 
         // Enviar email de respaldo de forma asíncrona
-        sendBackupEmail(formBackup, detailsBackup, recaptchaToken);
+        sendBackupEmail(formBackup, detailsBackup, recaptchaToken, csrfToken);
         setRecaptchaToken(""); // Limpiar reCAPTCHA tras envío
       } catch (err) {
         console.error("❌ Error en envío:", err);
@@ -448,6 +515,9 @@ function Form() {
       clearSaved,
       processFile,
       isRecaptchaConfigured,
+      usesSameOriginContactApi,
+      csrfToken,
+      sendBackupEmail,
     ],
   );
 

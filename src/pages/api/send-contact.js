@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
 import xss from "xss";
+import { isValidCsrf } from "./_utils/csrf";
 
 export default async function handler(req, res) {
   if (req.method === "OPTIONS") {
@@ -8,6 +9,11 @@ export default async function handler(req, res) {
   }
   if (req.method !== "POST") {
     res.status(405).json({ message: "Method Not Allowed" });
+    return;
+  }
+
+  if (!isValidCsrf(req)) {
+    res.status(403).json({ message: "CSRF token inválido o ausente." });
     return;
   }
 

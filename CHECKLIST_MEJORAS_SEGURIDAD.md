@@ -4,7 +4,7 @@
 
 - [x] Revisar que las variables de entorno (SMTP, etc.) no estén expuestas en el repositorio ni archivos públicos.
 - [x] Forzar HTTPS en todo el sitio (redirección en .htaccess o configuración del servidor).
-- [ ] Agregar cabeceras de seguridad HTTP:
+- [x] Agregar cabeceras de seguridad HTTP:
   - [x] Content-Security-Policy
   - [x] X-Frame-Options
   - [x] X-XSS-Protection
@@ -12,13 +12,13 @@
   - [x] Referrer-Policy
   - [x] Validar y sanitizar todos los datos recibidos por formularios (frontend y backend).
   - [x] Limitar tamaño y tipo de archivos en uploads.
-  - [] Implementar reCAPTCHA o similar en formularios.
+  - [x] Implementar reCAPTCHA o similar en formularios.
 
 ## 2. Seguridad de sesión y cookies
 
 - [ ] Usar cookies con flags HttpOnly y Secure si se implementa autenticación.
-- [ ] Implementar CSRF tokens en formularios sensibles.
-- [ ] No almacenar datos sensibles en localStorage/sessionStorage.
+- [x] Implementar CSRF tokens en formularios sensibles.
+- [x] No almacenar datos sensibles en localStorage/sessionStorage.
 
 ## 3. Seguridad en el servidor
 
@@ -48,7 +48,7 @@
 - [ ] Incluir política de privacidad y términos de uso claros.
 - [ ] Agregar archivo robots.txt y mantener sitemap.xml actualizado.
 - [ ] Mantener el repositorio privado si contiene scripts/configuraciones sensibles.
-- [ ] Realizar revisiones periódicas de seguridad y dependencias (npm audit, etc.).
+- [x] Realizar revisiones periódicas de seguridad y dependencias (npm audit, etc.).
 
 ---
 
