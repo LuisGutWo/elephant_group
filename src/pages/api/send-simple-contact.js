@@ -23,12 +23,22 @@ export default async function handler(req, res) {
     res.status(400).json({ message: "Falta el token de reCAPTCHA." });
     return;
   }
+  const isDevelopment = process.env.NODE_ENV === "development";
+  const hasLocalhostSiteKey = Boolean(
+    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_LOCALHOST,
+  );
+  const localhostSecret = process.env.RECAPTCHA_SECRET_KEY_LOCALHOST || "";
+
+  let secretKey = process.env.RECAPTCHA_SECRET_KEY || "";
+  if (isDevelopment) {
+    // Si en localhost se usa la site key de prueba, validar con secret de prueba.
+    if (!hasLocalhostSiteKey) {
+      secretKey = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe";
+    } else if (localhostSecret) {
+      secretKey = localhostSecret;
+    }
+  }
   // Verificar con Google reCAPTCHA
-  const secretKey =
-    process.env.RECAPTCHA_SECRET_KEY ||
-    (process.env.NODE_ENV === "development"
-      ? "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe"
-      : "");
   if (!secretKey) {
     res.status(500).json({ message: "RECAPTCHA_SECRET_KEY no configurada." });
     return;
@@ -110,9 +120,6 @@ export default async function handler(req, res) {
         user: SMTP_USER,
         pass: SMTP_PASS,
       },
-      tls: {
-        rejectUnauthorized: false,
-      },
     });
 
     let html = `<h2>Nuevo contacto simple desde el sitio web</h2>`;
@@ -123,7 +130,7 @@ export default async function handler(req, res) {
     const mailOptions = {
       from: `Web Contact <${SMTP_USER}>`,
       to: CONTACT_RECIPIENT,
-      subject: `Nuevo contacto simple de ${name}`,
+      subject: `Nuevo contacto simple de ${trimmedName}`,
       html,
     };
 

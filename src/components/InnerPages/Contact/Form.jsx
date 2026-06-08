@@ -263,16 +263,9 @@ function Form() {
   const sendBackupEmail = useCallback(
     async (formData, detailsData, recaptchaValue, csrfHeaderToken) => {
       try {
-        console.log("📧 Iniciando envío de email de respaldo...");
-        console.log("📝 Datos a enviar:", {
-          name: formData.name,
-          company: formData.company,
-          email: formData.email,
-          phone: formData.phone,
-          hasFile: !!detailsData.fileName,
-          fileName: detailsData.fileName,
-          productType: detailsData.productType,
-        });
+        if (process.env.NODE_ENV === "development") {
+          console.log("📧 Iniciando envío de email de respaldo...");
+        }
 
         const payload = {
           ...formData,
@@ -283,9 +276,9 @@ function Form() {
         // Calcular tamaño aproximado del payload
         const payloadSize = JSON.stringify(payload).length;
         const payloadSizeMB = (payloadSize / 1024 / 1024).toFixed(2);
-        console.log(
-          `📏 Tamaño del payload: ${payloadSizeMB}MB (${payloadSize} bytes)`,
-        );
+        if (process.env.NODE_ENV === "development") {
+          console.log(`📏 Tamaño del payload: ${payloadSizeMB}MB`);
+        }
 
         // Manejar archivos grandes
         let fileRemoved = false;
@@ -293,13 +286,6 @@ function Form() {
           // ~8MB
           console.warn(
             `⚠️ Payload muy grande (${payloadSizeMB}MB), removiendo archivo adjunto para email de respaldo`,
-          );
-          console.log(
-            `📁 Archivo original: ${detailsData.fileName} (${
-              detailsData.fileSize
-                ? (detailsData.fileSize / 1024 / 1024).toFixed(2) + "MB"
-                : "tamaño desconocido"
-            })`,
           );
           payload.details = {
             ...payload.details,
@@ -317,9 +303,9 @@ function Form() {
           const fileSizeMB = detailsData.fileSize
             ? (detailsData.fileSize / 1024 / 1024).toFixed(2)
             : "N/A";
-          console.log(
-            `📎 Incluyendo archivo en email: ${detailsData.fileName} (${fileSizeMB}MB)`,
-          );
+          if (process.env.NODE_ENV === "development") {
+            console.log(`📎 Incluyendo archivo en email (${fileSizeMB}MB)`);
+          }
         }
 
         // Crear un AbortController para timeout (aumentamos a 30 segundos)
@@ -341,15 +327,16 @@ function Form() {
 
         clearTimeout(timeoutId);
         const duration = Date.now() - startTime;
-        console.log(`⏱️ Tiempo de respuesta: ${duration}ms`);
+        if (process.env.NODE_ENV === "development") {
+          console.log(`⏱️ Tiempo de respuesta: ${duration}ms`);
+        }
 
         if (emailResponse.ok) {
           const emailResult = await emailResponse.json();
-          console.log(
-            "✅ Email de respaldo enviado correctamente:",
-            emailResult.message,
-          );
-          if (emailResult.messageId) {
+          if (process.env.NODE_ENV === "development") {
+            console.log("✅ Email de respaldo enviado correctamente");
+          }
+          if (process.env.NODE_ENV === "development" && emailResult.messageId) {
             console.log("🆔 Message ID:", emailResult.messageId);
           }
         } else {
@@ -475,7 +462,7 @@ function Form() {
 
         // Abrir WhatsApp después de 1 segundo
         setTimeout(() => {
-          window.open(whatsappURL, "_blank");
+          window.open(whatsappURL, "_blank", "noopener,noreferrer");
         }, 1000);
 
         // Backup de datos antes de limpiar

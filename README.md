@@ -66,6 +66,13 @@ Más detalles y troubleshooting en `md/RESUMEN_CAMBIOS.md` y `md/COMO_VER_LOS_CA
 - El archivo `src/config/emailApi.js` detecta automáticamente el entorno (Vercel, Netlify, cPanel) y usa la API adecuada.
 - Si usas Vercel, los formularios funcionarán automáticamente usando las rutas API JS/TS.
 
+### cPanel / PHP (Producción)
+
+- Para despliegues en cPanel, el frontend consume endpoints PHP (`/api/send-contact.php` y `/api/send-simple-contact.php`).
+- Debes configurar en el hosting: `APP_ENV=production` y `ALLOWED_ORIGIN=https://tu-dominio.com`.
+- `ALLOWED_ORIGIN` es obligatoria en producción para permitir solo el origen autorizado (CORS seguro).
+- Revisa el checklist operativo en `CHECKLIST_CIERRE_CPANEL.md` antes de publicar.
+
 ---
 
 ## 🌟 Características Principales
@@ -181,9 +188,14 @@ RECAPTCHA_SECRET_KEY=tu_secret_key_v2
 
 # SMTP (API de contacto)
 SMTP_HOST=smtp.tu-proveedor.com
+SMTP_PORT=587
 SMTP_USER=usuario
 SMTP_PASS=contrasena
 CONTACT_RECIPIENT=ventas@tudominio.com
+
+# Entorno y CORS seguro para cPanel/PHP
+APP_ENV=production
+ALLOWED_ORIGIN=https://tu-dominio.com
 ```
 
 Notas:
@@ -191,6 +203,7 @@ Notas:
 - `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` se usa en el cliente (Footer y formularios).
 - `RECAPTCHA_SECRET_KEY` se usa solo en backend para verificar el token.
 - Si falta `RECAPTCHA_SECRET_KEY` en producción, el endpoint de contacto devolverá error de configuración.
+- En producción PHP/cPanel, `ALLOWED_ORIGIN` debe coincidir exactamente con el dominio de navegación.
 
 No subas `.env.local` a Git. Usa `.env.local.example` como plantilla.
 

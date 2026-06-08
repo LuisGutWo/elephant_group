@@ -25,11 +25,21 @@ export default async function handler(req, res) {
     return;
   }
 
-  const secretKey =
-    process.env.RECAPTCHA_SECRET_KEY ||
-    (process.env.NODE_ENV === "development"
-      ? "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe"
-      : "");
+  const isDevelopment = process.env.NODE_ENV === "development";
+  const hasLocalhostSiteKey = Boolean(
+    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY_LOCALHOST,
+  );
+  const localhostSecret = process.env.RECAPTCHA_SECRET_KEY_LOCALHOST || "";
+
+  let secretKey = process.env.RECAPTCHA_SECRET_KEY || "";
+  if (isDevelopment) {
+    // Si en localhost se usa la site key de prueba, validar con secret de prueba.
+    if (!hasLocalhostSiteKey) {
+      secretKey = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe";
+    } else if (localhostSecret) {
+      secretKey = localhostSecret;
+    }
+  }
 
   if (!secretKey) {
     res.status(500).json({ message: "RECAPTCHA_SECRET_KEY no configurada." });
@@ -91,9 +101,6 @@ export default async function handler(req, res) {
         user: SMTP_USER,
         pass: SMTP_PASS,
       },
-      tls: {
-        rejectUnauthorized: false,
-      },
     });
 
     let html = `<h2>Nuevo contacto desde el sitio web</h2>`;
@@ -118,8 +125,8 @@ export default async function handler(req, res) {
     await transporter.sendMail(mailOptions);
     res.status(200).json({ message: "Correo enviado correctamente" });
   } catch (err) {
-    res
-      .status(500)
-      .json({ message: "Error enviando correo", error: err.message });
+    res.status(500).json({
+      message: "Error enviando correo. Intenta nuevamente mas tarde.",
+    });
   }
 }

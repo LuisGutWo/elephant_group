@@ -9,11 +9,55 @@ ini_set('display_errors', 0);
 ini_set('log_errors', 1);
 ini_set('error_log', __DIR__ . '/../../logs/php_errors.log');
 
+// Cargar configuración
+require_once __DIR__ . '/config.php';
+
+// CORS restringido por origen configurado
+$requestOrigin = $_SERVER['HTTP_ORIGIN'] ?? '';
+$allowedOrigin = ALLOWED_ORIGIN;
+$appEnv = getenv('APP_ENV') ?: (getenv('NODE_ENV') ?: 'production');
+$isProduction = $appEnv === 'production';
+$isOriginAllowed = !empty($allowedOrigin) && !empty($requestOrigin) && $requestOrigin === $allowedOrigin;
+$isWildcardDev = !$isProduction && empty($allowedOrigin);
+$isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+  || (($_SERVER['SERVER_PORT'] ?? '') == 443)
+  || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
+
+$csp = "default-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none';";
+
 // Headers CORS
-header('Access-Control-Allow-Origin: *');
+if ($isWildcardDev) {
+  header('Access-Control-Allow-Origin: *');
+} elseif ($isOriginAllowed) {
+  header('Access-Control-Allow-Origin: ' . $allowedOrigin);
+  header('Vary: Origin');
+}
 header('Access-Control-Allow-Methods: POST, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type');
+header('Access-Control-Allow-Headers: Content-Type, X-CSRF-Token');
+header('Access-Control-Max-Age: 600');
 header('Content-Type: application/json; charset=utf-8');
+header('Content-Security-Policy: ' . $csp);
+header('X-Frame-Options: DENY');
+header('Referrer-Policy: no-referrer');
+header('Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()');
+header('X-Content-Type-Options: nosniff');
+if ($isHttps) {
+  header('Strict-Transport-Security: max-age=31536000; includeSubDomains');
+}
+
+if ($isProduction) {
+  if (empty($allowedOrigin)) {
+    http_response_code(500);
+    echo json_encode(['message' => 'ALLOWED_ORIGIN no configurado en produccion.']);
+    exit;
+  }
+
+  if (!$isOriginAllowed) {
+    http_response_code(403);
+    echo json_encode(['message' => 'Origen no permitido.']);
+    exit;
+  }
+}
 
 // Manejar preflight request
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -28,12 +72,92 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Cargar configuración
-require_once __DIR__ . '/config.php';
+// Rate limiting básico por IP (20 requests cada 10 minutos, solo POST)
+$clientIpForRateLimit = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+$rateLimitKey = hash('sha256', 'send-simple-contact:' . $clientIpForRateLimit);
+$rateLimitFile = rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . 'eg_rl_' . $rateLimitKey . '.json';
+$rateLimitWindow = 600;
+$rateLimitMaxRequests = 20;
+$now = time();
+$history = [];
+
+if (file_exists($rateLimitFile)) {
+  $rawHistory = @file_get_contents($rateLimitFile);
+  $decodedHistory = json_decode($rawHistory ?: '[]', true);
+  if (is_array($decodedHistory)) {
+    $history = $decodedHistory;
+  }
+}
+
+$history = array_values(array_filter($history, function ($ts) use ($now, $rateLimitWindow) {
+  return is_int($ts) && ($now - $ts) < $rateLimitWindow;
+}));
+
+if (count($history) >= $rateLimitMaxRequests) {
+  http_response_code(429);
+  echo json_encode(['message' => 'Demasiadas solicitudes. Intenta nuevamente en unos minutos.']);
+  exit;
+}
+
+$history[] = $now;
+@file_put_contents($rateLimitFile, json_encode($history), LOCK_EX);
 
 // Obtener datos del POST
 $input = file_get_contents('php://input');
 $data = json_decode($input, true);
+
+if (!is_array($data)) {
+  http_response_code(400);
+  echo json_encode(['message' => 'Payload JSON invalido.']);
+  exit;
+}
+
+// Validar reCAPTCHA
+$recaptcha = $data['recaptchaToken'] ?? ($data['recaptcha'] ?? '');
+$secret = RECAPTCHA_SECRET_KEY;
+$clientIp = $_SERVER['REMOTE_ADDR'] ?? '';
+
+if (empty($secret)) {
+  http_response_code(500);
+  echo json_encode(['message' => 'RECAPTCHA_SECRET_KEY no configurada.']);
+  exit;
+}
+
+if (empty($recaptcha)) {
+  http_response_code(400);
+  echo json_encode(['message' => 'Falta token de reCAPTCHA.']);
+  exit;
+}
+
+$verifyPayload = http_build_query([
+  'secret' => $secret,
+  'response' => $recaptcha,
+  'remoteip' => $clientIp,
+]);
+
+$context = stream_context_create([
+  'http' => [
+    'method' => 'POST',
+    'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+    'content' => $verifyPayload,
+    'timeout' => 10,
+  ],
+]);
+
+$recaptchaResponse = @file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, $context);
+
+if ($recaptchaResponse === false) {
+  http_response_code(400);
+  echo json_encode(['message' => 'No se pudo verificar reCAPTCHA.']);
+  exit;
+}
+
+$recaptchaResult = json_decode($recaptchaResponse, true);
+if (!is_array($recaptchaResult) || empty($recaptchaResult['success'])) {
+  http_response_code(400);
+  echo json_encode(['message' => 'reCAPTCHA invalido']);
+  exit;
+}
 
 error_log("📨 API /send-simple-contact llamado");
 
@@ -68,6 +192,23 @@ if (empty(SMTP_HOST) || empty(SMTP_USER) || empty(SMTP_PASS)) {
 }
 
 // Usar PHPMailer
+$phpMailerFiles = [
+  __DIR__ . '/PHPMailer/PHPMailer.php',
+  __DIR__ . '/PHPMailer/SMTP.php',
+  __DIR__ . '/PHPMailer/Exception.php',
+];
+
+foreach ($phpMailerFiles as $phpMailerFile) {
+  if (!file_exists($phpMailerFile)) {
+    error_log("❌ Dependencia faltante: " . $phpMailerFile);
+    http_response_code(500);
+    echo json_encode([
+      'message' => 'Error de configuracion del servidor. Intenta mas tarde.'
+    ]);
+    exit;
+  }
+}
+
 require_once __DIR__ . '/PHPMailer/PHPMailer.php';
 require_once __DIR__ . '/PHPMailer/SMTP.php';
 require_once __DIR__ . '/PHPMailer/Exception.php';
@@ -172,8 +313,7 @@ try {
     error_log("❌ Error en send-simple-contact: " . $e->getMessage());
     http_response_code(500);
     echo json_encode([
-        'message' => 'Error enviando el mensaje. Por favor, intente nuevamente.',
-        'error' => $e->getMessage()
+    'message' => 'Error enviando el mensaje. Intente nuevamente mas tarde.'
     ]);
 }
 ?>

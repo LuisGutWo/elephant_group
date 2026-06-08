@@ -4,6 +4,60 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+const isProduction = process.env.NODE_ENV === "production";
+const scriptSrcTokens = [
+  "'self'",
+  "'unsafe-inline'",
+  ...(!isProduction ? ["'unsafe-eval'"] : []),
+  "https://www.google.com",
+  "https://www.gstatic.com",
+  "https://unpkg.com",
+  "https://cdn.jsdelivr.net",
+];
+
+const cspDirectives = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "frame-ancestors 'self'",
+  `script-src ${scriptSrcTokens.join(" ")}`,
+  "script-src-attr 'none'",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net",
+  "font-src 'self' data: https://fonts.gstatic.com https://cdn.jsdelivr.net",
+  "img-src 'self' data: blob: https:",
+  "connect-src 'self' https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com",
+  "frame-src 'self' https://www.google.com https://recaptcha.google.com",
+  "form-action 'self' https://wa.me https://api.whatsapp.com",
+  ...(isProduction ? ["upgrade-insecure-requests"] : []),
+];
+
+const securityHeaders = [
+  {
+    key: "Content-Security-Policy",
+    value: cspDirectives.join("; "),
+  },
+  {
+    key: "X-Frame-Options",
+    value: "SAMEORIGIN",
+  },
+  {
+    key: "Referrer-Policy",
+    value: "strict-origin-when-cross-origin",
+  },
+  {
+    key: "Permissions-Policy",
+    value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+  },
+  {
+    key: "X-Content-Type-Options",
+    value: "nosniff",
+  },
+  {
+    key: "Strict-Transport-Security",
+    value: "max-age=31536000; includeSubDomains",
+  },
+];
+
 const nextConfig = {
   trailingSlash: true,
   images: {
@@ -16,6 +70,14 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: false,
+  },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: securityHeaders,
+      },
+    ];
   },
   transpilePackages: [
     "framer-motion",

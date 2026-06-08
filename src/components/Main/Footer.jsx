@@ -174,12 +174,9 @@ function Footer({ subBg }) {
       }
 
       setLoading(true);
-      console.log("[Footer] Enviando mensaje:", {
-        name: form.name.trim(),
-        email: form.email.trim(),
-        message: form.message.trim(),
-        recaptchaToken,
-      });
+      if (process.env.NODE_ENV === "development") {
+        console.log("[Footer] Enviando mensaje de contacto...");
+      }
 
       const headers = { "Content-Type": "application/json" };
       if (usesSameOriginApi) {
@@ -198,11 +195,23 @@ function Footer({ subBg }) {
       });
 
       if (!response.ok) {
-        const errorText = await response.text();
+        let backendMessage = "";
+        let errorText = "";
+
+        try {
+          const errorJson = await response.json();
+          backendMessage = errorJson?.message || "";
+          errorText = JSON.stringify(errorJson);
+        } catch {
+          errorText = await response.text();
+        }
+
         console.error(
           `[Footer] Error al enviar mensaje: ${response.status} - ${errorText}`,
         );
-        throw new Error(`Error sending message: ${response.status}`);
+        throw new Error(
+          backendMessage || `Error sending message: ${response.status}`,
+        );
       }
 
       console.log("[Footer] Mensaje enviado correctamente");
@@ -216,7 +225,9 @@ function Footer({ subBg }) {
       console.error("[Footer] Error en envío:", err);
       setStatus({
         type: "error",
-        msg: "No pudimos enviar tu mensaje. Por favor revisa tus datos o intenta nuevamente en unos minutos. Si el problema persiste, Contáctanos por WhatsApp o correo.",
+        msg:
+          err?.message ||
+          "No pudimos enviar tu mensaje. Por favor revisa tus datos o intenta nuevamente en unos minutos. Si el problema persiste, Contáctanos por WhatsApp o correo.",
       });
     } finally {
       setLoading(false);
