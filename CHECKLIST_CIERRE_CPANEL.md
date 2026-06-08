@@ -12,6 +12,7 @@
 Configurar estas variables en el entorno del hosting:
 
 - [ ] `APP_ENV=production`
+- [ ] `NEXT_PUBLIC_EMAIL_BACKEND_MODE=next` (si despliegas como app Node.js)
 - [ ] `NEXT_PUBLIC_WHATSAPP_NUMBER`
 - [ ] `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`
 - [ ] `RECAPTCHA_SECRET_KEY`
@@ -20,12 +21,13 @@ Configurar estas variables en el entorno del hosting:
 - [ ] `SMTP_USER`
 - [ ] `SMTP_PASS`
 - [ ] `CONTACT_RECIPIENT`
-- [ ] `ALLOWED_ORIGIN` (obligatoria en produccion)
+- [ ] `ALLOWED_ORIGIN` (obligatoria solo si usas backend PHP)
 
 Notas de seguridad:
 
 - `ALLOWED_ORIGIN` debe coincidir EXACTAMENTE con el origen real del sitio (ejemplo: `https://landingclientes.elephantgroup.cl`).
 - Si `ALLOWED_ORIGIN` no esta definida en produccion, los endpoints PHP devolveran error de configuracion.
+- Si desplegas como app Node.js en cPanel, usa `NEXT_PUBLIC_EMAIL_BACKEND_MODE=next` para forzar las rutas API de Next (`/api/send-contact` y `/api/send-simple-contact`).
 
 ## 3. Publicacion en cPanel
 
