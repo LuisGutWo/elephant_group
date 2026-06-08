@@ -195,19 +195,18 @@ function Footer({ subBg }) {
       });
 
       if (!response.ok) {
+        const errorText = await response.text();
         let backendMessage = "";
-        let errorText = "";
 
         try {
-          const errorJson = await response.json();
+          const errorJson = JSON.parse(errorText);
           backendMessage = errorJson?.message || "";
-          errorText = JSON.stringify(errorJson);
         } catch {
-          errorText = await response.text();
+          // Si no es JSON, se conserva el texto plano.
         }
 
         console.error(
-          `[Footer] Error al enviar mensaje: ${response.status} - ${errorText}`,
+          `[Footer] Error al enviar mensaje (${EMAIL_API.sendSimpleContact}): ${response.status} ${response.statusText} - ${errorText}`,
         );
         throw new Error(
           backendMessage || `Error sending message: ${response.status}`,

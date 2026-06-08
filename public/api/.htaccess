@@ -1,5 +1,20 @@
 Options -Indexes
 
-<FilesMatch "^(config\.php|php_errors\.log)$">
-    Require all denied
-</FilesMatch>
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Bloquear acceso directo a archivos sensibles y ocultos
+    RewriteRule ^(?:\.|config\.php|php_errors\.log|composer\.(?:json|lock)|\.env.*)$ - [F,L,NC]
+
+    # Permitir solo los endpoints PHP esperados
+    RewriteRule ^(?:send-contact|send-simple-contact)\.php$ - [L,NC]
+
+    # Bloquear cualquier otro PHP en esta carpeta
+    RewriteRule \.php$ - [F,L,NC]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set Referrer-Policy "no-referrer"
+</IfModule>
