@@ -1,6 +1,11 @@
 /* Fix reCAPTCHA oculto en Footer */
+html,
+body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
 .eg-form-actions {
-  overflow: visible !important;
+  overflow: hidden !important;
   position: relative;
   z-index: 1000;
 }
@@ -25,6 +30,38 @@
     text-align: center;
     width: 100%;
     display: flex;
+  }
+  .eg-form-actions {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  .eg-form-actions .g-recaptcha,
+  .eg-form-actions iframe[src*="recaptcha"] {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+  }
+  .eg-footer-social,
+  .eg-social-links {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  .eg-social-links {
+    gap: 0.5rem !important;
+  }
+  .eg-footer-top,
+  .footer-responsive-minimal {
+    overflow-x: hidden !important;
+  }
+  .eg-footer-inner,
+  .footer-responsive-minimal .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    overflow-x: hidden !important;
   }
 }
 /* ====================== MODAL DE ESTADO FOOTER (ÉXITO/ERROR) ====================== */
@@ -534,7 +571,7 @@ a:focus {
     margin: 0;
   }
   .footer-responsive-minimal .eg-form-col {
-    margin-top: 6rem;
+    margin-top: 1.2rem;
   }
   .eg-form-card-minimal {
     width: 100%;
@@ -542,7 +579,7 @@ a:focus {
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 0.5rem;
-    margin-top: 40rem;
+    margin-top: 0;
     position: static;
     z-index: auto;
     box-sizing: border-box;

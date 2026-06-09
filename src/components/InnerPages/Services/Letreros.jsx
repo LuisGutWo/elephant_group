@@ -153,7 +153,7 @@ function Letreros() {
                 </p>
                 <Link
                   href="/quote"
-                  className="butn butn-md butn-bord butn-rounded"
+                  className="butn butn-md butn-bord butn-rounded btn-primary"
                 >
                   <span>Solicitar Cotización</span>
                 </Link>
@@ -163,22 +163,22 @@ function Letreros() {
                 <h4 className="mb-30">Servicios Relacionados</h4>
                 <ul className="services-links">
                   <li>
-                    <Link href="/services/corte-cnc">
+                    <p href="/services/corte-cnc">
                       Corte CNC Profesional
-                    </Link>
+                    </p>
                   </li>
                   <li>
-                    <Link href="/services/impresion-digital">
+                    <p href="/services/impresion-digital">
                       Impresión Digital Gran Formato
-                    </Link>
+                    </p>
                   </li>
                   <li>
-                    <Link href="/services/diseno">Diseño Personalizado</Link>
+                    <p href="/services/diseno">Diseño Personalizado</p>
                   </li>
                   <li>
-                    <Link href="/services/instalacion">
+                    <p href="/services/instalacion">
                       Instalación y Montaje
-                    </Link>
+                    </p>
                   </li>
                 </ul>
               </div>

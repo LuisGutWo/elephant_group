@@ -1618,6 +1618,17 @@ body.loaded {
   }
   .eg-form-col {
     justify-content: center;
+    margin-top: 1.2rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .eg-footer-top {
+    padding: 2rem 0 1rem;
+    height: auto;
+    position: relative;
   }
   /* Footer bottom styles now handled in globals.css - removing to prevent conflicts */
 }

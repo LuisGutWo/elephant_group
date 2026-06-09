@@ -153,7 +153,7 @@ function Señaleticas() {
                 </p>
                 <Link
                   href="/quote"
-                  className="butn butn-md butn-bord butn-rounded"
+                  className="butn butn-md butn-bord butn-rounded btn-primary"
                 >
                   <span>Solicitar Cotización</span>
                 </Link>
@@ -163,20 +163,20 @@ function Señaleticas() {
                 <h4 className="mb-30">Servicios Relacionados</h4>
                 <ul className="services-links">
                   <li>
-                    <Link href="/services/letreros">
+                    <p href="/services/letreros">
                       Letreros Personalizados
-                    </Link>
+                    </p>
                   </li>
                   <li>
-                    <Link href="/services/corte-cnc">Corte CNC</Link>
+                    <p href="/services/corte-cnc">Corte CNC</p>
                   </li>
                   <li>
-                    <Link href="/services/impresion-digital">
+                    <p href="/services/impresion-digital">
                       Impresión Digital
-                    </Link>
+                    </p>
                   </li>
                   <li>
-                    <Link href="/services/diseno">Diseño Personalizado</Link>
+                    <p href="/services/diseno">Diseño Personalizado</p>
                   </li>
                 </ul>
               </div>

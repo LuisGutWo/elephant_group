@@ -154,7 +154,7 @@ function Adhesivos() {
                 </p>
                 <Link
                   href="/quote"
-                  className="butn butn-md butn-bord butn-rounded"
+                  className="butn butn-md butn-bord butn-rounded btn-primary"
                 >
                   <span>Solicitar Cotización</span>
                 </Link>
@@ -164,16 +164,16 @@ function Adhesivos() {
                 <h4 className="mb-30">Servicios Relacionados</h4>
                 <ul className="services-links">
                   <li>
-                    <Link href="/services/letreros">Letreros</Link>
+                    <p href="/services/letreros">Letreros</p>
                   </li>
                   <li>
-                    <Link href="/services/senaleticas">Señaléticas</Link>
+                    <p href="/services/senaleticas">Señaléticas</p>
                   </li>
                   <li>
-                    <Link href="/services/diseno">Diseño Personalizado</Link>
+                    <p href="/services/diseno">Diseño Personalizado</p>
                   </li>
                   <li>
-                    <Link href="/quote">Cotización</Link>
+                    <p href="/quote">Cotización</p>
                   </li>
                 </ul>
               </div>
