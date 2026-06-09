@@ -6,7 +6,7 @@ Este repositorio contiene el código fuente del sitio web de Elephant Group, una
 
 ## 🚀 Cambios e Implementaciones Relevantes
 
-### 📱 Integración WhatsApp (Noviembre 2025)
+### 📱 Integración WhatsApp (Noviembre 2026)
 
 - Envío automático de datos del formulario de contacto a WhatsApp con mensaje preformateado y emojis.
 - Redirección automática a WhatsApp Web/App tras enviar el formulario.
