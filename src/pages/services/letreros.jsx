@@ -42,7 +42,7 @@ function LetrerosPage() {
         <meta name="author" content="Elephant Group" />
         <link
           rel="canonical"
-          href="https://landingclientes.elephantgroup.cl/services/letreros"
+          href="https://landingclientes.elephantgroup.cl/services/letreros/"
         />
       </Head>{" "}
       <Navbar mainBg />

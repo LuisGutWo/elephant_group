@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import SeoHead from "@/components/Common/SeoHead";
+import { SITE_URL } from "@/config/site";
 import MainNavbar from "@/components/Common/MainNavbar";
 import TermsHeader from "@/components/Legal/TermsHeader";
 import TermsContent from "@/components/Legal/TermsContent";
@@ -139,9 +140,9 @@ function TermsAndConditions() {
         robots="index, follow"
         language="Spanish"
         revisitAfter="7 days"
-        canonical="https://landingclientes.elephantgroup.cl/terminos"
+        canonical={`${SITE_URL}/terminos/`}
         ogType="website"
-        ogUrl="https://landingclientes.elephantgroup.cl/terminos"
+        ogUrl={`${SITE_URL}/terminos/`}
         ogTitle="Términos y Condiciones - Elephant Group"
         ogDescription="Condiciones generales que regulan el uso de nuestros servicios de implementos publicitarios, señalética y diseño gráfico. Información sobre cotizaciones, pagos, plazos y garantías."
         ogImage="https://landingclientes.elephantgroup.cl/dark/assets/imgs/logo-light.webp"

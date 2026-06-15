@@ -71,6 +71,10 @@ function Header() {
       role="banner"
       aria-label="Banner principal - Elephant Group implementos publicitarios"
     >
+      <h1 className="visually-hidden">
+        Implementos publicitarios, letreros y señalética para empresas en
+        Valparaíso y Viña del Mar
+      </h1>
       {loadSwiper && data && (
         <Swiper
           {...swiperOptions}

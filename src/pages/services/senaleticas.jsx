@@ -42,7 +42,7 @@ function SenaleticasPage() {
         <meta name="author" content="Elephant Group" />
         <link
           rel="canonical"
-          href="https://landingclientes.elephantgroup.cl/services/senaleticas"
+          href="https://landingclientes.elephantgroup.cl/services/senaleticas/"
         />
       </Head>{" "}
       <Navbar mainBg />

@@ -6,15 +6,8 @@ export default function Document() {
     <Html lang={process.env.NEXT_PUBLIC_SITE_LANGUAGE || "es"}>
       <Head>
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta
-          name="keywords"
-          content="React, Elephant Group, Web Development, Next.js, SEO Optimization"
-        />
-        <meta
-          name="description"
-          content="Explore React-based web development with Elephant Group, powered by Next.js and optimized for SEO by LAG media."
-        />
         <meta name="author" content="Elephant Group" />
+        <meta name="theme-color" content="#0a0a0a" />
         {/* ------ Favicon ------ */}
         <link rel="shortcut icon" href="/assets/light/imgs/favicon.ico" />
         <link rel="apple-touch-icon" href="/assets/light/imgs/favicon.ico" />
@@ -48,8 +41,6 @@ export default function Document() {
           async
           src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
         ></script>
-        {/* ------ Portfolio Debug Script ------ */}
-        <script async src="/assets/js/portfolio-debug.js"></script>
         {/* ------ Light Theme Stylesheets migrados a _app.js ------ */}
       </Head>
       <body>

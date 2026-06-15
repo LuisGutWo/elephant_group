@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import SeoHead from "@/components/Common/SeoHead";
+import { SITE_URL } from "@/config/site";
 import Layout from "@/layouts/default";
 import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/InnerPages/Header";
@@ -35,6 +36,7 @@ function QuotePage() {
       <SeoHead
         title="Cotización | Elephant Group - Presupuesto de Implementos Publicitarios"
         description="Solicita tu cotización personalizada de implementos publicitarios en Valparaíso. Material POP, señalética, gigantografías y merchandising. Respuesta en 24 horas. Presupuesto sin compromiso."
+        canonical={`${SITE_URL}/quote/`}
         keywords="cotización publicidad, presupuesto implementos publicitarios, cotizar material POP, precio señalética, presupuesto merchandising, cotización gigantografías Viña del Mar, Valparaiso y V Region, solicitar presupuesto publicidad V Región"
         author="Elephant Group"
         ogTitle="Cotización | Elephant Group - Presupuesto Implementos Publicitarios"

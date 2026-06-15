@@ -56,7 +56,7 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
         <div className="container">
           <Link
             className="logo"
-            href="/home"
+            href="/"
             aria-label="Elephant Group - Ir a inicio"
           >
             <img
@@ -89,12 +89,12 @@ function MainNavbar({ mainBg, subBg, noStatic, curve }) {
               <li className="nav-item" role="none">
                 <Link
                   className={`nav-link main-navbar-link-override${
-                    router.pathname === "/home" ? " is-active" : ""
+                    router.pathname === "/" ? " is-active" : ""
                   }`}
-                  href="/home"
+                  href="/"
                   role="menuitem"
                   aria-label="Ir a página de inicio"
-                  {...(router.pathname === "/home" && {
+                  {...(router.pathname === "/" && {
                     "aria-current": "page",
                   })}
                 >

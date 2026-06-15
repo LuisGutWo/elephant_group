@@ -43,7 +43,7 @@ function AcabadosPage() {
         <meta name="author" content="Elephant Group" />
         <link
           rel="canonical"
-          href="https://landingclientes.elephantgroup.cl/services/acabados"
+          href="https://landingclientes.elephantgroup.cl/services/acabados/"
         />
       </Head>{" "}
       <Navbar mainBg />

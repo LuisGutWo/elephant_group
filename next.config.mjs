@@ -79,6 +79,15 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/home",
+        destination: "/",
+        permanent: true,
+      },
+    ];
+  },
   transpilePackages: [
     "framer-motion",
     "gsap",

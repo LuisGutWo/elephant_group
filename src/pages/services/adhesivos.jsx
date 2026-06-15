@@ -42,7 +42,7 @@ function AdhesivosPage() {
         <meta name="author" content="Elephant Group" />
         <link
           rel="canonical"
-          href="https://landingclientes.elephantgroup.cl/services/adhesivos"
+          href="https://landingclientes.elephantgroup.cl/services/adhesivos/"
         />
       </Head>{" "}
       <Navbar mainBg />

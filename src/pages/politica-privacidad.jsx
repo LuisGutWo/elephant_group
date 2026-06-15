@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import SeoHead from "@/components/Common/SeoHead";
+import { SITE_URL } from "@/config/site";
 import MainNavbar from "@/components/Common/MainNavbar";
 import PrivacyPolicyHeader from "@/components/Legal/PrivacyPolicyHeader";
 import PrivacyPolicyContent from "@/components/Legal/PrivacyPolicyContent";
@@ -141,9 +142,9 @@ function PrivacyPolicy() {
         robots="index, follow"
         language="Spanish"
         revisitAfter="7 days"
-        canonical="https://landingclientes.elephantgroup.cl/politica-privacidad"
+        canonical={`${SITE_URL}/politica-privacidad/`}
         ogType="website"
-        ogUrl="https://landingclientes.elephantgroup.cl/politica-privacidad"
+        ogUrl={`${SITE_URL}/politica-privacidad/`}
         ogTitle="Política de Privacidad - Elephant Group | Protección de Datos"
         ogDescription="Tu privacidad es nuestra prioridad. Conoce cómo Elephant Group protege y gestiona tu información personal de forma segura y transparente."
         ogImage="https://landingclientes.elephantgroup.cl/dark/assets/imgs/logo-light.webp"

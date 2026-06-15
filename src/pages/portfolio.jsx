@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import SeoHead from "@/components/Common/SeoHead";
+import { SITE_URL } from "@/config/site";
 import Layout from "@/layouts/default";
 import Navbar from "@/components/Common/MainNavbar";
 import Header from "@/components/Portfolio/HeaderPortfolio";
@@ -49,7 +50,7 @@ function PortfolioPage() {
         twitterTitle="Portafolio Publicitario - Elephant Group"
         twitterDescription="Galería de trabajos: Letreros CNC, señalética, impresión digital en Viña del Mar, Valparaiso y V Region"
         twitterImage="/light/assets/imgs/works/work_publicity.webp"
-        canonical="https://elephantgroup.cl/portfolio"
+        canonical={`${SITE_URL}/portfolio/`}
         structuredData={[
           {
             "@context": "https://schema.org",

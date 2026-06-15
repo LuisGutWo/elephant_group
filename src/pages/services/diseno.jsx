@@ -45,7 +45,7 @@ function DisenoGraficoPage() {
         <meta name="author" content="Elephant Group" />
         <link
           rel="canonical"
-          href="https://landingclientes.elephantgroup.cl/services/diseno"
+          href="https://landingclientes.elephantgroup.cl/services/diseno/"
         />
       </Head>{" "}
       <Navbar mainBg />

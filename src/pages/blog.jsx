@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import SeoHead from "@/components/Common/SeoHead";
+import { SITE_URL } from "@/config/site";
 import Layout from "@/layouts/default";
 import Navbar from "@/components/Common/MainNavbar";
 import BlogHeader from "@/components/Blog/BlogHeader";
@@ -43,7 +44,7 @@ function BlogPage() {
         twitterTitle="Blog de Publicidad y Diseño | Elephant Group"
         twitterDescription="Artículos especializados sobre tendencias en diseño, impresión y marketing publicitario."
         twitterImage="https://landingclientes.elephantgroup.cl/light/assets/imgs/logo-light.webp"
-        canonical="https://landingclientes.elephantgroup.cl/blog"
+        canonical={`${SITE_URL}/blog/`}
         revisitAfter="7 days"
         distribution="global"
         rating="general"

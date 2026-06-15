@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Rutas internas / privadas
+Disallow: /api/
+
+Sitemap: https://www.elephantgroup.cl/sitemap.xml
