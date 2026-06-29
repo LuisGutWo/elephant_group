@@ -42,7 +42,7 @@
         "leaflet-geosearch": "^4.2.0",
         "lodash": "^4.17.21",
         "next": "^15.3.2",
-        "nodemailer": "^8.0.10",
+        "nodemailer": "^9.0.1",
         "react": "^19.0.0",
         "react-bootstrap": "^2.10.9",
         "react-countup": "^6.5.3",
