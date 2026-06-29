@@ -35,7 +35,7 @@ export default async function handler(req, res) {
   if (isDevelopment) {
     // Si en localhost se usa la site key de prueba, validar con secret de prueba.
     if (!hasLocalhostSiteKey) {
-      secretKey = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe";
+      secretKey = process.env.RECAPTCHA_SECRET_KEY_LOCALHOST || "";
     } else if (localhostSecret) {
       secretKey = localhostSecret;
     }
