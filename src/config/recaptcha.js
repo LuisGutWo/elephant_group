@@ -1,4 +1,5 @@
-const RECAPTCHA_TEST_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
+const RECAPTCHA_TEST_SITE_KEY =
+  process.env.NEXT_PUBLIC_RECAPTCHA_TEST_SITE_KEY || "";
 
 const isLocalhost = () => {
   if (typeof window === "undefined") return false;
